@@ -1,56 +1,105 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}NOIR{% endblock %}
+{% block meta_description %}NOIR — Premium menswear. Season 2026.{% endblock %}
 
 {% block content %}
 
-<!-- Hero Section -->
-<section class="hero d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7">
-                <p class="hero-subtitle">New Collection 2026</p>
-                <h1 class="hero-title">DEFINE<br>YOUR<br>STYLE</h1>
-                <p class="hero-text">Premium menswear for the modern man.<br>Crafted with intention. Worn with confidence.</p>
-                <a href="#" class="btn btn-light btn-lg px-5 mt-3 hero-btn">Shop Now</a>
+<!-- HERO -->
+<section class="yeezy-hero">
+    <canvas id="starfield"></canvas>
+    <div class="yeezy-hero-inner">
+        <span class="yeezy-season">NOIR — SEASON 2026</span>
+        <h1 class="yeezy-title" id="gravTitle" aria-label="Dark Matter">
+            <span class="grav-line">DARK</span>
+            <span class="grav-line">MATTER</span>
+        </h1>
+        <div class="yeezy-hero-footer">
+            <a href="/products/" class="yeezy-cta">SHOP THE COLLECTION</a>
+            <span class="yeezy-scroll-hint">↓</span>
+        </div>
+    </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="yeezy-statement">
+    <div class="yeezy-statement-inner">
+        <p class="yeezy-manifesto">
+            PREMIUM MENSWEAR.<br>NO EXCESS. NO NOISE.
+        </p>
+    </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="yeezy-grid">
+    <a href="/products/?category=jackets" class="yeezy-block">
+        <div class="yeezy-block-img" style="background-color: #0d0d0d;"></div>
+        <div class="yeezy-block-label">
+            <span class="yeezy-label-num">01</span>
+            <span class="yeezy-label-name">JACKETS</span>
+        </div>
+    </a>
+    <a href="/products/?category=trousers" class="yeezy-block">
+        <div class="yeezy-block-img" style="background-color: #111;"></div>
+        <div class="yeezy-block-label">
+            <span class="yeezy-label-num">02</span>
+            <span class="yeezy-label-name">TROUSERS</span>
+        </div>
+    </a>
+    <a href="/products/?category=t-shirts" class="yeezy-block">
+        <div class="yeezy-block-img" style="background-color: #0a0a0a;"></div>
+        <div class="yeezy-block-label">
+            <span class="yeezy-label-num">03</span>
+            <span class="yeezy-label-name">T-SHIRTS</span>
+        </div>
+    </a>
+</section>
+
+<!-- NEW IN -->
+<section class="yeezy-newin">
+    <div class="yeezy-newin-header">
+        <span class="yeezy-section-label">NEW IN</span>
+        <a href="/products/" class="yeezy-see-all">SEE ALL →</a>
+    </div>
+    <div class="yeezy-newin-grid">
+        <div class="yeezy-product-tile">
+            <div class="yeezy-tile-img"></div>
+            <div class="yeezy-tile-info">
+                <span class="yeezy-tile-cat">JACKETS</span>
+                <span class="yeezy-tile-name">MIDNIGHT LEATHER JACKET</span>
+                <span class="yeezy-tile-price">€349</span>
+            </div>
+        </div>
+        <div class="yeezy-product-tile">
+            <div class="yeezy-tile-img"></div>
+            <div class="yeezy-tile-info">
+                <span class="yeezy-tile-cat">T-SHIRTS</span>
+                <span class="yeezy-tile-name">GRAPHIC OVERSIZED TEE</span>
+                <span class="yeezy-tile-price">€44</span>
+            </div>
+        </div>
+        <div class="yeezy-product-tile">
+            <div class="yeezy-tile-img"></div>
+            <div class="yeezy-tile-info">
+                <span class="yeezy-tile-cat">TROUSERS</span>
+                <span class="yeezy-tile-name">CARGO TECH TROUSERS</span>
+                <span class="yeezy-tile-price">€99</span>
+            </div>
+        </div>
+        <div class="yeezy-product-tile">
+            <div class="yeezy-tile-img"></div>
+            <div class="yeezy-tile-info">
+                <span class="yeezy-tile-cat">SHIRTS</span>
+                <span class="yeezy-tile-name">LINEN RESORT SHIRT</span>
+                <span class="yeezy-tile-price">€69</span>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Categories Section -->
-<section class="categories py-6">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="category-card">
-                    <div class="category-img" style="background-color: #1a1a1a; height: 400px;"></div>
-                    <div class="category-info">
-                        <h3>T-Shirts</h3>
-                        <a href="#">Explore →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card">
-                    <div class="category-img" style="background-color: #222; height: 400px;"></div>
-                    <div class="category-info">
-                        <h3>Jackets</h3>
-                        <a href="#">Explore →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card">
-                    <div class="category-img" style="background-color: #1a1a1a; height: 400px;"></div>
-                    <div class="category-info">
-                        <h3>Accessories</h3>
-                        <a href="#">Explore →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{% endblock %}
 
+{% block extra_js %}
+<script src="/static/js/noir.js"></script>
 {% endblock %}
