@@ -1,225 +1,575 @@
 /* ============================================================
-   NOIR - Base Styles
+   NOIR — YEEZY-Inspired Dark Aesthetic
    ============================================================ */
 
 :root {
-    --noir-black: #0a0a0a;
-    --noir-dark: #111111;
-    --noir-grey: #1a1a1a;
-    --noir-mid: #333333;
-    --noir-light: #888888;
-    --noir-white: #f5f5f5;
-    --noir-accent: #c9a96e;
-    --font-primary: 'Montserrat', sans-serif;
-    --font-secondary: 'Cormorant Garamond', serif;
+    --black: #000000;
+    --off-black: #0a0a0a;
+    --dark: #111111;
+    --cement: #1c1c1c;
+    --mid: #333333;
+    --sand: #888068;
+    --bone: #c8c0b0;
+    --white: #f0ede8;
+    --accent: #c9a96e;
+    --font: 'Montserrat', sans-serif;
+    --font-sec: 'Cormorant Garamond', serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-    background-color: var(--noir-black);
-    color: var(--noir-white);
-    font-family: var(--font-primary);
+    background-color: var(--black);
+    color: var(--white);
+    font-family: var(--font);
     font-weight: 300;
+    letter-spacing: 0.03em;
 }
 
-/* ---- Navbar ---- */
+/* ============================================================
+   NAVBAR
+   ============================================================ */
 .navbar {
-    background-color: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    padding: 1.2rem 0;
+    background-color: var(--black);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding: 1.4rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo {
-    font-family: var(--font-primary);
+    font-family: var(--font);
     font-weight: 900;
-    font-size: 1.8rem;
-    letter-spacing: 0.3em;
-    color: var(--noir-white) !important;
+    font-size: 1.4rem;
+    letter-spacing: 0.45em;
+    color: var(--white) !important;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .navbar .nav-link {
-    color: var(--noir-light) !important;
-    font-size: 0.75rem;
+    color: rgba(240,237,232,0.72) !important; /* WCAG AA contrast ≥ 4.5:1 */
+    font-size: 0.65rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     transition: color 0.3s ease;
-    padding: 0.5rem 1rem !important;
+    padding: 0.5rem 1.2rem !important;
 }
 
-.navbar .nav-link:hover {
-    color: var(--noir-white) !important;
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--white) !important;
+    outline: none;
+}
+
+.navbar .nav-link:focus-visible {
+    outline: 1px solid rgba(240,237,232,0.5);
+    outline-offset: 4px;
+    border-radius: 2px;
 }
 
 .nav-icon {
-    color: var(--noir-light);
-    font-size: 1rem;
+    color: rgba(240,237,232,0.72); /* WCAG AA */
+    font-size: 0.9rem;
     text-decoration: none;
     transition: color 0.3s ease;
+    letter-spacing: 0;
 }
 
-.nav-icon:hover {
-    color: var(--noir-white);
+.nav-icon:hover,
+.nav-icon:focus { color: var(--white); }
+
+.nav-icon:focus-visible {
+    outline: 1px solid rgba(240,237,232,0.5);
+    outline-offset: 4px;
+    border-radius: 2px;
 }
 
 .bag-count {
     position: absolute;
     top: -8px;
     right: -8px;
-    background: var(--noir-accent);
-    color: var(--noir-black);
+    background: var(--white);
+    color: var(--black);
     border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    font-size: 0.6rem;
+    width: 15px;
+    height: 15px;
+    font-size: 0.55rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* ---- Hero ---- */
-.hero {
+/* ============================================================
+   HERO
+   ============================================================ */
+.yeezy-hero {
+    background: var(--black);
     min-height: 100vh;
-    background-color: var(--noir-dark);
-    background-image: linear-gradient(135deg, var(--noir-black) 0%, var(--noir-grey) 100%);
+    display: flex;
+    align-items: flex-end;
     padding-top: 80px;
-}
-
-.hero-subtitle {
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--noir-accent);
-    margin-bottom: 1rem;
-}
-
-.hero-title {
-    font-family: var(--font-primary);
-    font-weight: 900;
-    font-size: clamp(3.5rem, 10vw, 8rem);
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    color: var(--noir-white);
-    margin-bottom: 1.5rem;
-}
-
-.hero-text {
-    color: var(--noir-light);
-    font-size: 0.9rem;
-    line-height: 1.8;
-    letter-spacing: 0.05em;
-}
-
-.hero-btn {
-    background: var(--noir-white);
-    color: var(--noir-black);
-    border: none;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
-
-.hero-btn:hover {
-    background: var(--noir-accent);
-    color: var(--noir-black);
-    transform: translateY(-2px);
-}
-
-/* ---- Categories ---- */
-.py-6 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-.category-card {
     position: relative;
     overflow: hidden;
-    cursor: pointer;
 }
 
-.category-card .category-img {
-    transition: transform 0.5s ease;
+#starfield {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
 }
 
-.category-card:hover .category-img {
+.yeezy-hero-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.yeezy-hero-inner {
+    width: 100%;
+    padding: 0 5vw 8vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.yeezy-season {
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: rgba(240,237,232,0.3);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.yeezy-title {
+    font-family: var(--font);
+    font-weight: 900;
+    font-size: clamp(5rem, 18vw, 18rem);
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+.yeezy-hero-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.yeezy-cta {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    color: var(--white); /* full white = 19.5:1 contrast */
+    text-decoration: none;
+    border-bottom: 1px solid rgba(240,237,232,0.5);
+    padding-bottom: 4px;
+    transition: border-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.yeezy-cta:hover,
+.yeezy-cta:focus {
+    color: var(--white);
+    border-color: var(--white);
+    outline: none;
+}
+
+.yeezy-cta:focus-visible {
+    outline: 1px solid var(--white);
+    outline-offset: 6px;
+}
+
+.yeezy-scroll-hint {
+    color: rgba(240,237,232,0.2);
+    font-size: 1.2rem;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+/* ============================================================
+   STATEMENT
+   ============================================================ */
+.yeezy-statement {
+    background: var(--off-black);
+    padding: 10vh 5vw;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.yeezy-manifesto {
+    font-family: var(--font);
+    font-weight: 900;
+    font-size: clamp(1.8rem, 5vw, 5rem);
+    line-height: 1.1;
+    letter-spacing: 0.08em;
+    color: rgba(240,237,232,0.08);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* ============================================================
+   GRID CATEGORIES
+   ============================================================ */
+.yeezy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.04);
+}
+
+.yeezy-block {
+    text-decoration: none;
+    display: block;
+    background: var(--black);
+    overflow: hidden;
+    position: relative;
+}
+
+.yeezy-block-img {
+    height: 60vh;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.yeezy-block:hover .yeezy-block-img {
+    transform: scale(1.02);
+}
+
+.yeezy-block-label {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.yeezy-label-num {
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    color: rgba(240,237,232,0.25);
+    font-weight: 600;
+}
+
+.yeezy-label-name {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.yeezy-block:hover .yeezy-label-name {
+    color: var(--bone);
+}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.yeezy-marquee-wrap {
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding: 1.2rem 0;
+    background: var(--off-black);
+}
+
+.yeezy-marquee {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+}
+
+.yeezy-marquee span {
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    font-weight: 600;
+    color: rgba(240,237,232,0.2);
+    text-transform: uppercase;
+    flex-shrink: 0;
+    padding-right: 4rem;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   NEW IN
+   ============================================================ */
+.yeezy-newin {
+    padding: 8vh 5vw;
+    background: var(--black);
+}
+
+.yeezy-newin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding-bottom: 1rem;
+}
+
+.yeezy-section-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    font-weight: 700;
+    color: rgba(240,237,232,0.4);
+    text-transform: uppercase;
+}
+
+.yeezy-see-all {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    font-weight: 600;
+    color: rgba(240,237,232,0.3);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.yeezy-see-all:hover { color: var(--white); }
+
+.yeezy-newin-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.03);
+}
+
+.yeezy-product-tile {
+    background: var(--black);
+    overflow: hidden;
+}
+
+.yeezy-tile-img {
+    background-color: var(--dark);
+    aspect-ratio: 3/4;
+    transition: transform 0.6s ease;
+}
+
+.yeezy-product-tile:hover .yeezy-tile-img {
     transform: scale(1.03);
 }
 
-.category-info {
-    padding: 1.2rem 0;
+.yeezy-tile-info {
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 }
 
-.category-info h3 {
-    font-size: 0.8rem;
+.yeezy-tile-cat {
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    color: rgba(240,237,232,0.25);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.yeezy-tile-name {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+.yeezy-tile-price {
+    font-size: 0.7rem;
+    color: rgba(240,237,232,0.5);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+/* ============================================================
+   PRODUCTS PAGE
+   ============================================================ */
+.products-page {
+    padding-top: 80px;
+    min-height: 100vh;
+    background: var(--black);
+}
+
+.page-header {
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding: 5vh 5vw;
+    text-align: left;
+}
+
+.page-header h1 {
+    font-size: clamp(2rem, 6vw, 5rem);
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: rgba(240,237,232,0.25);
+    text-transform: uppercase;
+}
+
+.filter-heading {
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(240,237,232,0.25);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.filter-list {
+    list-style: none;
+    border-left: 1px solid rgba(255,255,255,0.06);
+    padding-left: 1rem;
+}
+
+.filter-link {
+    color: rgba(240,237,232,0.3);
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 2.5;
+    display: block;
+    transition: color 0.3s;
+}
+
+.filter-link:hover,
+.filter-link.active {
+    color: var(--white);
+}
+
+.product-card { cursor: pointer; }
+
+.product-image-wrap {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--dark);
+    aspect-ratio: 3/4;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-img { transform: scale(1.04); }
+
+.product-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark);
+}
+
+.badge-new {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--white);
+    color: var(--black);
+    font-size: 0.5rem;
     font-weight: 700;
     letter-spacing: 0.2em;
+    padding: 3px 8px;
     text-transform: uppercase;
+}
+
+.product-category {
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(240,237,232,0.25);
+    margin-bottom: 0.2rem;
+}
+
+.product-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white); /* 19.5:1 */
     margin-bottom: 0.3rem;
 }
 
-.category-info a {
-    color: var(--noir-light);
-    text-decoration: none;
+.product-price {
     font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    transition: color 0.3s ease;
+    color: rgba(240,237,232,0.75); /* ≥ 4.5:1 WCAG AA */
+    font-weight: 600;
+    margin-bottom: 0;
 }
 
-.category-info a:hover {
-    color: var(--noir-accent);
-}
-
-/* ---- Footer ---- */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 .footer {
-    background-color: var(--noir-dark);
-    border-top: 1px solid rgba(255,255,255,0.05);
+    background-color: var(--off-black);
+    border-top: 1px solid rgba(255,255,255,0.04);
 }
 
 .footer-heading {
-    font-size: 0.7rem;
+    font-size: 0.55rem;
     font-weight: 700;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: var(--noir-white);
-    margin-bottom: 1rem;
+    color: rgba(240,237,232,0.3);
+    margin-bottom: 1.2rem;
 }
 
 .footer-link {
-    color: var(--noir-light);
+    color: rgba(240,237,232,0.25);
     text-decoration: none;
-    font-size: 0.8rem;
-    line-height: 2;
-    transition: color 0.3s ease;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    line-height: 2.2;
+    transition: color 0.3s;
+    display: block;
 }
 
-.footer-link:hover {
-    color: var(--noir-accent);
-}
+.footer-link:hover { color: var(--white); }
 
 .newsletter-input {
-    background-color: var(--noir-grey);
-    border: 1px solid var(--noir-mid);
-    color: var(--noir-white);
+    background-color: var(--cement);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: var(--white);
+    font-size: 0.75rem;
 }
 
+.newsletter-input::placeholder { color: rgba(240,237,232,0.2); }
+
 .newsletter-input:focus {
-    background-color: var(--noir-grey);
-    border-color: var(--noir-accent);
-    color: var(--noir-white);
+    background-color: var(--cement);
+    border-color: rgba(255,255,255,0.2);
+    color: var(--white);
     box-shadow: none;
 }
 
-/* ---- Messages ---- */
+/* ============================================================
+   MESSAGES
+   ============================================================ */
 .message-container {
     position: fixed;
     top: 80px;
@@ -228,108 +578,11 @@ body {
     max-width: 350px;
 }
 
-/* ---- Products Page ---- */
-.products-page {
-    padding-top: 80px;
-    min-height: 100vh;
-}
-
-.page-header {
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    margin-bottom: 2rem;
-}
-
-.filter-heading {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--noir-accent);
-}
-
-.filter-list {
-    border-left: 1px solid rgba(255,255,255,0.08);
-    padding-left: 1rem;
-}
-
-.filter-link {
-    color: var(--noir-light);
-    text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    line-height: 2.2;
-    display: block;
-    transition: color 0.3s ease;
-}
-
-.filter-link:hover,
-.filter-link.active {
-    color: var(--noir-white);
-}
-
-.filter-link.active {
-    font-weight: 600;
-}
-
-.product-card {
-    cursor: pointer;
-}
-
-.product-image-wrap {
-    position: relative;
-    overflow: hidden;
-    background-color: var(--noir-grey);
-    aspect-ratio: 3/4;
-}
-
-.product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.product-card:hover .product-img {
-    transform: scale(1.04);
-}
-
-.product-img-placeholder {
-    width: 100%;
-    height: 100%;
-    background-color: var(--noir-grey);
-}
-
-.badge-new {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: var(--noir-accent);
-    color: var(--noir-black);
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    padding: 3px 8px;
-}
-
-.product-category {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--noir-light);
-    margin-bottom: 0.2rem;
-}
-
-.product-name {
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    color: var(--noir-white);
-    margin-bottom: 0.3rem;
-}
-
-.product-price {
-    font-size: 0.85rem;
-    color: var(--noir-accent);
-    font-weight: 600;
-    margin-bottom: 0;
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .yeezy-grid { grid-template-columns: 1fr; }
+    .yeezy-newin-grid { grid-template-columns: repeat(2, 1fr); }
+    .yeezy-block-img { height: 40vh; }
 }
