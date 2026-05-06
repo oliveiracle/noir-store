@@ -30,3 +30,4 @@ media/
 
 # Static files (collected)
 staticfiles/
+.claude/
