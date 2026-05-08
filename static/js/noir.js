@@ -285,7 +285,6 @@
         var oy = (mouseY / H) - 0.5;
 
         drawNebulae(ox, oy);
-        drawGalaxy(ox, oy);
         drawLayers(ox, oy);
         drawShooters();
 
