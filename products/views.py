@@ -7,7 +7,15 @@ def all_products(request):
     categories = Category.objects.all()
     current_category = None
 
+    query = request.GET.get('q')
     category_filter = request.GET.get('category')
+
+    if query:
+        products = (
+            products.filter(name__icontains=query) |
+            products.filter(description__icontains=query)
+        )
+
     if category_filter:
         products = products.filter(category__name=category_filter)
         current_category = category_filter
@@ -16,6 +24,7 @@ def all_products(request):
         'products': products,
         'categories': categories,
         'current_category': current_category,
+        'query': query,
     }
     return render(request, 'products/products.html', context)
 
