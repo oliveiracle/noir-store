@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Your Bag{% endblock %}
+
+{% block content %}
+<div class="products-page">
+    <div class="page-header px-4 px-lg-5">
+        <h1>YOUR BAG</h1>
+        <p>0 items</p>
+    </div>
+    <div class="container-fluid px-4 px-lg-5 py-5">
+        <p style="color:rgba(240,237,232,0.3);font-size:0.8rem;letter-spacing:0.1em;">Your bag is empty.</p>
+        <a href="/products/" class="detail-back">← CONTINUE SHOPPING</a>
+    </div>
+</div>
+{% endblock %}
