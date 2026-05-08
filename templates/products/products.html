@@ -42,25 +42,27 @@
                 <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-4">
                     {% for product in products %}
                     <div class="col">
-                        <div class="product-card">
-                            <div class="product-image-wrap">
-                                {% if product.image %}
-                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
-                                {% else %}
-                                <div class="product-img-placeholder d-flex align-items-center justify-content-center">
-                                    <i class="fas fa-tshirt fa-2x text-muted"></i>
+                        <a href="{% url 'product_detail' product.id %}" class="product-card-link">
+                            <div class="product-card">
+                                <div class="product-image-wrap">
+                                    {% if product.image %}
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
+                                    {% else %}
+                                    <div class="product-img-placeholder d-flex align-items-center justify-content-center">
+                                        <i class="fas fa-tshirt fa-2x" style="color:rgba(240,237,232,0.08);"></i>
+                                    </div>
+                                    {% endif %}
+                                    {% if product.is_new %}
+                                    <span class="badge-new">NEW</span>
+                                    {% endif %}
                                 </div>
-                                {% endif %}
-                                {% if product.is_new %}
-                                <span class="badge-new">NEW</span>
-                                {% endif %}
+                                <div class="product-info mt-2">
+                                    <p class="product-category">{{ product.category.friendly_name|default:"Uncategorised" }}</p>
+                                    <h6 class="product-name">{{ product.name }}</h6>
+                                    <p class="product-price">€{{ product.price }}</p>
+                                </div>
                             </div>
-                            <div class="product-info mt-2">
-                                <p class="product-category">{{ product.category.friendly_name|default:"Uncategorised" }}</p>
-                                <h6 class="product-name">{{ product.name }}</h6>
-                                <p class="product-price">€{{ product.price }}</p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     {% endfor %}
                 </div>

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock %}
+{% block meta_description %}{{ product.description|truncatechars:150 }}{% endblock %}
+
+{% block content %}
+<div class="detail-page">
+    <div class="container-fluid px-4 px-lg-5 py-6">
+        <div class="row g-5">
+
+            <!-- Product Image -->
+            <div class="col-lg-7">
+                <div class="detail-image-wrap">
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="detail-img">
+                    {% else %}
+                    <div class="detail-img-placeholder d-flex align-items-center justify-content-center">
+                        <i class="fas fa-tshirt fa-4x" style="color:rgba(240,237,232,0.08);"></i>
+                    </div>
+                    {% endif %}
+                    {% if product.is_new %}
+                    <span class="badge-new">NEW</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="col-lg-5 d-flex align-items-center">
+                <div class="detail-info w-100">
+
+                    <span class="detail-category">
+                        {{ product.category.friendly_name|default:"Uncategorised" }}
+                    </span>
+
+                    <h1 class="detail-name">{{ product.name }}</h1>
+
+                    <p class="detail-price">€{{ product.price }}</p>
+
+                    {% if product.rating %}
+                    <div class="detail-rating mb-4">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= product.rating %}
+                            <i class="fas fa-star"></i>
+                            {% else %}
+                            <i class="far fa-star"></i>
+                            {% endif %}
+                        {% endfor %}
+                        <span class="rating-value">{{ product.rating }}</span>
+                    </div>
+                    {% endif %}
+
+                    <p class="detail-description">{{ product.description }}</p>
+
+                    <div class="detail-divider"></div>
+
+                    <!-- Size selector placeholder -->
+                    <div class="mb-4">
+                        <span class="detail-label">SIZE</span>
+                        <div class="size-grid mt-2">
+                            <button class="size-btn">XS</button>
+                            <button class="size-btn">S</button>
+                            <button class="size-btn">M</button>
+                            <button class="size-btn">L</button>
+                            <button class="size-btn">XL</button>
+                        </div>
+                    </div>
+
+                    <!-- Add to bag -->
+                    <form action="#" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="quantity" value="1">
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        <button type="submit" class="btn-add-bag w-100">
+                            ADD TO BAG
+                        </button>
+                    </form>
+
+                    <div class="detail-divider mt-4"></div>
+
+                    <div class="detail-meta">
+                        <span class="detail-label">SKU</span>
+                        <span class="detail-meta-value">{{ product.sku|default:"N/A" }}</span>
+                    </div>
+
+                    <a href="{% url 'products' %}" class="detail-back mt-4 d-inline-block">
+                        ← BACK TO SHOP
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
