@@ -601,6 +601,52 @@ body {
 }
 
 /* ============================================================
+   BAG
+   ============================================================ */
+.bag-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem 0;
+}
+
+.bag-item-img {
+    width: 90px;
+    flex-shrink: 0;
+    aspect-ratio: 3/4;
+    background: var(--dark);
+    overflow: hidden;
+}
+
+.bag-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bag-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--dark);
+}
+
+.bag-item-info { flex: 1; }
+
+.bag-item-subtotal {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(240,237,232,0.75);
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+.bag-summary {
+    background: var(--off-black);
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ============================================================
    PRODUCT DETAIL
    ============================================================ */
 .detail-page {

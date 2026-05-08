@@ -6,11 +6,70 @@
 <div class="products-page">
     <div class="page-header px-4 px-lg-5">
         <h1>YOUR BAG</h1>
-        <p>0 items</p>
+        <p>{{ item_count }} item{{ item_count|pluralize }}</p>
     </div>
+
     <div class="container-fluid px-4 px-lg-5 py-5">
-        <p style="color:rgba(240,237,232,0.3);font-size:0.8rem;letter-spacing:0.1em;">Your bag is empty.</p>
-        <a href="/products/" class="detail-back">← CONTINUE SHOPPING</a>
+        {% if bag_items %}
+        <div class="row">
+            <div class="col-lg-8">
+                {% for item in bag_items %}
+                <div class="bag-item">
+                    <div class="bag-item-img">
+                        {% if item.product.image %}
+                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        {% else %}
+                        <div class="bag-img-placeholder"></div>
+                        {% endif %}
+                    </div>
+                    <div class="bag-item-info">
+                        <p class="product-category">{{ item.product.category.friendly_name|default:"" }}</p>
+                        <h6 class="product-name">{{ item.product.name }}</h6>
+                        <p class="product-price">€{{ item.product.price }}</p>
+                        <p style="font-size:0.7rem;color:rgba(240,237,232,0.3);letter-spacing:0.1em;">
+                            QTY: {{ item.quantity }}
+                        </p>
+                    </div>
+                    <div class="bag-item-subtotal">
+                        €{{ item.subtotal }}
+                    </div>
+                </div>
+                <div class="detail-divider"></div>
+                {% endfor %}
+            </div>
+
+            <div class="col-lg-4">
+                <div class="bag-summary">
+                    <h6 class="filter-heading mb-4">ORDER SUMMARY</h6>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span style="font-size:0.75rem;color:rgba(240,237,232,0.4);letter-spacing:0.1em;">SUBTOTAL</span>
+                        <span style="font-size:0.75rem;color:var(--white);">€{{ total }}</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-4">
+                        <span style="font-size:0.75rem;color:rgba(240,237,232,0.4);letter-spacing:0.1em;">SHIPPING</span>
+                        <span style="font-size:0.75rem;color:rgba(240,237,232,0.4);">Calculated at checkout</span>
+                    </div>
+                    <div class="detail-divider"></div>
+                    <div class="d-flex justify-content-between mb-4">
+                        <span style="font-size:0.8rem;font-weight:700;letter-spacing:0.15em;">TOTAL</span>
+                        <span style="font-size:0.8rem;font-weight:700;">€{{ total }}</span>
+                    </div>
+                    <a href="#" class="btn-add-bag d-block text-center text-decoration-none">
+                        PROCEED TO CHECKOUT
+                    </a>
+                    <a href="{% url 'products' %}" class="detail-back d-block text-center mt-3">
+                        ← CONTINUE SHOPPING
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {% else %}
+        <p style="color:rgba(240,237,232,0.3);font-size:0.8rem;letter-spacing:0.1em;">
+            Your bag is empty.
+        </p>
+        <a href="{% url 'products' %}" class="detail-back">← CONTINUE SHOPPING</a>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

@@ -44,9 +44,9 @@
                     <input type="text" name="q" placeholder="SEARCH" class="search-input" aria-label="Search products">
                 </form>
                 <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
-                <a href="#" class="nav-icon position-relative">
+                <a href="{% url 'view_bag' %}" class="nav-icon position-relative">
                     <i class="fas fa-shopping-bag"></i>
-                    <span class="bag-count">0</span>
+                    <span class="bag-count">{{ item_count }}</span>
                 </a>
             </div>
         </div>
