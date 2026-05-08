@@ -1,80 +1,121 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Shop{% endblock %}
+{% block title %}{% if current_category %}{{ current_category|upper }}{% elif query %}Search — {{ query }}{% else %}Shop{% endif %} — NOIR{% endblock %}
 
 {% block meta_description %}Browse NOIR's premium men's fashion collection — jackets, trousers, shirts and more.{% endblock %}
 
 {% block content %}
-<div class="products-page">
+<div class="shop-page">
 
     <!-- Page Header -->
-    <div class="page-header text-center py-5">
-        <h1 class="display-5 fw-bold">{% if current_category %}{{ current_category|title }}{% else %}All Products{% endif %}</h1>
-        <p class="text-muted">{{ products.count }} item{{ products.count|pluralize }} found</p>
+    <div class="shop-header">
+        <div class="shop-header-inner">
+            <div class="shop-header-left">
+                <span class="shop-header-label">SEASON 2026</span>
+                <h1 class="shop-header-title">
+                    {% if current_category %}{{ current_category|upper }}
+                    {% elif query %}SEARCH
+                    {% else %}ALL PRODUCTS{% endif %}
+                </h1>
+            </div>
+            <div class="shop-header-right">
+                <span class="shop-count">{{ products.count }} ITEM{{ products.count|pluralize }}</span>
+            </div>
+        </div>
     </div>
 
-    <div class="container pb-5">
-        <div class="row">
+    <div class="shop-layout">
 
-            <!-- Sidebar Filters -->
-            <div class="col-lg-2 mb-4">
-                <h6 class="filter-heading mb-3">CATEGORIES</h6>
-                <ul class="list-unstyled filter-list">
-                    <li>
-                        <a href="{% url 'products' %}" class="filter-link {% if not current_category %}active{% endif %}">
-                            All
-                        </a>
-                    </li>
-                    {% for cat in categories %}
-                    <li>
-                        <a href="{% url 'products' %}?category={{ cat.name }}" class="filter-link {% if current_category == cat.name %}active{% endif %}">
-                            {{ cat.friendly_name|default:cat.name }}
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
+        <!-- Sidebar -->
+        <aside class="shop-sidebar">
+            <span class="filter-heading">SHOP BY</span>
+            <ul class="filter-list">
+                <li>
+                    <a href="{% url 'products' %}" class="filter-link {% if not current_category and not query %}active{% endif %}">
+                        All
+                    </a>
+                </li>
+                {% for cat in categories %}
+                <li>
+                    <a href="{% url 'products' %}?category={{ cat.name }}" class="filter-link {% if current_category == cat.name %}active{% endif %}">
+                        {{ cat.friendly_name|default:cat.name }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </aside>
 
-            <!-- Product Grid -->
-            <div class="col-lg-10">
-                {% if products %}
-                <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-4">
-                    {% for product in products %}
-                    <div class="col">
-                        <a href="{% url 'product_detail' product.id %}" class="product-card-link">
-                            <div class="product-card">
-                                <div class="product-image-wrap">
-                                    {% if product.image %}
-                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
-                                    {% else %}
-                                    <div class="product-img-placeholder d-flex align-items-center justify-content-center">
-                                        <i class="fas fa-tshirt fa-2x" style="color:rgba(240,237,232,0.08);"></i>
-                                    </div>
-                                    {% endif %}
-                                    {% if product.is_new %}
-                                    <span class="badge-new">NEW</span>
-                                    {% endif %}
-                                </div>
-                                <div class="product-info mt-2">
-                                    <p class="product-category">{{ product.category.friendly_name|default:"Uncategorised" }}</p>
-                                    <h6 class="product-name">{{ product.name }}</h6>
-                                    <p class="product-price">€{{ product.price }}</p>
-                                </div>
+        <!-- Main Content -->
+        <main class="shop-main">
+
+            {% if categories_with_products %}
+            <!-- Grouped by category -->
+            {% for group in categories_with_products %}
+            <section class="category-section">
+                <div class="category-section-header">
+                    <span class="category-section-num">0{{ forloop.counter }}</span>
+                    <h2 class="category-section-name">{{ group.category.friendly_name|upper }}</h2>
+                    <a href="{% url 'products' %}?category={{ group.category.name }}" class="category-section-link">
+                        SEE ALL <i class="fas fa-arrow-right" style="font-size:0.5rem;margin-left:0.4rem;"></i>
+                    </a>
+                </div>
+                <div class="product-grid product-grid--group">
+                    {% for product in group.products %}
+                    <a href="{% url 'product_detail' product.id %}" class="product-tile">
+                        <div class="product-tile-img-wrap">
+                            {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-tile-img">
+                            {% else %}
+                            <div class="product-tile-placeholder">
+                                <i class="fas fa-tshirt"></i>
                             </div>
-                        </a>
-                    </div>
+                            {% endif %}
+                            {% if product.is_new %}<span class="badge-new">NEW</span>{% endif %}
+                        </div>
+                        <div class="product-tile-info">
+                            <p class="product-tile-name">{{ product.name|upper }}</p>
+                            <p class="product-tile-price">€{{ product.price }}</p>
+                        </div>
+                    </a>
                     {% endfor %}
                 </div>
-                {% else %}
-                <div class="text-center py-5">
-                    <i class="fas fa-box-open fa-3x text-muted mb-3"></i>
-                    <p class="text-muted">No products found.</p>
-                </div>
-                {% endif %}
-            </div>
+            </section>
+            {% endfor %}
 
-        </div>
+            {% else %}
+            <!-- Flat grid (filtered or search) -->
+            {% if products %}
+            <div class="product-grid product-grid--flat">
+                {% for product in products %}
+                <a href="{% url 'product_detail' product.id %}" class="product-tile">
+                    <div class="product-tile-img-wrap">
+                        {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-tile-img">
+                        {% else %}
+                        <div class="product-tile-placeholder">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        {% endif %}
+                        {% if product.is_new %}<span class="badge-new">NEW</span>{% endif %}
+                    </div>
+                    <div class="product-tile-info">
+                        <p class="product-tile-cat">{{ product.category.friendly_name }}</p>
+                        <p class="product-tile-name">{{ product.name|upper }}</p>
+                        <p class="product-tile-price">€{{ product.price }}</p>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="shop-empty">
+                <p>NO PRODUCTS FOUND.</p>
+                <a href="{% url 'products' %}" class="detail-back mt-3 d-inline-block">← BACK TO SHOP</a>
+            </div>
+            {% endif %}
+            {% endif %}
+
+        </main>
     </div>
 </div>
 {% endblock %}

@@ -6,7 +6,6 @@ def all_products(request):
     products = Product.objects.all()
     categories = Category.objects.all()
     current_category = None
-
     query = request.GET.get('q')
     category_filter = request.GET.get('category')
 
@@ -20,11 +19,22 @@ def all_products(request):
         products = products.filter(category__name=category_filter)
         current_category = category_filter
 
+    categories_with_products = []
+    if not current_category and not query:
+        for cat in categories:
+            cat_products = Product.objects.filter(category=cat)
+            if cat_products.exists():
+                categories_with_products.append({
+                    'category': cat,
+                    'products': cat_products,
+                })
+
     context = {
         'products': products,
         'categories': categories,
         'current_category': current_category,
         'query': query,
+        'categories_with_products': categories_with_products,
     }
     return render(request, 'products/products.html', context)
 
