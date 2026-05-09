@@ -26,12 +26,23 @@
                         <p class="product-category">{{ item.product.category.friendly_name|default:"" }}</p>
                         <h6 class="product-name">{{ item.product.name }}</h6>
                         <p class="product-price">€{{ item.product.price }}</p>
-                        <p style="font-size:0.7rem;color:rgba(240,237,232,0.3);letter-spacing:0.1em;">
-                            QTY: {{ item.quantity }}
-                        </p>
+
+                        <form action="{% url 'update_bag' item.item_id %}" method="POST" class="bag-qty-form">
+                            {% csrf_token %}
+                            <div class="bag-qty-row">
+                                <button type="button" class="bag-qty-btn" onclick="changeQty(this, -1)">−</button>
+                                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10" class="bag-qty-input" readonly>
+                                <button type="button" class="bag-qty-btn" onclick="changeQty(this, 1)">+</button>
+                                <button type="submit" class="bag-qty-update">UPDATE</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="bag-item-subtotal">
-                        €{{ item.subtotal }}
+                    <div class="bag-item-right">
+                        <p class="bag-item-subtotal">€{{ item.subtotal }}</p>
+                        <form action="{% url 'remove_from_bag' item.item_id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="bag-remove-btn">REMOVE</button>
+                        </form>
                     </div>
                 </div>
                 <div class="detail-divider"></div>
@@ -72,4 +83,14 @@
         {% endif %}
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function changeQty(btn, delta) {
+    const input = btn.parentElement.querySelector('.bag-qty-input');
+    const val = parseInt(input.value) + delta;
+    if (val >= 1 && val <= 10) input.value = val;
+}
+</script>
 {% endblock %}
