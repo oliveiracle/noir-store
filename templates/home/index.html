@@ -34,21 +34,27 @@
 <!-- CATEGORIES -->
 <section class="yeezy-grid">
     <a href="/products/?category=jackets" class="yeezy-block">
-        <div class="yeezy-block-img" style="background-color: #0d0d0d;"></div>
+        <div class="yeezy-block-img">
+            <img src="/media/products/home-jackets-hero.jpg" alt="Jackets" class="yeezy-block-photo">
+        </div>
         <div class="yeezy-block-label">
             <span class="yeezy-label-num">01</span>
             <span class="yeezy-label-name">JACKETS</span>
         </div>
     </a>
     <a href="/products/?category=trousers" class="yeezy-block">
-        <div class="yeezy-block-img" style="background-color: #111;"></div>
+        <div class="yeezy-block-img">
+            <img src="/media/products/home-trousers-hero.jpg" alt="Trousers" class="yeezy-block-photo">
+        </div>
         <div class="yeezy-block-label">
             <span class="yeezy-label-num">02</span>
             <span class="yeezy-label-name">TROUSERS</span>
         </div>
     </a>
     <a href="/products/?category=t-shirts" class="yeezy-block">
-        <div class="yeezy-block-img" style="background-color: #0a0a0a;"></div>
+        <div class="yeezy-block-img">
+            <img src="/media/products/home-tshirts-hero.jpg" alt="T-Shirts" class="yeezy-block-photo">
+        </div>
         <div class="yeezy-block-label">
             <span class="yeezy-label-num">03</span>
             <span class="yeezy-label-name">T-SHIRTS</span>
@@ -63,38 +69,22 @@
         <a href="/products/" class="yeezy-see-all">SEE ALL →</a>
     </div>
     <div class="yeezy-newin-grid">
-        <div class="yeezy-product-tile">
-            <div class="yeezy-tile-img"></div>
-            <div class="yeezy-tile-info">
-                <span class="yeezy-tile-cat">JACKETS</span>
-                <span class="yeezy-tile-name">MIDNIGHT LEATHER JACKET</span>
-                <span class="yeezy-tile-price">€349</span>
+        {% for product in new_products %}
+        <a href="{% url 'product_detail' product.id %}" class="yeezy-product-tile-link">
+            <div class="yeezy-product-tile">
+                <div class="yeezy-tile-img">
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="yeezy-tile-photo">
+                    {% endif %}
+                </div>
+                <div class="yeezy-tile-info">
+                    <span class="yeezy-tile-cat">{{ product.category.friendly_name|upper }}</span>
+                    <span class="yeezy-tile-name">{{ product.name|upper }}</span>
+                    <span class="yeezy-tile-price">€{{ product.price }}</span>
+                </div>
             </div>
-        </div>
-        <div class="yeezy-product-tile">
-            <div class="yeezy-tile-img"></div>
-            <div class="yeezy-tile-info">
-                <span class="yeezy-tile-cat">T-SHIRTS</span>
-                <span class="yeezy-tile-name">GRAPHIC OVERSIZED TEE</span>
-                <span class="yeezy-tile-price">€44</span>
-            </div>
-        </div>
-        <div class="yeezy-product-tile">
-            <div class="yeezy-tile-img"></div>
-            <div class="yeezy-tile-info">
-                <span class="yeezy-tile-cat">TROUSERS</span>
-                <span class="yeezy-tile-name">CARGO TECH TROUSERS</span>
-                <span class="yeezy-tile-price">€99</span>
-            </div>
-        </div>
-        <div class="yeezy-product-tile">
-            <div class="yeezy-tile-img"></div>
-            <div class="yeezy-tile-info">
-                <span class="yeezy-tile-cat">SHIRTS</span>
-                <span class="yeezy-tile-name">LINEN RESORT SHIRT</span>
-                <span class="yeezy-tile-price">€69</span>
-            </div>
-        </div>
+        </a>
+        {% endfor %}
     </div>
 </section>
 
