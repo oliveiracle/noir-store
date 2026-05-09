@@ -11,9 +11,9 @@
 
             <!-- Product Image -->
             <div class="col-lg-7">
-                <div class="detail-image-wrap">
+                <div class="detail-image-wrap" id="imgWrap">
                     {% if product.image %}
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="detail-img">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="detail-img" id="detailImg">
                     {% else %}
                     <div class="detail-img-placeholder d-flex align-items-center justify-content-center">
                         <i class="fas fa-tshirt fa-4x" style="color:rgba(240,237,232,0.08);"></i>
@@ -54,7 +54,6 @@
 
                     <div class="detail-divider"></div>
 
-                    <!-- Size selector placeholder -->
                     <div class="mb-4">
                         <span class="detail-label">SIZE</span>
                         <div class="size-grid mt-2">
@@ -66,14 +65,11 @@
                         </div>
                     </div>
 
-                    <!-- Add to bag -->
                     <form action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="quantity" value="1">
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                        <button type="submit" class="btn-add-bag w-100">
-                            ADD TO BAG
-                        </button>
+                        <button type="submit" class="btn-add-bag w-100">ADD TO BAG</button>
                     </form>
 
                     <div class="detail-divider mt-4"></div>
@@ -93,4 +89,32 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+{% if product.image %}
+<script>
+    var wrap = document.getElementById('imgWrap');
+    var img  = document.getElementById('detailImg');
+
+    wrap.addEventListener('mouseenter', function () {
+        img.style.transition = 'transform .3s ease';
+        img.style.transform  = 'scale(4)';
+    });
+
+    wrap.addEventListener('mousemove', function (e) {
+        var r = wrap.getBoundingClientRect();
+        var x = ((e.clientX - r.left)  / r.width)  * 100;
+        var y = ((e.clientY - r.top)   / r.height) * 100;
+        img.style.transition      = 'transform .3s ease';
+        img.style.transformOrigin = x + '% ' + y + '%';
+    });
+
+    wrap.addEventListener('mouseleave', function () {
+        img.style.transition      = 'transform .4s ease, transform-origin 0s';
+        img.style.transform       = 'scale(1)';
+        img.style.transformOrigin = 'center center';
+    });
+</script>
+{% endif %}
 {% endblock %}
