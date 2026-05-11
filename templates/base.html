@@ -43,7 +43,19 @@
                 <form action="/products/" method="GET" class="d-flex align-items-center">
                     <input type="text" name="q" placeholder="SEARCH" class="search-input" aria-label="Search products">
                 </form>
-                <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
+                {% if request.user.is_authenticated %}
+                <div class="dropdown">
+                    <a href="#" class="nav-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end noir-dropdown">
+                        <li><a class="dropdown-item" href="#">MY ACCOUNT</a></li>
+                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">SIGN OUT</a></li>
+                    </ul>
+                </div>
+                {% else %}
+                <a href="{% url 'account_login' %}" class="nav-icon"><i class="fas fa-user"></i></a>
+                {% endif %}
                 <a href="{% url 'view_bag' %}" class="nav-icon position-relative">
                     <i class="fas fa-shopping-bag"></i>
                     <span class="bag-count">{{ item_count }}</span>

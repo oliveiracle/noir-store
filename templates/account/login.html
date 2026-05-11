@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Sign In — NOIR{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-box">
+        <span class="auth-label">NOIR / ACCOUNT</span>
+        <h1 class="auth-title">SIGN IN</h1>
+
+        <form method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+            <p class="auth-error">{{ form.non_field_errors }}</p>
+            {% endif %}
+
+            <div class="auth-field">
+                <label for="{{ form.login.id_for_label }}">USERNAME OR EMAIL</label>
+                {{ form.login }}
+            </div>
+
+            <div class="auth-field">
+                <label for="{{ form.password.id_for_label }}">PASSWORD</label>
+                {{ form.password }}
+            </div>
+
+            <div class="auth-remember">
+                {{ form.remember }}
+                <label for="{{ form.remember.id_for_label }}">REMEMBER ME</label>
+            </div>
+
+            <button type="submit" class="btn-add-bag w-100 mt-3">SIGN IN</button>
+        </form>
+
+        <div class="auth-links">
+            <a href="{% url 'account_reset_password' %}" class="auth-link">Forgot your password?</a>
+            <a href="{% url 'account_signup' %}" class="auth-link">New here? Create an account →</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

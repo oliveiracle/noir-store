@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Out — NOIR{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-box">
+        <span class="auth-label">NOIR / ACCOUNT</span>
+        <h1 class="auth-title">SIGN OUT</h1>
+        <p class="auth-confirm-text">Are you sure you want to sign out?</p>
+
+        <form method="POST" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn-add-bag w-100 mt-3">SIGN OUT</button>
+        </form>
+
+        <div class="auth-links">
+            <a href="/" class="auth-link">← Stay in the store</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
