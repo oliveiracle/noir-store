@@ -1019,6 +1019,40 @@ body {
 }
 
 /* ============================================================
+   CHECKOUT
+   ============================================================ */
+.checkout-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(240,237,232,0.15);
+    color: var(--white);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 0;
+    margin-bottom: 1.2rem;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+    display: block;
+}
+.checkout-input:focus {
+    border-bottom-color: var(--white);
+}
+.checkout-input::placeholder {
+    color: rgba(240,237,232,0.25);
+    letter-spacing: 0.08em;
+}
+.checkout-card-element {
+    border-bottom: 1px solid rgba(240,237,232,0.15);
+    padding: 0.75rem 0;
+    transition: border-color 0.2s;
+}
+.checkout-card-element.StripeElement--focus {
+    border-bottom-color: var(--white);
+}
+
+/* ============================================================
    BAG
    ============================================================ */
 .bag-item {

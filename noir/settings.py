@@ -1,6 +1,8 @@
 from pathlib import Path
 import os
 import dj_database_url
+from dotenv import load_dotenv
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -30,6 +32,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'bag',
+    'checkout',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +136,8 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STRIPE_CURRENCY = 'eur'
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')

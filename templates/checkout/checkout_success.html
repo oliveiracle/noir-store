@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Order Confirmed — NOIR{% endblock %}
+
+{% block content %}
+<div class="products-page">
+    <div class="page-header px-4 px-lg-5">
+        <h1>ORDER CONFIRMED</h1>
+        <p style="font-size:0.7rem;letter-spacing:0.1em;color:rgba(240,237,232,0.4);">
+            {{ order.order_number }}
+        </p>
+    </div>
+
+    <div class="container-fluid px-4 px-lg-5 py-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="bag-summary">
+                    <h6 class="filter-heading mb-4">ORDER DETAILS</h6>
+
+                    {% for item in order.lineitems.all %}
+                    <div class="d-flex justify-content-between mb-3">
+                        <div>
+                            <p class="mb-0" style="font-size:0.72rem;letter-spacing:0.1em;color:var(--white);">{{ item.product.name|upper }}</p>
+                            <p class="mb-0" style="font-size:0.62rem;letter-spacing:0.1em;color:rgba(240,237,232,0.4);">Qty: {{ item.quantity }}</p>
+                        </div>
+                        <span style="font-size:0.72rem;color:var(--white);">€{{ item.lineitem_total }}</span>
+                    </div>
+                    {% endfor %}
+
+                    <div class="detail-divider my-3"></div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span style="font-size:0.72rem;letter-spacing:0.1em;color:rgba(240,237,232,0.4);">DELIVERY</span>
+                        <span style="font-size:0.72rem;">€{{ order.delivery_cost }}</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span style="font-size:0.8rem;font-weight:700;letter-spacing:0.15em;">TOTAL</span>
+                        <span style="font-size:0.8rem;font-weight:700;">€{{ order.grand_total }}</span>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <p style="font-size:0.7rem;letter-spacing:0.1em;color:rgba(240,237,232,0.4);">
+                        A confirmation has been sent to {{ order.email }}.
+                    </p>
+                </div>
+
+                <a href="{% url 'products' %}" class="btn-add-bag d-inline-block mt-3 px-4">
+                    CONTINUE SHOPPING
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

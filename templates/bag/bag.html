@@ -65,7 +65,7 @@
                         <span style="font-size:0.8rem;font-weight:700;letter-spacing:0.15em;">TOTAL</span>
                         <span style="font-size:0.8rem;font-weight:700;">€{{ total }}</span>
                     </div>
-                    <a href="#" class="btn-add-bag d-block text-center text-decoration-none">
+                    <a href="{% url 'checkout' %}" class="btn-add-bag d-block text-center text-decoration-none">
                         PROCEED TO CHECKOUT
                     </a>
                     <a href="{% url 'products' %}" class="detail-back d-block text-center mt-3">

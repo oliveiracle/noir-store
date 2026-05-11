@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Checkout — NOIR{% endblock %}
+
+{% block content %}
+<div class="products-page">
+    <div class="page-header px-4 px-lg-5">
+        <h1>CHECKOUT</h1>
+    </div>
+
+    <div class="container-fluid px-4 px-lg-5 py-5">
+        <div class="row g-5">
+
+            <!-- Delivery Form -->
+            <div class="col-lg-7">
+                <span class="detail-label">DELIVERY INFORMATION</span>
+                <form id="payment-form" method="POST" class="mt-4">
+                    {% csrf_token %}
+                    {{ order_form.full_name }}
+                    {{ order_form.email }}
+                    {{ order_form.phone_number }}
+                    <div class="detail-divider my-3"></div>
+                    {{ order_form.street_address1 }}
+                    {{ order_form.street_address2 }}
+                    {{ order_form.town_or_city }}
+                    {{ order_form.postcode }}
+                    {{ order_form.country }}
+                    {{ order_form.county }}
+                    <div class="detail-divider my-4"></div>
+                    <span class="detail-label">PAYMENT</span>
+                    <div id="card-element" class="checkout-card-element mt-3"></div>
+                    <div id="card-errors" class="auth-error mt-2" role="alert"></div>
+                    <input type="hidden" name="client_secret" value="{{ client_secret }}">
+                    <button type="submit" id="submit-btn" class="btn-add-bag w-100 mt-4">
+                        COMPLETE ORDER
+                    </button>
+                </form>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="col-lg-5">
+                <div class="bag-summary">
+                    <h6 class="filter-heading mb-4">ORDER SUMMARY</h6>
+                    {% for item in bag_items %}
+                    <div class="d-flex justify-content-between mb-3 align-items-center">
+                        <div>
+                            <p class="mb-0" style="font-size:0.72rem;letter-spacing:0.1em;color:var(--white);">{{ item.product.name|upper }}</p>
+                            <p class="mb-0" style="font-size:0.62rem;letter-spacing:0.1em;color:rgba(240,237,232,0.4);">Qty: {{ item.quantity }}</p>
+                        </div>
+                        <span style="font-size:0.72rem;color:var(--white);">€{{ item.subtotal }}</span>
+                    </div>
+                    {% endfor %}
+                    <div class="detail-divider my-3"></div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span style="font-size:0.72rem;letter-spacing:0.1em;color:rgba(240,237,232,0.4);">SUBTOTAL</span>
+                        <span style="font-size:0.72rem;color:var(--white);">€{{ total }}</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span style="font-size:0.72rem;letter-spacing:0.1em;color:rgba(240,237,232,0.4);">DELIVERY</span>
+                        <span style="font-size:0.72rem;color:var(--white);">€{{ delivery }}</span>
+                    </div>
+                    <div class="detail-divider mb-3"></div>
+                    <div class="d-flex justify-content-between">
+                        <span style="font-size:0.8rem;font-weight:700;letter-spacing:0.15em;">TOTAL</span>
+                        <span style="font-size:0.8rem;font-weight:700;">€{{ grand_total }}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    var stripePublicKey = '{{ stripe_public_key }}';
+    var clientSecret   = '{{ client_secret }}';
+    var stripe  = Stripe(stripePublicKey);
+    var elements = stripe.elements();
+
+    var style = {
+        base: {
+            color: '#f0ede8',
+            fontFamily: 'Montserrat, sans-serif',
+            fontSize: '14px',
+            letterSpacing: '0.05em',
+            '::placeholder': { color: 'rgba(240,237,232,0.35)' },
+        },
+        invalid: { color: '#c0392b' }
+    };
+
+    var card = elements.create('card', {style: style});
+    card.mount('#card-element');
+
+    card.addEventListener('change', function(e) {
+        var el = document.getElementById('card-errors');
+        el.textContent = e.error ? e.error.message : '';
+    });
+
+    var form = document.getElementById('payment-form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('submit-btn').disabled = true;
+        stripe.confirmCardPayment(clientSecret, {
+            payment_method: { card: card }
+        }).then(function(result) {
+            if (result.error) {
+                document.getElementById('card-errors').textContent = result.error.message;
+                document.getElementById('submit-btn').disabled = false;
+            } else {
+                form.submit();
+            }
+        });
+    });
+</script>
+{% endblock %}

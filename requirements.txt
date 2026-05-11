@@ -17,6 +17,7 @@ packaging==26.2
 pillow==12.2.0
 psycopg2-binary==2.9.12
 python-dateutil==2.9.0.post0
+python-dotenv==1.2.2
 requests==2.33.1
 s3transfer==0.17.0
 six==1.17.0
