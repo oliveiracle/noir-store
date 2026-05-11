@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Create Account — NOIR{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-box">
+        <span class="auth-label">NOIR / ACCOUNT</span>
+        <h1 class="auth-title">CREATE ACCOUNT</h1>
+
+        <form method="POST" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+            <p class="auth-error">{{ form.non_field_errors }}</p>
+            {% endif %}
+
+            <div class="auth-field">
+                <label for="{{ form.username.id_for_label }}">USERNAME</label>
+                {{ form.username }}
+                {% if form.username.errors %}<p class="auth-error">{{ form.username.errors }}</p>{% endif %}
+            </div>
+
+            <div class="auth-field">
+                <label for="{{ form.email.id_for_label }}">EMAIL</label>
+                {{ form.email }}
+                {% if form.email.errors %}<p class="auth-error">{{ form.email.errors }}</p>{% endif %}
+            </div>
+
+            <div class="auth-field">
+                <label for="{{ form.email2.id_for_label }}">CONFIRM EMAIL</label>
+                {{ form.email2 }}
+                {% if form.email2.errors %}<p class="auth-error">{{ form.email2.errors }}</p>{% endif %}
+            </div>
+
+            <div class="auth-field">
+                <label for="{{ form.password1.id_for_label }}">PASSWORD</label>
+                {{ form.password1 }}
+                {% if form.password1.errors %}<p class="auth-error">{{ form.password1.errors }}</p>{% endif %}
+            </div>
+
+            <div class="auth-field">
+                <label for="{{ form.password2.id_for_label }}">CONFIRM PASSWORD</label>
+                {{ form.password2 }}
+                {% if form.password2.errors %}<p class="auth-error">{{ form.password2.errors }}</p>{% endif %}
+            </div>
+
+            <button type="submit" class="btn-add-bag w-100 mt-3">CREATE ACCOUNT</button>
+        </form>
+
+        <div class="auth-links">
+            <a href="{% url 'account_login' %}" class="auth-link">Already have an account? Sign in →</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
