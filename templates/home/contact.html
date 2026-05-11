@@ -9,9 +9,10 @@
         <p>We're here to help</p>
     </div>
     <div class="container-fluid px-4 px-lg-5 py-5">
-        <div class="row">
-            <div class="col-lg-5">
+        <div class="row g-5">
 
+            <!-- Info -->
+            <div class="col-lg-4">
                 <div class="faq-item">
                     <span class="detail-label">EMAIL</span>
                     <p class="faq-answer">support@noir-store.com</p>
@@ -26,7 +27,7 @@
 
                 <div class="faq-item">
                     <span class="detail-label">RESPONSE TIME</span>
-                    <p class="faq-answer">We aim to respond to all enquiries within 24 hours, Monday to Friday.</p>
+                    <p class="faq-answer">We aim to respond within 24 hours, Monday to Friday.</p>
                 </div>
                 <div class="detail-divider"></div>
 
@@ -34,8 +35,38 @@
                     <span class="detail-label">HEADQUARTERS</span>
                     <p class="faq-answer">NOIR Store<br>12 Rue du Commerce<br>75015 Paris, France</p>
                 </div>
-
             </div>
+
+            <!-- Form -->
+            <div class="col-lg-6 offset-lg-1">
+                <span class="detail-label mb-4 d-block">SEND A MESSAGE</span>
+
+                {% if message_sent %}
+                <p class="contact-success">Message sent. We'll be in touch shortly.</p>
+                {% else %}
+                <form method="POST" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <div class="auth-field">
+                        <label for="contact-name">NAME</label>
+                        <input type="text" id="contact-name" name="name" class="checkout-input" placeholder="Your name" required>
+                    </div>
+                    <div class="auth-field">
+                        <label for="contact-email">EMAIL</label>
+                        <input type="email" id="contact-email" name="email" class="checkout-input" placeholder="your@email.com" required>
+                    </div>
+                    <div class="auth-field">
+                        <label for="contact-subject">SUBJECT</label>
+                        <input type="text" id="contact-subject" name="subject" class="checkout-input" placeholder="How can we help?">
+                    </div>
+                    <div class="auth-field">
+                        <label for="contact-message">MESSAGE</label>
+                        <textarea id="contact-message" name="message" class="checkout-input contact-textarea" placeholder="Your message..." required rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn-add-bag w-100 mt-2">SEND MESSAGE</button>
+                </form>
+                {% endif %}
+            </div>
+
         </div>
     </div>
 </div>

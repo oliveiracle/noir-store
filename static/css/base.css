@@ -1058,6 +1058,18 @@ body {
     color: rgba(240,237,232,0.25);
     letter-spacing: 0.08em;
 }
+.contact-textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+.contact-success {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: rgba(240,237,232,0.75);
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
 .checkout-card-element {
     border-bottom: 1px solid rgba(240,237,232,0.15);
     padding: 0.75rem 0;
