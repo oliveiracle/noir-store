@@ -2,53 +2,32 @@
 
 {% block title %}Contact — NOIR{% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+{% endblock %}
+
 {% block content %}
 <div class="products-page">
     <div class="page-header px-4 px-lg-5">
         <h1>CONTACT</h1>
         <p>We're here to help</p>
     </div>
+
     <div class="container-fluid px-4 px-lg-5 py-5">
         <div class="row g-5">
 
-            <!-- Info -->
-            <div class="col-lg-4">
-                <div class="faq-item">
-                    <span class="detail-label">EMAIL</span>
-                    <p class="faq-answer">support@noir-store.com</p>
-                </div>
-                <div class="detail-divider"></div>
-
-                <div class="faq-item">
-                    <span class="detail-label">RETURNS</span>
-                    <p class="faq-answer">returns@noir-store.com</p>
-                </div>
-                <div class="detail-divider"></div>
-
-                <div class="faq-item">
-                    <span class="detail-label">RESPONSE TIME</span>
-                    <p class="faq-answer">We aim to respond within 24 hours, Monday to Friday.</p>
-                </div>
-                <div class="detail-divider"></div>
-
-                <div class="faq-item">
-                    <span class="detail-label">HEADQUARTERS</span>
-                    <p class="faq-answer">NOIR Store<br>12 Rue du Commerce<br>75015 Paris, France</p>
-                </div>
-            </div>
-
             <!-- Form -->
-            <div class="col-lg-6 offset-lg-1">
-                <span class="detail-label mb-4 d-block">SEND A MESSAGE</span>
-
+            <div class="col-lg-6">
                 {% if message_sent %}
-                <p class="contact-success">Message sent. We'll be in touch shortly.</p>
+                <div class="contact-success">
+                    <p>Message received. We'll be in touch within 24 hours.</p>
+                </div>
                 {% else %}
-                <form method="POST" action="{% url 'contact' %}">
+                <form method="POST" action="{% url 'contact' %}" novalidate>
                     {% csrf_token %}
                     <div class="auth-field">
                         <label for="contact-name">NAME</label>
-                        <input type="text" id="contact-name" name="name" class="checkout-input" placeholder="Your name" required>
+                        <input type="text" id="contact-name" name="name" class="checkout-input" placeholder="Your full name" required>
                     </div>
                     <div class="auth-field">
                         <label for="contact-email">EMAIL</label>
@@ -67,7 +46,48 @@
                 {% endif %}
             </div>
 
+            <!-- Map + Info -->
+            <div class="col-lg-6">
+                <div id="contact-map"></div>
+                <div class="contact-info-row mt-4">
+                    <div>
+                        <span class="detail-label">LOCATION</span>
+                        <p class="faq-answer">12 Rue du Commerce<br>75015 Paris, France</p>
+                    </div>
+                    <div>
+                        <span class="detail-label">RESPONSE TIME</span>
+                        <p class="faq-answer">Within 24 hours<br>Monday — Friday</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    var map = L.map('contact-map', { zoomControl: false, scrollWheelZoom: false }).setView([48.8494, 2.2923], 15);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+        maxZoom: 19
+    }).addTo(map);
+
+    var icon = L.divIcon({
+        className: '',
+        html: '<div class="map-marker"></div>',
+        iconSize: [14, 14],
+        iconAnchor: [7, 7]
+    });
+
+    L.marker([48.8494, 2.2923], { icon: icon })
+        .addTo(map)
+        .bindPopup('<span style="font-family:Montserrat,sans-serif;font-size:0.7rem;letter-spacing:0.1em;color:#000;">NOIR STORE</span>')
+        .openPopup();
+
+    L.control.zoom({ position: 'bottomright' }).addTo(map);
+</script>
 {% endblock %}
