@@ -19,9 +19,12 @@ def checkout(request):
 
     current_bag = bag_contents(request)
     total = current_bag['grand_total']
-    stripe_total = round(total * 100)
+    stripe_total = round(float(total) * 100)
     stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(amount=stripe_total, currency=settings.STRIPE_CURRENCY)
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
 
     if request.method == 'POST':
         form_data = {
@@ -38,15 +41,25 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
-            order.stripe_pid = request.POST.get('client_secret', '').split('_secret')[0]
+            pid = request.POST.get('client_secret', '')
+            order.stripe_pid = pid.split('_secret')[0]
             order.save()
             for item_id, quantity in bag.items():
                 product = get_object_or_404(Product, pk=item_id)
-                OrderLineItem.objects.create(order=order, product=product, quantity=quantity)
+                OrderLineItem.objects.create(
+                    order=order,
+                    product=product,
+                    quantity=quantity,
+                )
             request.session['bag'] = {}
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number])
+            )
         else:
-            messages.error(request, 'There was an error with your form. Please check your details.')
+            messages.error(
+                request,
+                'There was an error with your form. Please check your details.'
+            )
     else:
         order_form = OrderForm()
 
@@ -61,4 +74,6 @@ def checkout(request):
 def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order {order_number} confirmed!')
-    return render(request, 'checkout/checkout_success.html', {'order': order})
+    return render(
+        request, 'checkout/checkout_success.html', {'order': order}
+    )
