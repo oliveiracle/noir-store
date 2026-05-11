@@ -45,8 +45,8 @@
                 </form>
                 {% if request.user.is_authenticated %}
                 <div class="dropdown">
-                    <a href="#" class="nav-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user"></i>
+                    <a href="#" class="nav-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Account menu">
+                        <i class="fas fa-user" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end noir-dropdown">
                         <li><a class="dropdown-item" href="#">MY ACCOUNT</a></li>
@@ -54,11 +54,11 @@
                     </ul>
                 </div>
                 {% else %}
-                <a href="{% url 'account_login' %}" class="nav-icon"><i class="fas fa-user"></i></a>
+                <a href="{% url 'account_login' %}" class="nav-icon" aria-label="Sign in"><i class="fas fa-user" aria-hidden="true"></i></a>
                 {% endif %}
-                <a href="{% url 'view_bag' %}" class="nav-icon position-relative">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="bag-count">{{ item_count }}</span>
+                <a href="{% url 'view_bag' %}" class="nav-icon position-relative" aria-label="Shopping bag, {{ item_count }} item{{ item_count|pluralize }}">
+                    <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+                    <span class="bag-count" aria-hidden="true">{{ item_count }}</span>
                 </a>
             </div>
         </div>
