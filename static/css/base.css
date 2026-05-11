@@ -916,6 +916,93 @@ body {
     text-transform: uppercase;
 }
 
+/* ============================================================
+   UTILITY — ORDER / BAG / CHECKOUT
+   ============================================================ */
+.label-muted {
+    font-size: 0.75rem;
+    color: rgba(240,237,232,0.4);
+    letter-spacing: 0.1em;
+}
+.label-total {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+.text-price {
+    font-size: 0.75rem;
+    color: var(--white);
+}
+.text-total {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.text-order-name {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    margin-bottom: 0;
+}
+.text-order-qty {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: rgba(240,237,232,0.4);
+    margin-bottom: 0;
+}
+.text-order-num {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: rgba(240,237,232,0.4);
+}
+.text-confirm {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: rgba(240,237,232,0.4);
+}
+
+/* ============================================================
+   UTILITY — FOOTER
+   ============================================================ */
+.footer-tagline {
+    font-size: 0.8rem;
+    color: rgba(240,237,232,0.2);
+    line-height: 1.8;
+    letter-spacing: 0.08em;
+}
+.footer-newsletter-hint {
+    font-size: 0.8rem;
+    color: rgba(240,237,232,0.2);
+    margin-bottom: 1rem;
+    letter-spacing: 0.06em;
+}
+.footer-copyright {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: rgba(240,237,232,0.15);
+    text-align: center;
+    text-transform: uppercase;
+}
+.footer-brand-sm {
+    font-size: 1.1rem;
+}
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.04);
+    padding-top: 2rem;
+    margin-top: 1rem;
+}
+.footer-join-btn {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+}
+.icon-faded {
+    color: rgba(240,237,232,0.08);
+}
+.see-all-icon {
+    font-size: 0.75rem;
+    margin-left: 0.4rem;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .product-grid--group,
