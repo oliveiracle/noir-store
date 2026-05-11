@@ -22,8 +22,13 @@ def bag_contents(request):
         except Product.DoesNotExist:
             pass
 
+    delivery = 0 if total >= 150 else round(total * 0.1, 2)
+    grand_total = total + delivery
+
     return {
         'bag_items': bag_items,
         'total': total,
+        'delivery': delivery,
+        'grand_total': grand_total,
         'item_count': item_count,
     }
