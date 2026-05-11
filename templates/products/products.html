@@ -57,7 +57,7 @@
                     <span class="category-section-num">0{{ forloop.counter }}</span>
                     <h2 class="category-section-name">{{ group.category.friendly_name|upper }}</h2>
                     <a href="{% url 'products' %}?category={{ group.category.name }}" class="category-section-link">
-                        SEE ALL <i class="fas fa-arrow-right" style="font-size:0.5rem;margin-left:0.4rem;"></i>
+                        SEE ALL <i class="fas fa-arrow-right see-all-icon"></i>
                     </a>
                 </div>
                 <div class="product-grid product-grid--group">
