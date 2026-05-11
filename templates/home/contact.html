@@ -19,43 +19,43 @@
             <!-- Form -->
             <div class="col-lg-6">
                 {% if message_sent %}
-                <div class="contact-success">
+                <div class="contact-success" role="alert" aria-live="polite">
                     <p>Message received. We'll be in touch within 24 hours.</p>
                 </div>
                 {% else %}
-                <form method="POST" action="{% url 'contact' %}" novalidate>
+                <form method="POST" action="{% url 'contact' %}" novalidate aria-label="Contact form">
                     {% csrf_token %}
                     <div class="auth-field">
-                        <label for="contact-name">NAME</label>
-                        <input type="text" id="contact-name" name="name" class="checkout-input" placeholder="Your full name" required>
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" name="name" class="checkout-input" placeholder="Your full name" required aria-required="true">
                     </div>
                     <div class="auth-field">
-                        <label for="contact-email">EMAIL</label>
-                        <input type="email" id="contact-email" name="email" class="checkout-input" placeholder="your@email.com" required>
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" name="email" class="checkout-input" placeholder="your@email.com" required aria-required="true">
                     </div>
                     <div class="auth-field">
-                        <label for="contact-subject">SUBJECT</label>
+                        <label for="contact-subject">Subject</label>
                         <input type="text" id="contact-subject" name="subject" class="checkout-input" placeholder="How can we help?">
                     </div>
                     <div class="auth-field">
-                        <label for="contact-message">MESSAGE</label>
-                        <textarea id="contact-message" name="message" class="checkout-input contact-textarea" placeholder="Your message..." required rows="5"></textarea>
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" class="checkout-input contact-textarea" placeholder="Your message..." required aria-required="true" rows="5"></textarea>
                     </div>
-                    <button type="submit" class="btn-add-bag w-100 mt-2">SEND MESSAGE</button>
+                    <button type="submit" class="btn-add-bag w-100 mt-2">Send Message</button>
                 </form>
                 {% endif %}
             </div>
 
             <!-- Map + Info -->
             <div class="col-lg-6">
-                <div id="contact-map"></div>
+                <div id="contact-map" role="application" aria-label="Map showing NOIR Store location in Paris"></div>
                 <div class="contact-info-row mt-4">
                     <div>
-                        <span class="detail-label">LOCATION</span>
+                        <h2 class="detail-label">Location</h2>
                         <p class="faq-answer">12 Rue du Commerce<br>75015 Paris, France</p>
                     </div>
                     <div>
-                        <span class="detail-label">RESPONSE TIME</span>
+                        <h2 class="detail-label">Response Time</h2>
                         <p class="faq-answer">Within 24 hours<br>Monday — Friday</p>
                     </div>
                 </div>
