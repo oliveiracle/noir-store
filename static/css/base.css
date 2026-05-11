@@ -53,7 +53,7 @@ body {
 
 .navbar .nav-link {
     color: rgba(240,237,232,0.72) !important; /* WCAG AA contrast ≥ 4.5:1 */
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -96,7 +96,7 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.15);
     color: var(--white);
     font-family: var(--font);
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.2em;
     padding: 0.3rem 0.5rem;
@@ -120,7 +120,7 @@ body {
     border-radius: 50%;
     width: 15px;
     height: 15px;
-    font-size: 0.55rem;
+    font-size: 0.8rem;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -161,7 +161,7 @@ body {
 }
 
 .yeezy-season {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     letter-spacing: 0.4em;
     color: rgba(240,237,232,0.3);
     text-transform: uppercase;
@@ -187,7 +187,7 @@ body {
 }
 
 .yeezy-cta {
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     letter-spacing: 0.3em;
     font-weight: 700;
     color: var(--white); /* full white = 19.5:1 contrast */
@@ -288,14 +288,14 @@ body {
 }
 
 .yeezy-label-num {
-    font-size: 0.55rem;
+    font-size: 0.8rem;
     letter-spacing: 0.3em;
     color: rgba(240,237,232,0.25);
     font-weight: 600;
 }
 
 .yeezy-label-name {
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     letter-spacing: 0.3em;
     font-weight: 700;
     color: var(--white);
@@ -361,12 +361,12 @@ body {
     opacity: 1;
 }
 .strip-cat {
-    font-size: 0.58rem;
+    font-size: 0.75rem;
     letter-spacing: 0.22em;
     color: rgba(240,237,232,0.45);
 }
 .strip-name {
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     letter-spacing: 0.15em;
     color: var(--white);
     font-weight: 600;
@@ -375,7 +375,7 @@ body {
     position: absolute;
     bottom: 1.5rem;
     right: 2rem;
-    font-size: 0.58rem;
+    font-size: 0.75rem;
     letter-spacing: 0.22em;
     color: rgba(240,237,232,0.18);
     pointer-events: none;
@@ -411,7 +411,7 @@ body {
     max-width: 420px;
 }
 .auth-label {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     letter-spacing: 0.25em;
     color: rgba(240,237,232,0.35);
     display: block;
@@ -435,7 +435,7 @@ body {
 }
 .auth-box label {
     display: block;
-    font-size: 0.58rem;
+    font-size: 0.75rem;
     letter-spacing: 0.2em;
     color: rgba(240,237,232,0.35);
     margin-bottom: 0.5rem;
@@ -476,12 +476,12 @@ body {
 }
 .auth-remember label {
     margin-bottom: 0;
-    font-size: 0.58rem;
+    font-size: 0.75rem;
     letter-spacing: 0.18em;
     color: rgba(240,237,232,0.35);
 }
 .auth-error {
-    font-size: 0.62rem;
+    font-size: 0.75rem;
     letter-spacing: 0.08em;
     color: #c0392b;
     margin-top: 0.3rem;
@@ -494,7 +494,7 @@ body {
     gap: 0.75rem;
 }
 .auth-link {
-    font-size: 0.62rem;
+    font-size: 0.75rem;
     letter-spacing: 0.15em;
     color: rgba(240,237,232,0.35);
     text-decoration: none;
@@ -511,7 +511,7 @@ body {
     min-width: 160px;
 }
 .noir-dropdown .dropdown-item {
-    font-size: 0.62rem;
+    font-size: 0.75rem;
     letter-spacing: 0.18em;
     color: rgba(240,237,232,0.6);
     padding: 0.6rem 1.2rem;
@@ -541,7 +541,7 @@ body {
 }
 
 .yeezy-marquee span {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     letter-spacing: 0.35em;
     font-weight: 600;
     color: rgba(240,237,232,0.2);
@@ -573,7 +573,7 @@ body {
 }
 
 .yeezy-section-label {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     letter-spacing: 0.4em;
     font-weight: 700;
     color: rgba(240,237,232,0.4);
@@ -581,7 +581,7 @@ body {
 }
 
 .yeezy-see-all {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     letter-spacing: 0.25em;
     font-weight: 600;
     color: rgba(240,237,232,0.3);
@@ -637,7 +637,7 @@ body {
 }
 
 .yeezy-tile-cat {
-    font-size: 0.55rem;
+    font-size: 0.8rem;
     letter-spacing: 0.25em;
     color: rgba(240,237,232,0.25);
     text-transform: uppercase;
@@ -645,7 +645,7 @@ body {
 }
 
 .yeezy-tile-name {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: 0.08em;
     color: var(--white);
     font-weight: 600;
@@ -654,7 +654,7 @@ body {
 }
 
 .yeezy-tile-price {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: rgba(240,237,232,0.5);
     font-weight: 400;
     letter-spacing: 0.1em;
@@ -683,7 +683,7 @@ body {
 
 .shop-header-label {
     display: block;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     letter-spacing: 0.45em;
     color: rgba(240,237,232,0.2);
     text-transform: uppercase;
@@ -700,7 +700,7 @@ body {
 }
 
 .shop-count {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     letter-spacing: 0.35em;
     color: rgba(240,237,232,0.2);
     text-transform: uppercase;
@@ -724,7 +724,7 @@ body {
 }
 
 .filter-heading {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.45em;
     text-transform: uppercase;
@@ -744,7 +744,7 @@ body {
 .filter-link {
     color: rgba(240,237,232,0.28);
     text-decoration: none;
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 600;
@@ -779,7 +779,7 @@ body {
 }
 
 .category-section-num {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     letter-spacing: 0.3em;
     color: rgba(240,237,232,0.15);
     font-weight: 600;
@@ -795,7 +795,7 @@ body {
 }
 
 .category-section-link {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     letter-spacing: 0.3em;
     font-weight: 700;
     color: rgba(240,237,232,0.2);
@@ -882,7 +882,7 @@ body {
 }
 
 .product-tile-cat {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     letter-spacing: 0.25em;
     color: rgba(240,237,232,0.2);
     text-transform: uppercase;
@@ -890,7 +890,7 @@ body {
 }
 
 .product-tile-name {
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     color: var(--white);
@@ -900,7 +900,7 @@ body {
 }
 
 .product-tile-price {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: rgba(240,237,232,0.5);
     font-weight: 400;
     letter-spacing: 0.08em;
@@ -910,7 +910,7 @@ body {
 /* Empty state */
 .shop-empty {
     padding: 10vh 4vw;
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     letter-spacing: 0.3em;
     color: rgba(240,237,232,0.2);
     text-transform: uppercase;
@@ -956,7 +956,7 @@ body {
 .product-card:hover .product-img { transform: scale(1.04); }
 .product-img-placeholder { width: 100%; height: 100%; background-color: var(--dark); }
 .product-category {
-    font-size: 0.55rem;
+    font-size: 0.8rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: rgba(240,237,232,0.25);
@@ -986,7 +986,7 @@ body {
 }
 
 .footer-heading {
-    font-size: 0.55rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.35em;
     text-transform: uppercase;
@@ -1146,7 +1146,7 @@ body {
     width: 36px;
     height: 26px;
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-family: var(--font);
     letter-spacing: 0.05em;
 }
@@ -1155,7 +1155,7 @@ body {
     background: none;
     border: none;
     color: rgba(240,237,232,0.3);
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     font-family: var(--font);
     font-weight: 700;
     letter-spacing: 0.25em;
@@ -1171,7 +1171,7 @@ body {
     background: none;
     border: none;
     color: rgba(240,237,232,0.2);
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     font-family: var(--font);
     font-weight: 700;
     letter-spacing: 0.25em;
@@ -1241,7 +1241,7 @@ body {
 }
 
 .detail-category {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: rgba(240,237,232,0.3);
@@ -1275,7 +1275,7 @@ body {
 
 .rating-value {
     color: rgba(240,237,232,0.35);
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     margin-left: 0.5rem;
     letter-spacing: 0.1em;
 }
@@ -1294,7 +1294,7 @@ body {
 }
 
 .detail-label {
-    font-size: 0.55rem;
+    font-size: 0.8rem;
     letter-spacing: 0.35em;
     font-weight: 700;
     text-transform: uppercase;
@@ -1313,7 +1313,7 @@ body {
     background: transparent;
     border: 1px solid rgba(255,255,255,0.12);
     color: rgba(240,237,232,0.6);
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.15em;
     padding: 0.5rem 0.9rem;
@@ -1332,7 +1332,7 @@ body {
     color: var(--black);
     border: none;
     font-family: var(--font);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -1352,13 +1352,13 @@ body {
 }
 
 .detail-meta-value {
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     letter-spacing: 0.15em;
     color: rgba(240,237,232,0.2);
 }
 
 .detail-back {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     letter-spacing: 0.25em;
     font-weight: 700;
     color: rgba(240,237,232,0.3);
