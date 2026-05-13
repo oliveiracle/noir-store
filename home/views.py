@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from products.models import Product
+from .models import NewsletterSubscriber
 
 
 def index(request):
@@ -28,3 +30,15 @@ def contact(request):
     if request.method == 'POST':
         message_sent = True
     return render(request, 'home/contact.html', {'message_sent': message_sent})
+
+
+def newsletter_signup(request):
+    if request.method == 'POST':
+        email = request.POST.get('email', '').strip()
+        if email:
+            _, created = NewsletterSubscriber.objects.get_or_create(email=email)
+            if created:
+                messages.success(request, 'You\'re on the list. Welcome to NOIR.')
+            else:
+                messages.info(request, 'You\'re already subscribed.')
+    return redirect(request.META.get('HTTP_REFERER', '/'))

@@ -106,8 +106,9 @@
             <div class="col-md-4 mb-4">
                 <span class="footer-heading d-block">Newsletter</span>
                 <p class="footer-newsletter-hint">Exclusive drops. No spam.</p>
-                <form class="d-flex gap-2">
-                    <input type="email" class="form-control form-control-sm newsletter-input" placeholder="your@email.com">
+                <form class="d-flex gap-2" method="POST" action="{% url 'newsletter_signup' %}">
+                    {% csrf_token %}
+                    <input type="email" name="email" class="form-control form-control-sm newsletter-input" placeholder="your@email.com" required>
                     <button class="btn btn-outline-light btn-sm px-3 footer-join-btn" type="submit">JOIN</button>
                 </form>
             </div>
