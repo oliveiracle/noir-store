@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'django.contrib.sitemaps',
     'crispy_forms',
     'crispy_bootstrap5',
 
