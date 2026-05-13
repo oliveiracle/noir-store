@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}My Account — NOIR{% endblock %}
+
+{% block content %}
+<div class="products-page">
+    <div class="page-header px-4 px-lg-5">
+        <h1>MY ACCOUNT</h1>
+        <p>{{ request.user.username }}</p>
+    </div>
+
+    <div class="container-fluid px-4 px-lg-5 py-5">
+        <div class="row g-5">
+
+            <!-- Delivery Info -->
+            <div class="col-lg-5">
+                <span class="detail-label d-block mb-4">DEFAULT DELIVERY INFO</span>
+                <form method="POST" action="{% url 'profile' %}">
+                    {% csrf_token %}
+                    {{ form.phone_number }}
+                    {{ form.street_address1 }}
+                    {{ form.street_address2 }}
+                    {{ form.town_or_city }}
+                    {{ form.postcode }}
+                    {{ form.country }}
+                    {{ form.county }}
+                    <button type="submit" class="btn-add-bag w-100 mt-3">UPDATE INFO</button>
+                </form>
+            </div>
+
+            <!-- Order History -->
+            <div class="col-lg-6 offset-lg-1">
+                <span class="detail-label d-block mb-4">ORDER HISTORY</span>
+                {% if orders %}
+                {% for order in orders %}
+                <div class="profile-order">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <p class="text-order-name">{{ order.order_number|truncatechars:16 }}</p>
+                            <p class="text-order-qty">{{ order.date|date:"d M Y" }}</p>
+                        </div>
+                        <span class="text-price">€{{ order.grand_total }}</span>
+                    </div>
+                    <div class="profile-order-items">
+                        {% for item in order.lineitems.all %}
+                        <p class="text-order-qty mb-0">{{ item.product.name }} × {{ item.quantity }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="detail-divider"></div>
+                {% endfor %}
+                {% else %}
+                <p class="label-muted">No orders yet.</p>
+                <a href="{% url 'products' %}" class="detail-back mt-3 d-inline-block">← SHOP NOW</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
