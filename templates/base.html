@@ -54,6 +54,9 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end noir-dropdown">
                         <li><a class="dropdown-item" href="{% url 'profile' %}">MY ACCOUNT</a></li>
+                        {% if request.user.is_superuser %}
+                        <li><a class="dropdown-item" href="{% url 'add_product' %}">ADD PRODUCT</a></li>
+                        {% endif %}
                         <li><a class="dropdown-item" href="{% url 'account_logout' %}">SIGN OUT</a></li>
                     </ul>
                 </div>

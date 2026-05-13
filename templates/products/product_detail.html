@@ -83,6 +83,16 @@
                         ← BACK TO SHOP
                     </a>
 
+                    {% if request.user.is_superuser %}
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="{% url 'edit_product' product.id %}" class="detail-label" style="text-decoration:underline">EDIT</a>
+                        <form method="POST" action="{% url 'delete_product' product.id %}" onsubmit="return confirm('Delete this product?')">
+                            {% csrf_token %}
+                            <button type="submit" class="detail-label border-0 bg-transparent p-0" style="text-decoration:underline;color:inherit">DELETE</button>
+                        </form>
+                    </div>
+                    {% endif %}
+
                 </div>
             </div>
 

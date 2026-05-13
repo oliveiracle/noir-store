@@ -1,5 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Product, Category
+from .forms import ProductForm
 
 
 def all_products(request):
@@ -43,3 +46,47 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     context = {'product': product}
     return render(request, 'products/product_detail.html', context)
+
+
+@login_required
+def add_product(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'Access restricted to store administrators.')
+        return redirect('products')
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            product = form.save()
+            messages.success(request, f'"{product.name}" added successfully.')
+            return redirect('product_detail', product_id=product.id)
+    else:
+        form = ProductForm()
+    return render(request, 'products/add_product.html', {'form': form})
+
+
+@login_required
+def edit_product(request, product_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Access restricted to store administrators.')
+        return redirect('products')
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'"{product.name}" updated successfully.')
+            return redirect('product_detail', product_id=product.id)
+    else:
+        form = ProductForm(instance=product)
+    return render(request, 'products/edit_product.html', {'form': form, 'product': product})
+
+
+@login_required
+def delete_product(request, product_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Access restricted to store administrators.')
+        return redirect('products')
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, f'"{product.name}" deleted.')
+    return redirect('products')
