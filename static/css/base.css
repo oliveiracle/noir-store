@@ -1640,6 +1640,7 @@ body {
 }
 .chat-toggle:hover { transform: scale(1.08); }
 .chat-box {
+    display: none;
     width: 320px;
     flex-direction: column;
     border: 1px solid rgba(255,255,255,0.08);
@@ -1647,6 +1648,16 @@ body {
     border-radius: 2px;
     overflow: hidden;
     box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+}
+.chat-box--open {
+    display: flex;
+}
+.contact-map-iframe {
+    border: 0;
+}
+.admin-action-link {
+    text-decoration: underline;
+    color: inherit;
 }
 .chat-header {
     display: flex;
