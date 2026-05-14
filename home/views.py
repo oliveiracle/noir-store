@@ -37,6 +37,10 @@ def contact(request):
     )
 
 
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
+
+
 def newsletter_signup(request):
     if request.method == 'POST':
         email = request.POST.get('email', '').strip()

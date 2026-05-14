@@ -24,6 +24,8 @@ def robots_txt(request):
     return HttpResponse(content, content_type='text/plain')
 
 
+handler404 = 'home.views.custom_404'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
