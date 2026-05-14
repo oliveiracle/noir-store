@@ -1,4 +1,6 @@
 (function () {
+    if (window.innerWidth < 768) return;
+
     var section = document.getElementById('stripSection');
     var track   = document.getElementById('stripTrack');
     if (!section || !track) return;

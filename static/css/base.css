@@ -562,6 +562,7 @@ body {
     padding: 8vh 5vw;
     background: var(--black);
 }
+.mobile-shop-all { display: none; }
 
 .yeezy-newin-header {
     display: flex;
@@ -1503,4 +1504,62 @@ body {
     .yeezy-grid { grid-template-columns: 1fr; }
     .yeezy-newin-grid { grid-template-columns: repeat(2, 1fr); }
     .yeezy-block-img { height: 40vh; }
+}
+
+/* ============================================================
+   MOBILE — strip, navbar, hero, detail, bag, checkout
+   ============================================================ */
+@media (max-width: 767px) {
+
+    /* Hero: shorter on mobile */
+    .yeezy-hero { height: 70vh; }
+    .yeezy-title { font-size: clamp(3rem, 16vw, 6rem); }
+
+    /* Statement: redundant on mobile, hide it */
+    .yeezy-statement { display: none; }
+
+    /* New In: clean 2x2 grid */
+    .yeezy-newin { padding: 3rem 1.5rem; }
+    .yeezy-newin-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+    /* Strip: hidden on mobile */
+    .strip-section { display: none; }
+
+    /* Shop All CTA — mobile only */
+    .mobile-shop-all { display: flex; justify-content: center; margin-top: 2rem; }
+
+    /* Navbar */
+    .navbar-brand.logo { font-size: 1.4rem; }
+    .nav-link { font-size: 0.7rem; letter-spacing: 0.14em; }
+    .search-input { width: 90px; font-size: 0.7rem; }
+
+    /* Page headers */
+    .page-header h1 { font-size: clamp(1.8rem, 8vw, 3rem); }
+
+    /* Product grid */
+    .product-grid--group,
+    .product-grid--flat { grid-template-columns: repeat(2, 1fr); }
+
+    /* Product detail */
+    .detail-name { font-size: 1.4rem; }
+    .detail-price { font-size: 1.6rem; }
+    .size-grid { grid-template-columns: repeat(4, 1fr); }
+
+    /* Bag */
+    .bag-item { flex-direction: column; gap: 1rem; }
+    .bag-img { width: 100%; height: 50vw; }
+
+    /* Checkout */
+    .checkout-section { padding: 4vh 4vw; }
+
+    /* Footer: single column */
+    .footer { padding-bottom: 2rem; }
+    .footer-brand-sm { font-size: 1.2rem; }
+    .footer .col-md-2,
+    .footer .col-md-4 { margin-bottom: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+    .strip-item { width: 85vw; }
+    .yeezy-hero { height: 60vh; }
 }
