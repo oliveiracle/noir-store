@@ -2,9 +2,7 @@
 
 {% block title %}Contact — NOIR{% endblock %}
 
-{% block extra_css %}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-{% endblock %}
+{% block extra_css %}{% endblock %}
 
 {% block content %}
 <div class="products-page">
@@ -48,7 +46,13 @@
 
             <!-- Map + Info -->
             <div class="col-lg-6">
-                <div id="contact-map" role="application" aria-label="Map showing NOIR Store location in Paris"></div>
+                <a href="https://www.google.com/maps/search/12+Rue+du+Commerce,+75015+Paris,+France" target="_blank" rel="noopener noreferrer" aria-label="Open NOIR Store location in Google Maps">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.9!2d2.2923!3d48.8494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6703b8e22a32d%3A0x0!2s12+Rue+du+Commerce%2C+75015+Paris%2C+France!5e0!3m2!1sen!2sfr!4v1"
+                        width="100%" height="380" style="border:0;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="NOIR Store location"></iframe>
+                </a>
                 <div class="contact-info-row mt-4">
                     <div>
                         <h2 class="detail-label">Location</h2>
@@ -66,28 +70,4 @@
 </div>
 {% endblock %}
 
-{% block extra_js %}
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-    var map = L.map('contact-map', { zoomControl: false, scrollWheelZoom: false }).setView([48.8494, 2.2923], 15);
-
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-        maxZoom: 19
-    }).addTo(map);
-
-    var icon = L.divIcon({
-        className: '',
-        html: '<div class="map-marker"></div>',
-        iconSize: [14, 14],
-        iconAnchor: [7, 7]
-    });
-
-    L.marker([48.8494, 2.2923], { icon: icon })
-        .addTo(map)
-        .bindPopup('<span style="font-family:Montserrat,sans-serif;font-size:0.7rem;letter-spacing:0.1em;color:#000;">NOIR STORE</span>')
-        .openPopup();
-
-    L.control.zoom({ position: 'bottomright' }).addTo(map);
-</script>
-{% endblock %}
+{% block extra_js %}{% endblock %}
