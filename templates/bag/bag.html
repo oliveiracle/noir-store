@@ -31,9 +31,9 @@
                         <form action="{% url 'update_bag' item.item_id %}" method="POST" class="bag-qty-form">
                             {% csrf_token %}
                             <div class="bag-qty-row">
-                                <button type="button" class="bag-qty-btn" onclick="changeQty(this, -1)">−</button>
-                                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10" class="bag-qty-input" readonly>
-                                <button type="button" class="bag-qty-btn" onclick="changeQty(this, 1)">+</button>
+                                <button type="button" class="bag-qty-btn" onclick="changeQty(this, -1)" aria-label="Decrease quantity of {{ item.product.name }}">−</button>
+                                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10" class="bag-qty-input" readonly aria-label="Quantity of {{ item.product.name }}">
+                                <button type="button" class="bag-qty-btn" onclick="changeQty(this, 1)" aria-label="Increase quantity of {{ item.product.name }}">+</button>
                                 <button type="submit" class="bag-qty-update">UPDATE</button>
                             </div>
                         </form>

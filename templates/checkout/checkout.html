@@ -17,16 +17,16 @@
                 <span class="detail-label">DELIVERY INFORMATION</span>
                 <form id="payment-form" method="POST" class="mt-4" data-stripe-key="{{ stripe_public_key }}" data-client-secret="{{ client_secret }}">
                     {% csrf_token %}
-                    {{ order_form.full_name }}
-                    {{ order_form.email }}
-                    {{ order_form.phone_number }}
+                    <div class="form-group">{{ order_form.full_name.label_tag }}{{ order_form.full_name }}</div>
+                    <div class="form-group">{{ order_form.email.label_tag }}{{ order_form.email }}</div>
+                    <div class="form-group">{{ order_form.phone_number.label_tag }}{{ order_form.phone_number }}</div>
                     <div class="detail-divider my-3"></div>
-                    {{ order_form.street_address1 }}
-                    {{ order_form.street_address2 }}
-                    {{ order_form.town_or_city }}
-                    {{ order_form.postcode }}
-                    {{ order_form.country }}
-                    {{ order_form.county }}
+                    <div class="form-group">{{ order_form.street_address1.label_tag }}{{ order_form.street_address1 }}</div>
+                    <div class="form-group">{{ order_form.street_address2.label_tag }}{{ order_form.street_address2 }}</div>
+                    <div class="form-group">{{ order_form.town_or_city.label_tag }}{{ order_form.town_or_city }}</div>
+                    <div class="form-group">{{ order_form.postcode.label_tag }}{{ order_form.postcode }}</div>
+                    <div class="form-group">{{ order_form.country.label_tag }}{{ order_form.country }}</div>
+                    <div class="form-group">{{ order_form.county.label_tag }}{{ order_form.county }}</div>
                     <div class="detail-divider my-4"></div>
                     <span class="detail-label">PAYMENT</span>
                     <div id="card-element" class="checkout-card-element mt-3"></div>

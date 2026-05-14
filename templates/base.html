@@ -19,6 +19,8 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid px-4 px-lg-5">
 
@@ -98,7 +100,7 @@
 </div>
 {% endif %}
 
-<main>{% block content %}{% endblock %}</main>
+<main id="main-content">{% block content %}{% endblock %}</main>
 
 <footer class="footer">
     <div class="container-fluid px-4 px-lg-5 py-5">
@@ -129,7 +131,8 @@
                 <p class="footer-newsletter-hint">Exclusive drops. No spam.</p>
                 <form class="d-flex gap-2" method="POST" action="{% url 'newsletter_signup' %}">
                     {% csrf_token %}
-                    <input type="email" name="email" class="form-control form-control-sm newsletter-input" placeholder="your@email.com" required>
+                    <label for="newsletter-email" class="visually-hidden">Email address</label>
+                    <input type="email" name="email" id="newsletter-email" class="form-control form-control-sm newsletter-input" placeholder="your@email.com" required aria-label="Email address for newsletter signup">
                     <button class="btn btn-outline-light btn-sm px-3 footer-join-btn" type="submit">JOIN</button>
                 </form>
             </div>

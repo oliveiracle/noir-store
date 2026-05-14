@@ -413,7 +413,7 @@ body {
 .auth-label {
     font-size: 0.75rem;
     letter-spacing: 0.25em;
-    color: rgba(240,237,232,0.35);
+    color: rgba(240,237,232,0.7);
     display: block;
     margin-bottom: 1rem;
 }
@@ -437,7 +437,7 @@ body {
     display: block;
     font-size: 0.75rem;
     letter-spacing: 0.2em;
-    color: rgba(240,237,232,0.35);
+    color: rgba(240,237,232,0.7);
     margin-bottom: 0.5rem;
 }
 .auth-box input[type="text"],
@@ -744,7 +744,7 @@ body {
 .filter-list li { padding: 0; }
 
 .filter-link {
-    color: rgba(240,237,232,0.28);
+    color: rgba(240,237,232,0.65);
     text-decoration: none;
     font-size: 0.78rem;
     letter-spacing: 0.18em;
@@ -783,7 +783,7 @@ body {
 .category-section-num {
     font-size: 0.8rem;
     letter-spacing: 0.3em;
-    color: rgba(240,237,232,0.15);
+    color: rgba(240,237,232,0.45);
     font-weight: 600;
 }
 
@@ -886,7 +886,7 @@ body {
 .product-tile-cat {
     font-size: 0.8rem;
     letter-spacing: 0.25em;
-    color: rgba(240,237,232,0.2);
+    color: rgba(240,237,232,0.55);
     text-transform: uppercase;
     margin: 0 0 0.25rem;
 }
@@ -923,7 +923,7 @@ body {
    ============================================================ */
 .label-muted {
     font-size: 0.75rem;
-    color: rgba(240,237,232,0.4);
+    color: rgba(240,237,232,0.6);
     letter-spacing: 0.1em;
 }
 .label-total {
@@ -991,7 +991,7 @@ body {
 .footer-copyright {
     font-size: 0.75rem;
     letter-spacing: 0.3em;
-    color: rgba(240,237,232,0.15);
+    color: rgba(240,237,232,0.5);
     text-align: center;
     text-transform: uppercase;
 }
@@ -1734,4 +1734,44 @@ body {
 @media (max-width: 767px) {
     .chat-widget { bottom: 1.2rem; right: 1.2rem; }
     .chat-box { width: 290px; }
+}
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    background: var(--white);
+    color: var(--black);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    z-index: 10000;
+    text-decoration: none;
+    transition: top 0.1s;
+}
+.skip-link:focus {
+    top: 1rem;
+}
+.form-group {
+    margin-bottom: 0.75rem;
+}
+.form-group label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: rgba(240,237,232,0.65);
+    margin-bottom: 0.25rem;
+}
+.bag-qty-btn:focus-visible,
+.size-btn:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+.product-tile a:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 4px;
 }
