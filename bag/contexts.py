@@ -1,4 +1,19 @@
+import json
 from products.models import Product
+
+
+def all_products_json(request):
+    products = Product.objects.select_related('category').all()
+    data = [
+        {
+            'name': p.name,
+            'category': p.category.friendly_name if p.category else '',
+            'price': str(p.price),
+            'id': p.id,
+        }
+        for p in products
+    ]
+    return {'products_json': json.dumps(data)}
 
 
 def bag_contents(request):

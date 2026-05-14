@@ -9,7 +9,10 @@ def index(request):
     strip_products = (
         Product.objects.filter(image__isnull=False).exclude(image='')
     )
-    context = {'new_products': new_products, 'strip_products': strip_products}
+    context = {
+        'new_products': new_products,
+        'strip_products': strip_products,
+    }
     return render(request, 'home/index.html', context)
 
 
@@ -29,16 +32,24 @@ def contact(request):
     message_sent = False
     if request.method == 'POST':
         message_sent = True
-    return render(request, 'home/contact.html', {'message_sent': message_sent})
+    return render(
+        request, 'home/contact.html', {'message_sent': message_sent}
+    )
 
 
 def newsletter_signup(request):
     if request.method == 'POST':
         email = request.POST.get('email', '').strip()
         if email:
-            _, created = NewsletterSubscriber.objects.get_or_create(email=email)
+            _, created = NewsletterSubscriber.objects.get_or_create(
+                email=email
+            )
             if created:
-                messages.success(request, 'You\'re on the list. Welcome to NOIR.')
+                messages.success(
+                    request, "You're on the list. Welcome to NOIR."
+                )
             else:
-                messages.info(request, 'You\'re already subscribed.')
+                messages.info(request, "You're already subscribed.")
     return redirect(request.META.get('HTTP_REFERER', '/'))
+
+
