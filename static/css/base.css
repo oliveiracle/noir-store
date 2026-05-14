@@ -563,6 +563,7 @@ body {
     background: var(--black);
 }
 .mobile-shop-all { display: none; }
+.mobile-collection-cta { display: none; }
 
 .yeezy-newin-header {
     display: flex;
@@ -1511,15 +1512,31 @@ body {
    ============================================================ */
 @media (max-width: 767px) {
 
-    /* Hero: shorter on mobile */
-    .yeezy-hero { height: 70vh; }
-    .yeezy-title { font-size: clamp(3rem, 16vw, 6rem); }
+    /* Hero: compact on mobile, text closer to top */
+    .yeezy-hero {
+        height: auto;
+        min-height: unset;
+        align-items: flex-start;
+        padding-top: 68px;
+        padding-bottom: 3rem;
+    }
+    .yeezy-title { font-size: clamp(3rem, 16vw, 6rem); margin-bottom: 0; }
+    .yeezy-hero-inner { padding: 3.5rem 5vw 1rem; }
+    .yeezy-hero-footer { display: none; }
+
+    /* CTA between hero and products */
+    .mobile-collection-cta {
+        background: var(--black);
+        padding: 2rem 1.5rem 0;
+    }
+
+    /* New In section spacing */
+    .yeezy-newin { padding: 2rem 1.5rem 3rem; }
 
     /* Statement: redundant on mobile, hide it */
     .yeezy-statement { display: none; }
 
     /* New In: clean 2x2 grid */
-    .yeezy-newin { padding: 3rem 1.5rem; }
     .yeezy-newin-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 
     /* Strip: hidden on mobile */
@@ -1530,8 +1547,28 @@ body {
 
     /* Navbar */
     .navbar-brand.logo { font-size: 1.4rem; }
-    .nav-link { font-size: 0.7rem; letter-spacing: 0.14em; }
-    .search-input { width: 90px; font-size: 0.7rem; }
+
+    /* Mobile collapse: full-width panel flush below navbar */
+    .navbar-collapse.show,
+    .navbar-collapse.collapsing {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--black);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        z-index: 999;
+        padding: 1.5rem 1.5rem 2rem;
+    }
+    .navbar-collapse .navbar-nav { flex-direction: column; gap: 0; }
+    .navbar-collapse .nav-link {
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        padding: 0.9rem 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .mobile-search-form { margin-top: 1.5rem; }
+    .mobile-menu-panel .search-input { width: 100%; font-size: 0.8rem; }
 
     /* Page headers */
     .page-header h1 { font-size: clamp(1.8rem, 8vw, 3rem); }
@@ -1561,5 +1598,4 @@ body {
 
 @media (max-width: 480px) {
     .strip-item { width: 85vw; }
-    .yeezy-hero { height: 60vh; }
 }
