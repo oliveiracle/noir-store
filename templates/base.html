@@ -46,6 +46,7 @@
             <!-- Desktop: links centered -->
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="/products/">SHOP</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">ABOUT</a></li>
                 <li class="nav-item"><a class="nav-link" href="/products/?category=jackets">JACKETS</a></li>
                 <li class="nav-item"><a class="nav-link" href="/products/?category=trousers">TROUSERS</a></li>
                 <li class="nav-item"><a class="nav-link" href="/products/?category=accessories">ACCESSORIES</a></li>
@@ -121,6 +122,7 @@
             </div>
             <div class="col-md-2 mb-4">
                 <span class="footer-heading d-block">Help</span>
+                <a href="{% url 'about' %}" class="footer-link">About</a>
                 <a href="{% url 'faq' %}" class="footer-link">FAQ</a>
                 <a href="{% url 'shipping' %}" class="footer-link">Shipping</a>
                 <a href="{% url 'returns' %}" class="footer-link">Returns</a>

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About — NOIR{% endblock %}
+{% block meta_description %}The story behind NOIR — a brand built on silence, precision and the belief that less is always more.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="about-page">
+
+    <!-- Screen reader: full text always visible, hidden visually on desktop -->
+    <div class="about-sr-only" aria-live="polite">
+        <h1>NOIR — The Story</h1>
+        <p>Chapter I — The Origin. NOIR was born in 2019 in a small studio in Paris. No investors. No mood boards. Just two people who believed that modern menswear had lost its way — drowning in logos, noise and excess.</p>
+        <p>Chapter II — The Vision. We set one rule: if it doesn't need to be there, it isn't. Every seam, every cut, every fabric choice is a decision made in silence. We don't follow trends. We follow conviction.</p>
+        <p>Chapter III — The Product. Each NOIR piece is constructed to last a decade, not a season. We source from mills in Portugal and Japan. We produce in small runs. We never restock what sells out.</p>
+        <p>Chapter IV — The Future. NOIR will never be a big brand. That's the point. We exist for the few who understand that the most powerful thing a man can wear is restraint.</p>
+    </div>
+
+    <!-- Desktop typewriter stage -->
+    <div class="about-stage" aria-hidden="true">
+        <div class="about-cursor-wrap">
+            <div class="about-chapter-label" id="aboutChapterLabel"></div>
+            <div class="about-text" id="aboutText"></div>
+            <span class="about-cursor" id="aboutCursor">█</span>
+        </div>
+        <div class="about-progress" id="aboutProgress">
+            <span class="about-dot active" data-chapter="0"></span>
+            <span class="about-dot" data-chapter="1"></span>
+            <span class="about-dot" data-chapter="2"></span>
+            <span class="about-dot" data-chapter="3"></span>
+        </div>
+    </div>
+
+    <!-- Mobile static version -->
+    <div class="about-mobile">
+        <div class="page-header px-4">
+            <h1>NOIR</h1>
+            <p>The Story</p>
+        </div>
+        <div class="container-fluid px-4 py-5">
+            <div class="about-mobile-chapter">
+                <span class="about-mobile-num">I</span>
+                <h2 class="about-mobile-title">The Origin</h2>
+                <p class="about-mobile-body">NOIR was born in 2019 in a small studio in Paris. No investors. No mood boards. Just two people who believed that modern menswear had lost its way — drowning in logos, noise and excess.</p>
+            </div>
+            <div class="about-mobile-chapter">
+                <span class="about-mobile-num">II</span>
+                <h2 class="about-mobile-title">The Vision</h2>
+                <p class="about-mobile-body">We set one rule: if it doesn't need to be there, it isn't. Every seam, every cut, every fabric choice is a decision made in silence. We don't follow trends. We follow conviction.</p>
+            </div>
+            <div class="about-mobile-chapter">
+                <span class="about-mobile-num">III</span>
+                <h2 class="about-mobile-title">The Product</h2>
+                <p class="about-mobile-body">Each NOIR piece is constructed to last a decade, not a season. We source from mills in Portugal and Japan. We produce in small runs. We never restock what sells out.</p>
+            </div>
+            <div class="about-mobile-chapter">
+                <span class="about-mobile-num">IV</span>
+                <h2 class="about-mobile-title">The Future</h2>
+                <p class="about-mobile-body">NOIR will never be a big brand. That's the point. We exist for the few who understand that the most powerful thing a man can wear is restraint.</p>
+            </div>
+            <a href="{% url 'products' %}" class="btn-add-bag d-inline-block mt-4">SHOP THE COLLECTION</a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

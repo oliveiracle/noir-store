@@ -37,6 +37,10 @@ def contact(request):
     )
 
 
+def about(request):
+    return render(request, 'home/about.html')
+
+
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
 
@@ -55,5 +59,3 @@ def newsletter_signup(request):
             else:
                 messages.info(request, "You're already subscribed.")
     return redirect(request.META.get('HTTP_REFERER', '/'))
-
-
