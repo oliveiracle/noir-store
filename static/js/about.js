@@ -10,69 +10,46 @@
 
     if (!stage) return;
 
-    /* ── Web Audio click synthesiser ── */
-    var audioCtx = null;
+    /* ── Real audio samples ── */
     var soundOn = false;
+    var audioCtx = null;
+    var soundBuffers = [];
+    /* Swap this file to test each sound option */
+    var soundFiles = [
+        '/static/sounds/dragon-studio-typing-keyboard-asmr-356116.mp3',
+    ];
 
     function getAudioCtx() {
         if (!audioCtx) audioCtx = new window.AudioContext();
         return audioCtx;
     }
 
+    function loadSounds() {
+        var ctx = getAudioCtx();
+        soundFiles.forEach(function (url, idx) {
+            fetch(url)
+                .then(function (r) { return r.arrayBuffer(); })
+                .then(function (ab) { return ctx.decodeAudioData(ab); })
+                .then(function (buf) { soundBuffers[idx] = buf; })
+                .catch(function () {});
+        });
+    }
+
     function playClick() {
-        if (!soundOn) return;
+        if (!soundOn || !soundBuffers.length) return;
+        var loaded = soundBuffers.filter(Boolean);
+        if (!loaded.length) return;
         try {
             var ctx = getAudioCtx();
-            var now = ctx.currentTime;
-            var sr = ctx.sampleRate;
-
-            /* ── Layer 1: crisp top-end click (key contact) ──
-               White noise with fast exponential decay, bandpass around 4kHz */
-            var clickLen = Math.floor(sr * 0.014);
-            var clickBuf = ctx.createBuffer(1, clickLen, sr);
-            var clickData = clickBuf.getChannelData(0);
-            for (var i = 0; i < clickLen; i++) {
-                clickData[i] = (Math.random() * 2 - 1) * Math.exp(-i / (clickLen * 0.18));
-            }
-            var clickSrc = ctx.createBufferSource();
-            clickSrc.buffer = clickBuf;
-
-            var bp = ctx.createBiquadFilter();
-            bp.type = 'bandpass';
-            bp.frequency.value = 4200;
-            bp.Q.value = 1.4;
-
-            var clickGain = ctx.createGain();
-            clickGain.gain.value = 0.55;
-
-            clickSrc.connect(bp);
-            bp.connect(clickGain);
-            clickGain.connect(ctx.destination);
-            clickSrc.start(now);
-
-            /* ── Layer 2: soft body thud (finger + keycap mass) ──
-               Low noise burst filtered below 200Hz, very short */
-            var thudLen = Math.floor(sr * 0.022);
-            var thudBuf = ctx.createBuffer(1, thudLen, sr);
-            var thudData = thudBuf.getChannelData(0);
-            for (var j = 0; j < thudLen; j++) {
-                thudData[j] = (Math.random() * 2 - 1) * Math.exp(-j / (thudLen * 0.25));
-            }
-            var thudSrc = ctx.createBufferSource();
-            thudSrc.buffer = thudBuf;
-
-            var lp = ctx.createBiquadFilter();
-            lp.type = 'lowpass';
-            lp.frequency.value = 180;
-
-            var thudGain = ctx.createGain();
-            thudGain.gain.value = 0.35;
-
-            thudSrc.connect(lp);
-            lp.connect(thudGain);
-            thudGain.connect(ctx.destination);
-            thudSrc.start(now);
-        } catch (e) { /* silence any audio errors */ }
+            var buf = loaded[Math.floor(Math.random() * loaded.length)];
+            var src = ctx.createBufferSource();
+            src.buffer = buf;
+            var gain = ctx.createGain();
+            gain.gain.value = 0.5;
+            src.connect(gain);
+            gain.connect(ctx.destination);
+            src.start();
+        } catch (e) {}
     }
 
     /* ── Sound toggle button ── */
@@ -82,8 +59,8 @@
             soundBtn.setAttribute('aria-pressed', soundOn);
             soundBtn.querySelector('.sound-label').textContent = soundOn ? 'SOUND ON' : 'SOUND OFF';
             soundBtn.querySelector('i').className = soundOn ? 'fas fa-volume-up' : 'fas fa-volume-mute';
-            /* Resume AudioContext on first user gesture (browser policy) */
-            if (soundOn) getAudioCtx().resume();
+            /* Load sounds and resume AudioContext on first user gesture */
+            if (soundOn) { getAudioCtx().resume(); loadSounds(); }
         });
     }
 
