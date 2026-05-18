@@ -19,6 +19,7 @@
         if (!soundOn) return;
         clickSound.currentTime = Math.random() * 3;
         clickSound.play().catch(function () {});
+        setTimeout(function () { clickSound.pause(); }, 120);
     }
 
     /* ── Sound toggle button ── */
