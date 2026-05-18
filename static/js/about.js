@@ -5,11 +5,52 @@
     var stage = document.querySelector('.about-stage');
     var textEl = document.getElementById('aboutText');
     var labelEl = document.getElementById('aboutChapterLabel');
-    var cursor = document.getElementById('aboutCursor');
     var dots = document.querySelectorAll('.about-dot');
+    var soundBtn = document.getElementById('aboutSoundBtn');
 
     if (!stage) return;
 
+    /* ── Web Audio click synthesiser ── */
+    var audioCtx = null;
+    var soundOn = false;
+
+    function getAudioCtx() {
+        if (!audioCtx) audioCtx = new window.AudioContext();
+        return audioCtx;
+    }
+
+    function playClick() {
+        if (!soundOn) return;
+        try {
+            var ctx = getAudioCtx();
+            var buf = ctx.createBuffer(1, ctx.sampleRate * 0.04, ctx.sampleRate);
+            var data = buf.getChannelData(0);
+            for (var i = 0; i < data.length; i++) {
+                data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / data.length, 8);
+            }
+            var src = ctx.createBufferSource();
+            src.buffer = buf;
+            var gain = ctx.createGain();
+            gain.gain.value = 0.18;
+            src.connect(gain);
+            gain.connect(ctx.destination);
+            src.start();
+        } catch (e) { /* silence any audio errors */ }
+    }
+
+    /* ── Sound toggle button ── */
+    if (soundBtn) {
+        soundBtn.addEventListener('click', function () {
+            soundOn = !soundOn;
+            soundBtn.setAttribute('aria-pressed', soundOn);
+            soundBtn.querySelector('.sound-label').textContent = soundOn ? 'SOUND ON' : 'SOUND OFF';
+            soundBtn.querySelector('i').className = soundOn ? 'fas fa-volume-up' : 'fas fa-volume-mute';
+            /* Resume AudioContext on first user gesture (browser policy) */
+            if (soundOn) getAudioCtx().resume();
+        });
+    }
+
+    /* ── Chapters ── */
     var chapters = [
         {
             label: 'I — The Origin',
@@ -50,10 +91,10 @@
         if (typing) {
             if (currentChar <= chapter.text.length) {
                 textEl.textContent = chapter.text.slice(0, currentChar);
+                if (currentChar > 0) playClick();
                 currentChar++;
                 setTimeout(typeNext, SPEED);
             } else {
-                /* Finished typing — pause then erase */
                 paused = true;
                 setTimeout(function () {
                     paused = false;
@@ -62,13 +103,11 @@
                 }, PAUSE_AFTER);
             }
         } else {
-            /* Erasing */
             if (currentChar > 0) {
                 currentChar--;
                 textEl.textContent = chapter.text.slice(0, currentChar);
                 setTimeout(typeNext, ERASE_SPEED);
             } else {
-                /* Move to next chapter */
                 currentChapter = (currentChapter + 1) % chapters.length;
                 labelEl.textContent = chapters[currentChapter].label;
                 updateDots();
@@ -83,7 +122,7 @@
     updateDots();
     setTimeout(typeNext, 800);
 
-    /* Allow clicking dots to jump chapters */
+    /* Dot navigation */
     dots.forEach(function (dot) {
         dot.addEventListener('click', function () {
             var target = parseInt(dot.dataset.chapter, 10);

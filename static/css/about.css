@@ -86,6 +86,31 @@
 
 .about-dot:hover { background: rgba(240,237,232,0.6); }
 
+.about-sound-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: 1px solid rgba(240,237,232,0.15);
+    color: rgba(240,237,232,0.4);
+    font-family: var(--font);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    margin-top: 2.5rem;
+    transition: color 0.2s, border-color 0.2s;
+}
+.about-sound-btn:hover,
+.about-sound-btn[aria-pressed="true"] {
+    color: var(--white);
+    border-color: rgba(240,237,232,0.5);
+}
+.about-sound-btn:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+
 /* Mobile layout */
 @media (max-width: 991px) {
     .about-stage  { display: none; }
