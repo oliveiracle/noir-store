@@ -14,7 +14,7 @@
     var soundOn = false;
     var audioCtx = null;
     var soundBuffer = null;
-    var soundFile = '/static/sounds/dragon-studio-typing-keyboard-asmr-356116.mp3';
+    var soundFile = '/static/sounds/virtualzero-mechanical-keyboard-typing-hd-372290.mp3';
 
     function getAudioCtx() {
         if (!audioCtx) audioCtx = new window.AudioContext();
