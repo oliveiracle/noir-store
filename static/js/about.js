@@ -10,46 +10,44 @@
 
     if (!stage) return;
 
-    /* ── Real audio samples ── */
+    /* ── Audio samples ── */
     var soundOn = false;
     var audioCtx = null;
-    var soundBuffers = [];
-    /* Swap this file to test each sound option */
-    var soundFiles = [
-        '/static/sounds/dragon-studio-typing-keyboard-asmr-356116.mp3',
-    ];
+    var soundBuffer = null;
+    var soundFile = '/static/sounds/dragon-studio-typing-keyboard-asmr-356116.mp3';
 
     function getAudioCtx() {
         if (!audioCtx) audioCtx = new window.AudioContext();
         return audioCtx;
     }
 
-    function loadSounds() {
-        var ctx = getAudioCtx();
-        soundFiles.forEach(function (url, idx) {
-            fetch(url)
-                .then(function (r) { return r.arrayBuffer(); })
-                .then(function (ab) { return ctx.decodeAudioData(ab); })
-                .then(function (buf) { soundBuffers[idx] = buf; })
-                .catch(function () {});
-        });
-    }
+    /* Pre-fetch using a temporary AudioContext so buffer is ready when needed */
+    (function preload() {
+        var tmpCtx = new window.AudioContext();
+        fetch(soundFile)
+            .then(function (r) { return r.arrayBuffer(); })
+            .then(function (ab) { return tmpCtx.decodeAudioData(ab); })
+            .then(function (buf) {
+                soundBuffer = buf;
+                tmpCtx.close();
+            })
+            .catch(function () {});
+    }());
 
     function playClick() {
-        if (!soundOn || !soundBuffers.length) return;
-        var loaded = soundBuffers.filter(Boolean);
-        if (!loaded.length) return;
+        if (!soundOn || !soundBuffer) return;
         try {
             var ctx = getAudioCtx();
-            var buf = loaded[Math.floor(Math.random() * loaded.length)];
+            /* Pick a random 100ms window inside the file to vary the click */
+            var maxOffset = Math.max(0, soundBuffer.duration - 0.15);
+            var offset = Math.random() * maxOffset;
             var src = ctx.createBufferSource();
-            src.buffer = buf;
+            src.buffer = soundBuffer;
             var gain = ctx.createGain();
-            gain.gain.value = 0.5;
+            gain.gain.value = 0.6;
             src.connect(gain);
             gain.connect(ctx.destination);
-            /* Play only first 60ms — one key click from the recording */
-            src.start(0, 0, 0.06);
+            src.start(0, offset, 0.1);
         } catch (e) {}
     }
 
@@ -60,8 +58,7 @@
             soundBtn.setAttribute('aria-pressed', soundOn);
             soundBtn.querySelector('.sound-label').textContent = soundOn ? 'SOUND ON' : 'SOUND OFF';
             soundBtn.querySelector('i').className = soundOn ? 'fas fa-volume-up' : 'fas fa-volume-mute';
-            /* Load sounds and resume AudioContext on first user gesture */
-            if (soundOn) { getAudioCtx().resume(); loadSounds(); }
+            if (soundOn) getAudioCtx().resume();
         });
     }
 
