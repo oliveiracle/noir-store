@@ -48,7 +48,8 @@
             gain.gain.value = 0.5;
             src.connect(gain);
             gain.connect(ctx.destination);
-            src.start();
+            /* Play only first 60ms — one key click from the recording */
+            src.start(0, 0, 0.06);
         } catch (e) {}
     }
 
