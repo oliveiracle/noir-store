@@ -242,70 +242,6 @@ body {
     text-align: center;
 }
 
-/* ============================================================
-   GRID CATEGORIES
-   ============================================================ */
-.yeezy-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: rgba(255,255,255,0.04);
-}
-
-.yeezy-block {
-    text-decoration: none;
-    display: block;
-    background: var(--black);
-    overflow: hidden;
-    position: relative;
-}
-
-.yeezy-block-img {
-    height: 60vh;
-    overflow: hidden;
-    position: relative;
-    background: var(--dark);
-}
-
-.yeezy-block-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.yeezy-block:hover .yeezy-block-photo {
-    transform: scale(1.04);
-}
-
-.yeezy-block-label {
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.yeezy-label-num {
-    font-size: 0.8rem;
-    letter-spacing: 0.3em;
-    color: rgba(240,237,232,0.25);
-    font-weight: 600;
-}
-
-.yeezy-label-name {
-    font-size: 0.78rem;
-    letter-spacing: 0.3em;
-    font-weight: 700;
-    color: var(--white);
-    text-transform: uppercase;
-    transition: color 0.3s;
-}
-
-.yeezy-block:hover .yeezy-label-name {
-    color: var(--bone);
-}
 
 /* ============================================================
    COLLECTION STRIP
@@ -523,37 +459,6 @@ body {
     background: transparent;
 }
 
-/* ============================================================
-   MARQUEE
-   ============================================================ */
-.yeezy-marquee-wrap {
-    overflow: hidden;
-    border-top: 1px solid rgba(255,255,255,0.04);
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    padding: 1.2rem 0;
-    background: var(--off-black);
-}
-
-.yeezy-marquee {
-    display: flex;
-    white-space: nowrap;
-    animation: marquee 20s linear infinite;
-}
-
-.yeezy-marquee span {
-    font-size: 0.75rem;
-    letter-spacing: 0.35em;
-    font-weight: 600;
-    color: rgba(240,237,232,0.2);
-    text-transform: uppercase;
-    flex-shrink: 0;
-    padding-right: 4rem;
-}
-
-@keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
 
 /* ============================================================
    NEW IN

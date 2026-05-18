@@ -16,7 +16,7 @@
             <span class="grav-line">MATTER</span>
         </h1>
         <div class="yeezy-hero-footer">
-            <a href="/products/" class="yeezy-cta">SHOP THE COLLECTION</a>
+            <a href="{% url 'products' %}" class="yeezy-cta">SHOP THE COLLECTION</a>
             <span class="yeezy-scroll-hint">↓</span>
         </div>
     </div>
@@ -51,7 +51,7 @@
 <section class="yeezy-newin">
     <div class="yeezy-newin-header">
         <span class="yeezy-section-label">NEW IN</span>
-        <a href="/products/" class="yeezy-see-all">SEE ALL →</a>
+        <a href="{% url 'products' %}" class="yeezy-see-all">SEE ALL →</a>
     </div>
     <div class="yeezy-newin-grid">
         {% for product in new_products %}
@@ -72,13 +72,13 @@
         {% endfor %}
     </div>
     <div class="mobile-shop-all">
-        <a href="/products/" class="yeezy-cta">SHOP ALL</a>
+        <a href="{% url 'products' %}" class="yeezy-cta">SHOP ALL</a>
     </div>
 </section>
 
 {% endblock %}
 
 {% block extra_js %}
-<script src="/static/js/noir.js"></script>
-<script src="/static/js/strip.js"></script>
+<script src="{% static 'js/noir.js' %}"></script>
+<script src="{% static 'js/strip.js' %}"></script>
 {% endblock %}
