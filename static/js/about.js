@@ -24,32 +24,54 @@
         try {
             var ctx = getAudioCtx();
             var now = ctx.currentTime;
+            var sr = ctx.sampleRate;
 
-            /* High-frequency click — the key contact */
-            var click = ctx.createOscillator();
+            /* ── Layer 1: crisp top-end click (key contact) ──
+               White noise with fast exponential decay, bandpass around 4kHz */
+            var clickLen = Math.floor(sr * 0.014);
+            var clickBuf = ctx.createBuffer(1, clickLen, sr);
+            var clickData = clickBuf.getChannelData(0);
+            for (var i = 0; i < clickLen; i++) {
+                clickData[i] = (Math.random() * 2 - 1) * Math.exp(-i / (clickLen * 0.18));
+            }
+            var clickSrc = ctx.createBufferSource();
+            clickSrc.buffer = clickBuf;
+
+            var bp = ctx.createBiquadFilter();
+            bp.type = 'bandpass';
+            bp.frequency.value = 4200;
+            bp.Q.value = 1.4;
+
             var clickGain = ctx.createGain();
-            click.type = 'square';
-            click.frequency.setValueAtTime(2800, now);
-            click.frequency.exponentialRampToValueAtTime(800, now + 0.018);
-            clickGain.gain.setValueAtTime(0.22, now);
-            clickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.018);
-            click.connect(clickGain);
-            clickGain.connect(ctx.destination);
-            click.start(now);
-            click.stop(now + 0.018);
+            clickGain.gain.value = 0.55;
 
-            /* Low thud — the key bottom-out */
-            var thud = ctx.createOscillator();
+            clickSrc.connect(bp);
+            bp.connect(clickGain);
+            clickGain.connect(ctx.destination);
+            clickSrc.start(now);
+
+            /* ── Layer 2: soft body thud (finger + keycap mass) ──
+               Low noise burst filtered below 200Hz, very short */
+            var thudLen = Math.floor(sr * 0.022);
+            var thudBuf = ctx.createBuffer(1, thudLen, sr);
+            var thudData = thudBuf.getChannelData(0);
+            for (var j = 0; j < thudLen; j++) {
+                thudData[j] = (Math.random() * 2 - 1) * Math.exp(-j / (thudLen * 0.25));
+            }
+            var thudSrc = ctx.createBufferSource();
+            thudSrc.buffer = thudBuf;
+
+            var lp = ctx.createBiquadFilter();
+            lp.type = 'lowpass';
+            lp.frequency.value = 180;
+
             var thudGain = ctx.createGain();
-            thud.type = 'sine';
-            thud.frequency.setValueAtTime(120, now);
-            thud.frequency.exponentialRampToValueAtTime(40, now + 0.035);
-            thudGain.gain.setValueAtTime(0.12, now);
-            thudGain.gain.exponentialRampToValueAtTime(0.001, now + 0.035);
-            thud.connect(thudGain);
+            thudGain.gain.value = 0.35;
+
+            thudSrc.connect(lp);
+            lp.connect(thudGain);
             thudGain.connect(ctx.destination);
-            thud.start(now);
-            thud.stop(now + 0.035);
+            thudSrc.start(now);
         } catch (e) { /* silence any audio errors */ }
     }
 
