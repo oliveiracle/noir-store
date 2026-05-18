@@ -17,9 +17,11 @@
 
     function playClick() {
         if (!soundOn) return;
-        clickSound.currentTime = Math.random() * 3;
-        clickSound.play().catch(function () {});
-        setTimeout(function () { clickSound.pause(); }, 120);
+        var s = clickSound.cloneNode();
+        s.currentTime = Math.random() * 3;
+        s.volume = 0.5;
+        s.play().catch(function () {});
+        setTimeout(function () { s.pause(); }, 120);
     }
 
     /* ── Sound toggle button ── */
