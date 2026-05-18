@@ -23,18 +23,33 @@
         if (!soundOn) return;
         try {
             var ctx = getAudioCtx();
-            var buf = ctx.createBuffer(1, ctx.sampleRate * 0.04, ctx.sampleRate);
-            var data = buf.getChannelData(0);
-            for (var i = 0; i < data.length; i++) {
-                data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / data.length, 8);
-            }
-            var src = ctx.createBufferSource();
-            src.buffer = buf;
-            var gain = ctx.createGain();
-            gain.gain.value = 0.18;
-            src.connect(gain);
-            gain.connect(ctx.destination);
-            src.start();
+            var now = ctx.currentTime;
+
+            /* High-frequency click — the key contact */
+            var click = ctx.createOscillator();
+            var clickGain = ctx.createGain();
+            click.type = 'square';
+            click.frequency.setValueAtTime(2800, now);
+            click.frequency.exponentialRampToValueAtTime(800, now + 0.018);
+            clickGain.gain.setValueAtTime(0.22, now);
+            clickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.018);
+            click.connect(clickGain);
+            clickGain.connect(ctx.destination);
+            click.start(now);
+            click.stop(now + 0.018);
+
+            /* Low thud — the key bottom-out */
+            var thud = ctx.createOscillator();
+            var thudGain = ctx.createGain();
+            thud.type = 'sine';
+            thud.frequency.setValueAtTime(120, now);
+            thud.frequency.exponentialRampToValueAtTime(40, now + 0.035);
+            thudGain.gain.setValueAtTime(0.12, now);
+            thudGain.gain.exponentialRampToValueAtTime(0.001, now + 0.035);
+            thud.connect(thudGain);
+            thudGain.connect(ctx.destination);
+            thud.start(now);
+            thud.stop(now + 0.035);
         } catch (e) { /* silence any audio errors */ }
     }
 
