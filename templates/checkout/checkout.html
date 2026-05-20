@@ -17,16 +17,43 @@
                 <span class="detail-label">DELIVERY INFORMATION</span>
                 <form id="payment-form" method="POST" class="mt-4" data-stripe-key="{{ stripe_public_key }}" data-client-secret="{{ client_secret }}">
                     {% csrf_token %}
-                    <div class="form-group">{{ order_form.full_name.label_tag }}{{ order_form.full_name }}</div>
-                    <div class="form-group">{{ order_form.email.label_tag }}{{ order_form.email }}</div>
-                    <div class="form-group">{{ order_form.phone_number.label_tag }}{{ order_form.phone_number }}</div>
+                    <div class="form-group">
+                        <label for="id_full_name" class="visually-hidden">Full Name</label>
+                        {{ order_form.full_name }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_email" class="visually-hidden">Email Address</label>
+                        {{ order_form.email }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_phone_number" class="visually-hidden">Phone Number</label>
+                        {{ order_form.phone_number }}
+                    </div>
                     <div class="detail-divider my-3"></div>
-                    <div class="form-group">{{ order_form.street_address1.label_tag }}{{ order_form.street_address1 }}</div>
-                    <div class="form-group">{{ order_form.street_address2.label_tag }}{{ order_form.street_address2 }}</div>
-                    <div class="form-group">{{ order_form.town_or_city.label_tag }}{{ order_form.town_or_city }}</div>
-                    <div class="form-group">{{ order_form.postcode.label_tag }}{{ order_form.postcode }}</div>
-                    <div class="form-group">{{ order_form.country.label_tag }}{{ order_form.country }}</div>
-                    <div class="form-group">{{ order_form.county.label_tag }}{{ order_form.county }}</div>
+                    <div class="form-group">
+                        <label for="id_street_address1" class="visually-hidden">Street Address 1</label>
+                        {{ order_form.street_address1 }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_street_address2" class="visually-hidden">Street Address 2</label>
+                        {{ order_form.street_address2 }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_town_or_city" class="visually-hidden">Town or City</label>
+                        {{ order_form.town_or_city }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_postcode" class="visually-hidden">Postcode</label>
+                        {{ order_form.postcode }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_country" class="visually-hidden">Country</label>
+                        {{ order_form.country }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_county" class="visually-hidden">County / State</label>
+                        {{ order_form.county }}
+                    </div>
                     <div class="detail-divider my-4"></div>
                     <span class="detail-label">PAYMENT</span>
                     <div id="card-element" class="checkout-card-element mt-3"></div>
