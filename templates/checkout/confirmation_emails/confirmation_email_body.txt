@@ -1,0 +1,25 @@
+Hello {{ order.full_name }},
+
+Your order has been confirmed. Thank you for choosing NOIR.
+
+Order Number: {{ order.order_number }}
+Date: {{ order.date }}
+
+ORDER SUMMARY
+{% for item in order.lineitems.all %}
+  {{ item.product.name }} x{{ item.quantity }} — €{{ item.lineitem_total }}
+{% endfor %}
+
+Delivery: €{{ order.delivery_cost }}
+Total: €{{ order.grand_total }}
+
+DELIVERY ADDRESS
+{{ order.street_address1 }}
+{% if order.street_address2 %}{{ order.street_address2 }}
+{% endif %}{{ order.town_or_city }}
+{% if order.postcode %}{{ order.postcode }}
+{% endif %}{{ order.country }}
+
+If you have any questions, reply to this email or visit our contact page.
+
+— NOIR
