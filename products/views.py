@@ -74,11 +74,16 @@ def edit_product(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, f'"{product.name}" updated successfully.')
+            messages.success(
+                request, f'"{product.name}" updated successfully.')
             return redirect('product_detail', product_id=product.id)
     else:
         form = ProductForm(instance=product)
-    return render(request, 'products/edit_product.html', {'form': form, 'product': product})
+    return render(
+        request,
+        'products/edit_product.html',
+        {'form': form, 'product': product},
+    )
 
 
 @login_required

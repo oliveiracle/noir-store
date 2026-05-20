@@ -67,7 +67,10 @@ def checkout(request):
             try:
                 profile = request.user.profile
                 initial = {
-                    'full_name': request.user.get_full_name() or request.user.username,
+                    'full_name': (
+                        request.user.get_full_name() or
+                        request.user.username
+                    ),
                     'email': request.user.email,
                     'phone_number': profile.phone_number,
                     'street_address1': profile.street_address1,

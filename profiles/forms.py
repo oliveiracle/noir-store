@@ -19,6 +19,7 @@ class UserProfileForm(forms.ModelForm):
             'county': 'County / State',
         }
         for field in self.fields:
-            self.fields[field].widget.attrs['placeholder'] = placeholders[field]
+            placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'checkout-input'
             self.fields[field].label = False

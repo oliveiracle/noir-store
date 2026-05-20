@@ -1,3 +1,1 @@
-from django.db import models
-
-# Create your models here.
+# Bag contents are stored in the session, not the database
