@@ -10,6 +10,7 @@ from .models import Order, OrderLineItem
 
 
 def checkout(request):
+    """Handle checkout form and create a Stripe PaymentIntent."""
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -93,6 +94,7 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
+    """Display the order confirmation page after a successful payment."""
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order {order_number} confirmed!')
     return render(

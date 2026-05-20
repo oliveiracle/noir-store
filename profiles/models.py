@@ -5,6 +5,7 @@ from django.dispatch import receiver
 
 
 class UserProfile(models.Model):
+    """Stores delivery information for a registered user."""
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name='profile')
     phone_number = models.CharField(max_length=20, null=True, blank=True)

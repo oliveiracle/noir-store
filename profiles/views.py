@@ -7,6 +7,7 @@ from .forms import UserProfileForm
 
 @login_required
 def profile(request):
+    """Display and update the user's delivery profile and order history."""
     user_profile = request.user.profile
     orders = Order.objects.filter(email=request.user.email).order_by('-date')
 

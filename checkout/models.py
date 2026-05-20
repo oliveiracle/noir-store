@@ -5,6 +5,7 @@ from products.models import Product
 
 
 class Order(models.Model):
+    """Represents a completed customer order."""
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -26,9 +27,11 @@ class Order(models.Model):
         max_length=254, null=False, blank=False, default='')
 
     def _generate_order_number(self):
+        """Generate a unique order number using UUID."""
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
+        """Recalculate order total, delivery cost and grand total."""
         self.order_total = (
             self.lineitems.aggregate(
                 Sum('lineitem_total'))['lineitem_total__sum'] or 0
@@ -50,6 +53,7 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """Represents a single product line within an order."""
     order = models.ForeignKey(
         Order, null=False, blank=False,
         on_delete=models.CASCADE, related_name='lineitems')

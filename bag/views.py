@@ -4,10 +4,12 @@ from products.models import Product
 
 
 def view_bag(request):
+    """Render the shopping bag page."""
     return render(request, 'bag/bag.html')
 
 
 def add_to_bag(request, item_id):
+    """Add a product to the shopping bag or increase its quantity."""
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity', 1))
     redirect_url = request.POST.get('redirect_url', '/products/')
@@ -26,6 +28,7 @@ def add_to_bag(request, item_id):
 
 
 def update_bag(request, item_id):
+    """Update item quantity in the bag, or remove it if zero."""
     quantity = int(request.POST.get('quantity', 1))
     bag = request.session.get('bag', {})
     key = str(item_id)
@@ -40,6 +43,7 @@ def update_bag(request, item_id):
 
 
 def remove_from_bag(request, item_id):
+    """Remove an item from the shopping bag entirely."""
     product = get_object_or_404(Product, pk=item_id)
     bag = request.session.get('bag', {})
     bag.pop(str(item_id), None)
