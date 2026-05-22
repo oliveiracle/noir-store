@@ -1,3 +1,6 @@
+// Homepage hero animations — starfield canvas, nebulae, galaxy, black hole,
+// shooting stars, and the letter gravity effect on the title
+
 (function () {
     'use strict';
 
@@ -9,6 +12,7 @@
     let mouseX = 0, mouseY = 0;
     let tick = 0;
 
+    // Resize canvas to match the hero section size
     function resize() {
         const hero = canvas.parentElement;
         W = canvas.width  = hero.offsetWidth;
@@ -18,7 +22,8 @@
         build();
     }
 
-    /* --- STAR LAYERS --- */
+    /* --- STAR LAYERS ---
+       Three layers with different speeds and sizes to create depth */
     const layers = [
         { stars: [], count: 260, maxR: 0.32, speed: 0.007, parallax: 0.006 },
         { stars: [], count: 110, maxR: 0.85, speed: 0.014, parallax: 0.014 },
@@ -45,12 +50,14 @@
     function drawLayers(ox, oy) {
         layers.forEach(layer => {
             layer.stars.forEach(s => {
+                // Make stars twinkle by oscillating their alpha with Math.sin
                 s.twinklePhase += s.twinkleSpeed;
                 const alpha = Math.max(0, s.baseAlpha + Math.sin(s.twinklePhase) * 0.18);
                 s.x += s.drift;
                 if (s.x < 0) s.x = W;
                 if (s.x > W) s.x = 0;
 
+                // Parallax offset based on mouse position
                 const px = s.x - ox * W * layer.parallax;
                 const py = s.y - oy * H * layer.parallax;
 
@@ -59,6 +66,7 @@
                 ctx.fillStyle = 'rgba(240,237,232,' + alpha + ')';
                 ctx.fill();
 
+                // Draw cross-shaped spikes on larger stars
                 if (s.r > 1.4) {
                     const spikeLen = s.r * 7;
                     ctx.strokeStyle = 'rgba(240,237,232,' + (alpha * 0.22) + ')';
@@ -84,6 +92,7 @@
         ];
     }
 
+    // Draw each nebula as a radial gradient circle
     function drawNebulae(ox, oy) {
         nebulae.forEach(function(n) {
             var nx = n.x + ox * 0.4 * W;
@@ -107,6 +116,7 @@
         galaxy.arms = [];
         galaxy.core = [];
 
+        // Two spiral arms with points along them
         for (var a = 0; a < 2; a++) {
             for (var i = 0; i < 90; i++) {
                 var t = i / 90;
@@ -118,6 +128,7 @@
                 });
             }
         }
+        // Bright central core
         for (var j = 0; j < 60; j++) {
             galaxy.core.push({
                 angle: Math.random() * Math.PI * 2,
@@ -131,7 +142,7 @@
     function drawGalaxy(ox, oy) {
         var gx = galaxy.x + ox * 0.2 * W;
         var gy = galaxy.y + oy * 0.2 * H;
-        var rot = tick * 0.0002;
+        var rot = tick * 0.0002; // Slowly rotates over time
 
         var glow = ctx.createRadialGradient(gx, gy, 0, gx, gy, 60);
         glow.addColorStop(0,   'rgba(201,169,110,0.06)');
@@ -145,7 +156,7 @@
         ctx.save();
         ctx.translate(gx, gy);
         ctx.rotate(rot);
-        ctx.scale(1, 0.38);
+        ctx.scale(1, 0.38); // Flatten to look like a tilted disc
 
         galaxy.arms.forEach(function(p) {
             ctx.beginPath();
@@ -171,6 +182,7 @@
         bh = { x: W * 0.5, y: H * 0.32, radius: Math.min(W, H) * 0.038 };
         bhParticles = [];
 
+        // Particles orbit the black hole at different distances
         for (var i = 0; i < 160; i++) {
             var dist  = bh.radius * (1.35 + Math.random() * 2.6);
             var speed = (bh.radius * 1.5 / dist) * 0.018 * (Math.random() * 0.4 + 0.8);
@@ -194,6 +206,7 @@
         var by = bh.y + oy * 0.55 * H;
         var R  = bh.radius;
 
+        // Outer accretion glow
         var outerGlow = ctx.createRadialGradient(bx, by, R, bx, by, R * 9);
         outerGlow.addColorStop(0,    'rgba(201,130,50,0.10)');
         outerGlow.addColorStop(0.25, 'rgba(100,60,20,0.04)');
@@ -203,6 +216,7 @@
         ctx.arc(bx, by, R * 9, 0, Math.PI * 2);
         ctx.fill();
 
+        // Orbiting particles
         bhParticles.forEach(function(p) {
             p.angle += p.speed;
             var px = bx + Math.cos(p.angle) * p.dist;
@@ -213,6 +227,7 @@
             ctx.fill();
         });
 
+        // Dark centre — covers everything inside the event horizon
         var shadow = ctx.createRadialGradient(bx, by, R * 0.2, bx, by, R * 1.3);
         shadow.addColorStop(0,    'rgba(0,0,0,1)');
         shadow.addColorStop(0.75, 'rgba(0,0,0,0.96)');
@@ -222,6 +237,7 @@
         ctx.arc(bx, by, R * 1.3, 0, Math.PI * 2);
         ctx.fill();
 
+        // Polar jets above and below the black hole
         var jetUp = ctx.createLinearGradient(bx, by - R, bx, by - R * 7);
         jetUp.addColorStop(0, 'rgba(201,169,110,0.08)');
         jetUp.addColorStop(1, 'rgba(0,0,0,0)');
@@ -254,6 +270,7 @@
         });
     }
 
+    // Spawn a new shooting star every ~6 seconds
     setInterval(function() { if (Math.random() > 0.35) spawnShooter(); }, 6000);
 
     function drawShooters() {
@@ -262,6 +279,7 @@
             s.x += s.vx; s.y += s.vy; s.alpha -= s.fade;
             if (s.alpha <= 0) { shooters.splice(i, 1); continue; }
 
+            // Draw the tail as a gradient line that fades to transparent
             var steps = s.len / s.vx;
             var tail = ctx.createLinearGradient(s.x - s.vx * steps, s.y - s.vy * steps, s.x, s.y);
             tail.addColorStop(0, 'rgba(240,237,232,0)');
@@ -275,13 +293,14 @@
         }
     }
 
-    /* --- MAIN LOOP --- */
+    /* --- MAIN ANIMATION LOOP ---
+       requestAnimationFrame keeps the animation in sync with the screen refresh rate */
     function loop() {
         tick++;
         ctx.fillStyle = '#000000';
         ctx.fillRect(0, 0, W, H);
 
-        var ox = (mouseX / W) - 0.5;
+        var ox = (mouseX / W) - 0.5; // -0.5 to 0.5 range for parallax
         var oy = (mouseY / H) - 0.5;
 
         drawNebulae(ox, oy);
@@ -312,22 +331,24 @@
         mouseY = e.clientY;
     });
 
-    /* --- LETTER GRAVITY --- */
+    /* --- LETTER GRAVITY ---
+       Letters in the hero title are repelled by the mouse cursor */
     var titleEl = document.getElementById('gravTitle');
     if (!titleEl) return;
 
-    var lines = titleEl.querySelectorAll('.grav-line');
+    var lines   = titleEl.querySelectorAll('.grav-line');
     var letters = [];
 
+    // Split each word into individual <span> elements
     lines.forEach(function(line) {
         var text = line.textContent;
         line.textContent = '';
         line.style.display = 'block';
         text.split('').forEach(function(char) {
             var span = document.createElement('span');
-            span.className = 'grav-letter';
+            span.className  = 'grav-letter';
             span.textContent = char;
-            span.setAttribute('aria-hidden', 'true');
+            span.setAttribute('aria-hidden', 'true'); // Screen readers use the parent aria-label
             line.appendChild(span);
             letters.push(span);
         });
@@ -339,68 +360,74 @@
 
     var isCollapsing = false;
 
+    // Push letters away from the cursor
     document.addEventListener('mousemove', function(e) {
         if (isCollapsing) return;
         letters.forEach(function(letter) {
             var rect = letter.getBoundingClientRect();
-            var cx = rect.left + rect.width / 2;
-            var cy = rect.top  + rect.height / 2;
-            var dx = e.clientX - cx;
-            var dy = e.clientY - cy;
+            var cx   = rect.left + rect.width  / 2;
+            var cy   = rect.top  + rect.height / 2;
+            var dx   = e.clientX - cx;
+            var dy   = e.clientY - cy;
             var dist = Math.sqrt(dx * dx + dy * dy);
             var influence = 260;
 
             if (dist < influence && dist > 0) {
                 var force = Math.pow((influence - dist) / influence, 2) * 16;
-                letter.style.transform = 'translate(' + (dx / dist * force) + 'px,' + (dy / dist * force) + 'px)';
+                letter.style.transform  = 'translate(' + (dx / dist * force) + 'px,' + (dy / dist * force) + 'px)';
                 letter.style.transition = 'transform 0.1s ease-out';
             } else {
-                letter.style.transform = 'translate(0,0)';
+                letter.style.transform  = 'translate(0,0)';
                 letter.style.transition = 'transform 0.5s ease-out';
             }
         });
     });
 
+    // Return letters to their original position when the mouse leaves the title
     titleEl.addEventListener('mouseleave', function() {
         if (isCollapsing) return;
         letters.forEach(function(l) {
-            l.style.transform = 'translate(0,0)';
+            l.style.transform  = 'translate(0,0)';
             l.style.transition = 'transform 0.7s ease-out';
         });
     });
 
+    // Click the title to trigger a collapse-and-expand animation
     titleEl.addEventListener('click', function() {
         if (isCollapsing) return;
         isCollapsing = true;
 
+        // Collapse all letters with a random delay
         letters.forEach(function(letter) {
             setTimeout(function() {
                 letter.style.transition = 'transform 280ms cubic-bezier(.55,0,1,.45),opacity 230ms ease';
-                letter.style.transform = 'scale(0)';
-                letter.style.opacity = '0';
+                letter.style.transform  = 'scale(0)';
+                letter.style.opacity    = '0';
             }, Math.random() * 110);
         });
 
+        // Flash a white point in the centre
         setTimeout(function() {
             var pt = document.createElement('div');
             pt.style.cssText = 'position:fixed;top:50%;left:50%;width:3px;height:3px;background:#f0ede8;border-radius:50%;transform:translate(-50%,-50%) scale(1);transition:transform .38s,opacity .38s;z-index:9999;pointer-events:none;box-shadow:0 0 18px 6px rgba(201,169,110,.7)';
             document.body.appendChild(pt);
             requestAnimationFrame(function() { requestAnimationFrame(function() {
                 pt.style.transform = 'translate(-50%,-50%) scale(90)';
-                pt.style.opacity = '0';
+                pt.style.opacity   = '0';
             }); });
             setTimeout(function() { pt.remove(); }, 420);
         }, 300);
 
+        // Expand the letters back one by one
         setTimeout(function() {
             letters.forEach(function(letter, i) {
                 setTimeout(function() {
                     letter.style.transition = 'transform .14s ease-out,opacity .14s ease';
-                    letter.style.transform = 'scale(1.25)';
-                    letter.style.opacity = '1';
+                    letter.style.transform  = 'scale(1.25)';
+                    letter.style.opacity    = '1';
                     setTimeout(function() {
                         letter.style.transition = 'transform .45s cubic-bezier(.175,.885,.32,1.275)';
-                        letter.style.transform = 'scale(1)';
+                        letter.style.transform  = 'scale(1)';
                     }, 140);
                 }, i * 30);
             });
@@ -408,6 +435,7 @@
         }, 660);
     });
 
+    // Respect the user's reduced motion preference
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         cancelAnimationFrame(animId);
         ctx.fillStyle = '#000';

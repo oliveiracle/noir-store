@@ -1,16 +1,19 @@
+// Typewriter animation for the About page
+// Types each chapter one character at a time, pauses, then erases it
+
 (function () {
-    /* Only run typewriter on desktop */
+    // Only run on desktop — mobile shows a static version instead
     if (window.innerWidth < 992) return;
 
-    var stage = document.querySelector('.about-stage');
-    var textEl = document.getElementById('aboutText');
-    var labelEl = document.getElementById('aboutChapterLabel');
-    var dots = document.querySelectorAll('.about-dot');
+    var stage    = document.querySelector('.about-stage');
+    var textEl   = document.getElementById('aboutText');
+    var labelEl  = document.getElementById('aboutChapterLabel');
+    var dots     = document.querySelectorAll('.about-dot');
     var soundBtn = document.getElementById('aboutSoundBtn');
 
     if (!stage) return;
 
-    /* ── Keyboard sound ── */
+    // Sound setup — cloning the audio node lets us play overlapping clicks
     var soundOn = false;
     var clickSound = new Audio('/static/sounds/virtualzero-mechanical-keyboard-typing-hd-372290.mp3');
     clickSound.volume = 0.5;
@@ -18,13 +21,13 @@
     function playClick() {
         if (!soundOn) return;
         var s = clickSound.cloneNode();
-        s.currentTime = Math.random() * 3;
+        s.currentTime = Math.random() * 3; // Start at a random point in the sound
         s.volume = 0.5;
         s.play().catch(function () {});
         setTimeout(function () { s.pause(); }, 120);
     }
 
-    /* ── Sound toggle button ── */
+    // Toggle sound on/off and update the button label
     if (soundBtn) {
         soundBtn.addEventListener('click', function () {
             soundOn = !soundOn;
@@ -34,7 +37,7 @@
         });
     }
 
-    /* ── Chapters ── */
+    // The four brand story chapters
     var chapters = [
         {
             label: 'I — The Origin',
@@ -55,19 +58,21 @@
     ];
 
     var currentChapter = 0;
-    var currentChar = 0;
-    var typing = true;
-    var paused = false;
-    var SPEED = 38;
-    var PAUSE_AFTER = 2200;
-    var ERASE_SPEED = 18;
+    var currentChar    = 0;
+    var typing         = true;  // true = typing forward, false = erasing
+    var paused         = false;
+    var SPEED          = 38;    // ms per character when typing
+    var PAUSE_AFTER    = 2200;  // ms to wait before erasing
+    var ERASE_SPEED    = 18;    // ms per character when erasing
 
+    // Update which dot is highlighted
     function updateDots() {
         dots.forEach(function (d, i) {
             d.classList.toggle('active', i === currentChapter);
         });
     }
 
+    // Main typewriter loop — called recursively via setTimeout
     function typeNext() {
         if (paused) return;
         var chapter = chapters[currentChapter];
@@ -79,6 +84,7 @@
                 currentChar++;
                 setTimeout(typeNext, SPEED);
             } else {
+                // Finished typing — pause before erasing
                 paused = true;
                 setTimeout(function () {
                     paused = false;
@@ -88,10 +94,12 @@
             }
         } else {
             if (currentChar > 0) {
+                // Erase one character at a time
                 currentChar--;
                 textEl.textContent = chapter.text.slice(0, currentChar);
                 setTimeout(typeNext, ERASE_SPEED);
             } else {
+                // Move to the next chapter and start typing again
                 currentChapter = (currentChapter + 1) % chapters.length;
                 labelEl.textContent = chapters[currentChapter].label;
                 updateDots();
@@ -101,21 +109,21 @@
         }
     }
 
-    /* Initialise */
+    // Initialise the first chapter and start
     labelEl.textContent = chapters[0].label;
     updateDots();
     setTimeout(typeNext, 800);
 
-    /* Dot navigation */
+    // Allow clicking the dots to jump to a specific chapter
     dots.forEach(function (dot) {
         dot.addEventListener('click', function () {
             var target = parseInt(dot.dataset.chapter, 10);
             if (target === currentChapter) return;
             currentChapter = target;
-            currentChar = 0;
-            typing = true;
-            paused = false;
-            textEl.textContent = '';
+            currentChar    = 0;
+            typing         = true;
+            paused         = false;
+            textEl.textContent  = '';
             labelEl.textContent = chapters[currentChapter].label;
             updateDots();
             typeNext();

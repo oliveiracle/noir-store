@@ -1,4 +1,8 @@
+// Horizontal scroll strip on the homepage
+// Moving the mouse across the section scrolls the product track
+
 (function () {
+    // Don't run on mobile — the strip isn't used on small screens
     if (window.innerWidth < 768) return;
 
     var section = document.getElementById('stripSection');
@@ -7,15 +11,17 @@
 
     var current = 0;
     var target  = 0;
-    var ease    = 0.03;
+    var ease    = 0.03; // Lower value = smoother/slower easing
     var raf;
 
+    // Smoothly interpolate current position toward the target each frame
     function tick() {
         current += (target - current) * ease;
         track.style.transform = 'translateX(-' + current + 'px)';
         raf = requestAnimationFrame(tick);
     }
 
+    // Calculate the target scroll position based on where the mouse is
     section.addEventListener('mousemove', function (e) {
         var rect = section.getBoundingClientRect();
         var x    = (e.clientX - rect.left) / rect.width;
@@ -25,6 +31,7 @@
         if (!raf) raf = requestAnimationFrame(tick);
     });
 
+    // Scroll back to the start when the mouse leaves the section
     section.addEventListener('mouseleave', function () {
         target = 0;
     });
