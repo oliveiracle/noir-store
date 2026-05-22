@@ -47,6 +47,11 @@ def about(request):
     return render(request, 'home/about.html')
 
 
+def facebook_mockup(request):
+    """Render the Facebook Business Page mockup for marketing documentation."""
+    return render(request, 'home/facebook_mockup.html')
+
+
 def custom_404(request, exception):
     """Render a custom 404 error page."""
     return render(request, '404.html', status=404)
