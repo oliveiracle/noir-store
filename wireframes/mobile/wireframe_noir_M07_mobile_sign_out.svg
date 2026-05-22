@@ -1,0 +1,119 @@
+<svg viewBox="0 0 390 1200" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR Mobile / Sign Out</title>
+  <rect width="390" height="1200" fill="#F4F2ED"/>
+
+  <text x="8" y="14" font-size="8" fill="#888" letter-spacing="1">WIREFRAME — NOIR / MOBILE — SIGN OUT PAGE</text>
+  <line x1="8" y1="19" x2="382" y2="19" stroke="#CCC" stroke-width="0.4"/>
+
+  <!-- SCREEN BORDER 390x844 -->
+  <rect x="8" y="24" width="374" height="844" fill="#E8E6E0" rx="8" stroke="#AAAAAA" stroke-width="1.2"/>
+
+  <!-- STATUS BAR -->
+  <rect x="8" y="24" width="374" height="28" fill="#D8D6CF" rx="8"/>
+  <rect x="8" y="40" width="374" height="12" fill="#D8D6CF"/>
+  <text x="28" y="42" font-size="7" fill="#777">9:41</text>
+  <text x="362" y="42" font-size="7" fill="#777" text-anchor="end">●●●</text>
+
+  <!-- NAVBAR — cart badge shows 0 (signed in, empty cart) -->
+  <rect x="8" y="52" width="374" height="52" fill="#DEDAD3" stroke="#C0BEB8" stroke-width="0.6"/>
+  <rect x="22" y="64" width="52" height="16" fill="#C8C6BF" rx="2"/>
+  <text x="48" y="75" font-size="7.5" fill="#666" text-anchor="middle">LOGO</text>
+  <circle cx="298" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <text x="298" y="82" font-size="6" fill="#888" text-anchor="middle">acct</text>
+  <circle cx="324" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <circle cx="332" cy="70" r="5.5" fill="#777"/>
+  <text x="332" y="73.5" font-size="5" fill="#F4F2ED" text-anchor="middle">0</text>
+  <rect x="348" y="71" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="77" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="83" width="18" height="2" fill="#777" rx="1"/>
+  <!-- annotation: cart badge = 0 -->
+  <line x1="332" y1="70" x2="382" y2="56" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="228" y="46" width="154" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="305" y="56" font-size="6.5" fill="#666" text-anchor="middle">Cart badge = 0 — empty session on sign out</text>
+
+  <!-- MAIN CONTENT -->
+  <rect x="8" y="104" width="374" height="740" fill="#E8E6E0" stroke="#C0BEB8" stroke-width="0.6"/>
+
+  <!-- Large top spacing — matches screenshot -->
+  <rect x="8" y="104" width="374" height="200" fill="#E2E0D9"/>
+  <text x="195" y="208" font-size="7.5" fill="#CCC" text-anchor="middle">large top spacing — deliberate, no content here</text>
+  <!-- annotation top spacing -->
+  <line x1="195" y1="200" x2="195" y2="182" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="80" y="166" width="230" height="16" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="195" y="178" font-size="6.5" fill="#666" text-anchor="middle">~200px top padding — brand pacing, not an error</text>
+
+  <!-- Breadcrumb -->
+  <text x="24" y="328" font-size="7.5" fill="#999" letter-spacing="1.5">NOIR / ACCOUNT</text>
+  <!-- annotation breadcrumb -->
+  <line x1="140" y1="324" x2="200" y2="312" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="202" y="304" width="160" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="282" y="314" font-size="6.5" fill="#666" text-anchor="middle">Breadcrumb — NOIR / ACCOUNT</text>
+
+  <!-- Page title: SIGN OUT -->
+  <rect x="24" y="340" width="230" height="52" fill="#C0BDB6" rx="3"/>
+  <text x="139" y="374" font-size="18" fill="#555" text-anchor="middle" font-weight="bold">SIGN OUT</text>
+  <!-- annotation title -->
+  <line x1="254" y1="366" x2="300" y2="352" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="202" y="328" width="170" height="24" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="287" y="338" font-size="6.5" fill="#666" text-anchor="middle">Title — display bold, single line</text>
+  <text x="287" y="348" font-size="6.5" fill="#777" text-anchor="middle">No sub-title or description above CTA</text>
+
+  <!-- Confirmation question -->
+  <text x="24" y="420" font-size="9" fill="#888">Are you sure you want to sign out?</text>
+  <!-- annotation confirmation text -->
+  <line x1="270" y1="416" x2="310" y2="404" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="212" y="396" width="162" height="20" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="293" y="405" font-size="6.5" fill="#666" text-anchor="middle">Confirmation prompt — body light</text>
+  <text x="293" y="413" font-size="6.5" fill="#777" text-anchor="middle">~15px, muted tone</text>
+
+  <!-- SIGN OUT CTA button -->
+  <rect x="24" y="438" width="342" height="50" fill="#C8C5BE" rx="2" stroke="#888" stroke-width="1.2"/>
+  <text x="195" y="468" font-size="10" fill="#444" text-anchor="middle" letter-spacing="3" font-weight="bold">SIGN OUT</text>
+  <!-- annotation CTA -->
+  <line x1="24" y1="463" x2="8" y2="452" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="8" y="432" width="180" height="20" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="98" y="441" font-size="6.5" fill="#444" text-anchor="middle" font-weight="bold">Primary CTA — full-width, light fill</text>
+  <text x="98" y="450" font-size="6.5" fill="#777" text-anchor="middle">Destructive action — no red/warning color</text>
+
+  <!-- Stay in the store link -->
+  <text x="24" y="514" font-size="9" fill="#888">← Stay in the store</text>
+  <line x1="24" y1="517" x2="148" y2="517" stroke="#888" stroke-width="0.4"/>
+  <!-- annotation secondary link -->
+  <line x1="148" y1="514" x2="200" y2="502" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="202" y="494" width="172" height="20" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="288" y="503" font-size="6.5" fill="#444" text-anchor="middle" font-weight="bold">"Stay in the store" — cancel link</text>
+  <text x="288" y="511" font-size="6.5" fill="#777" text-anchor="middle">← arrow prefix, muted, navigates back</text>
+
+  <!-- UX note: 2-action pattern -->
+  <rect x="24" y="540" width="342" height="42" fill="#F4F2ED" rx="3" stroke="#BBBAB3" stroke-width="0.7"/>
+  <text x="195" y="556" font-size="7" fill="#444" text-anchor="middle" font-weight="bold">UX PATTERN — Confirm + Cancel</text>
+  <text x="195" y="568" font-size="6.5" fill="#777" text-anchor="middle">Primary action (confirm sign out) + secondary escape route</text>
+  <text x="195" y="578" font-size="6.5" fill="#777" text-anchor="middle">No modal/dialog — dedicated confirmation page instead</text>
+
+  <!-- Large empty space below — matches screenshot -->
+  <rect x="24" y="596" width="342" height="196" fill="#E2E0D9" rx="2" stroke="#C8C5BE" stroke-width="0.4" stroke-dasharray="4,3"/>
+  <text x="195" y="698" font-size="7.5" fill="#CCC" text-anchor="middle">empty space — no additional content</text>
+
+  <!-- FOOTER partial -->
+  <rect x="8" y="796" width="374" height="72" fill="#D8D6CF" stroke="#BBBAB3" stroke-width="0.6"/>
+  <rect x="22" y="810" width="52" height="16" fill="#C0BDB6" rx="2"/>
+  <text x="48" y="821" font-size="7.5" fill="#666" text-anchor="middle">LOGO</text>
+  <text x="90" y="821" font-size="7.5" fill="#888">Premium menswear. No excess. No noise.</text>
+  <!-- annotation footer visible -->
+  <line x1="195" y1="796" x2="195" y2="780" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="72" y="768" width="246" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="195" y="778" font-size="6.5" fill="#666" text-anchor="middle">Footer visible without scrolling — page content is minimal</text>
+
+  <!-- Chat widget -->
+  <circle cx="358" cy="820" r="16" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="358" y="824" font-size="6.5" fill="#888" text-anchor="middle">chat</text>
+
+  <!-- viewport bottom -->
+  <line x1="8" y1="836" x2="382" y2="836" stroke="#AAAAAA" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <text x="195" y="850" font-size="6.5" fill="#BBB" text-anchor="middle">— bottom of viewport (844px) —</text>
+
+  <!-- bottom label -->
+  <line x1="8" y1="876" x2="382" y2="876" stroke="#CCC" stroke-width="0.4"/>
+  <text x="8" y="888" font-size="8" fill="#AAAAAA">Page M-07 / Mobile — Sign Out</text>
+  <text x="382" y="888" font-size="8" fill="#AAAAAA" text-anchor="end">390×844px viewport</text>
+</svg>

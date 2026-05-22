@@ -117,6 +117,8 @@ The About page extends this metaphor through a typewriter animation that reveals
 
 The palette is built around blacks and warm off-whites, with a single gold accent. Every shade has a specific role in the hierarchy.
 
+![NOIR Colour Palette](docs/noir_colour_palette_readme.svg)
+
 | Variable | Hex | Role |
 |----------|-----|------|
 | `--black` | `#000000` | Page background |

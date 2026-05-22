@@ -1,0 +1,160 @@
+<svg viewBox="0 0 390 1600" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR Mobile / About Page</title>
+  <rect width="390" height="1600" fill="#F4F2ED"/>
+
+  <text x="8" y="14" font-size="8" fill="#888" letter-spacing="1">WIREFRAME — NOIR / MOBILE — ABOUT PAGE</text>
+  <line x1="8" y1="19" x2="382" y2="19" stroke="#CCC" stroke-width="0.4"/>
+
+  <!-- =====================
+       SCREEN BORDER 390x844
+  ===================== -->
+  <rect x="8" y="24" width="374" height="844" fill="#E8E6E0" rx="8" stroke="#AAAAAA" stroke-width="1.2"/>
+
+  <!-- STATUS BAR -->
+  <rect x="8" y="24" width="374" height="28" fill="#D8D6CF" rx="8"/>
+  <rect x="8" y="40" width="374" height="12" fill="#D8D6CF"/>
+  <text x="28" y="42" font-size="7" fill="#777">9:41</text>
+  <text x="362" y="42" font-size="7" fill="#777" text-anchor="end">●●●</text>
+
+  <!-- NAVBAR -->
+  <rect x="8" y="52" width="374" height="52" fill="#DEDAD3" stroke="#C0BEB8" stroke-width="0.6"/>
+  <rect x="22" y="64" width="52" height="16" fill="#C8C6BF" rx="2"/>
+  <text x="48" y="75" font-size="7.5" fill="#666" text-anchor="middle">LOGO</text>
+  <circle cx="298" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <text x="298" y="82" font-size="6" fill="#888" text-anchor="middle">acct</text>
+  <circle cx="324" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <circle cx="332" cy="70" r="5.5" fill="#777"/>
+  <text x="332" y="73.5" font-size="5" fill="#F4F2ED" text-anchor="middle">2</text>
+  <rect x="348" y="71" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="77" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="83" width="18" height="2" fill="#777" rx="1"/>
+
+  <!-- annotation navbar -->
+  <rect x="8" y="108" width="200" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="108" y="118" font-size="6.5" fill="#666" text-anchor="middle">Same mobile nav as all pages</text>
+
+  <!-- TOP SPACING -->
+  <rect x="8" y="104" width="374" height="50" fill="#E2E0D9"/>
+  <text x="195" y="133" font-size="7" fill="#CCC" text-anchor="middle">top spacing — no page title/hero</text>
+
+  <!-- =====================
+       SECTION I — THE ORIGIN
+  ===================== -->
+  <rect x="8" y="154" width="374" height="290" fill="#E8E6E0"/>
+
+  <!-- Vertical bar / index marker -->
+  <rect x="24" y="170" width="2" height="18" fill="#888" rx="1"/>
+  <!-- annotation: index marker -->
+  <line x1="26" y1="179" x2="60" y2="165" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="62" y="157" width="180" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="152" y="167" font-size="6.5" fill="#666" text-anchor="middle">Section index — vertical bar marker</text>
+
+  <!-- Section title -->
+  <rect x="24" y="194" width="200" height="22" fill="#C0BDB6" rx="2"/>
+  <text x="124" y="209" font-size="10" fill="#555" text-anchor="middle" letter-spacing="2">THE ORIGIN</text>
+  <!-- annotation title -->
+  <line x1="224" y1="205" x2="260" y2="192" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="262" y="184" width="110" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="317" y="194" font-size="6.5" fill="#666" text-anchor="middle">Title — caps, ~20px</text>
+
+  <!-- Body text lines -->
+  <rect x="24" y="228" width="342" height="11" fill="#CCCAC3" rx="1"/>
+  <rect x="24" y="246" width="342" height="11" fill="#CCCAC3" rx="1"/>
+  <rect x="24" y="264" width="342" height="11" fill="#CCCAC3" rx="1"/>
+  <rect x="24" y="282" width="260" height="11" fill="#CCCAC3" rx="1"/>
+  <!-- annotation text -->
+  <line x1="366" y1="255" x2="382" y2="244" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="248" y="222" width="134" height="20" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="315" y="231" font-size="6.5" fill="#666" text-anchor="middle">Body text — ~17px</text>
+  <text x="315" y="240" font-size="6.5" fill="#999" text-anchor="middle">light weight, wide line-h</text>
+
+  <!-- Section divider -->
+  <line x1="24" y1="340" x2="366" y2="340" stroke="#C0BDB6" stroke-width="0.6"/>
+  <!-- annotation divider -->
+  <line x1="195" y1="340" x2="195" y2="356" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="100" y="358" width="190" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="195" y="368" font-size="6.5" fill="#666" text-anchor="middle">Thin divider between sections</text>
+
+  <!-- =====================
+       SECTION II — THE VISION
+  ===================== -->
+  <rect x="8" y="384" width="374" height="290" fill="#E8E6E0"/>
+
+  <!-- Two vertical bars -->
+  <rect x="24" y="398" width="2" height="18" fill="#888" rx="1"/>
+  <rect x="30" y="398" width="2" height="18" fill="#888" rx="1"/>
+
+  <rect x="24" y="422" width="200" height="22" fill="#C0BDB6" rx="2"/>
+  <text x="124" y="437" font-size="10" fill="#555" text-anchor="middle" letter-spacing="2">THE VISION</text>
+
+  <rect x="24" y="456" width="342" height="11" fill="#CCCAC3" rx="1"/>
+  <rect x="24" y="474" width="342" height="11" fill="#CCCAC3" rx="1"/>
+  <rect x="24" y="492" width="342" height="11" fill="#CCCAC3" rx="1"/>
+  <rect x="24" y="510" width="342" height="11" fill="#CCCAC3" rx="1"/>
+  <rect x="24" y="528" width="200" height="11" fill="#CCCAC3" rx="1"/>
+
+  <!-- annotation: 2 bars = slide 2 -->
+  <line x1="32" y1="407" x2="60" y2="394" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="62" y="386" width="170" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="147" y="396" font-size="6.5" fill="#666" text-anchor="middle">II bars = slide 2 of 4</text>
+
+  <line x1="24" y1="568" x2="366" y2="568" stroke="#C0BDB6" stroke-width="0.6"/>
+
+  <!-- =====================
+       SECTION III — THE PRODUCT
+  ===================== -->
+  <rect x="8" y="612" width="374" height="256" fill="#E8E6E0"/>
+
+  <!-- Three vertical bars -->
+  <rect x="24" y="626" width="2" height="18" fill="#888" rx="1"/>
+  <rect x="30" y="626" width="2" height="18" fill="#888" rx="1"/>
+  <rect x="36" y="626" width="2" height="18" fill="#888" rx="1"/>
+
+  <rect x="24" y="650" width="210" height="22" fill="#C0BDB6" rx="2"/>
+  <text x="129" y="665" font-size="10" fill="#555" text-anchor="middle" letter-spacing="2">THE PRODUCT</text>
+
+  <rect x="24" y="684" width="342" height="11" fill="#CCCAC3" rx="1"/>
+  <rect x="24" y="702" width="342" height="11" fill="#CCCAC3" rx="1"/>
+  <rect x="24" y="720" width="342" height="11" fill="#CCCAC3" rx="1"/>
+  <rect x="24" y="738" width="260" height="11" fill="#CCCAC3" rx="1"/>
+
+  <!-- annotation: 3 bars = slide 3 -->
+  <line x1="38" y1="635" x2="64" y2="622" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="66" y="614" width="170" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="151" y="624" font-size="6.5" fill="#666" text-anchor="middle">III bars = slide 3 of 4</text>
+
+  <!-- bottom of viewport line -->
+  <line x1="8" y1="836" x2="382" y2="836" stroke="#AAAAAA" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <text x="195" y="850" font-size="6.5" fill="#BBB" text-anchor="middle">— bottom of viewport (844px) —</text>
+
+  <!-- Chat widget (fixed) -->
+  <circle cx="358" cy="800" r="16" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="358" y="804" font-size="6.5" fill="#888" text-anchor="middle">chat</text>
+  <!-- annotation fixed -->
+  <rect x="232" y="788" width="118" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="291" y="798" font-size="6.5" fill="#666" text-anchor="middle">Fixed chat — bottom right</text>
+
+  <!-- SECTION IV hint (below fold) -->
+  <rect x="8" y="868" width="374" height="280" fill="#E0DDD6" rx="0" stroke="#C0BEB8" stroke-width="0.4" stroke-dasharray="4,3"/>
+  <rect x="24" y="886" width="2" height="18" fill="#BBBBBB" rx="1"/>
+  <rect x="30" y="886" width="2" height="18" fill="#BBBBBB" rx="1"/>
+  <rect x="36" y="886" width="2" height="18" fill="#BBBBBB" rx="1"/>
+  <rect x="42" y="886" width="2" height="18" fill="#BBBBBB" rx="1"/>
+  <rect x="24" y="910" width="180" height="20" fill="#C8C5BE" rx="2" opacity="0.7"/>
+  <text x="114" y="924" font-size="9" fill="#AAA" text-anchor="middle" letter-spacing="2">THE PEOPLE</text>
+  <rect x="24" y="942" width="342" height="10" fill="#CCCAC3" rx="1" opacity="0.6"/>
+  <rect x="24" y="958" width="300" height="10" fill="#CCCAC3" rx="1" opacity="0.6"/>
+  <text x="195" y="1000" font-size="7" fill="#BBBBBB" text-anchor="middle">Section IV — below fold on scroll ↓</text>
+
+  <!-- layout annotation overall -->
+  <rect x="8" y="1160" width="374" height="64" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="195" y="1178" font-size="7.5" fill="#555" text-anchor="middle" font-weight="bold">LAYOUT NOTES</text>
+  <text x="195" y="1194" font-size="7" fill="#777" text-anchor="middle">• Each section = full scroll segment (not slide snapping on mobile)</text>
+  <text x="195" y="1208" font-size="7" fill="#777" text-anchor="middle">• Vertical bar count = section index (I, II, III, IV)</text>
+  <text x="195" y="1220" font-size="7" fill="#777" text-anchor="middle">• No SOUND OFF toggle — audio control desktop only</text>
+
+  <!-- bottom label -->
+  <line x1="8" y1="1256" x2="382" y2="1256" stroke="#CCC" stroke-width="0.4"/>
+  <text x="8" y="1268" font-size="8" fill="#AAAAAA">Page M-02 / Mobile — About Page</text>
+  <text x="382" y="1268" font-size="8" fill="#AAAAAA" text-anchor="end">390×844px viewport</text>
+</svg>

@@ -1,0 +1,175 @@
+<svg viewBox="0 0 390 1420" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR Mobile / Checkout Page</title>
+  <rect width="390" height="1420" fill="#F4F2ED"/>
+
+  <text x="8" y="14" font-size="8" fill="#888" letter-spacing="1">WIREFRAME — NOIR / MOBILE — CHECKOUT PAGE</text>
+  <line x1="8" y1="19" x2="382" y2="19" stroke="#CCC" stroke-width="0.4"/>
+
+  <!-- SCREEN BORDER 390x844 -->
+  <rect x="8" y="24" width="374" height="844" fill="#E8E6E0" rx="8" stroke="#AAAAAA" stroke-width="1.2"/>
+
+  <!-- STATUS BAR -->
+  <rect x="8" y="24" width="374" height="28" fill="#D8D6CF" rx="8"/>
+  <rect x="8" y="40" width="374" height="12" fill="#D8D6CF"/>
+  <text x="28" y="42" font-size="7" fill="#777">9:41</text>
+  <text x="362" y="42" font-size="7" fill="#777" text-anchor="end">●●●</text>
+
+  <!-- NAVBAR -->
+  <rect x="8" y="52" width="374" height="52" fill="#DEDAD3" stroke="#C0BEB8" stroke-width="0.6"/>
+  <rect x="22" y="64" width="52" height="16" fill="#C8C6BF" rx="2"/>
+  <text x="48" y="75" font-size="7.5" fill="#666" text-anchor="middle">LOGO</text>
+  <circle cx="298" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <text x="298" y="82" font-size="6" fill="#888" text-anchor="middle">acct</text>
+  <circle cx="324" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <circle cx="332" cy="70" r="5.5" fill="#777"/>
+  <text x="332" y="73.5" font-size="5" fill="#F4F2ED" text-anchor="middle">2</text>
+  <rect x="348" y="71" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="77" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="83" width="18" height="2" fill="#777" rx="1"/>
+
+  <!-- =====================
+       DELIVERY INFORMATION
+  ===================== -->
+  <rect x="8" y="104" width="374" height="580" fill="#E8E6E0" stroke="#C0BEB8" stroke-width="0.6"/>
+
+  <text x="24" y="132" font-size="8.5" fill="#666" font-weight="bold" letter-spacing="2">DELIVERY INFORMATION</text>
+  <line x1="24" y1="140" x2="366" y2="140" stroke="#C0BDB6" stroke-width="0.5"/>
+
+  <!-- annotation: section title -->
+  <line x1="260" y1="132" x2="310" y2="118" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="212" y="106" width="162" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="293" y="116" font-size="6.5" fill="#666" text-anchor="middle">Section label — caps, bold, letter-spaced</text>
+
+  <!-- Field helper function — all underline style -->
+  <!-- Email pre-filled 1 -->
+  <rect x="24" y="152" width="342" height="30" fill="#D0CEC8" rx="2" stroke="#AAAAAA" stroke-width="0.5"/>
+  <text x="38" y="171" font-size="8.5" fill="#777">user@email.com</text>
+  <line x1="24" y1="182" x2="366" y2="182" stroke="#999" stroke-width="0.7"/>
+  <!-- annotation pre-filled -->
+  <line x1="366" y1="167" x2="382" y2="155" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="228" y="143" width="154" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="305" y="153" font-size="6.5" fill="#666" text-anchor="middle">Pre-filled from account — muted</text>
+
+  <!-- Email pre-filled 2 -->
+  <rect x="24" y="196" width="342" height="30" fill="#D0CEC8" rx="2" stroke="#AAAAAA" stroke-width="0.5"/>
+  <text x="38" y="215" font-size="8.5" fill="#777">user@email.com</text>
+  <line x1="24" y1="226" x2="366" y2="226" stroke="#999" stroke-width="0.7"/>
+
+  <!-- Phone Number * -->
+  <rect x="24" y="240" width="342" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.5"/>
+  <text x="38" y="259" font-size="8.5" fill="#AAA">Phone Number *</text>
+  <line x1="24" y1="270" x2="366" y2="270" stroke="#AAAAAA" stroke-width="0.7"/>
+
+  <!-- Street Address 1 * -->
+  <rect x="24" y="284" width="342" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.5"/>
+  <text x="38" y="303" font-size="8.5" fill="#AAA">Street Address 1 *</text>
+  <line x1="24" y1="314" x2="366" y2="314" stroke="#AAAAAA" stroke-width="0.7"/>
+
+  <!-- Street Address 2 -->
+  <rect x="24" y="328" width="342" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.5"/>
+  <text x="38" y="347" font-size="8.5" fill="#AAA">Street Address 2</text>
+  <line x1="24" y1="358" x2="366" y2="358" stroke="#AAAAAA" stroke-width="0.7"/>
+
+  <!-- Town or City * -->
+  <rect x="24" y="372" width="342" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.5"/>
+  <text x="38" y="391" font-size="8.5" fill="#AAA">Town or City *</text>
+  <line x1="24" y1="402" x2="366" y2="402" stroke="#AAAAAA" stroke-width="0.7"/>
+
+  <!-- Postcode -->
+  <rect x="24" y="416" width="342" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.5"/>
+  <text x="38" y="435" font-size="8.5" fill="#AAA">Postcode</text>
+  <line x1="24" y1="446" x2="366" y2="446" stroke="#AAAAAA" stroke-width="0.7"/>
+
+  <!-- Country * -->
+  <rect x="24" y="460" width="342" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.5"/>
+  <text x="38" y="479" font-size="8.5" fill="#AAA">Country *</text>
+  <line x1="24" y1="490" x2="366" y2="490" stroke="#AAAAAA" stroke-width="0.7"/>
+
+  <!-- County / State -->
+  <rect x="24" y="504" width="342" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.5"/>
+  <text x="38" y="523" font-size="8.5" fill="#AAA">County / State</text>
+  <line x1="24" y1="534" x2="366" y2="534" stroke="#AAAAAA" stroke-width="0.7"/>
+
+  <!-- annotation: all fields underline style -->
+  <line x1="24" y1="390" x2="8" y2="402" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="8" y="548" width="200" height="28" fill="#F4F2ED" rx="3" stroke="#CCC" stroke-width="0.6"/>
+  <text x="108" y="560" font-size="6.5" fill="#444" text-anchor="middle" font-weight="bold">All inputs — underline style only</text>
+  <text x="108" y="570" font-size="6.5" fill="#777" text-anchor="middle">No border on sides or top · * = required</text>
+  <text x="108" y="578" font-size="6.5" fill="#777" text-anchor="middle">Full width on mobile (no 2-col rows)</text>
+  <line x1="108" y1="548" x2="108" y2="534" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+
+  <!-- =====================
+       PAYMENT SECTION
+  ===================== -->
+  <rect x="8" y="580" width="374" height="148" fill="#E2E0D9" stroke="#C0BEB8" stroke-width="0.6"/>
+
+  <text x="24" y="606" font-size="8.5" fill="#666" font-weight="bold" letter-spacing="2">PAYMENT</text>
+  <line x1="24" y1="614" x2="366" y2="614" stroke="#C0BDB6" stroke-width="0.5"/>
+
+  <!-- Card number field -->
+  <rect x="24" y="624" width="342" height="36" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.7"/>
+  <!-- card icon -->
+  <rect x="34" y="634" width="26" height="16" fill="#C0BDB6" rx="2"/>
+  <text x="47" y="645" font-size="6" fill="#777" text-anchor="middle">CARD</text>
+  <text x="80" y="645" font-size="8.5" fill="#AAA">Card number</text>
+  <!-- Autofill badge -->
+  <rect x="248" y="632" width="108" height="20" fill="#5A8A52" rx="10"/>
+  <text x="302" y="646" font-size="7.5" fill="#FFF" text-anchor="middle" font-weight="bold">Autofill  link</text>
+  <line x1="248" y1="642" x2="220" y2="630" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="44" y="618" width="174" height="20" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="131" y="628" font-size="6.5" fill="#666" text-anchor="middle">Autofill badge — browser native · green pill</text>
+  <line x1="24" y1="660" x2="366" y2="660" stroke="#AAAAAA" stroke-width="0.7"/>
+
+  <!-- Expiry + CVC — full width on mobile (stacked) -->
+  <rect x="24" y="674" width="162" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.5"/>
+  <text x="38" y="693" font-size="8" fill="#AAA">Expiry (MM/YY)</text>
+  <line x1="24" y1="704" x2="186" y2="704" stroke="#AAAAAA" stroke-width="0.7"/>
+
+  <rect x="196" y="674" width="170" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.5"/>
+  <text x="210" y="693" font-size="8" fill="#AAA">CVC</text>
+  <line x1="196" y1="704" x2="366" y2="704" stroke="#AAAAAA" stroke-width="0.7"/>
+
+  <!-- annotation expiry+cvc -->
+  <line x1="186" y1="689" x2="186" y2="720" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="80" y="722" width="220" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="190" y="732" font-size="6.5" fill="#666" text-anchor="middle">Expiry + CVC side-by-side in same row on mobile</text>
+
+  <!-- =====================
+       COMPLETE ORDER CTA — sticky bottom
+  ===================== -->
+  <rect x="8" y="746" width="374" height="60" fill="#C8C5BE" rx="0" stroke="#888" stroke-width="1.2"/>
+  <rect x="8" y="746" width="374" height="60" fill="#C8C5BE" rx="0"/>
+  <!-- rounded bottom corners only -->
+  <rect x="8" y="746" width="374" height="8" fill="#C8C5BE"/>
+  <text x="195" y="783" font-size="9.5" fill="#444" text-anchor="middle" letter-spacing="3" font-weight="bold">COMPLETE ORDER</text>
+
+  <!-- annotation CTA sticky -->
+  <line x1="195" y1="746" x2="195" y2="734" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="80" y="720" width="230" height="0" fill="none"/>
+  <rect x="60" y="706" width="270" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="195" y="716" font-size="6.5" fill="#444" text-anchor="middle" font-weight="bold">COMPLETE ORDER — sticky footer CTA, full-width</text>
+
+  <!-- Chat widget -->
+  <circle cx="358" cy="792" r="16" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="358" y="796" font-size="6.5" fill="#888" text-anchor="middle">chat</text>
+
+  <!-- viewport bottom -->
+  <line x1="8" y1="836" x2="382" y2="836" stroke="#AAAAAA" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <text x="195" y="850" font-size="6.5" fill="#BBB" text-anchor="middle">— bottom of viewport (844px) —</text>
+
+  <!-- =====================
+       LAYOUT COMPARISON NOTE
+  ===================== -->
+  <rect x="8" y="878" width="374" height="90" fill="#F4F2ED" rx="4" stroke="#BBBAB3" stroke-width="0.8"/>
+  <text x="195" y="896" font-size="7.5" fill="#444" text-anchor="middle" font-weight="bold">MOBILE vs DESKTOP LAYOUT DIFFERENCE</text>
+  <line x1="24" y1="902" x2="366" y2="902" stroke="#CCC" stroke-width="0.4"/>
+  <text x="195" y="916" font-size="6.5" fill="#666" text-anchor="middle">Desktop: delivery form left col (~72%) + sticky order summary right col (~28%)</text>
+  <text x="195" y="928" font-size="6.5" fill="#666" text-anchor="middle">Mobile: single full-width column — order summary removed from view</text>
+  <text x="195" y="940" font-size="6.5" fill="#777" text-anchor="middle">CTA "COMPLETE ORDER" replaces "PROCEED TO CHECKOUT" — sticky at bottom of screen</text>
+  <text x="195" y="952" font-size="6.5" fill="#777" text-anchor="middle">No 2-col rows for fields — all inputs stack full-width vertically</text>
+
+  <!-- bottom label -->
+  <line x1="8" y1="978" x2="382" y2="978" stroke="#CCC" stroke-width="0.4"/>
+  <text x="8" y="990" font-size="8" fill="#AAAAAA">Page M-05 / Mobile — Checkout Page</text>
+  <text x="382" y="990" font-size="8" fill="#AAAAAA" text-anchor="end">390×844px viewport</text>
+</svg>

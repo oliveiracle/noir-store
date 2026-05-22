@@ -1,0 +1,151 @@
+<svg viewBox="0 0 390 1600" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR Mobile / Shop All Products</title>
+  <rect width="390" height="1600" fill="#F4F2ED"/>
+
+  <!-- Top label -->
+  <text x="8" y="14" font-size="8" fill="#888" letter-spacing="1">WIREFRAME — NOIR / MOBILE — SHOP ALL PRODUCTS</text>
+  <line x1="8" y1="19" x2="382" y2="19" stroke="#CCC" stroke-width="0.4"/>
+
+  <!-- =====================
+       SCREEN 1 — viewport 390x844
+  ===================== -->
+  <!-- Screen border -->
+  <rect x="8" y="24" width="374" height="844" fill="#E8E6E0" rx="8" stroke="#AAAAAA" stroke-width="1.2"/>
+
+  <!-- STATUS BAR -->
+  <rect x="8" y="24" width="374" height="28" fill="#D8D6CF" rx="8"/>
+  <rect x="8" y="40" width="374" height="12" fill="#D8D6CF" rx="0"/>
+  <text x="28" y="42" font-size="7" fill="#777">9:41</text>
+  <text x="362" y="42" font-size="7" fill="#777" text-anchor="end">●●●</text>
+
+  <!-- NAVBAR -->
+  <rect x="8" y="52" width="374" height="52" fill="#DEDAD3" stroke="#C0BEB8" stroke-width="0.6"/>
+  <rect x="22" y="64" width="52" height="16" fill="#C8C6BF" rx="2"/>
+  <text x="48" y="75" font-size="7.5" fill="#666" text-anchor="middle">LOGO</text>
+  <!-- account icon -->
+  <circle cx="298" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <text x="298" y="82" font-size="6.5" fill="#888" text-anchor="middle">acct</text>
+  <!-- cart icon + badge -->
+  <circle cx="324" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <circle cx="332" cy="70" r="5.5" fill="#777"/>
+  <text x="332" y="73.5" font-size="5" fill="#F4F2ED" text-anchor="middle">2</text>
+  <!-- hamburger -->
+  <rect x="348" y="71" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="77" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="83" width="18" height="2" fill="#777" rx="1"/>
+  <!-- annotation hamburger -->
+  <line x1="370" y1="77" x2="382" y2="68" stroke="#AAAAAA" stroke-width="0.8" stroke-dasharray="2,2"/>
+  <rect x="276" y="24" width="106" height="14" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="329" y="34" font-size="6.5" fill="#666" text-anchor="middle">logo | acct | cart | ☰</text>
+
+  <!-- HERO HEADER -->
+  <rect x="8" y="104" width="374" height="152" fill="#E2E0D9" stroke="#C0BEB8" stroke-width="0.6"/>
+  <text x="24" y="128" font-size="7.5" fill="#999" letter-spacing="2.5">SEASON 2026</text>
+  <!-- big title -->
+  <rect x="24" y="136" width="220" height="48" fill="#C0BDB6" rx="2"/>
+  <text x="134" y="154" font-size="11" fill="#666" text-anchor="middle" font-weight="bold">ALL</text>
+  <text x="134" y="175" font-size="11" fill="#666" text-anchor="middle" font-weight="bold">PRODUCTS</text>
+  <!-- item count -->
+  <text x="312" y="158" font-size="20" fill="#999" text-anchor="middle">34</text>
+  <text x="312" y="174" font-size="7" fill="#AAA" text-anchor="middle" letter-spacing="1.5">ITEMS</text>
+  <!-- divider -->
+  <line x1="24" y1="224" x2="366" y2="224" stroke="#C0BDB6" stroke-width="0.5"/>
+  <!-- annotation title -->
+  <line x1="244" y1="160" x2="270" y2="148" stroke="#AAAAAA" stroke-width="0.8" stroke-dasharray="2,2"/>
+  <rect x="200" y="104" width="174" height="13" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="287" y="114" font-size="6.5" fill="#666" text-anchor="middle">Title wraps 2 lines on mobile</text>
+
+  <!-- SHOP BY FILTERS -->
+  <rect x="8" y="256" width="374" height="108" fill="#E0DDD6" stroke="#C0BEB8" stroke-width="0.6"/>
+  <text x="24" y="276" font-size="7.5" fill="#999" letter-spacing="2">SHOP BY</text>
+  <line x1="24" y1="282" x2="366" y2="282" stroke="#BBBAB3" stroke-width="0.4"/>
+  <!-- row 1 pills -->
+  <rect x="24" y="290" width="28" height="20" fill="#777" rx="11"/>
+  <text x="38" y="304" font-size="7" fill="#F4F2ED" text-anchor="middle">ALL</text>
+  <rect x="58" y="290" width="56" height="20" fill="none" rx="10" stroke="#888" stroke-width="0.8"/>
+  <text x="86" y="304" font-size="7" fill="#777" text-anchor="middle">JACKETS</text>
+  <rect x="120" y="290" width="65" height="20" fill="none" rx="10" stroke="#888" stroke-width="0.8"/>
+  <text x="152" y="304" font-size="7" fill="#777" text-anchor="middle">TROUSERS</text>
+  <rect x="191" y="290" width="49" height="20" fill="none" rx="10" stroke="#888" stroke-width="0.8"/>
+  <text x="215" y="304" font-size="7" fill="#777" text-anchor="middle">SHIRTS</text>
+  <!-- row 2 pills -->
+  <rect x="24" y="318" width="59" height="20" fill="none" rx="10" stroke="#888" stroke-width="0.8"/>
+  <text x="53" y="332" font-size="7" fill="#777" text-anchor="middle">T-SHIRTS</text>
+  <rect x="89" y="318" width="84" height="20" fill="none" rx="10" stroke="#888" stroke-width="0.8"/>
+  <text x="131" y="332" font-size="7" fill="#777" text-anchor="middle">ACCESSORIES</text>
+  <!-- annotation pills -->
+  <line x1="38" y1="310" x2="8" y2="340" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="0" y="340" width="0" height="0"/>
+  <rect x="8" y="342" width="220" height="13" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="118" y="352" font-size="6.5" fill="#666" text-anchor="middle">Active pill = solid dark | inactive = outlined</text>
+
+  <!-- CATEGORY ROW -->
+  <rect x="8" y="368" width="374" height="36" fill="#DEDAD3" stroke="#C0BEB8" stroke-width="0.6"/>
+  <text x="24" y="391" font-size="7.5" fill="#999">01</text>
+  <text x="44" y="391" font-size="12" fill="#444" font-weight="bold">JACKETS</text>
+  <text x="348" y="391" font-size="7.5" fill="#888" text-anchor="end" letter-spacing="0.5">SEE ALL →</text>
+  <!-- annotation -->
+  <line x1="270" y1="386" x2="270" y2="364" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="180" y="352" width="182" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="271" y="362" font-size="6.5" fill="#666" text-anchor="middle">index · category name · SEE ALL →</text>
+
+  <!-- PRODUCT GRID ROW 1 -->
+  <!-- Card 1 -->
+  <rect x="8" y="408" width="185" height="260" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <line x1="8" y1="408" x2="193" y2="668" stroke="#BBB" stroke-width="0.4"/>
+  <line x1="193" y1="408" x2="8" y2="668" stroke="#BBB" stroke-width="0.4"/>
+  <rect x="18" y="418" width="32" height="16" fill="#F4F2ED" rx="1" stroke="#AAAAAA" stroke-width="0.7"/>
+  <text x="34" y="429" font-size="6.5" fill="#555" text-anchor="middle">NEW</text>
+  <text x="100" y="542" font-size="7.5" fill="#888" text-anchor="middle">PRODUCT IMAGE</text>
+  <!-- info below -->
+  <text x="8" y="682" font-size="8.5" fill="#444" font-weight="bold">MIDNIGHT LEATHER</text>
+  <text x="8" y="696" font-size="8.5" fill="#444" font-weight="bold">JACKET</text>
+  <text x="8" y="712" font-size="8" fill="#777">€349.99</text>
+
+  <!-- Card 2 -->
+  <rect x="197" y="408" width="185" height="260" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <line x1="197" y1="408" x2="382" y2="668" stroke="#BBB" stroke-width="0.4"/>
+  <line x1="382" y1="408" x2="197" y2="668" stroke="#BBB" stroke-width="0.4"/>
+  <text x="289" y="542" font-size="7.5" fill="#888" text-anchor="middle">PRODUCT IMAGE</text>
+  <!-- info below -->
+  <text x="197" y="682" font-size="8.5" fill="#444" font-weight="bold">SLIM WOOL OVERCOAT</text>
+  <text x="197" y="698" font-size="8" fill="#777">€289.99</text>
+
+  <!-- annotation: 2-col grid -->
+  <line x1="100" y1="668" x2="100" y2="730" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="8" y="732" width="280" height="13" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="148" y="742" font-size="6.5" fill="#666" text-anchor="middle">2-col grid: image | name bold | price — stacked vertically</text>
+
+  <!-- PRODUCT GRID ROW 2 — partially cut off (scroll) -->
+  <rect x="8" y="752" width="185" height="116" fill="#BDB9B2" rx="2" stroke="#AAAAAA" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <rect x="18" y="762" width="32" height="16" fill="#F4F2ED" rx="1" stroke="#AAA" stroke-width="0.7"/>
+  <text x="34" y="773" font-size="6.5" fill="#555" text-anchor="middle">NEW</text>
+  <text x="100" y="816" font-size="7" fill="#AAA" text-anchor="middle">IMAGE</text>
+
+  <rect x="197" y="752" width="185" height="116" fill="#BDB9B2" rx="2" stroke="#AAAAAA" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <rect x="207" y="762" width="32" height="16" fill="#F4F2ED" rx="1" stroke="#AAA" stroke-width="0.7"/>
+  <text x="223" y="773" font-size="6.5" fill="#555" text-anchor="middle">NEW</text>
+  <text x="289" y="816" font-size="7" fill="#AAA" text-anchor="middle">IMAGE</text>
+
+  <!-- scroll hint -->
+  <text x="195" y="886" font-size="7" fill="#BBBBBB" text-anchor="middle">↓  content continues on scroll</text>
+
+  <!-- Screen bottom edge -->
+  <line x1="8" y1="868" x2="382" y2="868" stroke="#AAAAAA" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <text x="195" y="882" font-size="6.5" fill="#BBB" text-anchor="middle">— bottom of viewport (844px) —</text>
+
+  <!-- Chat widget (fixed) -->
+  <circle cx="358" cy="826" r="16" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="358" y="830" font-size="6.5" fill="#888" text-anchor="middle">chat</text>
+  <!-- annotation chat fixed -->
+  <line x1="358" y1="810" x2="358" y2="796" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="270" y="782" width="116" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="328" y="792" font-size="6.5" fill="#666" text-anchor="middle">Fixed chat widget</text>
+
+  <!-- =====================
+       BOTTOM LABEL
+  ===================== -->
+  <line x1="8" y1="900" x2="382" y2="900" stroke="#CCC" stroke-width="0.4"/>
+  <text x="8" y="912" font-size="8" fill="#AAAAAA">Page M-01 / Mobile — Shop All Products</text>
+  <text x="382" y="912" font-size="8" fill="#AAAAAA" text-anchor="end">390×844px viewport</text>
+</svg>

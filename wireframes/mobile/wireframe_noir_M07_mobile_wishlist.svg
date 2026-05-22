@@ -1,0 +1,151 @@
+<svg viewBox="0 0 390 1300" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR Mobile / Order History + Wishlist</title>
+  <rect width="390" height="1300" fill="#F4F2ED"/>
+
+  <text x="8" y="14" font-size="8" fill="#888" letter-spacing="1">WIREFRAME — NOIR / MOBILE — ORDER HISTORY + MY WISHLIST</text>
+  <line x1="8" y1="19" x2="382" y2="19" stroke="#CCC" stroke-width="0.4"/>
+
+  <!-- SCREEN BORDER 390x844 -->
+  <rect x="8" y="24" width="374" height="844" fill="#E8E6E0" rx="8" stroke="#AAAAAA" stroke-width="1.2"/>
+
+  <!-- STATUS BAR -->
+  <rect x="8" y="24" width="374" height="28" fill="#D8D6CF" rx="8"/>
+  <rect x="8" y="40" width="374" height="12" fill="#D8D6CF"/>
+  <text x="28" y="42" font-size="7" fill="#777">9:41</text>
+  <text x="362" y="42" font-size="7" fill="#777" text-anchor="end">●●●</text>
+
+  <!-- NAVBAR -->
+  <rect x="8" y="52" width="374" height="52" fill="#DEDAD3" stroke="#C0BEB8" stroke-width="0.6"/>
+  <rect x="22" y="64" width="52" height="16" fill="#C8C6BF" rx="2"/>
+  <text x="48" y="75" font-size="7.5" fill="#666" text-anchor="middle">LOGO</text>
+  <circle cx="298" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <text x="298" y="82" font-size="6" fill="#888" text-anchor="middle">acct</text>
+  <circle cx="324" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <circle cx="332" cy="70" r="5.5" fill="#777"/>
+  <text x="332" y="73.5" font-size="5" fill="#F4F2ED" text-anchor="middle">2</text>
+  <rect x="348" y="71" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="77" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="83" width="18" height="2" fill="#777" rx="1"/>
+
+  <!-- top spacing -->
+  <rect x="8" y="104" width="374" height="50" fill="#E2E0D9"/>
+  <text x="195" y="133" font-size="7" fill="#CCC" text-anchor="middle">top spacing</text>
+
+  <!-- =====================
+       ORDER HISTORY SECTION
+  ===================== -->
+  <rect x="8" y="154" width="374" height="270" fill="#E8E6E0" stroke="#C0BEB8" stroke-width="0.6"/>
+
+  <text x="24" y="180" font-size="8.5" fill="#666" font-weight="bold" letter-spacing="2">ORDER HISTORY</text>
+  <line x1="24" y1="188" x2="366" y2="188" stroke="#C0BDB6" stroke-width="0.5"/>
+  <!-- annotation section label -->
+  <line x1="200" y1="180" x2="240" y2="166" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="242" y="158" width="130" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="307" y="168" font-size="6.5" fill="#666" text-anchor="middle">Section label — caps, letter-spaced</text>
+
+  <!-- Order row -->
+  <rect x="24" y="206" width="342" height="80" fill="#D8D6CF" rx="3" stroke="#C0BDB6" stroke-width="0.6"/>
+
+  <!-- Order ID (truncated) -->
+  <text x="38" y="228" font-size="9" fill="#555" font-weight="bold">8F9A07652218...</text>
+  <!-- annotation order ID -->
+  <line x1="160" y1="224" x2="200" y2="210" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="202" y="202" width="160" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="282" y="212" font-size="6.5" fill="#666" text-anchor="middle">Order ID — UUID truncated with "..."</text>
+
+  <!-- Order total right-aligned -->
+  <text x="356" y="228" font-size="9" fill="#555" text-anchor="end" font-weight="bold">€0.00</text>
+  <!-- annotation total -->
+  <line x1="356" y1="224" x2="382" y2="212" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="226" y="188" width="156" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="304" y="198" font-size="6.5" fill="#666" text-anchor="middle">Order total — right-aligned on same row</text>
+
+  <!-- Date -->
+  <text x="38" y="248" font-size="8" fill="#888">22 May 2026</text>
+  <!-- annotation date -->
+  <line x1="110" y1="244" x2="150" y2="232" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+
+  <!-- Items line -->
+  <text x="38" y="270" font-size="8" fill="#999">Ivory Field Coat × 1</text>
+  <!-- annotation items -->
+  <line x1="38" y1="266" x2="8" y2="280" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="8" y="282" width="200" height="20" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="108" y="291" font-size="6.5" fill="#444" text-anchor="middle" font-weight="bold">Item summary — product name × qty</text>
+  <text x="108" y="300" font-size="6.5" fill="#777" text-anchor="middle">Inline below date inside order card</text>
+
+  <!-- divider between orders -->
+  <line x1="24" y1="306" x2="366" y2="306" stroke="#C0BDB6" stroke-width="0.5"/>
+  <text x="195" y="360" font-size="7" fill="#CCC" text-anchor="middle">empty space — only 1 order in history</text>
+  <text x="195" y="374" font-size="7" fill="#CCC" text-anchor="middle">additional orders would stack below</text>
+
+  <!-- section separator -->
+  <line x1="24" y1="410" x2="366" y2="410" stroke="#BBBAB3" stroke-width="0.8"/>
+
+  <!-- =====================
+       MY WISHLIST SECTION
+  ===================== -->
+  <rect x="8" y="424" width="374" height="444" fill="#E8E6E0" stroke="#C0BEB8" stroke-width="0.6"/>
+
+  <text x="24" y="452" font-size="8.5" fill="#666" font-weight="bold" letter-spacing="2">MY WISHLIST</text>
+  <line x1="24" y1="460" x2="366" y2="460" stroke="#C0BDB6" stroke-width="0.5"/>
+  <!-- annotation -->
+  <line x1="180" y1="452" x2="220" y2="438" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="222" y="430" width="150" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="297" y="440" font-size="6.5" fill="#666" text-anchor="middle">Section label — same style as Order History</text>
+
+  <!-- Wishlist product card — left aligned, ~half width -->
+  <rect x="24" y="474" width="176" height="234" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.7"/>
+  <line x1="24" y1="474" x2="200" y2="708" stroke="#BBB" stroke-width="0.4"/>
+  <line x1="200" y1="474" x2="24" y2="708" stroke="#BBB" stroke-width="0.4"/>
+  <text x="112" y="594" font-size="7.5" fill="#888" text-anchor="middle">PRODUCT</text>
+  <text x="112" y="606" font-size="7.5" fill="#888" text-anchor="middle">IMAGE</text>
+
+  <!-- annotation: card width ~half screen -->
+  <line x1="200" y1="590" x2="240" y2="578" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="242" y="570" width="130" height="20" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="307" y="579" font-size="6.5" fill="#666" text-anchor="middle">Card ~45% screen width —</text>
+  <text x="307" y="588" font-size="6.5" fill="#777" text-anchor="middle">not full-width like cart items</text>
+
+  <!-- Product info below card -->
+  <text x="24" y="724" font-size="9" fill="#444" font-weight="bold">TAILORED SLIM</text>
+  <text x="24" y="738" font-size="9" fill="#444" font-weight="bold">TROUSERS</text>
+  <text x="24" y="754" font-size="8.5" fill="#777">€119.99</text>
+
+  <!-- annotation: name wraps 2 lines -->
+  <line x1="120" y1="730" x2="160" y2="718" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="162" y="710" width="200" height="20" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="262" y="719" font-size="6.5" fill="#666" text-anchor="middle">Product name wraps 2 lines on mobile</text>
+  <text x="262" y="728" font-size="6.5" fill="#777" text-anchor="middle">bold · price below in muted tone</text>
+
+  <!-- Empty right half of wishlist grid (space for 2nd item) -->
+  <rect x="208" y="474" width="158" height="234" fill="#D8D6CF" rx="2" stroke="#C0BDB6" stroke-width="0.5" stroke-dasharray="4,3"/>
+  <text x="287" y="594" font-size="7" fill="#BBB" text-anchor="middle">empty slot</text>
+  <text x="287" y="606" font-size="7" fill="#BBB" text-anchor="middle">more items →</text>
+  <!-- annotation empty slot -->
+  <line x1="287" y1="474" x2="287" y2="458" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="214" y="444" width="146" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="287" y="454" font-size="6.5" fill="#666" text-anchor="middle">2-col grid — empty slots shown dashed</text>
+
+  <!-- FOOTER (partially visible) -->
+  <rect x="8" y="796" width="374" height="72" fill="#D8D6CF" stroke="#BBBAB3" stroke-width="0.5"/>
+  <rect x="22" y="810" width="52" height="16" fill="#C0BDB6" rx="2"/>
+  <text x="48" y="821" font-size="7.5" fill="#666" text-anchor="middle">LOGO</text>
+  <text x="90" y="821" font-size="7.5" fill="#888">Premium menswear. No excess. No noise.</text>
+  <!-- annotation footer -->
+  <line x1="195" y1="796" x2="195" y2="780" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="80" y="768" width="230" height="12" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="195" y="778" font-size="6.5" fill="#666" text-anchor="middle">Footer visible — page fits within viewport</text>
+
+  <!-- Chat widget -->
+  <circle cx="358" cy="820" r="16" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="358" y="824" font-size="6.5" fill="#888" text-anchor="middle">chat</text>
+
+  <!-- viewport bottom -->
+  <line x1="8" y1="836" x2="382" y2="836" stroke="#AAAAAA" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <text x="195" y="850" font-size="6.5" fill="#BBB" text-anchor="middle">— bottom of viewport (844px) —</text>
+
+  <!-- bottom label -->
+  <line x1="8" y1="876" x2="382" y2="876" stroke="#CCC" stroke-width="0.4"/>
+  <text x="8" y="888" font-size="8" fill="#AAAAAA">Page M-07 / Mobile — Order History + My Wishlist</text>
+  <text x="382" y="888" font-size="8" fill="#AAAAAA" text-anchor="end">390×844px viewport</text>
+</svg>

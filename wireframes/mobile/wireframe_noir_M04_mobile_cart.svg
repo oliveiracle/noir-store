@@ -1,0 +1,156 @@
+<svg viewBox="0 0 390 1400" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR Mobile / Cart Page</title>
+  <rect width="390" height="1400" fill="#F4F2ED"/>
+
+  <text x="8" y="14" font-size="8" fill="#888" letter-spacing="1">WIREFRAME — NOIR / MOBILE — CART PAGE</text>
+  <line x1="8" y1="19" x2="382" y2="19" stroke="#CCC" stroke-width="0.4"/>
+
+  <!-- SCREEN BORDER 390x844 -->
+  <rect x="8" y="24" width="374" height="844" fill="#E8E6E0" rx="8" stroke="#AAAAAA" stroke-width="1.2"/>
+
+  <!-- STATUS BAR -->
+  <rect x="8" y="24" width="374" height="28" fill="#D8D6CF" rx="8"/>
+  <rect x="8" y="40" width="374" height="12" fill="#D8D6CF"/>
+  <text x="28" y="42" font-size="7" fill="#777">9:41</text>
+  <text x="362" y="42" font-size="7" fill="#777" text-anchor="end">●●●</text>
+
+  <!-- NAVBAR -->
+  <rect x="8" y="52" width="374" height="52" fill="#DEDAD3" stroke="#C0BEB8" stroke-width="0.6"/>
+  <rect x="22" y="64" width="52" height="16" fill="#C8C6BF" rx="2"/>
+  <text x="48" y="75" font-size="7.5" fill="#666" text-anchor="middle">LOGO</text>
+  <circle cx="298" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <text x="298" y="82" font-size="6" fill="#888" text-anchor="middle">acct</text>
+  <circle cx="324" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <circle cx="332" cy="70" r="5.5" fill="#777"/>
+  <text x="332" y="73.5" font-size="5" fill="#F4F2ED" text-anchor="middle">2</text>
+  <rect x="348" y="71" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="77" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="83" width="18" height="2" fill="#777" rx="1"/>
+
+  <!-- TOP SPACING -->
+  <rect x="8" y="104" width="374" height="50" fill="#E2E0D9"/>
+  <text x="195" y="133" font-size="7" fill="#CCC" text-anchor="middle">top spacing — no page title on mobile cart</text>
+
+  <!-- =====================
+       CART ITEM — single column on mobile
+  ===================== -->
+  <rect x="8" y="154" width="374" height="430" fill="#E8E6E0" stroke="#C0BEB8" stroke-width="0.6"/>
+
+  <!-- Thumbnail -->
+  <rect x="24" y="178" width="130" height="170" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.7"/>
+  <line x1="24" y1="178" x2="154" y2="348" stroke="#BBB" stroke-width="0.4"/>
+  <line x1="154" y1="178" x2="24" y2="348" stroke="#BBB" stroke-width="0.4"/>
+  <text x="89" y="268" font-size="7.5" fill="#888" text-anchor="middle">PRODUCT</text>
+  <text x="89" y="280" font-size="7.5" fill="#888" text-anchor="middle">THUMBNAIL</text>
+  <!-- annotation thumbnail -->
+  <line x1="154" y1="263" x2="200" y2="250" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="202" y="240" width="170" height="20" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="287" y="250" font-size="6.5" fill="#666" text-anchor="middle">Thumbnail left — no image on right col</text>
+  <text x="287" y="258" font-size="6.5" fill="#777" text-anchor="middle">Mobile: stacked layout, not side-by-side</text>
+
+  <!-- Product info below thumbnail -->
+  <text x="24" y="370" font-size="7.5" fill="#888" letter-spacing="1.5">TROUSERS</text>
+  <text x="24" y="388" font-size="10" fill="#444" font-weight="bold">TAILORED SLIM TROUSERS</text>
+  <text x="24" y="406" font-size="9" fill="#777">€119.99</text>
+
+  <!-- Qty stepper -->
+  <rect x="24" y="422" width="28" height="28" fill="#D0CEC8" rx="2" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="38" y="440" font-size="11" fill="#555" text-anchor="middle">−</text>
+  <rect x="56" y="422" width="46" height="28" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="79" y="440" font-size="9" fill="#444" text-anchor="middle">2</text>
+  <rect x="106" y="422" width="28" height="28" fill="#D0CEC8" rx="2" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="120" y="440" font-size="11" fill="#555" text-anchor="middle">+</text>
+  <rect x="140" y="422" width="68" height="28" fill="#D0CEC8" rx="2" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="174" y="440" font-size="7.5" fill="#555" text-anchor="middle">UPDATE</text>
+  <!-- annotation stepper -->
+  <line x1="208" y1="436" x2="240" y2="424" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="242" y="414" width="130" height="20" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="307" y="423" font-size="6.5" fill="#666" text-anchor="middle">Qty stepper: − | input | +</text>
+  <text x="307" y="431" font-size="6.5" fill="#777" text-anchor="middle">+ UPDATE button inline</text>
+
+  <!-- Line total -->
+  <text x="24" y="476" font-size="12" fill="#444" font-weight="bold">€239.98</text>
+  <!-- annotation line total -->
+  <line x1="110" y1="472" x2="160" y2="460" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="162" y="452" width="148" height="16" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="236" y="463" font-size="6.5" fill="#666" text-anchor="middle">Line total = unit price × qty</text>
+
+  <!-- REMOVE link -->
+  <text x="24" y="508" font-size="8" fill="#888" letter-spacing="1.5">REMOVE</text>
+  <line x1="24" y1="511" x2="80" y2="511" stroke="#888" stroke-width="0.5"/>
+  <!-- annotation remove -->
+  <line x1="80" y1="508" x2="140" y2="496" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="142" y="488" width="150" height="16" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="217" y="499" font-size="6.5" fill="#666" text-anchor="middle">REMOVE — text link, muted, underlined</text>
+
+  <!-- divider -->
+  <line x1="24" y1="538" x2="366" y2="538" stroke="#C0BDB6" stroke-width="0.5"/>
+  <text x="195" y="556" font-size="7" fill="#CCC" text-anchor="middle">more cart items would repeat above divider</text>
+
+  <!-- =====================
+       ORDER SUMMARY PANEL — below items on mobile
+  ===================== -->
+  <rect x="24" y="584" width="352" height="290" fill="#D8D6CF" rx="4" stroke="#BBBAB3" stroke-width="0.8"/>
+
+  <text x="195" y="610" font-size="8" fill="#777" text-anchor="middle" letter-spacing="2">ORDER SUMMARY</text>
+  <line x1="40" y1="618" x2="360" y2="618" stroke="#BBBAB3" stroke-width="0.5"/>
+
+  <!-- Subtotal row -->
+  <text x="40" y="640" font-size="8" fill="#888" letter-spacing="1">SUBTOTAL</text>
+  <text x="360" y="640" font-size="8" fill="#555" text-anchor="end">€239.98</text>
+
+  <!-- Shipping row -->
+  <text x="40" y="664" font-size="8" fill="#888" letter-spacing="1">SHIPPING</text>
+  <text x="360" y="664" font-size="8" fill="#888" text-anchor="end">Calculated at checkout</text>
+
+  <line x1="40" y1="678" x2="360" y2="678" stroke="#BBBAB3" stroke-width="0.5"/>
+
+  <!-- Total -->
+  <text x="40" y="702" font-size="10" fill="#444" font-weight="bold">TOTAL</text>
+  <text x="360" y="702" font-size="10" fill="#333" text-anchor="end" font-weight="bold">€239.98</text>
+
+  <!-- annotation summary panel -->
+  <line x1="24" y1="660" x2="8" y2="648" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="8" y="628" width="0" height="0"/>
+
+  <!-- PROCEED TO CHECKOUT CTA -->
+  <rect x="40" y="720" width="320" height="44" fill="#C8C5BE" rx="2" stroke="#888" stroke-width="1.2"/>
+  <text x="200" y="747" font-size="8.5" fill="#444" text-anchor="middle" letter-spacing="2.5">PROCEED TO CHECKOUT</text>
+  <!-- annotation CTA -->
+  <line x1="360" y1="742" x2="382" y2="730" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="240" y="710" width="142" height="18" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="311" y="719" font-size="6.5" fill="#666" text-anchor="middle">Full-width CTA within panel</text>
+  <text x="311" y="726" font-size="6.5" fill="#777" text-anchor="middle">light fill, caps, bold</text>
+
+  <!-- CONTINUE SHOPPING link -->
+  <text x="200" y="784" font-size="8" fill="#888" text-anchor="middle" letter-spacing="1">← CONTINUE SHOPPING</text>
+  <line x1="128" y1="787" x2="272" y2="787" stroke="#888" stroke-width="0.4"/>
+  <!-- annotation -->
+  <line x1="272" y1="784" x2="300" y2="772" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="218" y="762" width="164" height="16" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="300" y="772" font-size="6.5" fill="#666" text-anchor="middle">Secondary link — centered, muted</text>
+
+  <!-- viewport bottom -->
+  <line x1="8" y1="836" x2="382" y2="836" stroke="#AAAAAA" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <text x="195" y="850" font-size="6.5" fill="#BBB" text-anchor="middle">— bottom of viewport (844px) —</text>
+
+  <!-- Chat widget fixed -->
+  <circle cx="358" cy="802" r="16" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="358" y="806" font-size="6.5" fill="#888" text-anchor="middle">chat</text>
+
+  <!-- =====================
+       LAYOUT COMPARISON NOTE
+  ===================== -->
+  <rect x="8" y="880" width="374" height="82" fill="#F4F2ED" rx="4" stroke="#BBBAB3" stroke-width="0.8"/>
+  <text x="195" y="898" font-size="7.5" fill="#444" text-anchor="middle" font-weight="bold">MOBILE vs DESKTOP LAYOUT DIFFERENCE</text>
+  <line x1="24" y1="904" x2="366" y2="904" stroke="#CCC" stroke-width="0.4"/>
+  <text x="195" y="918" font-size="6.5" fill="#666" text-anchor="middle">Desktop: cart items left col (~67%) + order summary right col (~30%) — side by side</text>
+  <text x="195" y="930" font-size="6.5" fill="#666" text-anchor="middle">Mobile: single column — cart items stacked on top, order summary panel below</text>
+  <text x="195" y="942" font-size="6.5" fill="#777" text-anchor="middle">Order summary moves from sticky sidebar → inline block at bottom of page</text>
+  <text x="195" y="954" font-size="6.5" fill="#777" text-anchor="middle">Thumbnail stays left-aligned; product info shifts below (not beside) on narrow viewport</text>
+
+  <!-- bottom label -->
+  <line x1="8" y1="976" x2="382" y2="976" stroke="#CCC" stroke-width="0.4"/>
+  <text x="8" y="988" font-size="8" fill="#AAAAAA">Page M-04 / Mobile — Cart Page</text>
+  <text x="382" y="988" font-size="8" fill="#AAAAAA" text-anchor="end">390×844px viewport</text>
+</svg>

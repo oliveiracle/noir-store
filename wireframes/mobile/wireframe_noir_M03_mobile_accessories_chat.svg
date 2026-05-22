@@ -1,0 +1,223 @@
+<svg viewBox="0 0 390 1600" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR Mobile / Accessories + AI Chat Assistant</title>
+  <rect width="390" height="1600" fill="#F4F2ED"/>
+
+  <text x="8" y="14" font-size="8" fill="#888" letter-spacing="1">WIREFRAME — NOIR / MOBILE — ACCESSORIES + AI CHAT ASSISTANT</text>
+  <line x1="8" y1="19" x2="382" y2="19" stroke="#CCC" stroke-width="0.4"/>
+
+  <!-- =====================
+       SCREEN BORDER 390x844
+  ===================== -->
+  <rect x="8" y="24" width="374" height="844" fill="#E8E6E0" rx="8" stroke="#AAAAAA" stroke-width="1.2"/>
+
+  <!-- STATUS BAR -->
+  <rect x="8" y="24" width="374" height="28" fill="#D8D6CF" rx="8"/>
+  <rect x="8" y="40" width="374" height="12" fill="#D8D6CF"/>
+  <text x="28" y="42" font-size="7" fill="#777">9:41</text>
+  <text x="362" y="42" font-size="7" fill="#777" text-anchor="end">●●●</text>
+
+  <!-- NAVBAR -->
+  <rect x="8" y="52" width="374" height="52" fill="#DEDAD3" stroke="#C0BEB8" stroke-width="0.6"/>
+  <rect x="22" y="64" width="52" height="16" fill="#C8C6BF" rx="2"/>
+  <text x="48" y="75" font-size="7.5" fill="#666" text-anchor="middle">LOGO</text>
+  <circle cx="298" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <text x="298" y="82" font-size="6" fill="#888" text-anchor="middle">acct</text>
+  <circle cx="324" cy="78" r="9" fill="none" stroke="#AAAAAA" stroke-width="1.1"/>
+  <circle cx="332" cy="70" r="5.5" fill="#777"/>
+  <text x="332" y="73.5" font-size="5" fill="#F4F2ED" text-anchor="middle">2</text>
+  <rect x="348" y="71" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="77" width="18" height="2" fill="#777" rx="1"/>
+  <rect x="348" y="83" width="18" height="2" fill="#777" rx="1"/>
+
+  <!-- HERO HEADER -->
+  <rect x="8" y="104" width="374" height="130" fill="#E2E0D9" stroke="#C0BEB8" stroke-width="0.6"/>
+  <text x="24" y="128" font-size="7.5" fill="#999" letter-spacing="2.5">SEASON 2026</text>
+  <rect x="24" y="136" width="280" height="52" fill="#C0BDB6" rx="2"/>
+  <text x="164" y="170" font-size="14" fill="#555" text-anchor="middle" font-weight="bold">ACCESSORIES</text>
+  <text x="340" y="154" font-size="14" fill="#AAA" text-anchor="middle">11</text>
+  <text x="340" y="170" font-size="7" fill="#AAA" text-anchor="middle" letter-spacing="1.5">ITEMS</text>
+
+  <!-- SHOP BY filters -->
+  <rect x="8" y="238" width="374" height="94" fill="#E0DDD6" stroke="#C0BEB8" stroke-width="0.6"/>
+  <text x="24" y="258" font-size="7.5" fill="#999" letter-spacing="2">SHOP BY</text>
+  <line x1="24" y1="264" x2="366" y2="264" stroke="#BBBAB3" stroke-width="0.4"/>
+  <!-- row 1 — plain text style (no pills — matches screenshot) -->
+  <text x="24" y="284" font-size="8.5" fill="#888">ALL</text>
+  <text x="62" y="284" font-size="8.5" fill="#888">JACKETS</text>
+  <text x="128" y="284" font-size="8.5" fill="#888">TROUSERS</text>
+  <text x="210" y="284" font-size="8.5" fill="#888">SHIRTS</text>
+  <!-- row 2 -->
+  <text x="24" y="308" font-size="8.5" fill="#888">T-SHIRTS</text>
+  <text x="96" y="308" font-size="9" fill="#444" font-weight="bold">ACCESSORIES</text>
+  <!-- active underline -->
+  <line x1="96" y1="311" x2="222" y2="311" stroke="#555" stroke-width="1.2"/>
+  <!-- annotation active filter -->
+  <line x1="158" y1="311" x2="260" y2="320" stroke="#AAAAAA" stroke-width="0.7" stroke-dasharray="2,2"/>
+  <rect x="262" y="314" width="110" height="20" fill="#F4F2ED" rx="2" stroke="#CCC" stroke-width="0.5"/>
+  <text x="317" y="322" font-size="6.5" fill="#666" text-anchor="middle">Active filter —</text>
+  <text x="317" y="331" font-size="6.5" fill="#666" text-anchor="middle">bold + underline</text>
+
+  <!-- PRODUCT GRID (behind overlay — dimmed) -->
+  <rect x="8" y="336" width="185" height="220" fill="#B8B5AE" rx="2" stroke="#AAAAAA" stroke-width="0.5" opacity="0.5"/>
+  <text x="100" y="450" font-size="7" fill="#AAA" text-anchor="middle" opacity="0.7">IMAGE</text>
+  <text x="8" y="570" font-size="7.5" fill="#AAA" opacity="0.6">ACCESSORIES</text>
+  <text x="8" y="584" font-size="8" fill="#AAA" font-weight="bold" opacity="0.6">LEATHER CARD...</text>
+  <text x="8" y="598" font-size="7.5" fill="#AAA" opacity="0.6">€49.99</text>
+
+  <rect x="197" y="336" width="185" height="220" fill="#B8B5AE" rx="2" stroke="#AAAAAA" stroke-width="0.5" opacity="0.5"/>
+  <text x="289" y="450" font-size="7" fill="#AAA" text-anchor="middle" opacity="0.7">IMAGE</text>
+
+  <!-- Dim overlay behind chat panel -->
+  <rect x="8" y="336" width="374" height="532" fill="#666" opacity="0.18" rx="0"/>
+  <text x="195" y="620" font-size="7" fill="#999" text-anchor="middle" opacity="0.8">page content dimmed behind overlay</text>
+
+  <!-- =====================
+       AI CHAT ASSISTANT PANEL — HERO ELEMENT
+  ===================== -->
+
+  <!-- Panel shadow hint -->
+  <rect x="180" y="442" width="202" height="356" fill="#888" rx="8" opacity="0.12"/>
+
+  <!-- Main panel -->
+  <rect x="178" y="438" width="202" height="356" fill="#F0EEE8" rx="6" stroke="#AAAAAA" stroke-width="1.2"/>
+
+  <!-- Panel header -->
+  <rect x="178" y="438" width="202" height="40" fill="#E8E6E0" rx="6" stroke="#AAAAAA" stroke-width="0"/>
+  <rect x="178" y="458" width="202" height="20" fill="#E8E6E0"/>
+  <text x="232" y="463" font-size="8.5" fill="#444" font-weight="bold" letter-spacing="1">NOIR ASSISTANT</text>
+  <!-- X button -->
+  <circle cx="366" cy="458" r="10" fill="#D8D6CF" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="366" y="462" font-size="9" fill="#666" text-anchor="middle">×</text>
+
+  <line x1="178" y1="478" x2="380" y2="478" stroke="#CCCAC3" stroke-width="0.5"/>
+
+  <!-- Chat bubble — AI message -->
+  <rect x="190" y="490" width="170" height="82" fill="#E0DDD6" rx="6" stroke="#C8C5BE" stroke-width="0.7"/>
+  <rect x="186" y="510" width="8" height="8" fill="#E0DDD6" rx="1" transform="rotate(45,186,514)"/>
+  <text x="275" y="510" font-size="7" fill="#555" text-anchor="middle">Hi. I&#39;m the NOIR Assistant.</text>
+  <text x="275" y="524" font-size="7" fill="#555" text-anchor="middle">Ask me about shipping,</text>
+  <text x="275" y="538" font-size="7" fill="#555" text-anchor="middle">returns, sizing or our</text>
+  <text x="275" y="552" font-size="7" fill="#555" text-anchor="middle">collections.</text>
+
+  <!-- Suggested prompts -->
+  <rect x="190" y="584" width="162" height="18" fill="#D8D6CF" rx="9" stroke="#BBBAB3" stroke-width="0.7"/>
+  <text x="271" y="596" font-size="6.5" fill="#666" text-anchor="middle">What sizes are available?</text>
+  <rect x="190" y="608" width="140" height="18" fill="#D8D6CF" rx="9" stroke="#BBBAB3" stroke-width="0.7"/>
+  <text x="260" y="620" font-size="6.5" fill="#666" text-anchor="middle">How long does shipping take?</text>
+  <rect x="190" y="632" width="118" height="18" fill="#D8D6CF" rx="9" stroke="#BBBAB3" stroke-width="0.7"/>
+  <text x="249" y="644" font-size="6.5" fill="#666" text-anchor="middle">Can I return this item?</text>
+
+  <!-- Input area -->
+  <line x1="178" y1="664" x2="380" y2="664" stroke="#CCCAC3" stroke-width="0.5"/>
+  <rect x="178" y="664" width="202" height="130" fill="#E8E6E0" rx="0"/>
+  <rect x="178" y="752" width="202" height="42" fill="#E8E6E0" rx="6"/>
+  <rect x="186" y="674" width="148" height="26" fill="#F4F2ED" rx="14" stroke="#BBBAB3" stroke-width="0.8"/>
+  <text x="260" y="690" font-size="7" fill="#AAA" text-anchor="middle">Ask me anything...</text>
+  <!-- Send button -->
+  <circle cx="356" cy="687" r="13" fill="#888" stroke="none"/>
+  <text x="356" y="691" font-size="10" fill="#F4F2ED" text-anchor="middle">→</text>
+
+  <!-- Panel bottom clip -->
+  <rect x="178" y="782" width="202" height="12" fill="#F0EEE8" rx="6"/>
+
+  <!-- =====================
+       ANNOTATIONS (all pointing TO the chat panel)
+  ===================== -->
+
+  <!-- 1. Panel header annotation -->
+  <line x1="178" y1="458" x2="90" y2="440" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+  <circle cx="90" cy="440" r="3" fill="#888"/>
+  <rect x="8" y="428" width="170" height="20" fill="#F4F2ED" rx="3" stroke="#888" stroke-width="0.8"/>
+  <text x="93" y="437" font-size="6.5" fill="#444" text-anchor="middle" font-weight="bold">Panel header: title + close (×) button</text>
+  <text x="93" y="446" font-size="6" fill="#777" text-anchor="middle">Fixed width ~202px, anchored bottom-right</text>
+
+  <!-- 2. AI message bubble annotation -->
+  <line x1="178" y1="530" x2="90" y2="520" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+  <circle cx="90" cy="520" r="3" fill="#888"/>
+  <rect x="8" y="510" width="170" height="28" fill="#F4F2ED" rx="3" stroke="#888" stroke-width="0.8"/>
+  <text x="93" y="521" font-size="6.5" fill="#444" text-anchor="middle" font-weight="bold">AI greeting message bubble</text>
+  <text x="93" y="531" font-size="6" fill="#777" text-anchor="middle">Rendered on panel open — no user input needed</text>
+  <text x="93" y="537" font-size="6" fill="#777" text-anchor="middle">JavaScript fetch → Anthropic/OpenAI API</text>
+
+  <!-- 3. Suggested prompts annotation -->
+  <line x1="178" y1="617" x2="90" y2="610" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+  <circle cx="90" cy="610" r="3" fill="#888"/>
+  <rect x="8" y="598" width="170" height="28" fill="#F4F2ED" rx="3" stroke="#888" stroke-width="0.8"/>
+  <text x="93" y="609" font-size="6.5" fill="#444" text-anchor="middle" font-weight="bold">Quick-reply chips / suggested prompts</text>
+  <text x="93" y="619" font-size="6" fill="#777" text-anchor="middle">Tap to auto-fill the input field</text>
+  <text x="93" y="625" font-size="6" fill="#777" text-anchor="middle">Hardcoded JS array of common questions</text>
+
+  <!-- 4. Input + send annotation -->
+  <line x1="178" y1="687" x2="90" y2="687" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+  <circle cx="90" cy="687" r="3" fill="#888"/>
+  <rect x="8" y="676" width="170" height="28" fill="#F4F2ED" rx="3" stroke="#888" stroke-width="0.8"/>
+  <text x="93" y="687" font-size="6.5" fill="#444" text-anchor="middle" font-weight="bold">Text input field + send button</text>
+  <text x="93" y="697" font-size="6" fill="#777" text-anchor="middle">On submit → POST to AI API with context</text>
+  <text x="93" y="703" font-size="6" fill="#777" text-anchor="middle">Response streamed into chat bubble</text>
+
+  <!-- 5. Dim overlay annotation -->
+  <line x1="100" y1="390" x2="70" y2="370" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+  <circle cx="70" cy="370" r="3" fill="#888"/>
+  <rect x="8" y="358" width="170" height="20" fill="#F4F2ED" rx="3" stroke="#888" stroke-width="0.8"/>
+  <text x="93" y="367" font-size="6.5" fill="#444" text-anchor="middle" font-weight="bold">Background overlay — semi-transparent</text>
+  <text x="93" y="375" font-size="6" fill="#777" text-anchor="middle">CSS backdrop filter / rgba overlay on open</text>
+
+  <!-- Fixed chat trigger button (closed state) -->
+  <circle cx="358" cy="802" r="16" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="358" y="806" font-size="7" fill="#888" text-anchor="middle">chat</text>
+  <!-- annotation trigger -->
+  <line x1="342" y1="802" x2="280" y2="802" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+  <circle cx="280" cy="802" r="3" fill="#888"/>
+  <rect x="100" y="792" width="178" height="20" fill="#F4F2ED" rx="3" stroke="#888" stroke-width="0.8"/>
+  <text x="189" y="801" font-size="6.5" fill="#444" text-anchor="middle" font-weight="bold">Trigger button — fixed bottom-right</text>
+  <text x="189" y="809" font-size="6" fill="#777" text-anchor="middle">onClick → toggles panel open/closed</text>
+
+  <!-- Viewport bottom edge -->
+  <line x1="8" y1="836" x2="382" y2="836" stroke="#AAAAAA" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <text x="195" y="850" font-size="6.5" fill="#BBB" text-anchor="middle">— bottom of viewport (844px) —</text>
+
+  <!-- =====================
+       FLOW DIAGRAM BELOW SCREEN
+  ===================== -->
+  <rect x="8" y="880" width="374" height="180" fill="#F4F2ED" rx="6" stroke="#BBBAB3" stroke-width="0.8"/>
+  <text x="195" y="900" font-size="8" fill="#444" text-anchor="middle" font-weight="bold" letter-spacing="1">AI ASSISTANT — INTERACTION FLOW</text>
+  <line x1="24" y1="906" x2="366" y2="906" stroke="#CCC" stroke-width="0.5"/>
+
+  <!-- Flow boxes -->
+  <rect x="20" y="916" width="72" height="28" fill="#D8D6CF" rx="3" stroke="#AAAAAA" stroke-width="0.7"/>
+  <text x="56" y="928" font-size="6.5" fill="#555" text-anchor="middle">User taps</text>
+  <text x="56" y="937" font-size="6.5" fill="#555" text-anchor="middle">chat button</text>
+
+  <text x="100" y="933" font-size="10" fill="#AAA" text-anchor="middle">→</text>
+
+  <rect x="108" y="916" width="72" height="28" fill="#D8D6CF" rx="3" stroke="#AAAAAA" stroke-width="0.7"/>
+  <text x="144" y="928" font-size="6.5" fill="#555" text-anchor="middle">Panel opens</text>
+  <text x="144" y="937" font-size="6.5" fill="#555" text-anchor="middle">greeting loads</text>
+
+  <text x="188" y="933" font-size="10" fill="#AAA" text-anchor="middle">→</text>
+
+  <rect x="196" y="916" width="72" height="28" fill="#D8D6CF" rx="3" stroke="#AAAAAA" stroke-width="0.7"/>
+  <text x="232" y="928" font-size="6.5" fill="#555" text-anchor="middle">User types /</text>
+  <text x="232" y="937" font-size="6.5" fill="#555" text-anchor="middle">taps chip</text>
+
+  <text x="276" y="933" font-size="10" fill="#AAA" text-anchor="middle">→</text>
+
+  <rect x="284" y="916" width="80" height="28" fill="#D8D6CF" rx="3" stroke="#AAAAAA" stroke-width="0.7"/>
+  <text x="324" y="928" font-size="6.5" fill="#555" text-anchor="middle">JS sends POST</text>
+  <text x="324" y="937" font-size="6.5" fill="#555" text-anchor="middle">to AI API</text>
+
+  <!-- Row 2 -->
+  <text x="195" y="960" font-size="10" fill="#AAA" text-anchor="middle">↓</text>
+
+  <rect x="108" y="968" width="174" height="28" fill="#C8C5BE" rx="3" stroke="#999" stroke-width="0.8"/>
+  <text x="195" y="981" font-size="6.5" fill="#444" text-anchor="middle" font-weight="bold">AI response streamed into chat bubble</text>
+  <text x="195" y="991" font-size="6" fill="#666" text-anchor="middle">Context: store data, product info, policies</text>
+
+  <text x="195" y="1012" font-size="6.5" fill="#888" text-anchor="middle">Built with: JavaScript fetch API · Anthropic/OpenAI endpoint · vanilla JS DOM rendering</text>
+  <text x="195" y="1024" font-size="6.5" fill="#888" text-anchor="middle">No framework required — works as a standalone JS widget injected on every page</text>
+
+  <!-- bottom label -->
+  <line x1="8" y1="1076" x2="382" y2="1076" stroke="#CCC" stroke-width="0.4"/>
+  <text x="8" y="1088" font-size="8" fill="#AAAAAA">Page M-03 / Mobile — Accessories + AI Chat Assistant</text>
+  <text x="382" y="1088" font-size="8" fill="#AAAAAA" text-anchor="end">390×844px viewport</text>
+</svg>
