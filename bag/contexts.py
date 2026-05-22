@@ -39,7 +39,8 @@ def bag_contents(request):
         except Product.DoesNotExist:
             pass
 
-    delivery = 0 if total >= 150 else round(total * 0.1, 2)
+    from decimal import Decimal
+    delivery = 0 if total >= 150 else round(total * Decimal('0.1'), 2)
     grand_total = total + delivery
 
     return {
