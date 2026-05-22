@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Review — NOIR{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-box">
+        <span class="auth-label">NOIR / REVIEW</span>
+        <h1 class="auth-title">EDIT REVIEW</h1>
+        <p class="auth-confirm-text">{{ review.product.name|upper }}</p>
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group mb-3">
+                <label for="id_rating" class="detail-label">RATING</label>
+                {{ form.rating }}
+            </div>
+            <div class="form-group mb-4">
+                <label for="id_comment" class="detail-label">COMMENT</label>
+                {{ form.comment }}
+            </div>
+            <button type="submit" class="btn-add-bag w-100">SAVE CHANGES</button>
+        </form>
+
+        <div class="auth-links mt-3">
+            <a href="{% url 'product_detail' review.product.id %}" class="auth-link">← Back to product</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

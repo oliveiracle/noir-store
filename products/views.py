@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Review
+from .forms import ProductForm, ReviewForm
 
 
 def all_products(request):
@@ -46,8 +46,69 @@ def all_products(request):
 def product_detail(request, product_id):
     """Display a single product detail page."""
     product = get_object_or_404(Product, pk=product_id)
-    context = {'product': product}
+    reviews = product.reviews.all()
+    user_review = None
+    review_form = None
+
+    if request.user.is_authenticated:
+        user_review = reviews.filter(user=request.user).first()
+        if not user_review:
+            review_form = ReviewForm()
+
+    context = {
+        'product': product,
+        'reviews': reviews,
+        'user_review': user_review,
+        'review_form': review_form,
+    }
     return render(request, 'products/product_detail.html', context)
+
+
+@login_required
+def add_review(request, product_id):
+    """Allow authenticated users to submit a review for a product."""
+    product = get_object_or_404(Product, pk=product_id)
+    if Review.objects.filter(product=product, user=request.user).exists():
+        messages.info(request, 'You have already reviewed this product.')
+        return redirect('product_detail', product_id=product_id)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.save()
+            messages.success(request, 'Your review has been added.')
+    return redirect('product_detail', product_id=product_id)
+
+
+@login_required
+def edit_review(request, review_id):
+    """Allow users to edit their own review."""
+    review = get_object_or_404(Review, pk=review_id, user=request.user)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your review has been updated.')
+            return redirect('product_detail', product_id=review.product.id)
+    else:
+        form = ReviewForm(instance=review)
+    return render(
+        request,
+        'products/edit_review.html',
+        {'form': form, 'review': review},
+    )
+
+
+@login_required
+def delete_review(request, review_id):
+    """Allow users to delete their own review."""
+    review = get_object_or_404(Review, pk=review_id, user=request.user)
+    product_id = review.product.id
+    review.delete()
+    messages.success(request, 'Your review has been removed.')
+    return redirect('product_detail', product_id=product_id)
 
 
 @login_required

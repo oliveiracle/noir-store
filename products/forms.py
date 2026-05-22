@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product, Category
+from .models import Product, Category, Review
 
 
 class ProductForm(forms.ModelForm):
@@ -22,3 +22,21 @@ class ProductForm(forms.ModelForm):
         )
         for field in self.fields.values():
             field.widget.attrs['class'] = 'checkout-input'
+
+
+class ReviewForm(forms.ModelForm):
+    """Form for submitting or editing a product review."""
+    class Meta:
+        model = Review
+        fields = ['rating', 'comment']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['rating'].widget.attrs['class'] = 'checkout-input'
+        self.fields['comment'].widget.attrs.update({
+            'class': 'checkout-input',
+            'rows': 3,
+            'placeholder': 'Share your thoughts...',
+        })
+        self.fields['comment'].label = False
+        self.fields['rating'].label = False

@@ -101,6 +101,67 @@
 </div>
 {% endblock %}
 
+<!-- Reviews Section -->
+<div class="container-fluid px-4 px-lg-5 pb-6">
+    <div class="detail-divider mb-5"></div>
+    <h2 class="filter-heading mb-4">REVIEWS</h2>
+
+    {% if reviews %}
+    {% for review in reviews %}
+    <div class="bag-summary mb-3 p-4">
+        <div class="d-flex justify-content-between align-items-start">
+            <div>
+                <span class="detail-label">{{ review.user.username|upper }}</span>
+                <div class="mt-1 mb-2">
+                    {% for i in "12345" %}
+                    {% if forloop.counter <= review.rating %}
+                    <i class="fas fa-star" style="color: var(--white); font-size:0.75rem;"></i>
+                    {% else %}
+                    <i class="far fa-star" style="color: var(--white); font-size:0.75rem;"></i>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <p class="footer-tagline mb-0">{{ review.comment }}</p>
+            </div>
+            {% if request.user == review.user %}
+            <div class="d-flex gap-3">
+                <a href="{% url 'edit_review' review.id %}" class="detail-label admin-action-link">EDIT</a>
+                <form method="POST" action="{% url 'delete_review' review.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="detail-label border-0 bg-transparent p-0 admin-action-link">DELETE</button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p class="footer-tagline">No reviews yet. Be the first.</p>
+    {% endif %}
+
+    {% if request.user.is_authenticated and not user_review %}
+    <div class="mt-5">
+        <h3 class="filter-heading mb-4">LEAVE A REVIEW</h3>
+        <form method="POST" action="{% url 'add_review' product.id %}">
+            {% csrf_token %}
+            <div class="form-group mb-3">
+                <label for="id_rating" class="detail-label">RATING</label>
+                {{ review_form.rating }}
+            </div>
+            <div class="form-group mb-3">
+                <label for="id_comment" class="detail-label">COMMENT</label>
+                {{ review_form.comment }}
+            </div>
+            <button type="submit" class="btn-add-bag px-4">SUBMIT REVIEW</button>
+        </form>
+    </div>
+    {% elif not request.user.is_authenticated %}
+    <p class="footer-tagline mt-4">
+        <a href="{% url 'account_login' %}" class="auth-link">Sign in</a> to leave a review.
+    </p>
+    {% endif %}
+</div>
+
 {% block extra_js %}
 {% if product.image %}
 <script src="{% static 'js/product.js' %}"></script>
