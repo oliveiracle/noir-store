@@ -94,6 +94,14 @@ User stories were tracked using GitHub Projects (Kanban board). They are grouped
 | US28 | As a developer, I have deployed the site to Heroku | Must |
 | US29 | As a developer, I have set up AWS S3 for static and media files | Must |
 | US30 | As a developer, I have written a full README | Must |
+| US31 | As a developer, I have written a full TESTING.md with manual test results | Must |
+| US32 | As a developer, external links use rel="nofollow noopener noreferrer" | Should |
+| US33 | As a registered user, I can change my password from my account page | Should |
+| US34 | As a registered user, checkout forms are pre-filled with my saved info | Should |
+| US35 | As a developer, all HTML, CSS and JavaScript passes validation | Must |
+| US36 | As a developer, all Python files are PEP8 compliant | Must |
+| US37 | As a developer, custom code has docstrings and inline comments | Could |
+| US38 | As a visitor, I can view the About page with typewriter animation | Should |
 
 ---
 
