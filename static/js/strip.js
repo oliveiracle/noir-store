@@ -1,37 +1,32 @@
 // Horizontal scroll strip on the homepage
-// Moving the mouse across the section scrolls the product track
 
 (function () {
-    // Don't run on mobile — the strip isn't used on small screens
     if (window.innerWidth < 768) return;
 
-    var section = document.getElementById('stripSection');
-    var track   = document.getElementById('stripTrack');
+    const section = document.getElementById('stripSection');
+    const track   = document.getElementById('stripTrack');
     if (!section || !track) return;
 
-    var current = 0;
-    var target  = 0;
-    var ease    = 0.03; // Lower value = smoother/slower easing
-    var raf;
+    let current = 0;
+    let target  = 0;
+    const ease  = 0.03;
+    let raf;
 
-    // Smoothly interpolate current position toward the target each frame
     function tick() {
         current += (target - current) * ease;
         track.style.transform = 'translateX(-' + current + 'px)';
         raf = requestAnimationFrame(tick);
     }
 
-    // Calculate the target scroll position based on where the mouse is
     section.addEventListener('mousemove', function (e) {
-        var rect = section.getBoundingClientRect();
-        var x    = (e.clientX - rect.left) / rect.width;
-        var maxT = track.scrollWidth - rect.width;
+        const rect = section.getBoundingClientRect();
+        const x    = (e.clientX - rect.left) / rect.width;
+        const maxT = track.scrollWidth - rect.width;
         if (maxT <= 0) return;
         target = x * maxT;
         if (!raf) raf = requestAnimationFrame(tick);
     });
 
-    // Scroll back to the start when the mouse leaves the section
     section.addEventListener('mouseleave', function () {
         target = 0;
     });

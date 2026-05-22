@@ -1,28 +1,25 @@
 // NOIR chat widget — a simple keyword-based assistant
-// It matches user input against a list of rules and replies accordingly
 
 (function () {
-    var widget  = document.getElementById('noir-chat');
+    const widget  = document.getElementById('noir-chat');
     if (!widget) return;
 
-    var toggle  = document.getElementById('chatToggle');
-    var closeBtn = document.getElementById('chatClose');
-    var box     = document.getElementById('chatBox');
-    var form    = document.getElementById('chatForm');
-    var input   = document.getElementById('chatInput');
-    var msgs    = document.getElementById('chatMessages');
+    const toggle   = document.getElementById('chatToggle');
+    const closeBtn = document.getElementById('chatClose');
+    const box      = document.getElementById('chatBox');
+    const form     = document.getElementById('chatForm');
+    const input    = document.getElementById('chatInput');
+    const msgs     = document.getElementById('chatMessages');
 
-    // Product data is passed from Django as a JSON string in the data attribute
-    var products = JSON.parse(widget.dataset.products || '[]');
+    const products = JSON.parse(widget.dataset.products || '[]');
 
-    // Search for products that match keywords in the user's message
     function findProducts(msg) {
-        var words = msg.toLowerCase().replace(/[?!.,]/g, '').split(' ').filter(function (w) {
-            return w.length > 3; // Ignore short words like "the", "a", etc.
+        const words = msg.toLowerCase().replace(/[?!.,]/g, '').split(' ').filter(function (w) {
+            return w.length > 3;
         });
-        var matches = products.filter(function (p) {
-            var name = p.name.toLowerCase();
-            var cat  = p.category.toLowerCase();
+        const matches = products.filter(function (p) {
+            const name = p.name.toLowerCase();
+            const cat  = p.category.toLowerCase();
             return words.some(function (w) {
                 return name.indexOf(w) !== -1 || cat.indexOf(w) !== -1;
             });
@@ -33,8 +30,7 @@
         }).join('\n');
     }
 
-    // Rules array — each rule has keywords and a reply
-    var rules = [
+    const rules = [
         { k: ['shipping', 'delivery', 'deliver', 'postage'],
           r: 'We offer free shipping on orders over €150. Orders below that have a flat 10% shipping fee. Delivery takes 3–5 business days.' },
         { k: ['return', 'refund', 'exchange'],
@@ -51,31 +47,26 @@
           r: "You're welcome. Is there anything else I can help you with?" },
     ];
 
-    // Check the message against each rule and return the first match
     function reply(msg) {
-        var lower = msg.toLowerCase();
-        for (var i = 0; i < rules.length; i++) {
-            for (var j = 0; j < rules[i].k.length; j++) {
+        const lower = msg.toLowerCase();
+        for (let i = 0; i < rules.length; i++) {
+            for (let j = 0; j < rules[i].k.length; j++) {
                 if (lower.indexOf(rules[i].k[j]) !== -1) return rules[i].r;
             }
         }
-        // Try to find matching products if no rule matched
-        var found = findProducts(msg);
+        const found = findProducts(msg);
         if (found) return 'Here\'s what we have:\n' + found;
         return "I'm not sure about that. Try asking about a product, shipping, returns or sizing — or visit our FAQ page.";
     }
 
-    // Add a message bubble to the chat window
     function addMsg(text, cls) {
-        var d = document.createElement('div');
+        const d = document.createElement('div');
         d.className = 'chat-msg ' + cls;
         d.textContent = text;
         msgs.appendChild(d);
-        // Auto-scroll to the latest message
         msgs.scrollTop = msgs.scrollHeight;
     }
 
-    // Open/close the chat box when clicking the toggle button
     toggle.addEventListener('click', function () {
         box.classList.toggle('chat-box--open');
         if (box.classList.contains('chat-box--open')) input.focus();
@@ -85,14 +76,12 @@
         box.classList.remove('chat-box--open');
     });
 
-    // Handle message submission
     form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var msg = input.value.trim();
+        const msg = input.value.trim();
         if (!msg) return;
         addMsg(msg, 'chat-msg--user');
         input.value = '';
-        // Small delay before the bot replies to feel more natural
         setTimeout(function () { addMsg(reply(msg), 'chat-msg--bot'); }, 350);
     });
 }());

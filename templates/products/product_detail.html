@@ -126,9 +126,7 @@
         </div>
     </div>
 </div>
-{% endblock %}
-
-<!-- Reviews section — outside the main content block so it spans full width -->
+<!-- Reviews section -->
 <div class="container-fluid px-4 px-lg-5 pb-6">
     <div class="detail-divider mb-5"></div>
     <h2 class="filter-heading mb-4">REVIEWS</h2>
@@ -194,8 +192,9 @@
     {% endif %}
 </div>
 
+{% endblock %}
+
 {% block extra_js %}
-<!-- product.js adds the image zoom interaction — only loaded if image exists -->
 {% if product.image %}
 <script src="{% static 'js/product.js' %}"></script>
 {% endif %}
