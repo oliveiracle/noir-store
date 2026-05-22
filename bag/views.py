@@ -12,7 +12,11 @@ def add_to_bag(request, item_id):
     """Add a product to the shopping bag or increase its quantity."""
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity', 1))
+    quantity = max(1, min(quantity, 99))
     redirect_url = request.POST.get('redirect_url', '/products/')
+
+    if not redirect_url.startswith('/'):
+        redirect_url = '/products/'
 
     bag = request.session.get('bag', {})
     key = str(item_id)

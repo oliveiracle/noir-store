@@ -10,9 +10,14 @@ SECRET_KEY = os.environ.get(
     'SECRET_KEY', 'django-insecure-dev-key-change-in-production'
 )
 
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'noir-store-pp5-a76b3f8c9d2e.herokuapp.com',
+    os.environ.get('HEROKU_HOSTNAME', ''),
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
