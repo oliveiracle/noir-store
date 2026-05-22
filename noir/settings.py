@@ -15,6 +15,7 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    '192.168.1.7',
     'noir-store-pp5-a76b3f8c9d2e.herokuapp.com',
     os.environ.get('HEROKU_HOSTNAME', ''),
 ]
