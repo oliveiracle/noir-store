@@ -1,6 +1,6 @@
 # NOIR — Premium Menswear E-Commerce Store
 
-![NOIR Logo](static/images/readme/noir-mockup.png)
+![NOIR Logo](docs/noir_logo.png)
 
 > **Live Site:** [noir-store-pp5.herokuapp.com](https://noir-store-pp5-a76b3f8c9d2e.herokuapp.com)
 > **GitHub Repository:** [github.com/oliveiracle/noir-store](https://github.com/oliveiracle/noir-store)
