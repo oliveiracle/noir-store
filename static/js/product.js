@@ -1,9 +1,13 @@
 // Adds a zoom effect to the product image on the detail page
+// On touch devices, the zoom is disabled to avoid the image getting stuck
 
 (function () {
     var wrap = document.getElementById('imgWrap');
     var img  = document.getElementById('detailImg');
     if (!wrap || !img) return;
+
+    // Don't apply zoom on touch devices — mouseleave doesn't fire on mobile
+    if ('ontouchstart' in window) return;
 
     // Zoom in when the mouse enters the image area
     wrap.addEventListener('mouseenter', function () {
