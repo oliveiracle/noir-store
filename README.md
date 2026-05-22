@@ -173,10 +173,25 @@ Wireframes were created in SVG format for both desktop and mobile layouts before
 | Shipping | [View](wireframes/desktop/wireframe_noir_09_shipping.svg) |
 | Contact | [View](wireframes/desktop/wireframe_noir_10_contact.svg) |
 | Sign In | [View](wireframes/desktop/wireframe_noir_11_sign_in.svg) |
+| Product Detail | [View](wireframes/desktop/wireframe_noir_12_product_detail.svg) |
+| Shopping Cart | [View](wireframes/desktop/wireframe_noir_13_cart.svg) |
+| Checkout | [View](wireframes/desktop/wireframe_noir_14_checkout.svg) |
+| Wishlist | [View](wireframes/desktop/wireframe_noir_15_desktop_wishlist.svg) |
 
 #### Mobile Wireframes
 
-*Mobile wireframes located in [wireframes/mobile/](wireframes/mobile/)*
+| Page | Wireframe |
+|------|-----------|
+| Shop All | [View](wireframes/mobile/wireframe_noir_M01_mobile_shop_all.svg) |
+| About | [View](wireframes/mobile/wireframe_noir_M02_mobile_about.svg) |
+| Accessories + Chat | [View](wireframes/mobile/wireframe_noir_M03_mobile_accessories_chat.svg) |
+| Cart | [View](wireframes/mobile/wireframe_noir_M04_mobile_cart.svg) |
+| Checkout | [View](wireframes/mobile/wireframe_noir_M05_mobile_checkout.svg) |
+| Change Password | [View](wireframes/mobile/wireframe_noir_M06_mobile_change_password.svg) |
+| Wishlist | [View](wireframes/mobile/wireframe_noir_M07_mobile_wishlist.svg) |
+| Sign Out | [View](wireframes/mobile/wireframe_noir_M07_mobile_sign_out.svg) |
+| Sign In | [View](wireframes/mobile/wireframe_noir_M08_mobile_sign_in.svg) |
+| Empty Cart + Toast + Footer | [View](wireframes/mobile/wireframe_noir_M09_mobile_empty_cart_toast_footer.svg) |
 
 ---
 
