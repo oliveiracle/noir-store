@@ -477,6 +477,8 @@ Wireframes were created in SVG format for both desktop and mobile layouts before
 
 The project uses the following custom models alongside Django's built-in User model:
 
+![Entity Relationship Diagram](docs/erd_diagram.svg)
+
 #### Category
 | Field | Type |
 |-------|------|
@@ -585,7 +587,9 @@ A real Facebook Business Page was created for NOIR Store as evidence of social m
 
 Screenshots of the Facebook Business Page are available at `/facebook/` on the live site.
 
-![Facebook Page](media/products/Screenshot%202026-05-22%20at%2014.25.46.png)
+![Facebook Page 1](docs/facebook_page_1.png)
+
+![Facebook Page 2](docs/facebook_page_2.png)
 
 ### Email Marketing
 

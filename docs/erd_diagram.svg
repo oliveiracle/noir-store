@@ -1,0 +1,287 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" style="font-family: 'Courier New', Courier, monospace;">
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#0A0A08"/>
+
+  <!-- Title -->
+  <text x="600" y="38" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="16" font-weight="bold" fill="#F0EDE4" letter-spacing="6">NOIR STORE — ENTITY RELATIONSHIP DIAGRAM</text>
+  <line x1="80" y1="48" x2="1120" y2="48" stroke="#C8A020" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- ============================================================ -->
+  <!-- ENTITY: User (Django built-in) — top-left                   -->
+  <!-- ============================================================ -->
+  <g id="entity-user">
+    <rect x="40" y="70" width="200" height="130" rx="2" fill="#111110" stroke="#C8A020" stroke-width="1.2"/>
+    <!-- Header -->
+    <rect x="40" y="70" width="200" height="28" rx="2" fill="#C8A020"/>
+    <text x="140" y="88" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#0A0A08" letter-spacing="2">USER</text>
+    <text x="140" y="100" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="8" fill="#0A0A08" opacity="0.7">(Django built-in)</text>
+    <!-- Fields -->
+    <line x1="40" y1="104" x2="240" y2="104" stroke="#C8A020" stroke-width="0.4" opacity="0.4"/>
+    <text x="52" y="120" font-family="'Courier New', Courier, monospace" font-size="10" fill="#888785">PK  id</text>
+    <text x="52" y="136" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    username</text>
+    <text x="52" y="151" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    email</text>
+    <text x="52" y="166" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    password</text>
+    <text x="52" y="191" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    first_name, last_name</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- ENTITY: UserProfile — top-left, below User                  -->
+  <!-- ============================================================ -->
+  <g id="entity-userprofile">
+    <rect x="40" y="240" width="200" height="190" rx="2" fill="#111110" stroke="#C8A020" stroke-width="1.2"/>
+    <!-- Header -->
+    <rect x="40" y="240" width="200" height="28" rx="2" fill="#1A1A18"/>
+    <rect x="40" y="240" width="200" height="28" rx="2" fill="none" stroke="#C8A020" stroke-width="1.2"/>
+    <text x="140" y="258" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#C8A020" letter-spacing="2">USERPROFILE</text>
+    <!-- Fields -->
+    <line x1="40" y1="268" x2="240" y2="268" stroke="#C8A020" stroke-width="0.4" opacity="0.4"/>
+    <text x="52" y="283" font-family="'Courier New', Courier, monospace" font-size="10" fill="#888785">PK  id</text>
+    <text x="52" y="298" font-family="'Courier New', Courier, monospace" font-size="10" fill="#C8A020">FK  user → User</text>
+    <text x="52" y="313" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    phone_number</text>
+    <text x="52" y="328" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    street_address1</text>
+    <text x="52" y="343" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    street_address2</text>
+    <text x="52" y="358" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    town_or_city</text>
+    <text x="52" y="373" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    postcode</text>
+    <text x="52" y="388" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    country, county</text>
+    <text x="52" y="403" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785" font-style="italic">  OneToOne → User</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- ENTITY: Wishlist — bottom-left                              -->
+  <!-- ============================================================ -->
+  <g id="entity-wishlist">
+    <rect x="40" y="470" width="200" height="100" rx="2" fill="#111110" stroke="#C8A020" stroke-width="1.2"/>
+    <!-- Header -->
+    <rect x="40" y="470" width="200" height="28" rx="2" fill="#1A1A18"/>
+    <rect x="40" y="470" width="200" height="28" rx="2" fill="none" stroke="#C8A020" stroke-width="1.2"/>
+    <text x="140" y="488" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#C8A020" letter-spacing="2">WISHLIST</text>
+    <!-- Fields -->
+    <line x1="40" y1="498" x2="240" y2="498" stroke="#C8A020" stroke-width="0.4" opacity="0.4"/>
+    <text x="52" y="513" font-family="'Courier New', Courier, monospace" font-size="10" fill="#888785">PK  id</text>
+    <text x="52" y="528" font-family="'Courier New', Courier, monospace" font-size="10" fill="#C8A020">FK  user → User</text>
+    <text x="52" y="543" font-family="'Courier New', Courier, monospace" font-size="10" fill="#C8A020">M2M products → Product</text>
+    <text x="52" y="558" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785" font-style="italic">  OneToOne → User</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- ENTITY: NewsletterSubscriber — bottom-left                  -->
+  <!-- ============================================================ -->
+  <g id="entity-newsletter">
+    <rect x="40" y="610" width="200" height="100" rx="2" fill="#111110" stroke="#C8A020" stroke-width="1.2"/>
+    <!-- Header -->
+    <rect x="40" y="610" width="200" height="28" rx="2" fill="#1A1A18"/>
+    <rect x="40" y="610" width="200" height="28" rx="2" fill="none" stroke="#C8A020" stroke-width="1.2"/>
+    <text x="140" y="628" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="10" font-weight="bold" fill="#C8A020" letter-spacing="1">NEWSLETTERSUBSCRIBER</text>
+    <!-- Fields -->
+    <line x1="40" y1="638" x2="240" y2="638" stroke="#C8A020" stroke-width="0.4" opacity="0.4"/>
+    <text x="52" y="653" font-family="'Courier New', Courier, monospace" font-size="10" fill="#888785">PK  id</text>
+    <text x="52" y="668" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    email (unique)</text>
+    <text x="52" y="683" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    subscribed_at</text>
+    <text x="52" y="698" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785" font-style="italic">  No relations</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- ENTITY: Category — top-centre                               -->
+  <!-- ============================================================ -->
+  <g id="entity-category">
+    <rect x="460" y="70" width="200" height="110" rx="2" fill="#111110" stroke="#C8A020" stroke-width="1.2"/>
+    <!-- Header -->
+    <rect x="460" y="70" width="200" height="28" rx="2" fill="#1A1A18"/>
+    <rect x="460" y="70" width="200" height="28" rx="2" fill="none" stroke="#C8A020" stroke-width="1.2"/>
+    <text x="560" y="88" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#C8A020" letter-spacing="2">CATEGORY</text>
+    <!-- Fields -->
+    <line x1="460" y1="98" x2="660" y2="98" stroke="#C8A020" stroke-width="0.4" opacity="0.4"/>
+    <text x="472" y="114" font-family="'Courier New', Courier, monospace" font-size="10" fill="#888785">PK  id</text>
+    <text x="472" y="129" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    name</text>
+    <text x="472" y="144" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    friendly_name</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- ENTITY: Product — centre                                     -->
+  <!-- ============================================================ -->
+  <g id="entity-product">
+    <rect x="460" y="230" width="200" height="220" rx="2" fill="#111110" stroke="#C8A020" stroke-width="1.2"/>
+    <!-- Header -->
+    <rect x="460" y="230" width="200" height="28" rx="2" fill="#C8A020"/>
+    <text x="560" y="248" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#0A0A08" letter-spacing="2">PRODUCT</text>
+    <!-- Fields -->
+    <line x1="460" y1="258" x2="660" y2="258" stroke="#C8A020" stroke-width="0.4" opacity="0.4"/>
+    <text x="472" y="274" font-family="'Courier New', Courier, monospace" font-size="10" fill="#888785">PK  id</text>
+    <text x="472" y="289" font-family="'Courier New', Courier, monospace" font-size="10" fill="#C8A020">FK  category → Category</text>
+    <text x="472" y="304" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    sku</text>
+    <text x="472" y="319" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    name</text>
+    <text x="472" y="334" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    description</text>
+    <text x="472" y="349" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    price</text>
+    <text x="472" y="364" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    rating</text>
+    <text x="472" y="379" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    image</text>
+    <text x="472" y="394" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    is_new</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- ENTITY: Review — centre-left                                -->
+  <!-- ============================================================ -->
+  <g id="entity-review">
+    <rect x="460" y="500" width="200" height="170" rx="2" fill="#111110" stroke="#C8A020" stroke-width="1.2"/>
+    <!-- Header -->
+    <rect x="460" y="500" width="200" height="28" rx="2" fill="#1A1A18"/>
+    <rect x="460" y="500" width="200" height="28" rx="2" fill="none" stroke="#C8A020" stroke-width="1.2"/>
+    <text x="560" y="518" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#C8A020" letter-spacing="2">REVIEW</text>
+    <!-- Fields -->
+    <line x1="460" y1="528" x2="660" y2="528" stroke="#C8A020" stroke-width="0.4" opacity="0.4"/>
+    <text x="472" y="544" font-family="'Courier New', Courier, monospace" font-size="10" fill="#888785">PK  id</text>
+    <text x="472" y="559" font-family="'Courier New', Courier, monospace" font-size="10" fill="#C8A020">FK  product → Product</text>
+    <text x="472" y="574" font-family="'Courier New', Courier, monospace" font-size="10" fill="#C8A020">FK  user → User</text>
+    <text x="472" y="589" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    rating (1–5)</text>
+    <text x="472" y="604" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    comment</text>
+    <text x="472" y="619" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    created_at</text>
+    <text x="472" y="634" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785" font-style="italic">  unique(product, user)</text>
+    <text x="472" y="648" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785" font-style="italic">  → 1 review per user</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- ENTITY: Order — top-right                                   -->
+  <!-- ============================================================ -->
+  <g id="entity-order">
+    <rect x="840" y="70" width="320" height="290" rx="2" fill="#111110" stroke="#C8A020" stroke-width="1.2"/>
+    <!-- Header -->
+    <rect x="840" y="70" width="320" height="28" rx="2" fill="#C8A020"/>
+    <text x="1000" y="88" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#0A0A08" letter-spacing="2">ORDER</text>
+    <!-- Fields -->
+    <line x1="840" y1="98" x2="1160" y2="98" stroke="#C8A020" stroke-width="0.4" opacity="0.4"/>
+    <text x="852" y="114" font-family="'Courier New', Courier, monospace" font-size="10" fill="#888785">PK  id</text>
+    <text x="852" y="129" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    order_number (UUID)</text>
+    <text x="852" y="144" font-family="'Courier New', Courier, monospace" font-size="10" fill="#C8A020">FK  user_profile → UserProfile</text>
+    <text x="852" y="159" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    full_name</text>
+    <text x="852" y="174" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    email</text>
+    <text x="852" y="189" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    phone_number</text>
+    <text x="852" y="204" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    street_address1, street_address2</text>
+    <text x="852" y="219" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    town_or_city, postcode</text>
+    <text x="852" y="234" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    country, county</text>
+    <text x="852" y="249" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    date</text>
+    <text x="852" y="264" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    delivery_cost</text>
+    <text x="852" y="279" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    order_total, grand_total</text>
+    <text x="852" y="294" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    stripe_pid</text>
+    <text x="852" y="309" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785" font-style="italic">  user_profile nullable (guest orders)</text>
+    <text x="852" y="323" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785" font-style="italic">  order_total auto-calculated from items</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- ENTITY: OrderLineItem — bottom-right                        -->
+  <!-- ============================================================ -->
+  <g id="entity-orderlineitem">
+    <rect x="840" y="410" width="320" height="150" rx="2" fill="#111110" stroke="#C8A020" stroke-width="1.2"/>
+    <!-- Header -->
+    <rect x="840" y="410" width="320" height="28" rx="2" fill="#1A1A18"/>
+    <rect x="840" y="410" width="320" height="28" rx="2" fill="none" stroke="#C8A020" stroke-width="1.2"/>
+    <text x="1000" y="428" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#C8A020" letter-spacing="2">ORDERLINEITEM</text>
+    <!-- Fields -->
+    <line x1="840" y1="438" x2="1160" y2="438" stroke="#C8A020" stroke-width="0.4" opacity="0.4"/>
+    <text x="852" y="454" font-family="'Courier New', Courier, monospace" font-size="10" fill="#888785">PK  id</text>
+    <text x="852" y="469" font-family="'Courier New', Courier, monospace" font-size="10" fill="#C8A020">FK  order → Order</text>
+    <text x="852" y="484" font-family="'Courier New', Courier, monospace" font-size="10" fill="#C8A020">FK  product → Product</text>
+    <text x="852" y="499" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    quantity</text>
+    <text x="852" y="514" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">    lineitem_total</text>
+    <text x="852" y="529" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785" font-style="italic">  lineitem_total auto-calculated on save</text>
+    <text x="852" y="543" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785" font-style="italic">  signals update order_total on change</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- RELATIONSHIP LINES                                           -->
+  <!-- ============================================================ -->
+
+  <!-- User → UserProfile (OneToOne) -->
+  <!-- User bottom (140, 200) → UserProfile top (140, 240) -->
+  <line x1="140" y1="200" x2="140" y2="240" stroke="#C8A020" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <!-- Arrow head -->
+  <polygon points="134,234 140,244 146,234" fill="#C8A020"/>
+  <text x="145" y="222" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785">1:1</text>
+
+  <!-- User → Wishlist (OneToOne) -->
+  <!-- UserProfile bottom (140, 430) → Wishlist top (140, 470) -->
+  <line x1="140" y1="430" x2="140" y2="470" stroke="#C8A020" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <polygon points="134,464 140,474 146,464" fill="#C8A020"/>
+  <text x="145" y="452" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785">1:1</text>
+
+  <!-- User → Review (FK, right side of User to Review) -->
+  <!-- User right (240, 135) → Review left (460, 574) -->
+  <path d="M240,135 Q350,135 350,574 L460,574" fill="none" stroke="#C8A020" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+  <polygon points="454,568 464,574 454,580" fill="#C8A020" opacity="0.7"/>
+  <text x="280" y="128" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785">FK</text>
+
+  <!-- Category → Product (FK) -->
+  <!-- Category bottom (560, 180) → Product top (560, 230) -->
+  <line x1="560" y1="180" x2="560" y2="230" stroke="#C8A020" stroke-width="1.2"/>
+  <polygon points="554,224 560,234 566,224" fill="#C8A020"/>
+  <text x="565" y="208" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785">1:N</text>
+
+  <!-- Product → Review (FK) -->
+  <!-- Product bottom (560, 450) → Review top (560, 500) -->
+  <line x1="560" y1="450" x2="560" y2="500" stroke="#C8A020" stroke-width="1.2"/>
+  <polygon points="554,494 560,504 566,494" fill="#C8A020"/>
+  <text x="565" y="477" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785">1:N</text>
+
+  <!-- Wishlist → Product (M2M) -->
+  <!-- Wishlist right (240, 528) → Product left (460, 340) -->
+  <path d="M240,528 Q350,528 350,340 L460,340" fill="none" stroke="#C8A020" stroke-width="1" stroke-dasharray="6,3" opacity="0.8"/>
+  <polygon points="454,334 464,340 454,346" fill="#C8A020" opacity="0.8"/>
+  <text x="265" y="518" font-family="'Courier New', Courier, monospace" font-size="9" fill="#C8A020">M2M</text>
+
+  <!-- UserProfile → Order (FK, nullable) -->
+  <!-- UserProfile right (240, 335) → Order left (840, 144) -->
+  <path d="M240,335 Q540,335 540,144 L840,144" fill="none" stroke="#C8A020" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+  <polygon points="834,138 844,144 834,150" fill="#C8A020" opacity="0.6"/>
+  <text x="390" y="328" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785">FK (null)</text>
+
+  <!-- Order → OrderLineItem (FK) -->
+  <!-- Order bottom (1000, 360) → OrderLineItem top (1000, 410) -->
+  <line x1="1000" y1="360" x2="1000" y2="410" stroke="#C8A020" stroke-width="1.4"/>
+  <polygon points="994,404 1000,414 1006,404" fill="#C8A020"/>
+  <text x="1005" y="388" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785">1:N</text>
+
+  <!-- Product → OrderLineItem (FK) -->
+  <!-- Product right (660, 340) → OrderLineItem left (840, 484) -->
+  <path d="M660,340 Q750,340 750,484 L840,484" fill="none" stroke="#C8A020" stroke-width="1.2"/>
+  <polygon points="834,478 844,484 834,490" fill="#C8A020"/>
+  <text x="695" y="390" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785">FK</text>
+
+  <!-- ============================================================ -->
+  <!-- LEGEND                                                       -->
+  <!-- ============================================================ -->
+  <g id="legend">
+    <rect x="840" y="600" width="320" height="155" rx="2" fill="#111110" stroke="#2D2D2B" stroke-width="1"/>
+    <text x="1000" y="620" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="10" font-weight="bold" fill="#F0EDE4" letter-spacing="3">LEGEND</text>
+    <line x1="840" y1="626" x2="1160" y2="626" stroke="#2D2D2B" stroke-width="0.5"/>
+
+    <!-- Solid line — direct FK -->
+    <line x1="860" y1="645" x2="900" y2="645" stroke="#C8A020" stroke-width="1.4"/>
+    <polygon points="897,641 905,645 897,649" fill="#C8A020"/>
+    <text x="912" y="649" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">ForeignKey (FK)</text>
+
+    <!-- Dashed line — OneToOne or nullable FK -->
+    <line x1="860" y1="668" x2="900" y2="668" stroke="#C8A020" stroke-width="1.2" stroke-dasharray="4,3"/>
+    <polygon points="897,664 905,668 897,672" fill="#C8A020"/>
+    <text x="912" y="672" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">OneToOne / nullable FK</text>
+
+    <!-- Dashed wider spacing — M2M -->
+    <line x1="860" y1="691" x2="900" y2="691" stroke="#C8A020" stroke-width="1" stroke-dasharray="6,3" opacity="0.8"/>
+    <polygon points="897,687 905,691 897,695" fill="#C8A020" opacity="0.8"/>
+    <text x="912" y="695" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">ManyToMany (M2M)</text>
+
+    <!-- Gold header box -->
+    <rect x="860" y="706" width="20" height="12" rx="1" fill="#C8A020"/>
+    <text x="912" y="718" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">Gold header = central entity</text>
+
+    <!-- Dark header box -->
+    <rect x="860" y="726" width="20" height="12" rx="1" fill="#1A1A18" stroke="#C8A020" stroke-width="1"/>
+    <text x="912" y="738" font-family="'Courier New', Courier, monospace" font-size="10" fill="#F0EDE4">Dark header = supporting entity</text>
+
+    <!-- PK / FK labels -->
+    <text x="860" y="755" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785">PK = Primary Key   FK = Foreign Key   M2M = Many-to-Many</text>
+  </g>
+
+  <!-- Footer line -->
+  <line x1="80" y1="775" x2="1120" y2="775" stroke="#C8A020" stroke-width="0.5" opacity="0.4"/>
+  <text x="600" y="790" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="9" fill="#888785" letter-spacing="2">NOIR Store — Code Institute PP5 — Django E-Commerce Application</text>
+
+</svg>
