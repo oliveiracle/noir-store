@@ -1,0 +1,156 @@
+<svg viewBox="0 0 1200 960" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR Checkout Page</title>
+  <rect width="1200" height="960" fill="#F4F2ED"/>
+  <text x="20" y="22" font-size="11" fill="#888" letter-spacing="1.5">WIREFRAME — NOIR / CHECKOUT PAGE — DELIVERY + PAYMENT</text>
+  <line x1="20" y1="30" x2="1180" y2="30" stroke="#CCC" stroke-width="0.5"/>
+
+  <!-- NAVBAR -->
+  <rect x="20" y="42" width="1160" height="52" fill="#E0DDD6" rx="3" stroke="#BBBAB3" stroke-width="0.8"/>
+  <rect x="40" y="58" width="70" height="18" fill="#C8C6BF" rx="2"/>
+  <text x="75" y="71" font-size="9" fill="#666" text-anchor="middle">LOGO</text>
+  <rect x="420" y="60" width="50" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="445" y="71" font-size="8" fill="#777" text-anchor="middle">SHOP</text>
+  <rect x="485" y="60" width="50" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="510" y="71" font-size="8" fill="#777" text-anchor="middle">ABOUT</text>
+  <rect x="550" y="60" width="60" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="580" y="71" font-size="8" fill="#777" text-anchor="middle">JACKETS</text>
+  <rect x="625" y="60" width="70" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="660" y="71" font-size="8" fill="#777" text-anchor="middle">TROUSERS</text>
+  <rect x="710" y="60" width="85" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="752" y="71" font-size="8" fill="#777" text-anchor="middle">ACCESSORIES</text>
+  <rect x="1020" y="60" width="70" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="1055" y="71" font-size="8" fill="#777" text-anchor="middle">SEARCH</text>
+  <circle cx="1115" cy="67" r="8" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <circle cx="1145" cy="67" r="8" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <line x1="20" y1="96" x2="1180" y2="96" stroke="#C8C6BF" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!-- Layout annotation -->
+  <line x1="882" y1="104" x2="882" y2="880" stroke="#BBBAB3" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <rect x="300" y="100" width="340" height="17" fill="#F4F2ED" rx="3" stroke="#CCC" stroke-width="0.5"/>
+  <text x="470" y="112" font-size="8" fill="#777" text-anchor="middle">Layout 2 col — delivery+payment ~72% | order summary ~28%</text>
+
+  <!-- ===== LEFT: DELIVERY INFORMATION ===== -->
+  <rect x="20" y="100" width="858" height="790" fill="#E8E6E0" rx="3" stroke="#C0BEB8" stroke-width="0.8"/>
+
+  <text x="40" y="130" font-size="9" fill="#888" letter-spacing="2" font-weight="bold">DELIVERY INFORMATION</text>
+  <line x1="40" y1="138" x2="858" y2="138" stroke="#C0BDB6" stroke-width="0.5"/>
+
+  <!-- Fields: email (pre-filled) -->
+  <rect x="40" y="152" width="800" height="30" fill="#D0CEC8" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="171" font-size="8.5" fill="#777">user@email.com</text>
+  <line x1="40" y1="182" x2="840" y2="182" stroke="#AAAAAA" stroke-width="0.8"/>
+  <!-- annotation pre-filled -->
+  <line x1="840" y1="167" x2="870" y2="155" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="872" y="143" width="195" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="969" y="158" font-size="8.5" fill="#666" text-anchor="middle">Pre-filled from account — muted style</text>
+
+  <!-- username pre-filled -->
+  <rect x="40" y="196" width="800" height="30" fill="#D0CEC8" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="215" font-size="8.5" fill="#777">user@email.com</text>
+  <line x1="40" y1="226" x2="840" y2="226" stroke="#AAAAAA" stroke-width="0.8"/>
+
+  <!-- Phone -->
+  <rect x="40" y="240" width="800" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="259" font-size="8.5" fill="#AAA">Phone Number *</text>
+  <line x1="40" y1="270" x2="840" y2="270" stroke="#AAAAAA" stroke-width="0.8"/>
+
+  <!-- Street Address 1 -->
+  <rect x="40" y="284" width="800" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="303" font-size="8.5" fill="#AAA">Street Address 1 *</text>
+  <line x1="40" y1="314" x2="840" y2="314" stroke="#AAAAAA" stroke-width="0.8"/>
+
+  <!-- Street Address 2 -->
+  <rect x="40" y="328" width="800" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="347" font-size="8.5" fill="#AAA">Street Address 2</text>
+  <line x1="40" y1="358" x2="840" y2="358" stroke="#AAAAAA" stroke-width="0.8"/>
+
+  <!-- Town / City -->
+  <rect x="40" y="372" width="800" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="391" font-size="8.5" fill="#AAA">Town or City *</text>
+  <line x1="40" y1="402" x2="840" y2="402" stroke="#AAAAAA" stroke-width="0.8"/>
+
+  <!-- Postcode -->
+  <rect x="40" y="416" width="800" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="435" font-size="8.5" fill="#AAA">Postcode</text>
+  <line x1="40" y1="446" x2="840" y2="446" stroke="#AAAAAA" stroke-width="0.8"/>
+
+  <!-- Country -->
+  <rect x="40" y="460" width="800" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="479" font-size="8.5" fill="#AAA">Country *</text>
+  <line x1="40" y1="490" x2="840" y2="490" stroke="#AAAAAA" stroke-width="0.8"/>
+
+  <!-- County / State -->
+  <rect x="40" y="504" width="800" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="523" font-size="8.5" fill="#AAA">County / State</text>
+  <line x1="40" y1="534" x2="840" y2="534" stroke="#AAAAAA" stroke-width="0.8"/>
+
+  <!-- field annotation -->
+  <line x1="840" y1="390" x2="860" y2="380" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="862" y="368" width="220" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="972" y="383" font-size="8.5" fill="#666" text-anchor="middle">All inputs — underline style, * = required</text>
+
+  <!-- PAYMENT section -->
+  <text x="40" y="564" font-size="9" fill="#888" letter-spacing="2" font-weight="bold">PAYMENT</text>
+  <line x1="40" y1="572" x2="858" y2="572" stroke="#C0BDB6" stroke-width="0.5"/>
+
+  <!-- Card number field -->
+  <rect x="40" y="584" width="800" height="36" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.8"/>
+  <rect x="55" y="596" width="24" height="14" fill="#C0BDB6" rx="1"/>
+  <text x="67" y="607" font-size="6" fill="#888" text-anchor="middle">CARD</text>
+  <text x="96" y="607" font-size="8.5" fill="#AAA">Card number</text>
+  <!-- Autofill badge -->
+  <rect x="718" y="592" width="110" height="22" fill="#A8C5A0" rx="3"/>
+  <text x="773" y="607" font-size="8" fill="#3A6B34" text-anchor="middle">Autofill  link</text>
+  <line x1="840" y1="602" x2="862" y2="590" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="864" y="578" width="196" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="962" y="593" font-size="8.5" fill="#666" text-anchor="middle">Autofill badge — browser native feature</text>
+
+  <!-- Expiry + CVC row -->
+  <rect x="40" y="634" width="390" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="653" font-size="8.5" fill="#AAA">Expiry date (MM/YY)</text>
+  <line x1="40" y1="664" x2="430" y2="664" stroke="#AAAAAA" stroke-width="0.8"/>
+  <rect x="450" y="634" width="390" height="30" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="465" y="653" font-size="8.5" fill="#AAA">Security code (CVC)</text>
+  <line x1="450" y1="664" x2="840" y2="664" stroke="#AAAAAA" stroke-width="0.8"/>
+  <!-- annotation row -->
+  <line x1="430" y1="649" x2="430" y2="680" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="280" y="682" width="300" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="430" y="697" font-size="8.5" fill="#666" text-anchor="middle">Expiry + CVC in a 2-col row below card number</text>
+
+  <!-- More content hint -->
+  <text x="430" y="740" font-size="8" fill="#CCC" text-anchor="middle">billing address fields + submit CTA continue below on scroll ↓</text>
+
+  <!-- ===== RIGHT: ORDER SUMMARY ===== -->
+  <rect x="890" y="100" width="290" height="340" fill="#D8D6CF" rx="3" stroke="#BBBAB3" stroke-width="0.8"/>
+  <text x="1035" y="128" font-size="8" fill="#777" letter-spacing="2" text-anchor="middle">ORDER SUMMARY</text>
+  <line x1="906" y1="136" x2="1164" y2="136" stroke="#BBBAB3" stroke-width="0.5"/>
+
+  <!-- Item line -->
+  <text x="906" y="158" font-size="9" fill="#555" font-weight="bold">TAILORED SLIM TROUSERS</text>
+  <text x="906" y="174" font-size="8" fill="#888">Qty: 2</text>
+  <text x="1164" y="158" font-size="9" fill="#555" text-anchor="end">€239.98</text>
+  <line x1="906" y1="184" x2="1164" y2="184" stroke="#BBBAB3" stroke-width="0.5"/>
+
+  <text x="906" y="204" font-size="8" fill="#888">SUBTOTAL</text>
+  <text x="1164" y="204" font-size="8" fill="#666" text-anchor="end">€239.98</text>
+  <text x="906" y="224" font-size="8" fill="#888">DELIVERY</text>
+  <text x="1164" y="224" font-size="8" fill="#666" text-anchor="end">€0</text>
+  <line x1="906" y1="238" x2="1164" y2="238" stroke="#BBBAB3" stroke-width="0.5"/>
+
+  <text x="906" y="260" font-size="10" fill="#444" font-weight="bold">TOTAL</text>
+  <text x="1164" y="260" font-size="10" fill="#444" text-anchor="end" font-weight="bold">€239.98</text>
+
+  <!-- annotation summary -->
+  <line x1="1164" y1="220" x2="1186" y2="208" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="990" y="278" width="180" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="1080" y="293" font-size="8.5" fill="#666" text-anchor="middle">Summary sticky on scroll — right panel</text>
+
+  <!-- Chat widget -->
+  <circle cx="1160" cy="900" r="18" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="1"/>
+  <text x="1160" y="904" font-size="8" fill="#888" text-anchor="middle">chat</text>
+
+  <!-- Bottom label -->
+  <line x1="20" y1="938" x2="1180" y2="938" stroke="#CCC" stroke-width="0.5"/>
+  <text x="20" y="954" font-size="10" fill="#AAAAAA">Page 14 / Checkout — delivery form + payment + order summary</text>
+  <text x="1180" y="954" font-size="10" fill="#AAAAAA" text-anchor="end">Breakpoint: Desktop 1440px+</text>
+</svg>

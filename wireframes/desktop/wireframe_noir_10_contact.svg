@@ -1,0 +1,175 @@
+<svg viewBox="0 0 1200 1020" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR Contact Page</title>
+  <rect width="1200" height="1020" fill="#F4F2ED"/>
+  <text x="20" y="22" font-size="11" fill="#888" letter-spacing="1.5">WIREFRAME — NOIR / CONTACT PAGE</text>
+  <line x1="20" y1="30" x2="1180" y2="30" stroke="#CCC" stroke-width="0.5"/>
+
+  <!-- NAVBAR -->
+  <rect x="20" y="42" width="1160" height="52" fill="#E0DDD6" rx="3" stroke="#BBBAB3" stroke-width="0.8"/>
+  <rect x="40" y="58" width="70" height="18" fill="#C8C6BF" rx="2"/>
+  <text x="75" y="71" font-size="9" fill="#666" text-anchor="middle">LOGO</text>
+  <rect x="420" y="60" width="50" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="445" y="71" font-size="8" fill="#777" text-anchor="middle">SHOP</text>
+  <rect x="485" y="60" width="50" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="510" y="71" font-size="8" fill="#777" text-anchor="middle">ABOUT</text>
+  <rect x="550" y="60" width="60" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="580" y="71" font-size="8" fill="#777" text-anchor="middle">JACKETS</text>
+  <rect x="625" y="60" width="70" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="660" y="71" font-size="8" fill="#777" text-anchor="middle">TROUSERS</text>
+  <rect x="710" y="60" width="85" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="752" y="71" font-size="8" fill="#777" text-anchor="middle">ACCESSORIES</text>
+  <rect x="1020" y="60" width="70" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="1055" y="71" font-size="8" fill="#777" text-anchor="middle">SEARCH</text>
+  <circle cx="1115" cy="67" r="8" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <circle cx="1145" cy="67" r="8" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <line x1="20" y1="96" x2="1180" y2="96" stroke="#C8C6BF" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!-- MAIN CONTENT AREA -->
+  <rect x="20" y="100" width="1160" height="620" fill="#E8E6E0" rx="3" stroke="#C0BEB8" stroke-width="0.8"/>
+
+  <!-- Top spacing -->
+  <rect x="20" y="100" width="1160" height="50" fill="#E2E0D9" rx="0"/>
+  <text x="600" y="129" font-size="8" fill="#BBB" text-anchor="middle">top spacing without page title</text>
+
+  <!-- layout annotation: 2-col split ~60/40 -->
+  <line x1="20" y1="100" x2="20" y2="720" stroke="none"/>
+  <line x1="748" y1="108" x2="748" y2="720" stroke="#BBBAB3" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <rect x="380" y="100" width="250" height="18" fill="#F4F2ED" rx="3" stroke="#CCC" stroke-width="0.5"/>
+  <text x="505" y="113" font-size="8" fill="#777" text-anchor="middle">2-column layout: form ~62% | map+info ~38%</text>
+
+  <!-- =====================
+       LEFT COL: FORM
+  ===================== -->
+
+  <!-- Field: Name -->
+  <text x="40" y="178" font-size="11" fill="#666" font-weight="bold">Name</text>
+  <rect x="40" y="188" width="680" height="28" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="207" font-size="8.5" fill="#AAA">Your full name</text>
+  <line x1="40" y1="216" x2="720" y2="216" stroke="#AAA" stroke-width="0.5"/>
+
+  <!-- annotation: field style -->
+  <line x1="720" y1="202" x2="758" y2="190" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="760" y="177" width="220" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="870" y="192" font-size="8.5" fill="#666" text-anchor="middle">Input — no side/top border, underline only</text>
+
+  <!-- Field: Email -->
+  <text x="40" y="264" font-size="11" fill="#666" font-weight="bold">Email</text>
+  <rect x="40" y="274" width="680" height="28" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="293" font-size="8.5" fill="#AAA">your@email.com</text>
+  <line x1="40" y1="302" x2="720" y2="302" stroke="#AAA" stroke-width="0.5"/>
+
+  <!-- Field: Subject -->
+  <text x="40" y="350" font-size="11" fill="#666" font-weight="bold">Subject</text>
+  <rect x="40" y="360" width="680" height="28" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="379" font-size="8.5" fill="#AAA">How can we help?</text>
+  <line x1="40" y1="388" x2="720" y2="388" stroke="#AAA" stroke-width="0.5"/>
+
+  <!-- Field: Message (textarea) -->
+  <text x="40" y="436" font-size="11" fill="#666" font-weight="bold">Message</text>
+  <rect x="40" y="446" width="680" height="100" fill="#D8D6CF" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <text x="55" y="468" font-size="8.5" fill="#AAA">Your message...</text>
+  <!-- resize handle corner -->
+  <line x1="710" y1="536" x2="720" y2="546" stroke="#AAA" stroke-width="1"/>
+  <line x1="704" y1="540" x2="720" y2="546" stroke="#AAA" stroke-width="1"/>
+  <line x1="708" y1="536" x2="716" y2="546" stroke="#AAA" stroke-width="0.6"/>
+  <!-- annotation: textarea -->
+  <line x1="720" y1="496" x2="760" y2="496" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="762" y="484" width="210" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="867" y="499" font-size="8.5" fill="#666" text-anchor="middle">Resizable textarea (resize handle)</text>
+
+  <!-- CTA Button: SEND MESSAGE -->
+  <rect x="40" y="570" width="680" height="46" fill="#C8C5BE" rx="2" stroke="#888" stroke-width="1.2"/>
+  <text x="380" y="598" font-size="10" fill="#555" text-anchor="middle" letter-spacing="3">SEND MESSAGE</text>
+  <!-- annotation: button -->
+  <line x1="380" y1="616" x2="380" y2="636" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="250" y="638" width="260" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="380" y="653" font-size="8.5" fill="#666" text-anchor="middle">CTA full-width — light fill, bold caps text</text>
+
+  <!-- =====================
+       RIGHT COL: MAP + INFO
+  ===================== -->
+
+  <!-- Map embed -->
+  <rect x="760" y="152" width="420" height="340" fill="#C8C5BE" rx="3" stroke="#AAAAAA" stroke-width="0.8"/>
+  <line x1="760" y1="152" x2="1180" y2="492" stroke="#BBBAB0" stroke-width="0.5"/>
+  <line x1="1180" y1="152" x2="760" y2="492" stroke="#BBBAB0" stroke-width="0.5"/>
+  <text x="970" y="318" font-size="10" fill="#888" text-anchor="middle">EMBEDDED MAP</text>
+  <text x="970" y="334" font-size="8" fill="#999" text-anchor="middle">Google Maps iframe</text>
+  <text x="970" y="348" font-size="8" fill="#999" text-anchor="middle">12 Rue du Commerce, Paris</text>
+  <!-- map pin hint -->
+  <circle cx="970" cy="300" r="10" fill="#C0BDB6" stroke="#888" stroke-width="1"/>
+  <text x="970" y="304" font-size="9" fill="#666" text-anchor="middle">+</text>
+  <!-- annotation map -->
+  <line x1="1180" y1="318" x2="1200" y2="310" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="1000" y="138" width="180" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="1090" y="153" font-size="8.5" fill="#666" text-anchor="middle">Google Maps iframe embed</text>
+
+  <!-- Info block below map: LOCATION + RESPONSE TIME -->
+  <text x="760" y="524" font-size="9" fill="#888" letter-spacing="2">LOCATION</text>
+  <rect x="760" y="532" width="160" height="11" fill="#CCCAC3" rx="1"/>
+  <rect x="760" y="549" width="140" height="11" fill="#CCCAC3" rx="1"/>
+  <text x="840" y="541" font-size="7.5" fill="#888" text-anchor="middle">12 Rue du Commerce</text>
+  <text x="830" y="558" font-size="7.5" fill="#888" text-anchor="middle">75015 Paris, France</text>
+
+  <text x="990" y="524" font-size="9" fill="#888" letter-spacing="2">RESPONSE TIME</text>
+  <rect x="990" y="532" width="160" height="11" fill="#CCCAC3" rx="1"/>
+  <rect x="990" y="549" width="140" height="11" fill="#CCCAC3" rx="1"/>
+  <text x="1070" y="541" font-size="7.5" fill="#888" text-anchor="middle">Within 24 hours</text>
+  <text x="1060" y="558" font-size="7.5" fill="#888" text-anchor="middle">Monday - Friday</text>
+
+  <!-- annotation: info block -->
+  <line x1="760" y1="540" x2="730" y2="556" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="500" y="548" width="228" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="614" y="563" font-size="8.5" fill="#666" text-anchor="middle">Info in 2 columns: Location + Response Time</text>
+
+  <!-- =====================
+       FOOTER (reutilizado)
+  ===================== -->
+  <rect x="20" y="724" width="1160" height="260" fill="#D8D6CF" rx="3" stroke="#BBBAB3" stroke-width="0.8"/>
+
+  <!-- Footer note -->
+  <rect x="400" y="730" width="400" height="18" fill="#F4F2ED" rx="3" stroke="#CCC" stroke-width="0.5"/>
+  <text x="600" y="743" font-size="8.5" fill="#888" text-anchor="middle">Footer identical to Homepage (wireframe #03)</text>
+
+  <!-- Footer col 1 -->
+  <rect x="48" y="764" width="80" height="22" fill="#C0BDB6" rx="2"/>
+  <text x="88" y="779" font-size="9" fill="#666" text-anchor="middle">LOGO</text>
+  <rect x="48" y="796" width="140" height="10" fill="#C8C5BE" rx="1"/>
+  <rect x="48" y="812" width="120" height="10" fill="#C8C5BE" rx="1"/>
+
+  <!-- Footer col 2: SHOP -->
+  <text x="500" y="770" font-size="9" fill="#777" letter-spacing="3">SHOP</text>
+  <rect x="500" y="782" width="80" height="9" fill="#C8C5BE" rx="1"/>
+  <rect x="500" y="797" width="72" height="9" fill="#C8C5BE" rx="1"/>
+  <rect x="500" y="812" width="50" height="9" fill="#C8C5BE" rx="1"/>
+  <rect x="500" y="827" width="66" height="9" fill="#C8C5BE" rx="1"/>
+
+  <!-- Footer col 3: HELP -->
+  <text x="740" y="770" font-size="9" fill="#777" letter-spacing="3">HELP</text>
+  <rect x="740" y="782" width="50" height="9" fill="#C8C5BE" rx="1"/>
+  <rect x="740" y="797" width="36" height="9" fill="#C8C5BE" rx="1"/>
+  <rect x="740" y="812" width="60" height="9" fill="#C8C5BE" rx="1"/>
+  <rect x="740" y="827" width="55" height="9" fill="#C8C5BE" rx="1"/>
+
+  <!-- Footer col 4: NEWSLETTER -->
+  <text x="980" y="770" font-size="9" fill="#777" letter-spacing="3">NEWSLETTER</text>
+  <rect x="980" y="796" width="150" height="28" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="1055" y="814" font-size="8" fill="#888" text-anchor="middle">your@email.com</text>
+  <rect x="1134" y="796" width="46" height="28" fill="#B0ADA6" rx="2" stroke="#999" stroke-width="0.8"/>
+  <text x="1157" y="814" font-size="8" fill="#666" text-anchor="middle">JOIN</text>
+
+  <!-- Footer bottom bar -->
+  <line x1="48" y1="874" x2="1152" y2="874" stroke="#BBBAB3" stroke-width="0.5"/>
+  <rect x="48" y="882" width="200" height="9" fill="#C0BDB6" rx="1"/>
+  <rect x="980" y="882" width="80" height="9" fill="#C0BDB6" rx="1"/>
+  <rect x="1070" y="882" width="60" height="9" fill="#C0BDB6" rx="1"/>
+
+  <!-- Chat widget -->
+  <circle cx="1160" cy="940" r="18" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="1"/>
+  <text x="1160" y="944" font-size="8" fill="#888" text-anchor="middle">chat</text>
+
+  <!-- Bottom label -->
+  <line x1="20" y1="998" x2="1180" y2="998" stroke="#CCC" stroke-width="0.5"/>
+  <text x="20" y="1014" font-size="10" fill="#AAAAAA">Contact page — form + map, 2 columns + footer</text>
+  <text x="1180" y="1014" font-size="10" fill="#AAAAAA" text-anchor="end">Breakpoint: Desktop 1440px+</text>
+</svg>

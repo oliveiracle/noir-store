@@ -1,0 +1,117 @@
+<svg viewBox="0 0 1200 920" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR FAQ Page</title>
+  <rect width="1200" height="920" fill="#F4F2ED"/>
+  <text x="20" y="22" font-size="11" fill="#888" letter-spacing="1.5">WIREFRAME — NOIR / FAQ PAGE</text>
+  <line x1="20" y1="30" x2="1180" y2="30" stroke="#CCC" stroke-width="0.5"/>
+
+  <!-- NAVBAR -->
+  <rect x="20" y="42" width="1160" height="52" fill="#E0DDD6" rx="3" stroke="#BBBAB3" stroke-width="0.8"/>
+  <rect x="40" y="58" width="70" height="18" fill="#C8C6BF" rx="2"/>
+  <text x="75" y="71" font-size="9" fill="#666" text-anchor="middle">LOGO</text>
+  <rect x="420" y="60" width="50" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="445" y="71" font-size="8" fill="#777" text-anchor="middle">SHOP</text>
+  <rect x="485" y="60" width="50" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="510" y="71" font-size="8" fill="#777" text-anchor="middle">ABOUT</text>
+  <rect x="550" y="60" width="60" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="580" y="71" font-size="8" fill="#777" text-anchor="middle">JACKETS</text>
+  <rect x="625" y="60" width="70" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="660" y="71" font-size="8" fill="#777" text-anchor="middle">TROUSERS</text>
+  <rect x="710" y="60" width="85" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="752" y="71" font-size="8" fill="#777" text-anchor="middle">ACCESSORIES</text>
+  <rect x="1020" y="60" width="70" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="1055" y="71" font-size="8" fill="#777" text-anchor="middle">SEARCH</text>
+  <circle cx="1115" cy="67" r="8" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <circle cx="1145" cy="67" r="8" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <line x1="20" y1="96" x2="1180" y2="96" stroke="#C8C6BF" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!-- MAIN CONTENT AREA -->
+  <rect x="20" y="100" width="1160" height="780" fill="#E8E6E0" rx="3" stroke="#C0BEB8" stroke-width="0.8"/>
+
+  <!-- Large top spacing (intentional — matches design) -->
+  <rect x="20" y="100" width="1160" height="80" fill="#E2E0D9" rx="0"/>
+  <text x="600" y="145" font-size="8" fill="#BBB" text-anchor="middle">top spacing — no header / page title</text>
+  <line x1="600" y1="135" x2="600" y2="120" stroke="#CCC" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+  <!-- annotation: layout single column, left-aligned, ~60% width -->
+  <line x1="830" y1="220" x2="900" y2="200" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="902" y="186" width="250" height="30" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="1027" y="199" font-size="8.5" fill="#666" text-anchor="middle">Single-col layout, text at ~58% width</text>
+  <text x="1027" y="211" font-size="8" fill="#999" text-anchor="middle">No sidebar, no strong visual dividers</text>
+
+  <!-- ============================
+       FAQ ITEM 1
+  ============================= -->
+  <line x1="40" y1="183" x2="830" y2="183" stroke="#C0BDB6" stroke-width="0.5"/>
+  <!-- Question -->
+  <rect x="40" y="190" width="500" height="14" fill="#C0BDB6" rx="2"/>
+  <text x="290" y="201" font-size="8" fill="#777" text-anchor="middle" letter-spacing="2">HOW DO I PLACE AN ORDER?</text>
+  <!-- Answer lines -->
+  <rect x="40" y="216" width="620" height="12" fill="#CCCAC3" rx="1"/>
+  <rect x="40" y="234" width="480" height="12" fill="#CCCAC3" rx="1"/>
+  <!-- annotations -->
+  <line x1="540" y1="197" x2="600" y2="180" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="602" y="167" width="220" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="712" y="182" font-size="8.5" fill="#666" text-anchor="middle">Question — caps, high letter-spacing, 10px</text>
+  <line x1="560" y1="234" x2="600" y2="252" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="602" y="244" width="210" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="707" y="259" font-size="8.5" fill="#666" text-anchor="middle">Answer — body regular, ~16px, light weight</text>
+
+  <!-- ============================
+       FAQ ITEM 2
+  ============================= -->
+  <line x1="40" y1="320" x2="830" y2="320" stroke="#C0BDB6" stroke-width="0.5"/>
+  <rect x="40" y="328" width="560" height="14" fill="#C0BDB6" rx="2"/>
+  <text x="320" y="339" font-size="8" fill="#777" text-anchor="middle" letter-spacing="2">WHAT PAYMENT METHODS DO YOU ACCEPT?</text>
+  <rect x="40" y="354" width="580" height="12" fill="#CCCAC3" rx="1"/>
+
+  <!-- ============================
+       FAQ ITEM 3
+  ============================= -->
+  <line x1="40" y1="446" x2="830" y2="446" stroke="#C0BDB6" stroke-width="0.5"/>
+  <rect x="40" y="454" width="480" height="14" fill="#C0BDB6" rx="2"/>
+  <text x="280" y="465" font-size="8" fill="#777" text-anchor="middle" letter-spacing="2">CAN I CHANGE OR CANCEL MY ORDER?</text>
+  <rect x="40" y="480" width="600" height="12" fill="#CCCAC3" rx="1"/>
+  <rect x="40" y="498" width="360" height="12" fill="#CCCAC3" rx="1"/>
+
+  <!-- ============================
+       FAQ ITEM 4
+  ============================= -->
+  <line x1="40" y1="580" x2="830" y2="580" stroke="#C0BDB6" stroke-width="0.5"/>
+  <rect x="40" y="588" width="360" height="14" fill="#C0BDB6" rx="2"/>
+  <text x="220" y="599" font-size="8" fill="#777" text-anchor="middle" letter-spacing="2">HOW DO I FIND MY SIZE?</text>
+  <rect x="40" y="614" width="620" height="12" fill="#CCCAC3" rx="1"/>
+  <rect x="40" y="632" width="300" height="12" fill="#CCCAC3" rx="1"/>
+
+  <!-- spacing annotation (between FAQ items) -->
+  <line x1="855" y1="320" x2="855" y2="446" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="2,3"/>
+  <line x1="840" y1="320" x2="870" y2="320" stroke="#AAAAAA" stroke-width="0.8"/>
+  <line x1="840" y1="446" x2="870" y2="446" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="860" y="387" font-size="8" fill="#999" transform="rotate(90,860,387)">~126px spacing</text>
+  <rect x="880" y="368" width="200" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="980" y="383" font-size="8.5" fill="#666" text-anchor="middle">Large spacing between items</text>
+
+  <!-- line separator annotation -->
+  <line x1="600" y1="580" x2="680" y2="560" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="682" y="547" width="220" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="792" y="562" font-size="8.5" fill="#666" text-anchor="middle">0.5px separator line between questions</text>
+
+  <!-- More FAQ items hint (cut off at bottom) -->
+  <line x1="40" y1="714" x2="830" y2="714" stroke="#C0BDB6" stroke-width="0.5" stroke-dasharray="5,4"/>
+  <rect x="40" y="722" width="420" height="14" fill="#C0BDB6" rx="2" opacity="0.5"/>
+  <text x="40" y="750" font-size="8" fill="#BBB">more FAQ items continue on scroll ↓</text>
+
+  <!-- Right side empty space annotation -->
+  <rect x="848" y="184" width="310" height="560" fill="#E0DDD6" rx="2" stroke="#C8C5BE" stroke-width="0.5" stroke-dasharray="5,4"/>
+  <text x="1003" y="470" font-size="9" fill="#BBB" text-anchor="middle">NEGATIVE SPACE</text>
+  <text x="1003" y="486" font-size="8" fill="#CCC" text-anchor="middle">Right side empty —</text>
+  <text x="1003" y="500" font-size="8" fill="#CCC" text-anchor="middle">consistent with About page</text>
+
+  <!-- Chat widget -->
+  <circle cx="1160" cy="840" r="18" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="1"/>
+  <text x="1160" y="844" font-size="8" fill="#888" text-anchor="middle">chat</text>
+
+  <!-- Bottom label -->
+  <line x1="20" y1="898" x2="1180" y2="898" stroke="#CCC" stroke-width="0.5"/>
+  <text x="20" y="914" font-size="10" fill="#AAAAAA">FAQ page — single-col editorial layout</text>
+  <text x="1180" y="914" font-size="10" fill="#AAAAAA" text-anchor="end">Breakpoint: Desktop 1440px+</text>
+</svg>

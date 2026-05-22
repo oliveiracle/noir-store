@@ -1,0 +1,157 @@
+<svg viewBox="0 0 1200 980" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR Homepage / Product Grid + Footer</title>
+
+  <rect width="1200" height="980" fill="#F4F2ED"/>
+  <text x="20" y="22" font-size="11" fill="#888" letter-spacing="1.5">WIREFRAME — NOIR / HOMEPAGE — PRODUCT GRID + FOOTER</text>
+  <line x1="20" y1="30" x2="1180" y2="30" stroke="#CCC" stroke-width="0.5"/>
+
+  <!-- ===== NAVBAR ===== -->
+  <rect x="20" y="42" width="1160" height="52" fill="#E0DDD6" rx="3" stroke="#BBBAB3" stroke-width="0.8"/>
+  <rect x="40" y="58" width="70" height="18" fill="#C8C6BF" rx="2"/>
+  <text x="75" y="71" font-size="9" fill="#666" text-anchor="middle">LOGO</text>
+  <rect x="420" y="60" width="50" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="445" y="71" font-size="8" fill="#777" text-anchor="middle">SHOP</text>
+  <rect x="485" y="60" width="50" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="510" y="71" font-size="8" fill="#777" text-anchor="middle">ABOUT</text>
+  <rect x="550" y="60" width="60" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="580" y="71" font-size="8" fill="#777" text-anchor="middle">JACKETS</text>
+  <rect x="625" y="60" width="70" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="660" y="71" font-size="8" fill="#777" text-anchor="middle">TROUSERS</text>
+  <rect x="710" y="60" width="85" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="752" y="71" font-size="8" fill="#777" text-anchor="middle">ACCESSORIES</text>
+  <rect x="1020" y="60" width="70" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="1055" y="71" font-size="8" fill="#777" text-anchor="middle">SEARCH</text>
+  <circle cx="1115" cy="67" r="8" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <circle cx="1145" cy="67" r="8" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <line x1="20" y1="96" x2="1180" y2="96" stroke="#C8C6BF" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!-- ===== PRODUCT GRID SECTION ===== -->
+  <!-- 4 columns -->
+
+  <!-- col gap = 14px, card width = (1160-42)/4 = ~279px -->
+  <!-- x positions: 20, 313, 606, 899 -->
+
+  <!-- CARD 1 -->
+  <rect x="20" y="106" width="279" height="360" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <line x1="20" y1="106" x2="299" y2="466" stroke="#BBBBB0" stroke-width="0.5"/>
+  <line x1="299" y1="106" x2="20" y2="466" stroke="#BBBBB0" stroke-width="0.5"/>
+  <text x="159" y="295" font-size="9" fill="#888" text-anchor="middle">PRODUCT IMAGE</text>
+  <!-- label below image -->
+  <text x="20" y="488" font-size="8" fill="#888" letter-spacing="2">ACCESSORIES</text>
+  <text x="20" y="505" font-size="11" fill="#555" font-weight="bold">OVAL TINTED SUNGLASSES</text>
+  <text x="20" y="522" font-size="10" fill="#777">€89.99</text>
+
+  <!-- CARD 2 -->
+  <rect x="313" y="106" width="279" height="360" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <line x1="313" y1="106" x2="592" y2="466" stroke="#BBBBB0" stroke-width="0.5"/>
+  <line x1="592" y1="106" x2="313" y2="466" stroke="#BBBBB0" stroke-width="0.5"/>
+  <text x="452" y="295" font-size="9" fill="#888" text-anchor="middle">PRODUCT IMAGE</text>
+  <text x="313" y="488" font-size="8" fill="#888" letter-spacing="2">JACKETS</text>
+  <text x="313" y="505" font-size="11" fill="#555" font-weight="bold">MIDNIGHT LEATHER JACKET</text>
+  <text x="313" y="522" font-size="10" fill="#777">€349.99</text>
+
+  <!-- CARD 3 -->
+  <rect x="606" y="106" width="279" height="360" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <line x1="606" y1="106" x2="885" y2="466" stroke="#BBBBB0" stroke-width="0.5"/>
+  <line x1="885" y1="106" x2="606" y2="466" stroke="#BBBBB0" stroke-width="0.5"/>
+  <text x="745" y="295" font-size="9" fill="#888" text-anchor="middle">PRODUCT IMAGE</text>
+  <text x="606" y="488" font-size="8" fill="#888" letter-spacing="2">ACCESSORIES</text>
+  <text x="606" y="505" font-size="11" fill="#555" font-weight="bold">NOIR SILVER RING SET</text>
+  <text x="606" y="522" font-size="10" fill="#777">€89.99</text>
+
+  <!-- CARD 4 -->
+  <rect x="899" y="106" width="281" height="360" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.6"/>
+  <line x1="899" y1="106" x2="1180" y2="466" stroke="#BBBBB0" stroke-width="0.5"/>
+  <line x1="1180" y1="106" x2="899" y2="466" stroke="#BBBBB0" stroke-width="0.5"/>
+  <text x="1039" y="295" font-size="9" fill="#888" text-anchor="middle">PRODUCT IMAGE</text>
+  <text x="899" y="488" font-size="8" fill="#888" letter-spacing="2">T-SHIRTS</text>
+  <text x="899" y="505" font-size="11" fill="#555" font-weight="bold">GRAPHIC OVERSIZED TEE</text>
+  <text x="899" y="522" font-size="10" fill="#777">€44.99</text>
+
+  <!-- Annotations for product grid -->
+  <line x1="159" y1="466" x2="159" y2="540" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="60" y="542" width="200" height="36" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="160" y="556" font-size="8.5" fill="#666" text-anchor="middle">4-column grid — fixed desktop</text>
+  <text x="160" y="569" font-size="8" fill="#999" text-anchor="middle">Image + category + name + price</text>
+
+  <!-- Divider before footer -->
+  <line x1="20" y1="590" x2="1180" y2="590" stroke="#C0BDB6" stroke-width="1"/>
+
+  <!-- ===== FOOTER ===== -->
+  <rect x="20" y="595" width="1160" height="340" fill="#D8D6CF" rx="3" stroke="#BBBAB3" stroke-width="0.8"/>
+
+  <!-- Footer col 1: Logo + tagline -->
+  <rect x="48" y="630" width="80" height="22" fill="#C0BDB6" rx="2"/>
+  <text x="88" y="645" font-size="9" fill="#666" text-anchor="middle">LOGO</text>
+  <text x="48" y="678" font-size="9" fill="#888">Premium menswear.</text>
+  <text x="48" y="694" font-size="9" fill="#888">No excess. No noise.</text>
+  <!-- annotation -->
+  <line x1="160" y1="685" x2="200" y2="700" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="202" y="693" width="160" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="282" y="708" font-size="8" fill="#777" text-anchor="middle">Brand tagline</text>
+
+  <!-- Footer col 2: SHOP -->
+  <text x="500" y="640" font-size="9" fill="#777" letter-spacing="3">SHOP</text>
+  <line x1="500" y1="648" x2="580" y2="648" stroke="#AAAAAA" stroke-width="0.5"/>
+  <rect x="500" y="658" width="80" height="10" fill="#C8C5BE" rx="1"/>
+  <rect x="500" y="676" width="72" height="10" fill="#C8C5BE" rx="1"/>
+  <rect x="500" y="694" width="50" height="10" fill="#C8C5BE" rx="1"/>
+  <rect x="500" y="712" width="66" height="10" fill="#C8C5BE" rx="1"/>
+  <rect x="500" y="730" width="80" height="10" fill="#C8C5BE" rx="1"/>
+  <text x="540" y="667" font-size="7" fill="#888" text-anchor="middle">Jackets</text>
+  <text x="536" y="685" font-size="7" fill="#888" text-anchor="middle">Trousers</text>
+  <text x="525" y="703" font-size="7" fill="#888" text-anchor="middle">Shirts</text>
+  <text x="533" y="721" font-size="7" fill="#888" text-anchor="middle">T-Shirts</text>
+  <text x="540" y="739" font-size="7" fill="#888" text-anchor="middle">Accessories</text>
+
+  <!-- Footer col 3: HELP -->
+  <text x="740" y="640" font-size="9" fill="#777" letter-spacing="3">HELP</text>
+  <line x1="740" y1="648" x2="820" y2="648" stroke="#AAAAAA" stroke-width="0.5"/>
+  <rect x="740" y="658" width="50" height="10" fill="#C8C5BE" rx="1"/>
+  <rect x="740" y="676" width="36" height="10" fill="#C8C5BE" rx="1"/>
+  <rect x="740" y="694" width="60" height="10" fill="#C8C5BE" rx="1"/>
+  <rect x="740" y="712" width="55" height="10" fill="#C8C5BE" rx="1"/>
+  <rect x="740" y="730" width="55" height="10" fill="#C8C5BE" rx="1"/>
+  <text x="765" y="667" font-size="7" fill="#888" text-anchor="middle">About</text>
+  <text x="758" y="685" font-size="7" fill="#888" text-anchor="middle">FAQ</text>
+  <text x="770" y="703" font-size="7" fill="#888" text-anchor="middle">Shipping</text>
+  <text x="767" y="721" font-size="7" fill="#888" text-anchor="middle">Returns</text>
+  <text x="767" y="739" font-size="7" fill="#888" text-anchor="middle">Contact</text>
+
+  <!-- Footer col 4: NEWSLETTER -->
+  <text x="980" y="640" font-size="9" fill="#777" letter-spacing="3">NEWSLETTER</text>
+  <line x1="980" y1="648" x2="1150" y2="648" stroke="#AAAAAA" stroke-width="0.5"/>
+  <text x="980" y="672" font-size="8.5" fill="#888">Exclusive drops. No spam.</text>
+  <!-- email input + button -->
+  <rect x="980" y="682" width="150" height="30" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="1055" y="701" font-size="8" fill="#888" text-anchor="middle">your@email.com</text>
+  <rect x="1134" y="682" width="46" height="30" fill="#B0ADA6" rx="2" stroke="#999" stroke-width="0.8"/>
+  <text x="1157" y="701" font-size="8" fill="#666" text-anchor="middle">JOIN</text>
+  <!-- annotation -->
+  <line x1="1157" y1="712" x2="1157" y2="740" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="1060" y="742" width="180" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="1150" y="757" font-size="8" fill="#777" text-anchor="middle">Email input + CTA button</text>
+
+  <!-- Footer bottom bar -->
+  <line x1="48" y1="876" x2="1152" y2="876" stroke="#BBBAB3" stroke-width="0.5"/>
+  <rect x="48" y="884" width="200" height="10" fill="#C0BDB6" rx="1"/>
+  <text x="148" y="893" font-size="7" fill="#777" text-anchor="middle">© 2026 NOIR. All rights reserved.</text>
+  <rect x="900" y="884" width="80" height="10" fill="#C0BDB6" rx="1"/>
+  <text x="940" y="893" font-size="7" fill="#777" text-anchor="middle">Privacy Policy</text>
+  <rect x="994" y="884" width="60" height="10" fill="#C0BDB6" rx="1"/>
+  <text x="1024" y="893" font-size="7" fill="#777" text-anchor="middle">Terms</text>
+
+  <!-- Annotation footer structure -->
+  <line x1="600" y1="595" x2="600" y2="570" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="480" y="552" width="240" height="18" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="600" y="565" font-size="8.5" fill="#666" text-anchor="middle">Footer — 4 columns: logo, shop, help, newsletter</text>
+
+  <!-- Chat widget -->
+  <circle cx="1160" cy="910" r="18" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="1"/>
+  <text x="1160" y="914" font-size="8" fill="#888" text-anchor="middle">chat</text>
+
+  <!-- Bottom label -->
+  <line x1="20" y1="958" x2="1180" y2="958" stroke="#CCC" stroke-width="0.5"/>
+  <text x="20" y="974" font-size="10" fill="#AAAAAA">Page 1 / Homepage — Product Grid + Footer</text>
+  <text x="1180" y="974" font-size="10" fill="#AAAAAA" text-anchor="end">Breakpoint: Desktop 1440px+</text>
+</svg>

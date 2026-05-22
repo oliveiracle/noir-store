@@ -1,0 +1,100 @@
+<svg viewBox="0 0 1200 860" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR About Page / The Origin Section</title>
+
+  <rect width="1200" height="860" fill="#F4F2ED"/>
+  <text x="20" y="22" font-size="11" fill="#888" letter-spacing="1.5">WIREFRAME — NOIR / ABOUT PAGE — THE ORIGIN (SLIDE 1 OF 4)</text>
+  <line x1="20" y1="30" x2="1180" y2="30" stroke="#CCC" stroke-width="0.5"/>
+
+  <!-- ===== NAVBAR ===== -->
+  <rect x="20" y="42" width="1160" height="52" fill="#E0DDD6" rx="3" stroke="#BBBAB3" stroke-width="0.8"/>
+  <rect x="40" y="58" width="70" height="18" fill="#C8C6BF" rx="2"/>
+  <text x="75" y="71" font-size="9" fill="#666" text-anchor="middle">LOGO</text>
+  <rect x="420" y="60" width="50" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="445" y="71" font-size="8" fill="#777" text-anchor="middle">SHOP</text>
+  <rect x="485" y="60" width="50" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="510" y="71" font-size="8" fill="#777" text-anchor="middle">ABOUT</text>
+  <rect x="550" y="60" width="60" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="580" y="71" font-size="8" fill="#777" text-anchor="middle">JACKETS</text>
+  <rect x="625" y="60" width="70" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="660" y="71" font-size="8" fill="#777" text-anchor="middle">TROUSERS</text>
+  <rect x="710" y="60" width="85" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="752" y="71" font-size="8" fill="#777" text-anchor="middle">ACCESSORIES</text>
+  <rect x="1020" y="60" width="70" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="1055" y="71" font-size="8" fill="#777" text-anchor="middle">SEARCH</text>
+  <circle cx="1115" cy="67" r="8" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <circle cx="1145" cy="67" r="8" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <line x1="20" y1="96" x2="1180" y2="96" stroke="#C8C6BF" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!-- ===== MAIN CONTENT AREA — full viewport slide ===== -->
+  <rect x="20" y="100" width="1160" height="700" fill="#E8E6E0" rx="3" stroke="#C0BEB8" stroke-width="0.8"/>
+
+  <!-- Left column: text content (~55% width) -->
+  <!-- Generous top padding — content starts ~40% down -->
+
+  <!-- Section label: I — THE ORIGIN -->
+  <text x="120" y="245" font-size="9" fill="#888" letter-spacing="3">I — THE ORIGIN</text>
+  <line x1="120" y1="254" x2="380" y2="254" stroke="#BBBAB3" stroke-width="0.5"/>
+
+  <!-- Body text block -->
+  <rect x="120" y="272" width="620" height="18" fill="#C8C5BE" rx="2"/>
+  <rect x="120" y="298" width="580" height="18" fill="#C8C5BE" rx="2"/>
+  <rect x="120" y="324" width="600" height="18" fill="#C8C5BE" rx="2"/>
+  <rect x="120" y="350" width="440" height="18" fill="#C8C5BE" rx="2"/>
+
+  <!-- text labels inside blocks -->
+  <text x="430" y="285" font-size="8" fill="#888" text-anchor="middle">Body paragraph — line 1</text>
+  <text x="410" y="311" font-size="8" fill="#888" text-anchor="middle">Body paragraph — line 2</text>
+  <text x="420" y="337" font-size="8" fill="#888" text-anchor="middle">Body paragraph — line 3</text>
+  <text x="340" y="363" font-size="8" fill="#888" text-anchor="middle">Body paragraph — line 4</text>
+
+  <!-- Annotation: text style -->
+  <line x1="740" y1="315" x2="820" y2="290" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="822" y="272" width="220" height="36" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="932" y="286" font-size="8.5" fill="#666" text-anchor="middle">Editorial text — large body</text>
+  <text x="932" y="300" font-size="8" fill="#999" text-anchor="middle">~22–26px, weight light, line-height 1.6</text>
+
+  <!-- SOUND OFF button -->
+  <rect x="120" y="530" width="140" height="36" fill="#D0CED8" rx="3" stroke="#AAAAAA" stroke-width="1"/>
+  <text x="145" y="552" font-size="9" fill="#777">◄◄  SOUND OFF</text>
+
+  <!-- Annotation: sound toggle -->
+  <line x1="262" y1="548" x2="340" y2="548" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="342" y="535" width="220" height="26" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="452" y="552" font-size="8.5" fill="#666" text-anchor="middle">Audio toggle — mute/unmute bg video</text>
+
+  <!-- Slide dots (pagination) -->
+  <circle cx="120" cy="610" r="7" fill="#888888"/>
+  <circle cx="143" cy="610" r="7" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <circle cx="166" cy="610" r="7" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <circle cx="189" cy="610" r="7" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+
+  <!-- Annotation: dots -->
+  <line x1="155" y1="618" x2="155" y2="650" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="60" y="652" width="190" height="26" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="155" y="669" font-size="8.5" fill="#666" text-anchor="middle">Dots — 4 slides, dot 1 active</text>
+
+  <!-- Right column: empty / dark space (intentional negative space) -->
+  <rect x="800" y="130" width="360" height="640" fill="#D8D6D0" rx="2" stroke="#BBBAB3" stroke-width="0.5" stroke-dasharray="5,3"/>
+  <text x="980" y="450" font-size="9" fill="#AAA" text-anchor="middle">NEGATIVE SPACE</text>
+  <text x="980" y="466" font-size="8" fill="#BBB" text-anchor="middle">Right side intentionally empty</text>
+  <text x="980" y="480" font-size="8" fill="#BBB" text-anchor="middle">full focus on text to the left</text>
+
+  <!-- Annotation: layout -->
+  <line x1="800" y1="340" x2="770" y2="315" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="560" y="296" width="208" height="26" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="664" y="313" font-size="8.5" fill="#666" text-anchor="middle">Asymmetric layout — text ~55% / empty ~45%</text>
+
+  <!-- Full-viewport annotation -->
+  <line x1="20" y1="100" x2="6" y2="85" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="0" y="68" width="230" height="18" fill="#F4F2ED" rx="3" stroke="#CCC" stroke-width="0.5"/>
+  <text x="115" y="81" font-size="8" fill="#777" text-anchor="middle">Full-viewport section (100vh) — scroll snapping</text>
+
+  <!-- Chat widget -->
+  <circle cx="1160" cy="778" r="18" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="1"/>
+  <text x="1160" y="782" font-size="8" fill="#888" text-anchor="middle">chat</text>
+
+  <!-- Bottom label -->
+  <line x1="20" y1="838" x2="1180" y2="838" stroke="#CCC" stroke-width="0.5"/>
+  <text x="20" y="854" font-size="10" fill="#AAAAAA">Page 2 / About — The Origin (Slide 1/4)</text>
+  <text x="1180" y="854" font-size="10" fill="#AAAAAA" text-anchor="end">Breakpoint: Desktop 1440px+</text>
+</svg>

@@ -1,0 +1,118 @@
+<svg viewBox="0 0 1200 920" xmlns="http://www.w3.org/2000/svg" role="img" font-family="monospace" style="background:#F4F2ED;">
+  <title>Wireframe – NOIR Product Detail Page</title>
+  <rect width="1200" height="920" fill="#F4F2ED"/>
+  <text x="20" y="22" font-size="11" fill="#888" letter-spacing="1.5">WIREFRAME — NOIR / PRODUCT DETAIL PAGE</text>
+  <line x1="20" y1="30" x2="1180" y2="30" stroke="#CCC" stroke-width="0.5"/>
+
+  <!-- NAVBAR -->
+  <rect x="20" y="42" width="1160" height="52" fill="#E0DDD6" rx="3" stroke="#BBBAB3" stroke-width="0.8"/>
+  <rect x="40" y="58" width="70" height="18" fill="#C8C6BF" rx="2"/>
+  <text x="75" y="71" font-size="9" fill="#666" text-anchor="middle">LOGO</text>
+  <rect x="420" y="60" width="50" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="445" y="71" font-size="8" fill="#777" text-anchor="middle">SHOP</text>
+  <rect x="485" y="60" width="50" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="510" y="71" font-size="8" fill="#777" text-anchor="middle">ABOUT</text>
+  <rect x="550" y="60" width="60" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="580" y="71" font-size="8" fill="#777" text-anchor="middle">JACKETS</text>
+  <rect x="625" y="60" width="70" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="660" y="71" font-size="8" fill="#777" text-anchor="middle">TROUSERS</text>
+  <rect x="710" y="60" width="85" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="752" y="71" font-size="8" fill="#777" text-anchor="middle">ACCESSORIES</text>
+  <rect x="1020" y="60" width="70" height="14" fill="#D8D6CF" rx="2"/>
+  <text x="1055" y="71" font-size="8" fill="#777" text-anchor="middle">SEARCH</text>
+  <circle cx="1115" cy="67" r="8" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <circle cx="1145" cy="67" r="8" fill="none" stroke="#AAAAAA" stroke-width="1.2"/>
+  <line x1="20" y1="96" x2="1180" y2="96" stroke="#C8C6BF" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!-- LEFT: Product Image — ~58% width -->
+  <rect x="20" y="100" width="820" height="790" fill="#C8C5BE" rx="3" stroke="#AAAAAA" stroke-width="0.8"/>
+  <line x1="20" y1="100" x2="840" y2="890" stroke="#BBBAB0" stroke-width="0.5"/>
+  <line x1="840" y1="100" x2="20" y2="890" stroke="#BBBAB0" stroke-width="0.5"/>
+  <text x="430" y="500" font-size="11" fill="#888" text-anchor="middle">PRODUCT IMAGE</text>
+  <text x="430" y="518" font-size="8" fill="#999" text-anchor="middle">Full-height editorial photo — no padding</text>
+  <!-- image annotation -->
+  <line x1="840" y1="495" x2="860" y2="480" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="862" y="467" width="210" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="967" y="482" font-size="8.5" fill="#666" text-anchor="middle">Full-bleed image — ~58% viewport width</text>
+
+  <!-- RIGHT: Product Info Panel -->
+  <rect x="842" y="100" width="338" height="790" fill="#E2E0D9" rx="3" stroke="#C0BEB8" stroke-width="0.8"/>
+
+  <!-- Category label -->
+  <text x="862" y="248" font-size="8" fill="#999" letter-spacing="2">TROUSERS</text>
+
+  <!-- Product name -->
+  <rect x="862" y="260" width="298" height="68" fill="#C0BDB6" rx="3"/>
+  <text x="1011" y="300" font-size="11" fill="#666" text-anchor="middle" font-weight="bold">PRODUCT NAME</text>
+  <text x="1011" y="316" font-size="8" fill="#888" text-anchor="middle">Display bold, ~36px, 2 lines</text>
+  <!-- annotation -->
+  <line x1="862" y1="294" x2="830" y2="280" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="630" y="268" width="198" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="729" y="283" font-size="8.5" fill="#666" text-anchor="middle">Product name — display extra bold</text>
+
+  <!-- Price -->
+  <text x="862" y="356" font-size="14" fill="#666" font-weight="bold">€119.99</text>
+  <line x1="862" y1="366" x2="1160" y2="366" stroke="#C0BDB6" stroke-width="0.5"/>
+
+  <!-- Stars + rating -->
+  <rect x="862" y="378" width="100" height="14" fill="#C8C5BE" rx="2"/>
+  <text x="912" y="389" font-size="7.5" fill="#888" text-anchor="middle">★★★★☆  4.5</text>
+  <!-- annotation -->
+  <line x1="962" y1="385" x2="1010" y2="375" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="1012" y="363" width="148" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="1086" y="378" font-size="8.5" fill="#666" text-anchor="middle">Star rating + numeric score</text>
+
+  <!-- Description -->
+  <rect x="862" y="408" width="298" height="12" fill="#CCCAC3" rx="1"/>
+  <rect x="862" y="426" width="240" height="12" fill="#CCCAC3" rx="1"/>
+  <text x="1011" y="419" font-size="7.5" fill="#999" text-anchor="middle">Short product description — 2 lines</text>
+
+  <!-- Size selector -->
+  <text x="862" y="470" font-size="8" fill="#888" letter-spacing="2">SIZE</text>
+  <line x1="862" y1="478" x2="1160" y2="478" stroke="#C0BDB6" stroke-width="0.5"/>
+  <!-- size buttons -->
+  <rect x="862" y="488" width="44" height="34" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="884" y="510" font-size="9" fill="#666" text-anchor="middle">XS</text>
+  <rect x="914" y="488" width="44" height="34" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="936" y="510" font-size="9" fill="#666" text-anchor="middle">S</text>
+  <rect x="966" y="488" width="44" height="34" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="988" y="510" font-size="9" fill="#666" text-anchor="middle">M</text>
+  <rect x="1018" y="488" width="44" height="34" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="1040" y="510" font-size="9" fill="#666" text-anchor="middle">L</text>
+  <rect x="1070" y="488" width="44" height="34" fill="#C8C5BE" rx="2" stroke="#AAAAAA" stroke-width="0.8"/>
+  <text x="1092" y="510" font-size="9" fill="#666" text-anchor="middle">XL</text>
+  <!-- annotation size -->
+  <line x1="862" y1="522" x2="840" y2="540" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="630" y="532" width="208" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="734" y="547" font-size="8.5" fill="#666" text-anchor="middle">Size pills — active state has border highlight</text>
+
+  <!-- ADD TO BAG button -->
+  <rect x="862" y="548" width="298" height="46" fill="#C8C5BE" rx="2" stroke="#888" stroke-width="1.2"/>
+  <text x="1011" y="576" font-size="9" fill="#555" text-anchor="middle" letter-spacing="3">ADD TO BAG</text>
+  <!-- annotation -->
+  <line x1="1160" y1="571" x2="1182" y2="560" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="1010" y="538" width="170" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="1095" y="553" font-size="8.5" fill="#666" text-anchor="middle">Primary CTA — fill light, caps</text>
+
+  <!-- ADD TO WISHLIST button -->
+  <rect x="862" y="604" width="298" height="46" fill="#D8D6CF" rx="2" stroke="#888" stroke-width="1"/>
+  <text x="1011" y="632" font-size="9" fill="#666" text-anchor="middle" letter-spacing="2">♡  ADD TO WISHLIST</text>
+  <!-- annotation -->
+  <line x1="862" y1="627" x2="830" y2="643" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="620" y="635" width="208" height="22" fill="#F4F2ED" rx="4" stroke="#CCC" stroke-width="0.8"/>
+  <text x="724" y="650" font-size="8.5" fill="#666" text-anchor="middle">Secondary CTA — darker bg, heart icon</text>
+
+  <!-- SKU -->
+  <line x1="862" y1="668" x2="1160" y2="668" stroke="#C0BDB6" stroke-width="0.5"/>
+  <text x="862" y="684" font-size="8" fill="#999" letter-spacing="1">SKU</text>
+  <text x="920" y="684" font-size="8" fill="#AAA">NR-TR-001</text>
+
+  <!-- Chat widget -->
+  <circle cx="1160" cy="862" r="18" fill="#D0CEC8" stroke="#AAAAAA" stroke-width="1"/>
+  <text x="1160" y="866" font-size="8" fill="#888" text-anchor="middle">chat</text>
+
+  <!-- Bottom label -->
+  <line x1="20" y1="898" x2="1180" y2="898" stroke="#CCC" stroke-width="0.5"/>
+  <text x="20" y="914" font-size="10" fill="#AAAAAA">Page 12 / Product Detail — image left, info panel right</text>
+  <text x="1180" y="914" font-size="10" fill="#AAAAAA" text-anchor="end">Breakpoint: Desktop 1440px+</text>
+</svg>
