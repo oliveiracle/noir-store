@@ -179,39 +179,171 @@ NOIR uses two typefaces with clearly defined roles:
 
 ### Wireframes
 
-Wireframes were created in SVG format for both desktop and mobile layouts before development began. They cover all major page types.
+Wireframes were created in SVG format for both desktop and mobile layouts before development began. Click any image to open it full size.
 
 #### Desktop Wireframes
 
-| Page | Wireframe |
-|------|-----------|
-| Homepage — Hero | [View](wireframes/desktop/wireframe_noir_01_homepage_hero.svg) |
-| Homepage — Grid + Footer | [View](wireframes/desktop/wireframe_noir_03_homepage_grid_footer.svg) |
-| About — The Origin | [View](wireframes/desktop/wireframe_noir_04_about_origin.svg) |
-| Category — Accessories | [View](wireframes/desktop/wireframe_noir_07_category_accessories.svg) |
-| FAQ | [View](wireframes/desktop/wireframe_noir_08_faq.svg) |
-| Shipping | [View](wireframes/desktop/wireframe_noir_09_shipping.svg) |
-| Contact | [View](wireframes/desktop/wireframe_noir_10_contact.svg) |
-| Sign In | [View](wireframes/desktop/wireframe_noir_11_sign_in.svg) |
-| Product Detail | [View](wireframes/desktop/wireframe_noir_12_product_detail.svg) |
-| Shopping Cart | [View](wireframes/desktop/wireframe_noir_13_cart.svg) |
-| Checkout | [View](wireframes/desktop/wireframe_noir_14_checkout.svg) |
-| Wishlist | [View](wireframes/desktop/wireframe_noir_15_desktop_wishlist.svg) |
+<table>
+<tr>
+<td align="center" width="50%">
+
+**Homepage — Hero**<br>
+<a href="wireframes/desktop/wireframe_noir_01_homepage_hero.svg"><img src="wireframes/desktop/wireframe_noir_01_homepage_hero.svg" width="100%" alt="Homepage Hero"></a>
+
+</td>
+<td align="center" width="50%">
+
+**Homepage — Grid + Footer**<br>
+<a href="wireframes/desktop/wireframe_noir_03_homepage_grid_footer.svg"><img src="wireframes/desktop/wireframe_noir_03_homepage_grid_footer.svg" width="100%" alt="Homepage Grid Footer"></a>
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**About — The Origin**<br>
+<a href="wireframes/desktop/wireframe_noir_04_about_origin.svg"><img src="wireframes/desktop/wireframe_noir_04_about_origin.svg" width="100%" alt="About"></a>
+
+</td>
+<td align="center">
+
+**Category — Accessories**<br>
+<a href="wireframes/desktop/wireframe_noir_07_category_accessories.svg"><img src="wireframes/desktop/wireframe_noir_07_category_accessories.svg" width="100%" alt="Accessories"></a>
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**FAQ**<br>
+<a href="wireframes/desktop/wireframe_noir_08_faq.svg"><img src="wireframes/desktop/wireframe_noir_08_faq.svg" width="100%" alt="FAQ"></a>
+
+</td>
+<td align="center">
+
+**Shipping**<br>
+<a href="wireframes/desktop/wireframe_noir_09_shipping.svg"><img src="wireframes/desktop/wireframe_noir_09_shipping.svg" width="100%" alt="Shipping"></a>
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**Contact**<br>
+<a href="wireframes/desktop/wireframe_noir_10_contact.svg"><img src="wireframes/desktop/wireframe_noir_10_contact.svg" width="100%" alt="Contact"></a>
+
+</td>
+<td align="center">
+
+**Sign In**<br>
+<a href="wireframes/desktop/wireframe_noir_11_sign_in.svg"><img src="wireframes/desktop/wireframe_noir_11_sign_in.svg" width="100%" alt="Sign In"></a>
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**Product Detail**<br>
+<a href="wireframes/desktop/wireframe_noir_12_product_detail.svg"><img src="wireframes/desktop/wireframe_noir_12_product_detail.svg" width="100%" alt="Product Detail"></a>
+
+</td>
+<td align="center">
+
+**Shopping Cart**<br>
+<a href="wireframes/desktop/wireframe_noir_13_cart.svg"><img src="wireframes/desktop/wireframe_noir_13_cart.svg" width="100%" alt="Cart"></a>
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**Checkout**<br>
+<a href="wireframes/desktop/wireframe_noir_14_checkout.svg"><img src="wireframes/desktop/wireframe_noir_14_checkout.svg" width="100%" alt="Checkout"></a>
+
+</td>
+<td align="center">
+
+**Wishlist**<br>
+<a href="wireframes/desktop/wireframe_noir_15_desktop_wishlist.svg"><img src="wireframes/desktop/wireframe_noir_15_desktop_wishlist.svg" width="100%" alt="Wishlist"></a>
+
+</td>
+</tr>
+</table>
 
 #### Mobile Wireframes
 
-| Page | Wireframe |
-|------|-----------|
-| Shop All | [View](wireframes/mobile/wireframe_noir_M01_mobile_shop_all.svg) |
-| About | [View](wireframes/mobile/wireframe_noir_M02_mobile_about.svg) |
-| Accessories + Chat | [View](wireframes/mobile/wireframe_noir_M03_mobile_accessories_chat.svg) |
-| Cart | [View](wireframes/mobile/wireframe_noir_M04_mobile_cart.svg) |
-| Checkout | [View](wireframes/mobile/wireframe_noir_M05_mobile_checkout.svg) |
-| Change Password | [View](wireframes/mobile/wireframe_noir_M06_mobile_change_password.svg) |
-| Wishlist | [View](wireframes/mobile/wireframe_noir_M07_mobile_wishlist.svg) |
-| Sign Out | [View](wireframes/mobile/wireframe_noir_M07_mobile_sign_out.svg) |
-| Sign In | [View](wireframes/mobile/wireframe_noir_M08_mobile_sign_in.svg) |
-| Empty Cart + Toast + Footer | [View](wireframes/mobile/wireframe_noir_M09_mobile_empty_cart_toast_footer.svg) |
+<table>
+<tr>
+<td align="center" width="33%">
+
+**Shop All**<br>
+<a href="wireframes/mobile/wireframe_noir_M01_mobile_shop_all.svg"><img src="wireframes/mobile/wireframe_noir_M01_mobile_shop_all.svg" width="100%" alt="Shop All"></a>
+
+</td>
+<td align="center" width="33%">
+
+**About**<br>
+<a href="wireframes/mobile/wireframe_noir_M02_mobile_about.svg"><img src="wireframes/mobile/wireframe_noir_M02_mobile_about.svg" width="100%" alt="About"></a>
+
+</td>
+<td align="center" width="33%">
+
+**Accessories + Chat**<br>
+<a href="wireframes/mobile/wireframe_noir_M03_mobile_accessories_chat.svg"><img src="wireframes/mobile/wireframe_noir_M03_mobile_accessories_chat.svg" width="100%" alt="Accessories Chat"></a>
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**Cart**<br>
+<a href="wireframes/mobile/wireframe_noir_M04_mobile_cart.svg"><img src="wireframes/mobile/wireframe_noir_M04_mobile_cart.svg" width="100%" alt="Cart"></a>
+
+</td>
+<td align="center">
+
+**Checkout**<br>
+<a href="wireframes/mobile/wireframe_noir_M05_mobile_checkout.svg"><img src="wireframes/mobile/wireframe_noir_M05_mobile_checkout.svg" width="100%" alt="Checkout"></a>
+
+</td>
+<td align="center">
+
+**Change Password**<br>
+<a href="wireframes/mobile/wireframe_noir_M06_mobile_change_password.svg"><img src="wireframes/mobile/wireframe_noir_M06_mobile_change_password.svg" width="100%" alt="Change Password"></a>
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**Wishlist**<br>
+<a href="wireframes/mobile/wireframe_noir_M07_mobile_wishlist.svg"><img src="wireframes/mobile/wireframe_noir_M07_mobile_wishlist.svg" width="100%" alt="Wishlist"></a>
+
+</td>
+<td align="center">
+
+**Sign Out**<br>
+<a href="wireframes/mobile/wireframe_noir_M07_mobile_sign_out.svg"><img src="wireframes/mobile/wireframe_noir_M07_mobile_sign_out.svg" width="100%" alt="Sign Out"></a>
+
+</td>
+<td align="center">
+
+**Sign In**<br>
+<a href="wireframes/mobile/wireframe_noir_M08_mobile_sign_in.svg"><img src="wireframes/mobile/wireframe_noir_M08_mobile_sign_in.svg" width="100%" alt="Sign In"></a>
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**Empty Cart + Toast + Footer**<br>
+<a href="wireframes/mobile/wireframe_noir_M09_mobile_empty_cart_toast_footer.svg"><img src="wireframes/mobile/wireframe_noir_M09_mobile_empty_cart_toast_footer.svg" width="100%" alt="Empty Cart Toast Footer"></a>
+
+</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</table>
 
 ---
 
