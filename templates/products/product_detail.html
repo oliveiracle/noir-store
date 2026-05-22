@@ -72,6 +72,19 @@
                         <button type="submit" class="btn-add-bag w-100">ADD TO BAG</button>
                     </form>
 
+                    {% if request.user.is_authenticated %}
+                    <form action="{% url 'toggle_wishlist' product.id %}" method="POST" class="mt-3">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-wishlist w-100">
+                            {% if product in request.user.wishlist.products.all %}
+                            ♥ REMOVE FROM WISHLIST
+                            {% else %}
+                            ♡ ADD TO WISHLIST
+                            {% endif %}
+                        </button>
+                    </form>
+                    {% endif %}
+
                     <div class="detail-divider mt-4"></div>
 
                     <div class="detail-meta">

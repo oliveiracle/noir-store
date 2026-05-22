@@ -18,13 +18,34 @@
                 <span class="detail-label d-block mb-4">DEFAULT DELIVERY INFO</span>
                 <form method="POST" action="{% url 'profile' %}">
                     {% csrf_token %}
-                    <div class="form-group">{{ form.phone_number.label_tag }}{{ form.phone_number }}</div>
-                    <div class="form-group">{{ form.street_address1.label_tag }}{{ form.street_address1 }}</div>
-                    <div class="form-group">{{ form.street_address2.label_tag }}{{ form.street_address2 }}</div>
-                    <div class="form-group">{{ form.town_or_city.label_tag }}{{ form.town_or_city }}</div>
-                    <div class="form-group">{{ form.postcode.label_tag }}{{ form.postcode }}</div>
-                    <div class="form-group">{{ form.country.label_tag }}{{ form.country }}</div>
-                    <div class="form-group">{{ form.county.label_tag }}{{ form.county }}</div>
+                    <div class="form-group">
+                        <label for="id_phone_number" class="visually-hidden">Phone Number</label>
+                        {{ form.phone_number }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_street_address1" class="visually-hidden">Street Address 1</label>
+                        {{ form.street_address1 }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_street_address2" class="visually-hidden">Street Address 2</label>
+                        {{ form.street_address2 }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_town_or_city" class="visually-hidden">Town or City</label>
+                        {{ form.town_or_city }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_postcode" class="visually-hidden">Postcode</label>
+                        {{ form.postcode }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_country" class="visually-hidden">Country</label>
+                        {{ form.country }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_county" class="visually-hidden">County / State</label>
+                        {{ form.county }}
+                    </div>
                     <button type="submit" class="btn-add-bag w-100 mt-3">UPDATE INFO</button>
                 </form>
             </div>
@@ -59,6 +80,36 @@
                 {% else %}
                 <p class="label-muted">No orders yet.</p>
                 <a href="{% url 'products' %}" class="detail-back mt-3 d-inline-block">← SHOP NOW</a>
+                {% endif %}
+            </div>
+
+            <!-- Wishlist -->
+            <div class="col-12">
+                <div class="detail-divider mb-5"></div>
+                <span class="detail-label d-block mb-4">MY WISHLIST</span>
+                {% if wishlist.products.all %}
+                <div class="row g-3">
+                    {% for product in wishlist.products.all %}
+                    <div class="col-6 col-md-3">
+                        <a href="{% url 'product_detail' product.id %}" class="yeezy-product-tile-link">
+                            <div class="yeezy-product-tile">
+                                <div class="yeezy-tile-img">
+                                    {% if product.image %}
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="yeezy-tile-photo">
+                                    {% endif %}
+                                </div>
+                                <div class="yeezy-tile-info">
+                                    <span class="yeezy-tile-name">{{ product.name|upper }}</span>
+                                    <span class="yeezy-tile-price">€{{ product.price }}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="label-muted">Your wishlist is empty.</p>
+                <a href="{% url 'products' %}" class="detail-back mt-3 d-inline-block">← BROWSE PRODUCTS</a>
                 {% endif %}
             </div>
 
