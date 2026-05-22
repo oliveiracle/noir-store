@@ -537,7 +537,6 @@ heroku run python manage.py migrate
 ### Design References
 
 - [Bottega Veneta](https://www.bottegaveneta.com) — editorial layout and negative space
-- [Rick Owens](https://www.rickowens.eu) — dark aesthetic and typographic boldness
 - [Acne Studios](https://www.acnestudios.com) — minimalist brand identity
 
 ### Acknowledgements
