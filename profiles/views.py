@@ -11,16 +11,22 @@ from .models import Wishlist
 def profile(request):
     """Display and update the user's delivery profile and order history."""
     user_profile = request.user.profile
+
+    # Get all orders linked to this user's email, newest first
     orders = Order.objects.filter(email=request.user.email).order_by('-date')
+
+    # Get or create the wishlist — every user should have one
     wishlist, _ = Wishlist.objects.get_or_create(user=request.user)
 
     if request.method == 'POST':
+        # Bind the form to both the POST data and the existing profile instance
         form = UserProfileForm(request.POST, instance=user_profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated.')
             return redirect('profile')
     else:
+        # Pre-fill the form with the user's current saved info
         form = UserProfileForm(instance=user_profile)
 
     context = {'form': form, 'orders': orders, 'wishlist': wishlist}
@@ -31,8 +37,11 @@ def profile(request):
 def toggle_wishlist(request, product_id):
     """Add or remove a product from the user's wishlist."""
     product = get_object_or_404(Product, pk=product_id)
+
+    # get_or_create ensures the user always has a wishlist record
     wishlist, _ = Wishlist.objects.get_or_create(user=request.user)
 
+    # Check if the product is already in the wishlist
     if product in wishlist.products.all():
         wishlist.products.remove(product)
         messages.success(request, f'"{product.name}" removed from wishlist.')
