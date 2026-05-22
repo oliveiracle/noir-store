@@ -15,6 +15,7 @@
    - [Target Audience](#target-audience)
    - [User Stories](#user-stories)
    - [Design Inspiration](#design-inspiration)
+   - [Brand Logo](#brand-logo)
    - [Colour Palette](#colour-palette)
    - [Typography](#typography)
    - [Wireframes](#wireframes)
@@ -110,6 +111,14 @@ The use of all-caps text, tight letter-spacing, thin dividers and no decorative 
 The hero section features a hand-coded canvas animation: a parallax starfield, animated nebulae, a rotating galaxy, a black hole with an accretion disc and orbital particles, and periodic shooting stars. The title "DARK MATTER" and the brand concept of silence and restraint are metaphors for the void — something present but unseen.
 
 The About page extends this metaphor through a typewriter animation that reveals four brand chapters, one character at a time, accompanied by an optional mechanical keyboard sound effect.
+
+---
+
+### Brand Logo
+
+![NOIR Logo](docs/noir_logo.png)
+
+The NOIR wordmark uses Montserrat at maximum weight (900) with extended letter-spacing, set in warm cream against black. The logotype is used consistently across the navbar, favicon, email confirmations and all brand touchpoints. No icon or symbol accompanies it — the name alone carries the identity.
 
 ---
 
