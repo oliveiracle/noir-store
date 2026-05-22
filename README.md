@@ -115,25 +115,43 @@ The About page extends this metaphor through a typewriter animation that reveals
 
 ### Colour Palette
 
-The palette is built around blacks and warm off-whites, with a single gold accent. Every shade has a specific role in the hierarchy.
+The palette spans 12 shades across four categories: backgrounds, typography, UI elements, and editorial accent tones drawn from the product photography. Every colour has a defined role — nothing is decorative.
 
 ![NOIR Colour Palette](docs/noir_colour_palette_readme.svg)
 
-| Variable | Hex | Role |
-|----------|-----|------|
-| `--black` | `#000000` | Page background |
-| `--off-black` | `#0a0a0a` | Alternate background |
-| `--dark` | `#111111` | Card backgrounds |
-| `--cement` | `#1c1c1c` | Borders, dividers |
-| `--mid` | `#333333` | Muted UI elements |
-| `--sand` | `#888068` | Secondary text, labels |
-| `--bone` | `#c8c0b0` | Body text on dark backgrounds |
-| `--white` | `#f0ede8` | Primary text, headings |
-| `--accent` | `#c9a96e` | Gold — CTAs, highlights, hover states |
+**Backgrounds**
 
-The palette is intentionally warm rather than clinical. Pure white (`#ffffff`) is never used — `--white` at `#f0ede8` adds warmth and avoids the harshness of a cold monochrome.
+| Colour | Hex | Usage |
+|--------|-----|-------|
+| Primary Black | `#0A0A08` | Page background, hero section, navbar, footer |
+| Off-Black | `#111110` | Order summary panel, category headers, form areas |
+| Deep Charcoal | `#1A1A18` | FAQ/shipping content areas, about page sections |
 
-The single accent colour `--accent` (`#c9a96e`) is used sparingly — it appears on hover states, CTA buttons and the hero animation — creating a focal point without noise.
+**Typography**
+
+| Colour | Hex | Usage |
+|--------|-----|-------|
+| Warm Cream | `#F0EDE4` | Hero headline, product names, navbar links |
+| Muted Stone | `#888785` | Category labels, breadcrumbs, eyebrow text |
+
+**UI Elements**
+
+| Colour | Hex | Usage |
+|--------|-----|-------|
+| Linen White | `#E8E5DC` | CTA buttons (ADD TO BAG, SIGN IN, SEND MESSAGE) |
+| Graphite | `#2D2D2B` | ADD TO WISHLIST background, input underlines, dividers |
+| Frost Blue | `#D6EEF0` | Newsletter already-subscribed toast only |
+| Forest Green | `#5A8A52` | Checkout autofill badge — browser-injected element |
+
+**Editorial & Accent**
+
+| Colour | Hex | Usage |
+|--------|-----|-------|
+| Solar Gold | `#C8A020` | Solar Linen Jacket editorial, warm ambient tone |
+| Terracotta | `#8B4A38` | Terracotta Cord Trousers, warm editorial photography |
+| Sky Haze | `#7AACCC` | Outdoor sky backgrounds across jacket and accessory photography |
+
+Pure white (`#ffffff`) is never used — `Warm Cream` at `#F0EDE4` adds warmth and avoids the harshness of a cold monochrome. The palette is intentionally restrained: no bright accent colours, no gradients — only tonal progression from black through warm grey to cream.
 
 ---
 
