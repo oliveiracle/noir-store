@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Login page — uses the allauth login form -->
+
 {% block title %}Sign In — NOIR{% endblock %}
 
 {% block content %}
@@ -9,13 +11,16 @@
         <span class="auth-label">NOIR / ACCOUNT</span>
         <h1 class="auth-title">SIGN IN</h1>
 
+        <!-- allauth handles the login logic — we just style the form -->
         <form method="POST" action="{% url 'account_login' %}">
             {% csrf_token %}
 
+            <!-- Show form-level errors like "incorrect username or password" -->
             {% if form.non_field_errors %}
             <p class="auth-error">{{ form.non_field_errors }}</p>
             {% endif %}
 
+            <!-- Username or email field — allauth supports both -->
             <div class="auth-field">
                 <label for="{{ form.login.id_for_label }}">USERNAME OR EMAIL</label>
                 {{ form.login }}
@@ -26,6 +31,7 @@
                 {{ form.password }}
             </div>
 
+            <!-- Remember me checkbox — keeps the session alive longer -->
             <div class="auth-remember">
                 {{ form.remember }}
                 <label for="{{ form.remember.id_for_label }}">REMEMBER ME</label>
@@ -34,6 +40,7 @@
             <button type="submit" class="btn-add-bag w-100 mt-3">SIGN IN</button>
         </form>
 
+        <!-- Links to other auth pages -->
         <div class="auth-links">
             <a href="{% url 'account_reset_password' %}" class="auth-link">Forgot your password?</a>
             <a href="{% url 'account_signup' %}" class="auth-link">New here? Create an account →</a>

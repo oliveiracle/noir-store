@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Product detail page — image, info, add to bag, wishlist, reviews -->
+
 {% block title %}{{ product.name }}{% endblock %}
+<!-- truncatechars keeps the meta description within a reasonable length -->
 {% block meta_description %}{{ product.description|truncatechars:150 }}{% endblock %}
 
 {% block content %}
@@ -9,36 +12,40 @@
     <div class="container-fluid px-4 px-lg-5 py-6">
         <div class="row g-5">
 
-            <!-- Product Image -->
+            <!-- Left column: product image -->
             <div class="col-lg-7">
                 <div class="detail-image-wrap" id="imgWrap">
                     {% if product.image %}
+                    <!-- product.js adds a zoom effect on this image -->
                     <img src="{{ product.image.url }}" alt="{{ product.name }}" class="detail-img" id="detailImg">
                     {% else %}
+                    <!-- Fallback icon when no image is uploaded -->
                     <div class="detail-img-placeholder d-flex align-items-center justify-content-center">
                         <i class="fas fa-tshirt fa-4x icon-faded"></i>
                     </div>
                     {% endif %}
+                    <!-- NEW badge — only shown if the product is marked as new -->
                     {% if product.is_new %}
                     <span class="badge-new">NEW</span>
                     {% endif %}
                 </div>
             </div>
 
-            <!-- Product Info -->
+            <!-- Right column: product info and actions -->
             <div class="col-lg-5 d-flex align-items-center">
                 <div class="detail-info w-100">
 
+                    <!-- Category and product name -->
                     <span class="detail-category">
                         {{ product.category.friendly_name|default:"Uncategorised" }}
                     </span>
-
                     <h1 class="detail-name">{{ product.name }}</h1>
-
                     <p class="detail-price">€{{ product.price }}</p>
 
+                    <!-- Star rating — only shown if the product has a rating -->
                     {% if product.rating %}
                     <div class="detail-rating mb-4">
+                        <!-- Loop over "12345" to render 5 stars -->
                         {% for i in "12345" %}
                             {% if forloop.counter <= product.rating %}
                             <i class="fas fa-star"></i>
@@ -51,9 +58,9 @@
                     {% endif %}
 
                     <p class="detail-description">{{ product.description }}</p>
-
                     <div class="detail-divider"></div>
 
+                    <!-- Size selector (visual only — no backend size tracking) -->
                     <div class="mb-4">
                         <span class="detail-label">SIZE</span>
                         <div class="size-grid mt-2">
@@ -65,17 +72,21 @@
                         </div>
                     </div>
 
+                    <!-- Add to bag form — sends product ID and redirect URL -->
                     <form action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="quantity" value="1">
+                        <!-- redirect_url sends the user back to this page after adding -->
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         <button type="submit" class="btn-add-bag w-100">ADD TO BAG</button>
                     </form>
 
+                    <!-- Wishlist button — only visible to logged-in users -->
                     {% if request.user.is_authenticated %}
                     <form action="{% url 'toggle_wishlist' product.id %}" method="POST" class="mt-3">
                         {% csrf_token %}
                         <button type="submit" class="btn-wishlist w-100">
+                            <!-- Show different text depending on whether it's already wishlisted -->
                             {% if product in request.user.wishlist.products.all %}
                             ♥ REMOVE FROM WISHLIST
                             {% else %}
@@ -87,6 +98,7 @@
 
                     <div class="detail-divider mt-4"></div>
 
+                    <!-- Product SKU -->
                     <div class="detail-meta">
                         <span class="detail-label">SKU</span>
                         <span class="detail-meta-value">{{ product.sku|default:"N/A" }}</span>
@@ -96,9 +108,11 @@
                         ← BACK TO SHOP
                     </a>
 
+                    <!-- Admin edit/delete links — only visible to superusers -->
                     {% if request.user.is_superuser %}
                     <div class="d-flex gap-3 mt-3">
                         <a href="{% url 'edit_product' product.id %}" class="detail-label admin-action-link">EDIT</a>
+                        <!-- Confirmation dialog before deleting -->
                         <form method="POST" action="{% url 'delete_product' product.id %}" onsubmit="return confirm('Delete this product?')">
                             {% csrf_token %}
                             <button type="submit" class="detail-label border-0 bg-transparent p-0 admin-action-link">DELETE</button>
@@ -114,17 +128,19 @@
 </div>
 {% endblock %}
 
-<!-- Reviews Section -->
+<!-- Reviews section — outside the main content block so it spans full width -->
 <div class="container-fluid px-4 px-lg-5 pb-6">
     <div class="detail-divider mb-5"></div>
     <h2 class="filter-heading mb-4">REVIEWS</h2>
 
     {% if reviews %}
+    <!-- Loop through all reviews for this product -->
     {% for review in reviews %}
     <div class="bag-summary mb-3 p-4">
         <div class="d-flex justify-content-between align-items-start">
             <div>
                 <span class="detail-label">{{ review.user.username|upper }}</span>
+                <!-- Star rating for this review -->
                 <div class="mt-1 mb-2">
                     {% for i in "12345" %}
                     {% if forloop.counter <= review.rating %}
@@ -136,6 +152,7 @@
                 </div>
                 <p class="footer-tagline mb-0">{{ review.comment }}</p>
             </div>
+            <!-- Only the review author can edit or delete their own review -->
             {% if request.user == review.user %}
             <div class="d-flex gap-3">
                 <a href="{% url 'edit_review' review.id %}" class="detail-label admin-action-link">EDIT</a>
@@ -152,6 +169,7 @@
     <p class="footer-tagline">No reviews yet. Be the first.</p>
     {% endif %}
 
+    <!-- Review form — only shown to logged-in users who haven't reviewed yet -->
     {% if request.user.is_authenticated and not user_review %}
     <div class="mt-5">
         <h3 class="filter-heading mb-4">LEAVE A REVIEW</h3>
@@ -169,6 +187,7 @@
         </form>
     </div>
     {% elif not request.user.is_authenticated %}
+    <!-- Prompt guests to sign in to leave a review -->
     <p class="footer-tagline mt-4">
         <a href="{% url 'account_login' %}" class="auth-link">Sign in</a> to leave a review.
     </p>
@@ -176,6 +195,7 @@
 </div>
 
 {% block extra_js %}
+<!-- product.js adds the image zoom interaction — only loaded if image exists -->
 {% if product.image %}
 <script src="{% static 'js/product.js' %}"></script>
 {% endif %}

@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 
+<!-- Order confirmation page — shown after a successful payment -->
+
 {% block title %}Order Confirmed — NOIR{% endblock %}
 
 {% block content %}
 <div class="products-page">
     <div class="page-header px-4 px-lg-5">
         <h1>ORDER CONFIRMED</h1>
+        <!-- Show the unique order number in the header -->
         <p class="text-order-num">{{ order.order_number }}</p>
     </div>
 
@@ -15,12 +18,14 @@
                 <div class="bag-summary">
                     <h6 class="filter-heading mb-4">ORDER DETAILS</h6>
 
+                    <!-- Loop through all line items on this order -->
                     {% for item in order.lineitems.all %}
                     <div class="d-flex justify-content-between mb-3">
                         <div>
                             <p class="text-order-name">{{ item.product.name|upper }}</p>
                             <p class="text-order-qty">Qty: {{ item.quantity }}</p>
                         </div>
+                        <!-- lineitem_total is calculated automatically in the model -->
                         <span class="text-price">€{{ item.lineitem_total }}</span>
                     </div>
                     {% endfor %}
@@ -37,6 +42,7 @@
                     </div>
                 </div>
 
+                <!-- Confirmation message with the customer's email -->
                 <div class="mt-4">
                     <p class="text-confirm">
                         A confirmation has been sent to {{ order.email }}.

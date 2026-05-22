@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Registration page — uses the allauth signup form -->
+
 {% block title %}Create Account — NOIR{% endblock %}
 
 {% block content %}
@@ -9,9 +11,11 @@
         <span class="auth-label">NOIR / ACCOUNT</span>
         <h1 class="auth-title">CREATE ACCOUNT</h1>
 
+        <!-- allauth handles validation and account creation -->
         <form method="POST" action="{% url 'account_signup' %}">
             {% csrf_token %}
 
+            <!-- Form-level errors (e.g. username already taken) -->
             {% if form.non_field_errors %}
             <p class="auth-error">{{ form.non_field_errors }}</p>
             {% endif %}
@@ -19,6 +23,7 @@
             <div class="auth-field">
                 <label for="{{ form.username.id_for_label }}">USERNAME</label>
                 {{ form.username }}
+                <!-- Field-level errors shown directly under each input -->
                 {% if form.username.errors %}<p class="auth-error">{{ form.username.errors }}</p>{% endif %}
             </div>
 
@@ -34,6 +39,7 @@
                 {% if form.password1.errors %}<p class="auth-error">{{ form.password1.errors }}</p>{% endif %}
             </div>
 
+            <!-- Password confirmation — allauth checks both passwords match -->
             <div class="auth-field">
                 <label for="{{ form.password2.id_for_label }}">CONFIRM PASSWORD</label>
                 {{ form.password2 }}
@@ -43,6 +49,7 @@
             <button type="submit" class="btn-add-bag w-100 mt-3">CREATE ACCOUNT</button>
         </form>
 
+        <!-- Link to login for users who already have an account -->
         <div class="auth-links">
             <a href="{% url 'account_login' %}" class="auth-link">Already have an account? Sign in →</a>
         </div>

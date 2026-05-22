@@ -1,21 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Shopping bag page — shows all items currently in the session bag -->
+
 {% block title %}Your Bag{% endblock %}
 
 {% block content %}
 <div class="products-page">
     <div class="page-header px-4 px-lg-5">
         <h1>YOUR BAG</h1>
+        <!-- pluralize adds an 's' when item_count is not 1 -->
         <p>{{ item_count }} item{{ item_count|pluralize }}</p>
     </div>
 
     <div class="container-fluid px-4 px-lg-5 py-5">
         {% if bag_items %}
+        <!-- Two-column layout: items on the left, summary on the right -->
         <div class="row">
             <div class="col-lg-8">
+
+                <!-- Loop through each item in the bag -->
                 {% for item in bag_items %}
                 <div class="bag-item">
+
+                    <!-- Product image or a placeholder if no image exists -->
                     <div class="bag-item-img">
                         {% if item.product.image %}
                         <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
@@ -23,14 +31,18 @@
                         <div class="bag-img-placeholder"></div>
                         {% endif %}
                     </div>
+
                     <div class="bag-item-info">
+                        <!-- Show category name if available -->
                         <p class="product-category">{{ item.product.category.friendly_name|default:"" }}</p>
                         <h6 class="product-name">{{ item.product.name }}</h6>
                         <p class="product-price">€{{ item.product.price }}</p>
 
+                        <!-- Quantity update form — submits to update_bag view -->
                         <form action="{% url 'update_bag' item.item_id %}" method="POST" class="bag-qty-form">
                             {% csrf_token %}
                             <div class="bag-qty-row">
+                                <!-- JavaScript buttons change the hidden input value -->
                                 <button type="button" class="bag-qty-btn" onclick="changeQty(this, -1)" aria-label="Decrease quantity of {{ item.product.name }}">−</button>
                                 <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10" class="bag-qty-input" readonly aria-label="Quantity of {{ item.product.name }}">
                                 <button type="button" class="bag-qty-btn" onclick="changeQty(this, 1)" aria-label="Increase quantity of {{ item.product.name }}">+</button>
@@ -38,8 +50,12 @@
                             </div>
                         </form>
                     </div>
+
                     <div class="bag-item-right">
+                        <!-- Subtotal = price × quantity, calculated in context processor -->
                         <p class="bag-item-subtotal">€{{ item.subtotal }}</p>
+
+                        <!-- Remove button — submits to remove_from_bag view -->
                         <form action="{% url 'remove_from_bag' item.item_id %}" method="POST">
                             {% csrf_token %}
                             <button type="submit" class="bag-remove-btn">REMOVE</button>
@@ -50,6 +66,7 @@
                 {% endfor %}
             </div>
 
+            <!-- Order summary sidebar -->
             <div class="col-lg-4">
                 <div class="bag-summary">
                     <h6 class="filter-heading mb-4">ORDER SUMMARY</h6>
@@ -66,6 +83,7 @@
                         <span class="label-total">TOTAL</span>
                         <span class="text-total">€{{ total }}</span>
                     </div>
+                    <!-- Proceed to checkout button -->
                     <a href="{% url 'checkout' %}" class="btn-add-bag d-block text-center text-decoration-none">
                         PROCEED TO CHECKOUT
                     </a>
@@ -77,6 +95,7 @@
         </div>
 
         {% else %}
+        <!-- Empty bag state -->
         <p class="label-muted mt-2">Your bag is empty.</p>
         <a href="{% url 'products' %}" class="detail-back">← CONTINUE SHOPPING</a>
         {% endif %}
@@ -85,5 +104,6 @@
 {% endblock %}
 
 {% block extra_js %}
+<!-- bag.js handles the +/- quantity buttons -->
 <script src="{% static 'js/bag.js' %}"></script>
 {% endblock %}

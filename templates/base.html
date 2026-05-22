@@ -4,35 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO meta description — each page can override this block -->
     <meta name="description" content="{% block meta_description %}NOIR — Premium Men's Fashion. Jackets, trousers and accessories for the modern man. Season 2026.{% endblock %}">
+
+    <!-- SEO keywords for search engines -->
     <meta name="keywords" content="{% block meta_keywords %}mens fashion, premium menswear, jackets, trousers, accessories, noir, luxury clothing{% endblock %}">
+
+    <!-- Open Graph tags for social media sharing previews -->
     <meta property="og:title" content="{% block og_title %}NOIR — Premium Men's Fashion{% endblock %}">
     <meta property="og:description" content="{% block og_description %}Premium menswear. No excess. No noise.{% endblock %}">
     <meta property="og:type" content="website">
+
+    <!-- Page title — each template can set its own via the block -->
     <title>{% block title %}NOIR{% endblock %}</title>
 
+    <!-- Bootstrap 5 for responsive layout and components -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for icons (bag, user, star, etc.) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts: Montserrat for headings, Cormorant Garamond for body -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Custom NOIR stylesheet -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <!-- Block for page-specific CSS (e.g. about.css) -->
     {% block extra_css %}{% endblock %}
 </head>
 <body>
 
+<!-- Skip link for keyboard and screen reader users — accessibility requirement -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
+<!-- Fixed navbar — stays at the top when scrolling -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid px-4 px-lg-5">
 
+        <!-- Brand logo links back to the homepage -->
         <a class="navbar-brand logo" href="{% url 'home' %}">NOIR</a>
 
-        <!-- Mobile right: bag + user + hamburger -->
+        <!-- Mobile right: bag + user + hamburger (only visible on small screens) -->
         <div class="d-flex align-items-center gap-3 ms-auto d-lg-none">
             {% if request.user.is_authenticated %}
             <a href="{% url 'profile' %}" class="nav-icon" aria-label="My account"><i class="fas fa-user" aria-hidden="true"></i></a>
             {% else %}
             <a href="{% url 'account_login' %}" class="nav-icon" aria-label="Sign in"><i class="fas fa-user" aria-hidden="true"></i></a>
             {% endif %}
+            <!-- item_count comes from the bag context processor -->
             <a href="{% url 'view_bag' %}" class="nav-icon position-relative" aria-label="Shopping bag">
                 <i class="fas fa-shopping-bag" aria-hidden="true"></i>
                 <span class="bag-count" aria-hidden="true">{{ item_count }}</span>
@@ -42,8 +63,10 @@
             </button>
         </div>
 
+        <!-- Collapsible nav — collapses on mobile, full on desktop -->
         <div class="collapse navbar-collapse" id="navbarMain">
-            <!-- Desktop: links centered -->
+
+            <!-- Main nav links — centered on desktop -->
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">SHOP</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">ABOUT</a></li>
@@ -52,12 +75,16 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'products' %}?category=accessories">ACCESSORIES</a></li>
             </ul>
 
-            <!-- Desktop: search + icons right -->
+            <!-- Desktop: search bar + account dropdown + bag icon -->
             <div class="d-none d-lg-flex align-items-center gap-4">
+
+                <!-- Search form — submits to the products page with a GET request -->
                 <form action="{% url 'products' %}" method="GET" class="d-flex align-items-center">
                     <input type="text" name="q" placeholder="SEARCH" class="search-input" aria-label="Search products">
                 </form>
+
                 {% if request.user.is_authenticated %}
+                <!-- Dropdown menu for logged-in users -->
                 <div class="dropdown">
                     <a href="#" class="nav-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Account menu">
                         <i class="fas fa-user" aria-hidden="true"></i>
@@ -65,21 +92,25 @@
                     <ul class="dropdown-menu dropdown-menu-end noir-dropdown">
                         <li><a class="dropdown-item" href="{% url 'profile' %}">MY ACCOUNT</a></li>
                         {% if request.user.is_superuser %}
+                        <!-- Only show "Add Product" to admin users -->
                         <li><a class="dropdown-item" href="{% url 'add_product' %}">ADD PRODUCT</a></li>
                         {% endif %}
                         <li><a class="dropdown-item" href="{% url 'account_logout' %}">SIGN OUT</a></li>
                     </ul>
                 </div>
                 {% else %}
+                <!-- Show sign in icon for guests -->
                 <a href="{% url 'account_login' %}" class="nav-icon" aria-label="Sign in"><i class="fas fa-user" aria-hidden="true"></i></a>
                 {% endif %}
+
+                <!-- Bag icon with live item count badge -->
                 <a href="{% url 'view_bag' %}" class="nav-icon position-relative" aria-label="Shopping bag, {{ item_count }} item{{ item_count|pluralize }}">
                     <i class="fas fa-shopping-bag" aria-hidden="true"></i>
                     <span class="bag-count" aria-hidden="true">{{ item_count }}</span>
                 </a>
             </div>
 
-            <!-- Mobile menu: search + nav links -->
+            <!-- Mobile menu: search bar at the bottom of the nav -->
             <div class="d-lg-none mobile-menu-panel">
                 <form action="{% url 'products' %}" method="GET" class="mobile-search-form">
                     <input type="text" name="q" placeholder="SEARCH" class="search-input w-100" aria-label="Search products">
@@ -90,6 +121,7 @@
     </div>
 </nav>
 
+<!-- Django messages framework — shows success/info/error toasts -->
 {% if messages %}
 <div class="message-container">
     {% for message in messages %}
@@ -101,17 +133,23 @@
 </div>
 {% endif %}
 
+<!-- main-content id is used by the skip link above for keyboard navigation -->
 <main id="main-content">{% block content %}{% endblock %}</main>
 
+<!-- Site footer -->
 <footer class="footer">
     <div class="container-fluid px-4 px-lg-5 py-5">
         <div class="row">
+
+            <!-- Brand tagline column -->
             <div class="col-md-4 mb-4">
                 <span class="logo footer-brand-sm d-block mb-3">NOIR</span>
                 <p class="footer-tagline">
                     Premium menswear.<br>No excess. No noise.
                 </p>
             </div>
+
+            <!-- Shop links column -->
             <div class="col-md-2 mb-4">
                 <span class="footer-heading d-block">Shop</span>
                 <a href="{% url 'products' %}?category=jackets" class="footer-link">Jackets</a>
@@ -120,6 +158,8 @@
                 <a href="{% url 'products' %}?category=t-shirts" class="footer-link">T-Shirts</a>
                 <a href="{% url 'products' %}?category=accessories" class="footer-link">Accessories</a>
             </div>
+
+            <!-- Help links column -->
             <div class="col-md-2 mb-4">
                 <span class="footer-heading d-block">Help</span>
                 <a href="{% url 'about' %}" class="footer-link">About</a>
@@ -128,27 +168,35 @@
                 <a href="{% url 'returns' %}" class="footer-link">Returns</a>
                 <a href="{% url 'contact' %}" class="footer-link">Contact</a>
             </div>
+
+            <!-- Newsletter signup form -->
             <div class="col-md-4 mb-4">
                 <span class="footer-heading d-block">Newsletter</span>
                 <p class="footer-newsletter-hint">Exclusive drops. No spam.</p>
                 <form class="d-flex gap-2" method="POST" action="{% url 'newsletter_signup' %}">
                     {% csrf_token %}
+                    <!-- visually-hidden keeps the label for screen readers without showing it -->
                     <label for="newsletter-email" class="visually-hidden">Email address</label>
                     <input type="email" name="email" id="newsletter-email" class="form-control form-control-sm newsletter-input" placeholder="your@email.com" required aria-label="Email address for newsletter signup">
                     <button class="btn btn-outline-light btn-sm px-3 footer-join-btn" type="submit">JOIN</button>
                 </form>
             </div>
         </div>
+
+        <!-- Copyright bar -->
         <div class="footer-bottom">
             <p class="footer-copyright">© 2026 NOIR. ALL RIGHTS RESERVED.</p>
         </div>
     </div>
 </footer>
 
+<!-- Bootstrap JS bundle (includes Popper for dropdowns) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Block for page-specific JS (e.g. stripe, product zoom) -->
 {% block extra_js %}{% endblock %}
 
-<!-- NOIR Chat Widget -->
+<!-- NOIR Chat Widget — fixed position, bottom-right corner -->
 <div id="noir-chat" class="chat-widget" aria-live="polite" data-products="{{ products_json }}">
     <div class="chat-box" id="chatBox">
         <div class="chat-header">
@@ -156,6 +204,7 @@
             <button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>
         </div>
         <div class="chat-messages" id="chatMessages">
+            <!-- Initial greeting message from the bot -->
             <div class="chat-msg chat-msg--bot">Hi. I'm the NOIR Assistant. Ask me about shipping, returns, sizing or our collections.</div>
         </div>
         <form class="chat-form" id="chatForm">
@@ -163,6 +212,7 @@
             <button type="submit" class="chat-send" aria-label="Send">→</button>
         </form>
     </div>
+    <!-- Toggle button to open/close the chat -->
     <button class="chat-toggle" id="chatToggle" aria-label="Open NOIR Assistant">
         <i class="fas fa-comment-dots"></i>
     </button>

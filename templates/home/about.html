@@ -1,17 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- About page — animated typewriter on desktop, static text on mobile -->
+
 {% block title %}About — NOIR{% endblock %}
 {% block meta_description %}The story behind NOIR — a brand built on silence, precision and the belief that less is always more.{% endblock %}
 
 {% block extra_css %}
+<!-- about.css has the typewriter-specific styles -->
 <link rel="stylesheet" href="{% static 'css/about.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="about-page">
 
-    <!-- Screen reader: full text always visible, hidden visually on desktop -->
+    <!-- This version is always in the DOM for screen readers -->
+    <!-- aria-live="polite" means screen readers announce content changes -->
     <div class="about-sr-only" aria-live="polite">
         <h1>NOIR — The Story</h1>
         <p>Chapter I — The Origin. NOIR was born in 2019 in a small studio in Paris. No investors. No mood boards. Just two people who believed that modern menswear had lost its way — drowning in logos, noise and excess.</p>
@@ -20,18 +24,22 @@
         <p>Chapter IV — The Future. NOIR will never be a big brand. That's the point. We exist for the few who understand that the most powerful thing a man can wear is restraint.</p>
     </div>
 
-    <!-- Desktop typewriter stage -->
+    <!-- Desktop: animated typewriter version (hidden from screen readers) -->
     <div class="about-stage" aria-hidden="true">
         <div class="about-cursor-wrap">
+            <!-- about.js fills these elements with the chapter text -->
             <div class="about-chapter-label" id="aboutChapterLabel"></div>
             <div class="about-text" id="aboutText"></div>
             <span class="about-cursor" id="aboutCursor">█</span>
         </div>
+
+        <!-- Sound toggle button for the typewriter click sound -->
         <button class="about-sound-btn" id="aboutSoundBtn" aria-pressed="false" aria-label="Toggle typewriter sound">
             <i class="fas fa-volume-mute"></i>
             <span class="sound-label">SOUND OFF</span>
         </button>
 
+        <!-- Dot navigation — one dot per chapter -->
         <div class="about-progress" id="aboutProgress">
             <span class="about-dot active" data-chapter="0"></span>
             <span class="about-dot" data-chapter="1"></span>
@@ -40,7 +48,7 @@
         </div>
     </div>
 
-    <!-- Mobile static version -->
+    <!-- Mobile: static readable version (shown on small screens) -->
     <div class="about-mobile">
         <div class="page-header px-4">
             <h1>NOIR</h1>
@@ -75,5 +83,6 @@
 {% endblock %}
 
 {% block extra_js %}
+<!-- about.js runs the typewriter animation and sound -->
 <script src="{% static 'js/about.js' %}"></script>
 {% endblock %}

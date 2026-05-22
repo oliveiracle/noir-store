@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Checkout page — delivery form + Stripe card element + order summary -->
+
 {% block title %}Checkout — NOIR{% endblock %}
 
 {% block content %}
@@ -12,11 +14,16 @@
     <div class="container-fluid px-4 px-lg-5 py-5">
         <div class="row g-5">
 
-            <!-- Delivery Form -->
+            <!-- Left column: delivery form + payment -->
             <div class="col-lg-7">
                 <span class="detail-label">DELIVERY INFORMATION</span>
+
+                <!-- data attributes pass Stripe keys to the JS file securely -->
                 <form id="payment-form" method="POST" class="mt-4" data-stripe-key="{{ stripe_public_key }}" data-client-secret="{{ client_secret }}">
                     {% csrf_token %}
+
+                    <!-- Each field has a visually-hidden label for accessibility -->
+                    <!-- The placeholder text acts as the visible hint -->
                     <div class="form-group">
                         <label for="id_full_name" class="visually-hidden">Full Name</label>
                         {{ order_form.full_name }}
@@ -29,7 +36,9 @@
                         <label for="id_phone_number" class="visually-hidden">Phone Number</label>
                         {{ order_form.phone_number }}
                     </div>
+
                     <div class="detail-divider my-3"></div>
+
                     <div class="form-group">
                         <label for="id_street_address1" class="visually-hidden">Street Address 1</label>
                         {{ order_form.street_address1 }}
@@ -54,21 +63,31 @@
                         <label for="id_county" class="visually-hidden">County / State</label>
                         {{ order_form.county }}
                     </div>
+
                     <div class="detail-divider my-4"></div>
                     <span class="detail-label">PAYMENT</span>
+
+                    <!-- Stripe injects the card input here via JavaScript -->
                     <div id="card-element" class="checkout-card-element mt-3"></div>
+
+                    <!-- Stripe card errors are displayed here (e.g. invalid card) -->
                     <div id="card-errors" class="auth-error mt-2" role="alert"></div>
+
+                    <!-- Hidden field — the client_secret is sent back to the view -->
                     <input type="hidden" name="client_secret" value="{{ client_secret }}">
+
                     <button type="submit" id="submit-btn" class="btn-add-bag w-100 mt-4">
                         COMPLETE ORDER
                     </button>
                 </form>
             </div>
 
-            <!-- Order Summary -->
+            <!-- Right column: order summary -->
             <div class="col-lg-5">
                 <div class="bag-summary">
                     <h6 class="filter-heading mb-4">ORDER SUMMARY</h6>
+
+                    <!-- Loop through bag items — passed via context processor -->
                     {% for item in bag_items %}
                     <div class="d-flex justify-content-between mb-3 align-items-center">
                         <div>
@@ -78,6 +97,7 @@
                         <span class="text-price">€{{ item.subtotal }}</span>
                     </div>
                     {% endfor %}
+
                     <div class="detail-divider my-3"></div>
                     <div class="d-flex justify-content-between mb-2">
                         <span class="label-muted">SUBTOTAL</span>
@@ -101,6 +121,7 @@
 {% endblock %}
 
 {% block extra_js %}
+<!-- Stripe.js must be loaded before our custom checkout.js -->
 <script src="https://js.stripe.com/v3/"></script>
 <script src="{% static 'js/checkout.js' %}"></script>
 {% endblock %}

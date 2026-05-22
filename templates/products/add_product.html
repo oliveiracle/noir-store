@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Add product page — admin only, for creating new products -->
+
 {% block title %}Add Product — NOIR{% endblock %}
 
 {% block content %}
@@ -13,12 +15,15 @@
     <div class="container-fluid px-4 px-lg-5 py-5">
         <div class="row">
             <div class="col-lg-6">
+                <!-- enctype="multipart/form-data" is required for image uploads -->
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
+                    <!-- Loop through all form fields from ProductForm -->
                     {% for field in form %}
                     <div class="mb-3">
                         <label class="detail-label d-block mb-1">{{ field.label|upper }}</label>
                         {{ field }}
+                        <!-- Show any validation errors under the field -->
                         {% if field.errors %}
                         <p class="text-danger small mt-1">{{ field.errors|join:", " }}</p>
                         {% endif %}

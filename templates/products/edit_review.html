@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+<!-- Edit review page — allows users to update their existing review -->
+
 {% block title %}Edit Review — NOIR{% endblock %}
 
 {% block content %}
@@ -7,8 +9,10 @@
     <div class="auth-box">
         <span class="auth-label">NOIR / REVIEW</span>
         <h1 class="auth-title">EDIT REVIEW</h1>
+        <!-- Show the product name the review is for -->
         <p class="auth-confirm-text">{{ review.product.name|upper }}</p>
 
+        <!-- Form pre-filled with existing review data (handled in the view) -->
         <form method="POST">
             {% csrf_token %}
             <div class="form-group mb-3">
@@ -22,6 +26,7 @@
             <button type="submit" class="btn-add-bag w-100">SAVE CHANGES</button>
         </form>
 
+        <!-- Link back to the product without saving -->
         <div class="auth-links mt-3">
             <a href="{% url 'product_detail' review.product.id %}" class="auth-link">← Back to product</a>
         </div>

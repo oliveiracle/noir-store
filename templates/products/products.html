@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Products listing page — shows all products or filters by category/search -->
+
 {% block title %}{% if current_category %}{{ current_category|upper }}{% elif query %}Search — {{ query }}{% else %}Shop{% endif %} — NOIR{% endblock %}
 
 {% block meta_description %}Browse NOIR's premium men's fashion collection — jackets, trousers, shirts and more.{% endblock %}
@@ -8,7 +10,7 @@
 {% block content %}
 <div class="shop-page">
 
-    <!-- Page Header -->
+    <!-- Page header — title changes depending on active filter or search -->
     <div class="shop-header">
         <div class="shop-header-inner">
             <div class="shop-header-left">
@@ -20,6 +22,7 @@
                 </h1>
             </div>
             <div class="shop-header-right">
+                <!-- pluralize adds 's' when count is not 1 -->
                 <span class="shop-count">{{ products.count }} ITEM{{ products.count|pluralize }}</span>
             </div>
         </div>
@@ -27,15 +30,17 @@
 
     <div class="shop-layout">
 
-        <!-- Sidebar -->
+        <!-- Sidebar filter — links to filter by category -->
         <aside class="shop-sidebar">
             <span class="filter-heading">SHOP BY</span>
             <ul class="filter-list">
+                <!-- "All" link — active when no category or search is applied -->
                 <li>
                     <a href="{% url 'products' %}" class="filter-link {% if not current_category and not query %}active{% endif %}">
                         All
                     </a>
                 </li>
+                <!-- Loop through all categories from the database -->
                 {% for cat in categories %}
                 <li>
                     <a href="{% url 'products' %}?category={{ cat.name }}" class="filter-link {% if current_category == cat.name %}active{% endif %}">
@@ -46,14 +51,15 @@
             </ul>
         </aside>
 
-        <!-- Main Content -->
+        <!-- Main product area -->
         <main class="shop-main">
 
             {% if categories_with_products %}
-            <!-- Grouped by category -->
+            <!-- Default view: products grouped by category -->
             {% for group in categories_with_products %}
             <section class="category-section">
                 <div class="category-section-header">
+                    <!-- forloop.counter gives us 1, 2, 3... -->
                     <span class="category-section-num">0{{ forloop.counter }}</span>
                     <h2 class="category-section-name">{{ group.category.friendly_name|upper }}</h2>
                     <a href="{% url 'products' %}?category={{ group.category.name }}" class="category-section-link">
@@ -62,15 +68,18 @@
                 </div>
                 <div class="product-grid product-grid--group">
                     {% for product in group.products %}
+                    <!-- Each product tile links to the product detail page -->
                     <a href="{% url 'product_detail' product.id %}" class="product-tile">
                         <div class="product-tile-img-wrap">
                             {% if product.image %}
                             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-tile-img">
                             {% else %}
+                            <!-- Fallback icon when no product image is uploaded -->
                             <div class="product-tile-placeholder">
                                 <i class="fas fa-tshirt"></i>
                             </div>
                             {% endif %}
+                            <!-- NEW badge only shown on products with is_new = True -->
                             {% if product.is_new %}<span class="badge-new">NEW</span>{% endif %}
                         </div>
                         <div class="product-tile-info">
@@ -84,7 +93,7 @@
             {% endfor %}
 
             {% else %}
-            <!-- Flat grid (filtered or search) -->
+            <!-- Filtered/search view: flat grid without category grouping -->
             {% if products %}
             <div class="product-grid product-grid--flat">
                 {% for product in products %}
@@ -108,6 +117,7 @@
                 {% endfor %}
             </div>
             {% else %}
+            <!-- No results found — show empty state -->
             <div class="shop-empty">
                 <p>NO PRODUCTS FOUND.</p>
                 <a href="{% url 'products' %}" class="detail-back mt-3 d-inline-block">← BACK TO SHOP</a>

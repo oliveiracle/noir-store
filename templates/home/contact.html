@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+<!-- Contact page — form + Google Maps embed + store info -->
+
 {% block title %}Contact — NOIR{% endblock %}
 
 {% block extra_css %}{% endblock %}
@@ -14,13 +16,16 @@
     <div class="container-fluid px-4 px-lg-5 py-5">
         <div class="row g-5">
 
-            <!-- Form -->
+            <!-- Left column: contact form or success message -->
             <div class="col-lg-6">
                 {% if message_sent %}
+                <!-- Show this confirmation after the form is submitted -->
+                <!-- role="alert" and aria-live="polite" announce it to screen readers -->
                 <div class="contact-success" role="alert" aria-live="polite">
                     <p>Message received. We'll be in touch within 24 hours.</p>
                 </div>
                 {% else %}
+                <!-- Contact form — novalidate disables browser default validation -->
                 <form method="POST" action="{% url 'contact' %}" novalidate aria-label="Contact form">
                     {% csrf_token %}
                     <div class="auth-field">
@@ -44,8 +49,9 @@
                 {% endif %}
             </div>
 
-            <!-- Map + Info -->
+            <!-- Right column: map and store info -->
             <div class="col-lg-6">
+                <!-- Google Maps embed — opens in a new tab when clicked -->
                 <a href="https://www.google.com/maps/search/12+Rue+du+Commerce,+75015+Paris,+France" target="_blank" rel="noopener noreferrer nofollow" aria-label="Open NOIR Store location in Google Maps">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.9!2d2.2923!3d48.8494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6703b8e22a32d%3A0x0!2s12+Rue+du+Commerce%2C+75015+Paris%2C+France!5e0!3m2!1sen!2sfr!4v1"
@@ -53,6 +59,8 @@
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                         title="NOIR Store location"></iframe>
                 </a>
+
+                <!-- Store contact info below the map -->
                 <div class="contact-info-row mt-4">
                     <div>
                         <h2 class="detail-label">Location</h2>

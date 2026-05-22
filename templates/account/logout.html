@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+<!-- Logout confirmation page — asks the user to confirm before signing out -->
+
 {% block title %}Sign Out — NOIR{% endblock %}
 
 {% block content %}
@@ -9,11 +11,13 @@
         <h1 class="auth-title">SIGN OUT</h1>
         <p class="auth-confirm-text">Are you sure you want to sign out?</p>
 
+        <!-- POST request to allauth's logout URL -->
         <form method="POST" action="{% url 'account_logout' %}">
             {% csrf_token %}
             <button type="submit" class="btn-add-bag w-100 mt-3">SIGN OUT</button>
         </form>
 
+        <!-- Option to go back without signing out -->
         <div class="auth-links">
             <a href="{% url 'home' %}" class="auth-link">← Stay in the store</a>
         </div>
