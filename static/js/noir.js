@@ -83,7 +83,7 @@
     }
 
     /* --- NEBULAE --- */
-    var nebulae = [];
+    let nebulae = [];
     function buildNebulae() {
         nebulae = [
             { x: W * 0.72, y: H * 0.22, r: W * 0.28, cr: 55,  cg: 35,  cb: 110, a: 0.055 },
@@ -95,9 +95,9 @@
     // Draw each nebula as a radial gradient circle
     function drawNebulae(ox, oy) {
         nebulae.forEach(function(n) {
-            var nx = n.x + ox * 0.4 * W;
-            var ny = n.y + oy * 0.4 * H;
-            var grd = ctx.createRadialGradient(nx, ny, 0, nx, ny, n.r);
+            const nx = n.x + ox * 0.4 * W;
+            const ny = n.y + oy * 0.4 * H;
+            const grd = ctx.createRadialGradient(nx, ny, 0, nx, ny, n.r);
             grd.addColorStop(0,    'rgba(' + n.cr + ',' + n.cg + ',' + n.cb + ',' + n.a + ')');
             grd.addColorStop(0.45, 'rgba(' + n.cr + ',' + n.cg + ',' + n.cb + ',' + (n.a * 0.35) + ')');
             grd.addColorStop(1,    'rgba(0,0,0,0)');
@@ -109,7 +109,7 @@
     }
 
     /* --- GALAXY --- */
-    var galaxy = { arms: [], core: [] };
+    let galaxy = { arms: [], core: [] };
     function buildGalaxy() {
         galaxy.x = W * 0.14;
         galaxy.y = H * 0.18;
@@ -119,7 +119,7 @@
         // Two spiral arms with points along them
         for (var a = 0; a < 2; a++) {
             for (var i = 0; i < 90; i++) {
-                var t = i / 90;
+                const t = i / 90;
                 galaxy.arms.push({
                     angle: a * Math.PI + t * Math.PI * 3.2,
                     dist:  t * 55 + 8,
@@ -140,11 +140,11 @@
     }
 
     function drawGalaxy(ox, oy) {
-        var gx = galaxy.x + ox * 0.2 * W;
-        var gy = galaxy.y + oy * 0.2 * H;
-        var rot = tick * 0.0002; // Slowly rotates over time
+        const gx = galaxy.x + ox * 0.2 * W;
+        const gy = galaxy.y + oy * 0.2 * H;
+        const rot = tick * 0.0002; // Slowly rotates over time
 
-        var glow = ctx.createRadialGradient(gx, gy, 0, gx, gy, 60);
+        const glow = ctx.createRadialGradient(gx, gy, 0, gx, gy, 60);
         glow.addColorStop(0,   'rgba(201,169,110,0.06)');
         glow.addColorStop(0.4, 'rgba(180,150,90,0.02)');
         glow.addColorStop(1,   'rgba(0,0,0,0)');
@@ -175,8 +175,8 @@
     }
 
     /* --- BLACK HOLE --- */
-    var bh = {};
-    var bhParticles = [];
+    let bh = {};
+    let bhParticles = [];
 
     function buildBlackHole() {
         bh = { x: W * 0.5, y: H * 0.32, radius: Math.min(W, H) * 0.038 };
@@ -184,9 +184,9 @@
 
         // Particles orbit the black hole at different distances
         for (var i = 0; i < 160; i++) {
-            var dist  = bh.radius * (1.35 + Math.random() * 2.6);
-            var speed = (bh.radius * 1.5 / dist) * 0.018 * (Math.random() * 0.4 + 0.8);
-            var t     = (dist - bh.radius * 1.35) / (bh.radius * 2.6);
+            const dist  = bh.radius * (1.35 + Math.random() * 2.6);
+            const speed = (bh.radius * 1.5 / dist) * 0.018 * (Math.random() * 0.4 + 0.8);
+            const t     = (dist - bh.radius * 1.35) / (bh.radius * 2.6);
             bhParticles.push({
                 angle:   Math.random() * Math.PI * 2,
                 dist:    dist,
@@ -202,12 +202,12 @@
     }
 
     function drawBlackHole(ox, oy) {
-        var bx = bh.x + ox * 0.55 * W;
-        var by = bh.y + oy * 0.55 * H;
-        var R  = bh.radius;
+        const bx = bh.x + ox * 0.55 * W;
+        const by = bh.y + oy * 0.55 * H;
+        const R  = bh.radius;
 
         // Outer accretion glow
-        var outerGlow = ctx.createRadialGradient(bx, by, R, bx, by, R * 9);
+        const outerGlow = ctx.createRadialGradient(bx, by, R, bx, by, R * 9);
         outerGlow.addColorStop(0,    'rgba(201,130,50,0.10)');
         outerGlow.addColorStop(0.25, 'rgba(100,60,20,0.04)');
         outerGlow.addColorStop(1,    'rgba(0,0,0,0)');
@@ -219,8 +219,8 @@
         // Orbiting particles
         bhParticles.forEach(function(p) {
             p.angle += p.speed;
-            var px = bx + Math.cos(p.angle) * p.dist;
-            var py = by + Math.sin(p.angle) * p.dist * 0.26 + Math.sin(p.angle + p.incline) * p.dist * 0.06;
+            const px = bx + Math.cos(p.angle) * p.dist;
+            const py = by + Math.sin(p.angle) * p.dist * 0.26 + Math.sin(p.angle + p.incline) * p.dist * 0.06;
             ctx.beginPath();
             ctx.arc(px, py, p.size, 0, Math.PI * 2);
             ctx.fillStyle = 'rgba(' + p.r + ',' + p.g + ',' + p.b + ',' + p.alpha + ')';
@@ -228,7 +228,7 @@
         });
 
         // Dark centre — covers everything inside the event horizon
-        var shadow = ctx.createRadialGradient(bx, by, R * 0.2, bx, by, R * 1.3);
+        const shadow = ctx.createRadialGradient(bx, by, R * 0.2, bx, by, R * 1.3);
         shadow.addColorStop(0,    'rgba(0,0,0,1)');
         shadow.addColorStop(0.75, 'rgba(0,0,0,0.96)');
         shadow.addColorStop(1,    'rgba(0,0,0,0)');
@@ -238,7 +238,7 @@
         ctx.fill();
 
         // Polar jets above and below the black hole
-        var jetUp = ctx.createLinearGradient(bx, by - R, bx, by - R * 7);
+        const jetUp = ctx.createLinearGradient(bx, by - R, bx, by - R * 7);
         jetUp.addColorStop(0, 'rgba(201,169,110,0.08)');
         jetUp.addColorStop(1, 'rgba(0,0,0,0)');
         ctx.fillStyle = jetUp;
@@ -246,7 +246,7 @@
         ctx.ellipse(bx, by - R * 4, R * 0.18, R * 3.5, 0, 0, Math.PI * 2);
         ctx.fill();
 
-        var jetDn = ctx.createLinearGradient(bx, by + R, bx, by + R * 7);
+        const jetDn = ctx.createLinearGradient(bx, by + R, bx, by + R * 7);
         jetDn.addColorStop(0, 'rgba(201,169,110,0.05)');
         jetDn.addColorStop(1, 'rgba(0,0,0,0)');
         ctx.fillStyle = jetDn;
@@ -256,7 +256,7 @@
     }
 
     /* --- SHOOTING STARS --- */
-    var shooters = [];
+    let shooters = [];
 
     function spawnShooter() {
         shooters.push({
@@ -275,13 +275,13 @@
 
     function drawShooters() {
         for (var i = shooters.length - 1; i >= 0; i--) {
-            var s = shooters[i];
+            const s = shooters[i];
             s.x += s.vx; s.y += s.vy; s.alpha -= s.fade;
             if (s.alpha <= 0) { shooters.splice(i, 1); continue; }
 
             // Draw the tail as a gradient line that fades to transparent
-            var steps = s.len / s.vx;
-            var tail = ctx.createLinearGradient(s.x - s.vx * steps, s.y - s.vy * steps, s.x, s.y);
+            const steps = s.len / s.vx;
+            const tail = ctx.createLinearGradient(s.x - s.vx * steps, s.y - s.vy * steps, s.x, s.y);
             tail.addColorStop(0, 'rgba(240,237,232,0)');
             tail.addColorStop(1, 'rgba(240,237,232,' + (s.alpha * 0.7) + ')');
             ctx.strokeStyle = tail;
@@ -300,10 +300,12 @@
         ctx.fillStyle = '#000000';
         ctx.fillRect(0, 0, W, H);
 
-        var ox = (mouseX / W) - 0.5; // -0.5 to 0.5 range for parallax
-        var oy = (mouseY / H) - 0.5;
+        const ox = (mouseX / W) - 0.5; // -0.5 to 0.5 range for parallax
+        const oy = (mouseY / H) - 0.5;
 
         drawNebulae(ox, oy);
+        drawGalaxy(ox, oy);
+        drawBlackHole(ox, oy);
         drawLayers(ox, oy);
         drawShooters();
 
@@ -333,19 +335,19 @@
 
     /* --- LETTER GRAVITY ---
        Letters in the hero title are repelled by the mouse cursor */
-    var titleEl = document.getElementById('gravTitle');
+    const titleEl = document.getElementById('gravTitle');
     if (!titleEl) return;
 
-    var lines   = titleEl.querySelectorAll('.grav-line');
-    var letters = [];
+    const lines   = titleEl.querySelectorAll('.grav-line');
+    const letters = [];
 
     // Split each word into individual <span> elements
     lines.forEach(function(line) {
-        var text = line.textContent;
+        const text = line.textContent;
         line.textContent = '';
         line.style.display = 'block';
         text.split('').forEach(function(char) {
-            var span = document.createElement('span');
+            const span = document.createElement('span');
             span.className  = 'grav-letter';
             span.textContent = char;
             span.setAttribute('aria-hidden', 'true'); // Screen readers use the parent aria-label
@@ -354,26 +356,26 @@
         });
     });
 
-    var style = document.createElement('style');
+    const style = document.createElement('style');
     style.textContent = '.grav-letter{display:inline-block;will-change:transform;transition:transform 0.12s cubic-bezier(.25,.46,.45,.94)} #gravTitle{cursor:pointer;user-select:none}';
     document.head.appendChild(style);
 
-    var isCollapsing = false;
+    let isCollapsing = false;
 
     // Push letters away from the cursor
     document.addEventListener('mousemove', function(e) {
         if (isCollapsing) return;
         letters.forEach(function(letter) {
-            var rect = letter.getBoundingClientRect();
-            var cx   = rect.left + rect.width  / 2;
-            var cy   = rect.top  + rect.height / 2;
-            var dx   = e.clientX - cx;
-            var dy   = e.clientY - cy;
-            var dist = Math.sqrt(dx * dx + dy * dy);
-            var influence = 260;
+            const rect = letter.getBoundingClientRect();
+            const cx   = rect.left + rect.width  / 2;
+            const cy   = rect.top  + rect.height / 2;
+            const dx   = e.clientX - cx;
+            const dy   = e.clientY - cy;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            const influence = 260;
 
             if (dist < influence && dist > 0) {
-                var force = Math.pow((influence - dist) / influence, 2) * 16;
+                const force = Math.pow((influence - dist) / influence, 2) * 16;
                 letter.style.transform  = 'translate(' + (dx / dist * force) + 'px,' + (dy / dist * force) + 'px)';
                 letter.style.transition = 'transform 0.1s ease-out';
             } else {
@@ -408,7 +410,7 @@
 
         // Flash a white point in the centre
         setTimeout(function() {
-            var pt = document.createElement('div');
+            const pt = document.createElement('div');
             pt.style.cssText = 'position:fixed;top:50%;left:50%;width:3px;height:3px;background:#f0ede8;border-radius:50%;transform:translate(-50%,-50%) scale(1);transition:transform .38s,opacity .38s;z-index:9999;pointer-events:none;box-shadow:0 0 18px 6px rgba(201,169,110,.7)';
             document.body.appendChild(pt);
             requestAnimationFrame(function() { requestAnimationFrame(function() {
