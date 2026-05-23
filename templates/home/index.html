@@ -27,7 +27,7 @@
 </section>
 
 <!-- BRAND STATEMENT SECTION -->
-<section class="yeezy-statement">
+<section class="yeezy-statement" aria-label="Brand statement">
     <div class="yeezy-statement-inner">
         <p class="yeezy-manifesto">
             PREMIUM MENSWEAR.<br>NO EXCESS. NO NOISE.
@@ -37,7 +37,7 @@
 
 <!-- HORIZONTAL SCROLLING PRODUCT STRIP -->
 <!-- strip_products are all products with images, passed from the view -->
-<section class="strip-section" id="stripSection">
+<section class="strip-section" id="stripSection" aria-label="Product strip">
     <div class="strip-track" id="stripTrack">
         {% for product in strip_products %}
         <a href="{% url 'product_detail' product.id %}" class="strip-item">
@@ -54,7 +54,7 @@
 </section>
 
 <!-- NEW IN SECTION — shows up to 4 products marked as is_new -->
-<section class="yeezy-newin">
+<section class="yeezy-newin" aria-label="New arrivals">
     <div class="yeezy-newin-header">
         <span class="yeezy-section-label">NEW IN</span>
         <a href="{% url 'products' %}" class="yeezy-see-all">SEE ALL →</a>
