@@ -35,7 +35,7 @@
                     <div class="bag-item-info">
                         <!-- Show category name if available -->
                         <p class="product-category">{{ item.product.category.friendly_name|default:"" }}</p>
-                        <h6 class="product-name">{{ item.product.name }}</h6>
+                        <p class="product-name">{{ item.product.name }}</p>
                         <p class="product-price">€{{ item.product.price }}</p>
 
                         <!-- Quantity update form — submits to update_bag view -->
@@ -69,7 +69,7 @@
             <!-- Order summary sidebar -->
             <div class="col-lg-4">
                 <div class="bag-summary">
-                    <h6 class="filter-heading mb-4">ORDER SUMMARY</h6>
+                    <h2 class="filter-heading mb-4">ORDER SUMMARY</h2>
                     <div class="d-flex justify-content-between mb-3">
                         <span class="label-muted">SUBTOTAL</span>
                         <span class="text-price">€{{ total }}</span>
