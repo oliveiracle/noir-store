@@ -721,6 +721,7 @@ heroku run python manage.py migrate
 
 - Product images sourced from [Unsplash](https://unsplash.com) — free to use under the Unsplash licence
 - Mechanical keyboard sound effect from [Freesound.org](https://freesound.org) (CC0 licence)
+- Editorial homepage video sourced from [Pexels](https://www.pexels.com) — free to use under the Pexels licence
 
 ### Design References
 
@@ -732,6 +733,7 @@ heroku run python manage.py migrate
 - My mentor at Code Institute for guidance throughout the project
 - The Code Institute Slack community for support
 - Code Institute tutors for technical assistance
+- [Claude](https://claude.ai) by Anthropic — AI assistant used for development support, code review and debugging throughout this project
 
 ---
 
