@@ -110,13 +110,13 @@ User stories were tracked using GitHub Projects (Kanban board). They are grouped
 NOIR draws its visual identity from three sources:
 
 **1. High-fashion editorial design**
-The layout borrows from luxury fashion lookbooks — full-bleed imagery, oversized typography, generous white space (here, *black* space), and minimal UI chrome. Brands like Bottega Veneta, Rick Owens and Acne Studios were reference points.
+The layout borrows from luxury fashion lookbooks — full-bleed imagery, oversized typography, generous white space (here, *black* space), and minimal UI chrome. Brands like Bottega Veneta and Acne Studios were reference points.
 
 **2. Brutalist web design**
 The use of all-caps text, tight letter-spacing, thin dividers and no decorative elements reflects a restrained brutalism — form follows function, but with precision.
 
 **3. Space and cosmos aesthetics**
-The hero section features a hand-coded canvas animation: a parallax starfield, animated nebulae, a rotating galaxy, a black hole with an accretion disc and orbital particles, and periodic shooting stars. The title "DARK MATTER" and the brand concept of silence and restraint are metaphors for the void — something present but unseen.
+The hero section features a hand-coded canvas animation: a parallax starfield, animated nebulae, and periodic shooting stars. Clicking the title "DARK MATTER" triggers a collapse-and-expand effect on the letters. The brand concept of silence and restraint is a metaphor for the void — something present but unseen.
 
 The About page extends this metaphor through a typewriter animation that reveals four brand chapters, one character at a time, accompanied by an optional mechanical keyboard sound effect.
 
