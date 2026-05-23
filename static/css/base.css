@@ -256,15 +256,11 @@ body {
 
 .noir-video {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     min-width: 100%;
     min-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: cover;
-    object-position: top center;
     opacity: 0.75;
 }
 
@@ -293,17 +289,24 @@ body {
    ============================================================ */
 .strip-section {
     position: relative;
-    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: hidden;
     height: 75vh;
     background: var(--black);
-    cursor: ew-resize;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    cursor: grab;
+}
+.strip-section::-webkit-scrollbar {
+    display: none;
+}
+.strip-section:active {
+    cursor: grabbing;
 }
 .strip-track {
     display: flex;
     height: 100%;
     width: max-content;
-    transition: none;
-    will-change: transform;
 }
 .strip-item {
     position: relative;

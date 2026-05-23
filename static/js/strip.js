@@ -1,33 +1,43 @@
-// Horizontal scroll strip on the homepage
+// Horizontal drag-to-scroll strip on the homepage
 
 (function () {
-    if (window.innerWidth < 768) return;
-
     const section = document.getElementById('stripSection');
-    const track   = document.getElementById('stripTrack');
-    if (!section || !track) return;
+    if (!section) return;
 
-    let current = 0;
-    let target  = 0;
-    const ease  = 0.03;
-    let raf;
+    let isDragging  = false;
+    let startX      = 0;
+    let scrollStart = 0;
 
-    function tick() {
-        current += (target - current) * ease;
-        track.style.transform = 'translateX(-' + current + 'px)';
-        raf = requestAnimationFrame(tick);
-    }
+    section.addEventListener('mousedown', function (e) {
+        isDragging  = true;
+        startX      = e.pageX;
+        scrollStart = section.scrollLeft;
+        section.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mouseup', function () {
+        isDragging = false;
+        section.style.cursor = 'grab';
+    });
 
     section.addEventListener('mousemove', function (e) {
-        const rect = section.getBoundingClientRect();
-        const x    = (e.clientX - rect.left) / rect.width;
-        const maxT = track.scrollWidth - rect.width;
-        if (maxT <= 0) return;
-        target = x * maxT;
-        if (!raf) raf = requestAnimationFrame(tick);
+        if (!isDragging) return;
+        e.preventDefault();
+        const walk = (e.pageX - startX) * 1.5;
+        section.scrollLeft = scrollStart - walk;
     });
 
-    section.addEventListener('mouseleave', function () {
-        target = 0;
-    });
+    // Touch support
+    let touchStartX     = 0;
+    let touchScrollLeft = 0;
+
+    section.addEventListener('touchstart', function (e) {
+        touchStartX    = e.touches[0].pageX;
+        touchScrollLeft = section.scrollLeft;
+    }, { passive: true });
+
+    section.addEventListener('touchmove', function (e) {
+        const walk = (touchStartX - e.touches[0].pageX) * 1.5;
+        section.scrollLeft = touchScrollLeft + walk;
+    }, { passive: true });
 }());
