@@ -275,3 +275,60 @@
     }
 
 }());
+
+// Band starfield — same stars as hero but smaller, for the separator band
+(function () {
+    const canvas = document.getElementById('bandStars');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let W = 0, H = 0;
+
+    function resize() {
+        W = canvas.width  = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+    }
+
+    const stars = [];
+
+    function buildStars() {
+        stars.length = 0;
+        const count = Math.floor(W * H / 1800);
+        for (let i = 0; i < count; i++) {
+            stars.push({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                r: Math.random() * 0.9 + 0.08,
+                baseAlpha: Math.random() * 0.55 + 0.15,
+                twinkleSpeed: Math.random() * 0.012 + 0.003,
+                twinklePhase: Math.random() * Math.PI * 2,
+                drift: (Math.random() - 0.5) * 0.012,
+            });
+        }
+    }
+
+    function loop() {
+        ctx.clearRect(0, 0, W, H);
+        stars.forEach(function (s) {
+            s.twinklePhase += s.twinkleSpeed;
+            s.x += s.drift;
+            if (s.x < 0) s.x = W;
+            if (s.x > W) s.x = 0;
+            const alpha = Math.max(0, s.baseAlpha + Math.sin(s.twinklePhase) * 0.18);
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(240,237,232,' + alpha + ')';
+            ctx.fill();
+        });
+        requestAnimationFrame(loop);
+    }
+
+    resize();
+    buildStars();
+    loop();
+
+    window.addEventListener('resize', function () {
+        resize();
+        buildStars();
+    });
+}());
