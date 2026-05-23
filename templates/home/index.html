@@ -20,18 +20,15 @@
             <span class="grav-line">MATTER</span>
         </h1>
         <div class="yeezy-hero-footer">
-            <a href="{% url 'products' %}" class="yeezy-cta">SHOP THE COLLECTION</a>
             <span class="yeezy-scroll-hint">↓</span>
         </div>
     </div>
 </section>
 
-<!-- BRAND STATEMENT SECTION -->
-<section class="yeezy-statement" aria-label="Brand statement">
+<!-- Mobile-only brand statement (replaces video on small screens) -->
+<section class="yeezy-statement d-block d-md-none" aria-label="Brand statement">
     <div class="yeezy-statement-inner">
-        <p class="yeezy-manifesto">
-            PREMIUM MENSWEAR.<br>NO EXCESS. NO NOISE.
-        </p>
+        <p class="yeezy-manifesto">PREMIUM MENSWEAR.<br>NO EXCESS. NO NOISE.</p>
     </div>
 </section>
 
@@ -40,9 +37,16 @@
     <video class="noir-video" autoplay muted loop playsinline>
         <source src="{% static 'videos/noir-editorial.mp4' %}" type="video/mp4">
     </video>
-    <div class="noir-video-overlay">
-        <p class="noir-video-caption">SEASON 2026</p>
+    <div class="noir-video-overlay"></div>
+    <div class="noir-video-manifesto" aria-hidden="true">
+        <p>PREMIUM MENSWEAR.<br>NO EXCESS. NO NOISE.</p>
     </div>
+</section>
+
+<!-- SEPARATOR BAND -->
+<section class="noir-band" aria-label="Collection label">
+    <canvas id="bandStars" class="noir-band-canvas" aria-hidden="true"></canvas>
+    <span class="noir-band-text">COLLECTION — SEASON 2026</span>
 </section>
 
 <!-- HORIZONTAL SCROLLING PRODUCT STRIP -->
