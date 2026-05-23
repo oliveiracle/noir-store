@@ -18,6 +18,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html, body { overflow-x: hidden; }
 html { scroll-behavior: smooth; }
 
 body {
@@ -155,7 +156,7 @@ body {
 
 .yeezy-hero-inner {
     width: 100%;
-    padding: 0 5vw 8vh;
+    padding: 0 5vw 2.5rem;
     display: flex;
     flex-direction: column;
 }
@@ -274,6 +275,26 @@ body {
     background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 60%);
 }
 
+.noir-video-manifesto {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+.noir-video-manifesto p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: var(--bone);
+    opacity: 0.18;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
+}
+
 .noir-video-caption {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.65rem;
@@ -282,6 +303,37 @@ body {
     color: var(--bone);
     opacity: 0.7;
     margin: 0;
+}
+
+/* ============================================================
+   SEPARATOR BAND
+   ============================================================ */
+.noir-band {
+    position: relative;
+    background: var(--black);
+    width: 100%;
+    padding: 2.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(240,237,232,0.08);
+    border-bottom: 1px solid rgba(240,237,232,0.08);
+    overflow: hidden;
+}
+.noir-band-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.noir-band-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    color: var(--bone);
+    opacity: 0.5;
 }
 
 /* ============================================================
@@ -1505,14 +1557,19 @@ body {
     /* New In section spacing */
     .yeezy-newin { padding: 2rem 1.5rem 3rem; }
 
-    /* Statement: redundant on mobile, hide it */
-    .yeezy-statement { display: none; }
+
 
     /* New In: clean 2x2 grid */
     .yeezy-newin-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 
-    /* Strip: hidden on mobile */
+    /* Statement: compact on mobile */
+    .yeezy-statement { padding: 3rem 5vw; }
+    .yeezy-manifesto { font-size: clamp(1.1rem, 5vw, 1.8rem); }
+
+    /* Strip, video and band: hidden on mobile */
     .strip-section { display: none; }
+    .noir-video-section { display: none; }
+    .noir-band { display: none; }
 
     /* Shop All CTA — mobile only */
     .mobile-shop-all { display: flex; justify-content: center; margin-top: 2rem; }
