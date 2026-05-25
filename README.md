@@ -752,6 +752,7 @@ heroku run python manage.py migrate
 
 ### Design References
 
+- [Yeezy](https://www.adidas.com/yeezy) — hero typography, dark aesthetic and overall layout structure
 - [Bottega Veneta](https://www.bottegaveneta.com) — editorial layout and negative space
 - [Acne Studios](https://www.acnestudios.com) — minimalist brand identity
 
