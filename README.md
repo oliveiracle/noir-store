@@ -743,11 +743,16 @@ heroku run python manage.py migrate
 
 ### Design References
 
-- [Yeezy](https://www.adidas.com/yeezy) — hero typography, dark aesthetic and overall layout structure
-- [Bottega Veneta](https://www.bottegaveneta.com) — editorial layout and negative space
-- [Acne Studios](https://www.acnestudios.com) — minimalist brand identity
+- [Yeezy](https://www.adidas.com/yeezy) — The primary design reference for NOIR. Yeezy's visual language — oversized all-caps typography, pure black backgrounds, raw negative space and a near-religious brand seriousness — was the direct inspiration for the hero section, the "DARK MATTER" title treatment, the overall colour palette and the tone of the brand copy. The layout philosophy of "remove everything until nothing can be removed" came from studying Yeezy's digital presence.
+
+- [Bottega Veneta](https://www.bottegaveneta.com) — Referenced for editorial restraint and the use of negative space as a design element. Bottega's approach to letting the product breathe — no clutter, no distractions — informed the product detail page layout, the generous padding throughout the site and the decision to use a horizontal scrolling strip rather than a traditional product grid.
+
+- [Acne Studios](https://www.acnestudios.com) — Referenced for minimalist brand identity and the editorial video section. Acne Studios demonstrates how a fashion brand can use moving image to communicate mood rather than product features. Their use of sparse, conceptual film inspired the homepage video section and the "SEASON 2026" brand positioning language used throughout the site.
 
 ### Acknowledgements
+
+- Above all, thanks be to **Jesus Christ** — my strength, my foundation, and the reason I finished this project.
+
 
 - [Claude](https://claude.ai) by Anthropic — AI assistant used for development support, debugging and code review
 
