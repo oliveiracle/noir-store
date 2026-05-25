@@ -122,7 +122,7 @@ The use of all-caps text, tight letter-spacing, thin dividers and no decorative 
 **3. Space and cosmos aesthetics**
 The hero section features a hand-coded canvas animation: a parallax starfield, animated nebulae, and periodic shooting stars. Clicking the title "DARK MATTER" triggers a collapse-and-expand effect on the letters. The brand concept of silence and restraint is a metaphor for the void — something present but unseen.
 
-The About page extends this metaphor through a typewriter animation that reveals four brand chapters, one character at a time, accompanied by an optional mechanical keyboard sound effect.
+The About page extends this metaphor through a typewriter animation that reveals four brand chapters, one character at a time.
 
 ---
 
@@ -426,7 +426,7 @@ Wireframes were created in SVG format for both desktop and mobile layouts before
 - Duplicate signups handled gracefully
 
 #### Information Pages
-- About (animated typewriter with sound on desktop, static on mobile)
+- About (animated typewriter on desktop, editorial full-screen chapters on mobile)
 - FAQ, Shipping, Returns, Contact (with Google Maps embed)
 - Facebook Business Page evidence at `/facebook/`
 - Custom 404 page
@@ -752,7 +752,6 @@ heroku run python manage.py migrate
 
 - Product images sourced from [Unsplash](https://unsplash.com) — free to use under the Unsplash licence
 - Model photography generated using [Meta AI](https://ai.meta.com) image generation
-- Mechanical keyboard sound effect from [Freesound.org](https://freesound.org) (CC0 licence)
 - Editorial homepage video sourced from [Pexels](https://www.pexels.com) — free to use under the Pexels licence
 
 ### Design References
