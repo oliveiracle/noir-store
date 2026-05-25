@@ -96,7 +96,7 @@ User stories were tracked using GitHub Projects (Kanban board). They are grouped
 | US26 | As a visitor, I can view FAQ, Shipping and Returns pages | Should |
 | US27 | As a visitor, I can contact the store via the Contact page | Should |
 | US28 | As a developer, I have deployed the site to Heroku | Must |
-| US29 | As a developer, I have set up AWS S3 for static and media files | Must |
+| US29 | As a developer, media files are served correctly on the deployed site | Must |
 | US30 | As a developer, I have written a full README | Must |
 | US31 | As a developer, I have written a full TESTING.md with manual test results | Must |
 | US32 | As a developer, external links use rel="nofollow noopener noreferrer" | Should |
@@ -459,7 +459,6 @@ Wireframes were created in SVG format for both desktop and mobile layouts before
 | django-allauth | User authentication, registration, password reset |
 | django-crispy-forms | Form rendering with Bootstrap 5 |
 | stripe | Stripe payment processing |
-| boto3 | AWS S3 integration (production) |
 | whitenoise | Static file serving |
 | Pillow | Image upload handling |
 
@@ -467,7 +466,6 @@ Wireframes were created in SVG format for both desktop and mobile layouts before
 - Git & GitHub — version control
 - GitHub Projects — Agile Kanban board
 - Heroku — cloud deployment
-- AWS S3 — static and media file storage (production)
 - Stripe — payment processing
 - SQLite — local development database
 - PostgreSQL — production database (Heroku)
@@ -717,11 +715,8 @@ python manage.py runserver
    - `STRIPE_PUBLIC_KEY`
    - `STRIPE_SECRET_KEY`
    - `STRIPE_WH_SECRET`
-   - `AWS_ACCESS_KEY_ID`
-   - `AWS_SECRET_ACCESS_KEY`
-   - `USE_AWS` = `True`
    - `EMAIL_HOST_USER`
-   - `EMAIL_HOST_PASSWORD`
+   - `EMAIL_HOST_PASS`
 4. Push to Heroku:
 ```bash
 git push heroku main
@@ -730,13 +725,6 @@ git push heroku main
 ```bash
 heroku run python manage.py migrate
 ```
-
-### AWS S3 Setup
-
-1. Create an S3 bucket with public access enabled
-2. Create an IAM user with S3 permissions
-3. Add `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_STORAGE_BUCKET_NAME` to Heroku Config Vars
-4. Set `USE_AWS=True` — the app will automatically use S3 for static and media files
 
 ---
 
