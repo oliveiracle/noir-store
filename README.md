@@ -620,7 +620,7 @@ Lighthouse audits were run via Chrome DevTools on the key pages of the site.
 | Category | Score |
 |----------|-------|
 | Performance | 69 |
-| Accessibility | 100 |
+| Accessibility | 95 |
 | Best Practices | 100 |
 | SEO | 100 |
 
