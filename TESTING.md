@@ -3,12 +3,13 @@
 ## Table of Contents
 
 1. [Manual Testing — User Stories](#1-manual-testing--user-stories)
-2. [Validator Testing](#2-validator-testing)
-3. [Browser Testing](#3-browser-testing)
-4. [Responsiveness Testing](#4-responsiveness-testing)
-5. [Accessibility Testing](#5-accessibility-testing)
-6. [Bugs Found & Fixed](#6-bugs-found--fixed)
-7. [Known Issues](#7-known-issues)
+2. [Automated Testing](#2-automated-testing)
+3. [Validator Testing](#3-validator-testing)
+4. [Browser Testing](#4-browser-testing)
+5. [Responsiveness Testing](#5-responsiveness-testing)
+6. [Accessibility Testing](#6-accessibility-testing)
+7. [Bugs Found & Fixed](#7-bugs-found--fixed)
+8. [Known Issues](#8-known-issues)
 
 ---
 
@@ -378,7 +379,79 @@ All 30 user stories were tested manually by navigating the deployed site and the
 
 ---
 
-## 2. Validator Testing
+## 2. Automated Testing
+
+Automated tests were written using Django's built-in `TestCase` framework across three apps: `products`, `bag` and `home`. Tests cover models, views, authentication guards and business logic.
+
+### Running the tests
+
+```bash
+python manage.py test products bag home
+```
+
+### Test results
+
+```
+Ran 34 tests in 6.3s
+OK
+```
+
+All 34 tests pass.
+
+### Test coverage by app
+
+#### products (17 tests)
+
+| Test Class | Test | Description |
+|------------|------|-------------|
+| `CategoryModelTest` | `test_str_returns_name` | `__str__` returns the internal category name |
+| `CategoryModelTest` | `test_get_friendly_name` | `get_friendly_name()` returns the display name |
+| `ProductModelTest` | `test_str_returns_name` | `__str__` returns the product name |
+| `ProductModelTest` | `test_is_new_default_false` | `is_new` defaults to `False` on new products |
+| `ProductModelTest` | `test_category_optional` | Products can be created without a category |
+| `ProductViewTest` | `test_all_products_page_loads` | `/products/` returns 200 with correct template |
+| `ProductViewTest` | `test_product_detail_page_loads` | Product detail page returns 200 |
+| `ProductViewTest` | `test_product_detail_404_for_invalid_id` | Invalid product ID returns 404 |
+| `ProductViewTest` | `test_search_returns_matching_product` | Search query returns matching products |
+| `ProductViewTest` | `test_search_returns_no_results_for_unknown_term` | Unknown search term shows "NO PRODUCTS FOUND" |
+| `ProductViewTest` | `test_category_filter` | Category filter returns only matching products |
+| `ReviewModelTest` | `test_str_format` | Review `__str__` includes username and product name |
+| `ReviewModelTest` | `test_review_linked_to_product` | Review foreign key links to correct product |
+| `AdminProductViewTest` | `test_add_product_requires_login` | Unauthenticated users are redirected to login |
+| `AdminProductViewTest` | `test_non_superuser_cannot_add_product` | Regular users redirected away from add product |
+| `AdminProductViewTest` | `test_superuser_can_access_add_product` | Superusers can access the add product form |
+| `AdminProductViewTest` | `test_superuser_can_delete_product` | Superusers can delete a product from the database |
+
+#### bag (7 tests)
+
+| Test Class | Test | Description |
+|------------|------|-------------|
+| `BagViewTest` | `test_bag_page_loads` | `/bag/` returns 200 with correct template |
+| `BagViewTest` | `test_add_to_bag` | Adding a product stores it in the session |
+| `BagViewTest` | `test_add_to_bag_increases_quantity` | Adding the same product again increments quantity |
+| `BagViewTest` | `test_remove_from_bag` | Removing a product clears it from the session |
+| `BagViewTest` | `test_update_bag_quantity` | Updating quantity changes the session value |
+| `BagViewTest` | `test_update_bag_with_zero_removes_item` | Setting quantity to 0 removes the item |
+| `BagViewTest` | `test_add_to_bag_rejects_open_redirect` | External redirect URLs are rejected for security |
+
+#### home (10 tests)
+
+| Test Class | Test | Description |
+|------------|------|-------------|
+| `HomeViewTest` | `test_homepage_loads` | Homepage returns 200 with correct template |
+| `HomeViewTest` | `test_homepage_shows_new_products` | Products marked `is_new=True` appear on the homepage |
+| `HomeViewTest` | `test_faq_page_loads` | FAQ page returns 200 |
+| `HomeViewTest` | `test_shipping_page_loads` | Shipping page returns 200 |
+| `HomeViewTest` | `test_returns_page_loads` | Returns page returns 200 |
+| `HomeViewTest` | `test_contact_page_loads` | Contact page returns 200 |
+| `HomeViewTest` | `test_contact_form_submission` | POST to contact shows confirmation message |
+| `HomeViewTest` | `test_about_page_loads` | About page returns 200 |
+| `NewsletterTest` | `test_newsletter_signup_creates_subscriber` | New email creates a `NewsletterSubscriber` record |
+| `NewsletterTest` | `test_newsletter_duplicate_does_not_create_second_record` | Duplicate email does not create a second record |
+
+---
+
+## 3. Validator Testing
 
 ### HTML — W3C Markup Validation Service
 
@@ -428,12 +501,12 @@ All JavaScript files were tested using [JSHint](https://jshint.com/) with ES6 en
 
 | File | Result | Notes |
 |------|--------|-------|
-| `static/js/starfield.js` | Pass | No errors. One undefined variable (`requestAnimationFrame`) is a browser global. |
-| `static/js/checkout_stripe.js` | Pass | No errors. `Stripe` marked as global via `/* global Stripe */`. |
-| `static/js/chat_widget.js` | Pass | No errors. |
-| `static/js/gravity_letters.js` | Pass | No errors. |
-| `static/js/about_typewriter.js` | Pass | No errors. |
-| `static/js/products.js` | Pass | No errors. |
+| `static/js/noir.js` | Pass | No errors. `requestAnimationFrame` is a browser global. |
+| `static/js/checkout.js` | Pass | No errors. `Stripe` marked as global via `/* global Stripe */`. |
+| `static/js/chat.js` | Pass | No errors. |
+| `static/js/strip.js` | Pass | No errors. |
+| `static/js/about.js` | Pass | No errors. |
+| `static/js/bag.js` | Pass | No errors. |
 
 ---
 
