@@ -1,9 +1,10 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from django.http import HttpResponse
+from django.views.static import serve
 from home.sitemaps import StaticViewSitemap, ProductSitemap
 
 sitemaps = {
@@ -40,4 +41,9 @@ urlpatterns = [
         {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap',
     ),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + [
+    re_path(
+        r'^media/(?P<path>.*)$', serve,
+        {'document_root': settings.MEDIA_ROOT}
+    ),
+]
