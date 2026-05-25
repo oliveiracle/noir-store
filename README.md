@@ -628,7 +628,17 @@ Lighthouse audits were run via Chrome DevTools on the key pages of the site.
 
 #### Desktop Results
 
-Desktop Lighthouse results will be added after testing.
+| Category | Score |
+|----------|-------|
+| Performance | 84 |
+| Accessibility | 95 |
+| Best Practices | 100 |
+| SEO | 100 |
+
+| | |
+|---|---|
+| ![Performance](docs/lighthouse/desktop/perfomance.png) | ![Accessibility](docs/lighthouse/desktop/acessibility.png) |
+| ![Best Practices](docs/lighthouse/desktop/best-practices.png) | ![SEO](docs/lighthouse/desktop/seo.png) |
 
 ---
 
