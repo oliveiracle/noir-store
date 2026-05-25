@@ -55,10 +55,11 @@
                 </form>
             </div>
 
-            <!-- Divider + password change link -->
+            <!-- Divider + password change + sign out -->
             <div class="col-12">
                 <div class="detail-divider"></div>
                 <a href="{% url 'account_change_password' %}" class="detail-back d-inline-block mt-2">CHANGE PASSWORD →</a>
+                <a href="{% url 'account_logout' %}" class="detail-back d-inline-block mt-2 ms-4">SIGN OUT →</a>
             </div>
 
             <!-- Right column: order history -->
