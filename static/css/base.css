@@ -1138,10 +1138,14 @@ body {
     max-width: 350px;
 }
 
-.message-container .alert {
-    background: var(--black);
-    border: 1px solid rgba(240,237,232,0.15);
-    color: rgba(240,237,232,0.9);
+.message-container .alert,
+.message-container .alert-success,
+.message-container .alert-info,
+.message-container .alert-warning,
+.message-container .alert-danger {
+    background: var(--black) !important;
+    border: 1px solid rgba(240,237,232,0.15) !important;
+    color: rgba(240,237,232,0.9) !important;
     font-family: var(--font);
     font-size: 0.72rem;
     letter-spacing: 0.12em;
