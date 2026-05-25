@@ -1,3 +1,7 @@
+> *"I can do all things through Christ who strengthens me."* — Philippians 4:13
+
+---
+
 # NOIR — Premium Menswear E-Commerce Store
 
 ![NOIR Logo](docs/noir_logo.png)
