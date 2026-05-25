@@ -132,7 +132,7 @@ The NOIR wordmark uses Montserrat at maximum weight (900) with extended letter-s
 
 ### Colour Palette
 
-The palette spans 12 shades across four categories: backgrounds, typography, UI elements, and editorial accent tones drawn from the product photography. Every colour has a defined role — nothing is decorative.
+The NOIR colour palette is built entirely from blacks, warm neutrals and a single gold accent. Every colour has a defined role in the interface — nothing is decorative.
 
 ![NOIR Colour Palette](docs/noir_colour_palette_readme.svg)
 
@@ -157,16 +157,7 @@ The palette spans 12 shades across four categories: backgrounds, typography, UI 
 |--------|-----|-------|
 | Linen White | `#E8E5DC` | CTA buttons (ADD TO BAG, SIGN IN, SEND MESSAGE) |
 | Graphite | `#2D2D2B` | ADD TO WISHLIST background, input underlines, dividers |
-| Frost Blue | `#D6EEF0` | Newsletter already-subscribed toast only |
-| Forest Green | `#5A8A52` | Checkout autofill badge — browser-injected element |
-
-**Editorial & Accent**
-
-| Colour | Hex | Usage |
-|--------|-----|-------|
-| Solar Gold | `#C8A020` | Solar Linen Jacket editorial, warm ambient tone |
-| Terracotta | `#8B4A38` | Terracotta Cord Trousers, warm editorial photography |
-| Sky Haze | `#7AACCC` | Outdoor sky backgrounds across jacket and accessory photography |
+| Gold Accent | `#C9A96E` | Star ratings, price highlights, hover accents |
 
 Pure white (`#ffffff`) is never used — `Warm Cream` at `#F0EDE4` adds warmth and avoids the harshness of a cold monochrome. The palette is intentionally restrained: no bright accent colours, no gradients — only tonal progression from black through warm grey to cream.
 
