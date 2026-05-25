@@ -746,6 +746,7 @@ heroku run python manage.py migrate
 ### Media
 
 - Product images sourced from [Unsplash](https://unsplash.com) — free to use under the Unsplash licence
+- Model photography generated using [Meta AI](https://ai.meta.com) image generation
 - Mechanical keyboard sound effect from [Freesound.org](https://freesound.org) (CC0 licence)
 - Editorial homepage video sourced from [Pexels](https://www.pexels.com) — free to use under the Pexels licence
 
