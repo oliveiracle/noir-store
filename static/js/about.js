@@ -8,32 +8,8 @@
     const textEl   = document.getElementById('aboutText');
     const labelEl  = document.getElementById('aboutChapterLabel');
     const dots     = document.querySelectorAll('.about-dot');
-    const soundBtn = document.getElementById('aboutSoundBtn');
 
     if (!stage) return;
-
-    let soundOn = false;
-    const soundSrc = stage.dataset.soundSrc || '';
-    const clickSound = soundSrc ? new Audio(soundSrc) : null;
-    if (clickSound) clickSound.volume = 0.5;
-
-    function playClick() {
-        if (!soundOn || !clickSound) return;
-        const s = clickSound.cloneNode();
-        s.currentTime = Math.random() * 3;
-        s.volume = 0.5;
-        s.play().catch(function () {});
-        setTimeout(function () { s.pause(); }, 120);
-    }
-
-    if (soundBtn) {
-        soundBtn.addEventListener('click', function () {
-            soundOn = !soundOn;
-            soundBtn.setAttribute('aria-pressed', soundOn);
-            soundBtn.querySelector('.sound-label').textContent = soundOn ? 'SOUND ON' : 'SOUND OFF';
-            soundBtn.querySelector('i').className = soundOn ? 'fas fa-volume-up' : 'fas fa-volume-mute';
-        });
-    }
 
     const chapters = [
         {
@@ -75,7 +51,6 @@
         if (typing) {
             if (currentChar <= chapter.text.length) {
                 textEl.textContent = chapter.text.slice(0, currentChar);
-                if (currentChar > 0) playClick();
                 currentChar++;
                 setTimeout(typeNext, SPEED);
             } else {

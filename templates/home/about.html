@@ -25,19 +25,13 @@
     </div>
 
     <!-- Desktop: animated typewriter version (hidden from screen readers) -->
-    <div class="about-stage" aria-hidden="true" data-sound-src="{% static 'sounds/virtualzero-mechanical-keyboard-typing-hd-372290.mp3' %}">
+    <div class="about-stage" aria-hidden="true">
         <div class="about-cursor-wrap">
             <!-- about.js fills these elements with the chapter text -->
             <div class="about-chapter-label" id="aboutChapterLabel"></div>
             <div class="about-text" id="aboutText"></div>
             <span class="about-cursor" id="aboutCursor">█</span>
         </div>
-
-        <!-- Sound toggle button for the typewriter click sound -->
-        <button class="about-sound-btn" id="aboutSoundBtn" aria-pressed="false" aria-label="Toggle typewriter sound">
-            <i class="fas fa-volume-mute"></i>
-            <span class="sound-label">SOUND OFF</span>
-        </button>
 
         <!-- Dot navigation — one dot per chapter -->
         <div class="about-progress" id="aboutProgress">
