@@ -50,32 +50,36 @@
 
     <!-- Mobile: static readable version (shown on small screens) -->
     <div class="about-mobile">
-        <div class="page-header px-4">
-            <h1>NOIR</h1>
-            <p>The Story</p>
-        </div>
-        <div class="container-fluid px-4 py-5">
-            <div class="about-mobile-chapter">
+        <div class="about-mobile-chapter about-ch-1">
+            <div class="about-mobile-overlay">
                 <span class="about-mobile-num">I</span>
                 <h2 class="about-mobile-title">The Origin</h2>
                 <p class="about-mobile-body">NOIR was born in 2019 in a small studio in Paris. No investors. No mood boards. Just two people who believed that modern menswear had lost its way — drowning in logos, noise and excess.</p>
             </div>
-            <div class="about-mobile-chapter">
+        </div>
+        <div class="about-mobile-chapter about-ch-2">
+            <div class="about-mobile-overlay">
                 <span class="about-mobile-num">II</span>
                 <h2 class="about-mobile-title">The Vision</h2>
                 <p class="about-mobile-body">We set one rule: if it doesn't need to be there, it isn't. Every seam, every cut, every fabric choice is a decision made in silence. We don't follow trends. We follow conviction.</p>
             </div>
-            <div class="about-mobile-chapter">
+        </div>
+        <div class="about-mobile-chapter about-ch-3">
+            <div class="about-mobile-overlay">
                 <span class="about-mobile-num">III</span>
                 <h2 class="about-mobile-title">The Product</h2>
                 <p class="about-mobile-body">Each NOIR piece is constructed to last a decade, not a season. We source from mills in Portugal and Japan. We produce in small runs. We never restock what sells out.</p>
             </div>
-            <div class="about-mobile-chapter">
+        </div>
+        <div class="about-mobile-chapter about-ch-4">
+            <div class="about-mobile-overlay">
                 <span class="about-mobile-num">IV</span>
                 <h2 class="about-mobile-title">The Future</h2>
                 <p class="about-mobile-body">NOIR will never be a big brand. That's the point. We exist for the few who understand that the most powerful thing a man can wear is restraint.</p>
             </div>
-            <a href="{% url 'products' %}" class="btn-add-bag d-inline-block mt-4">SHOP THE COLLECTION</a>
+        </div>
+        <div class="about-mobile-cta">
+            <a href="{% url 'products' %}" class="btn-add-bag d-inline-block">SHOP THE COLLECTION</a>
         </div>
     </div>
 

@@ -117,25 +117,35 @@
     .about-mobile { display: block; }
 
     .about-mobile-chapter {
-        margin-bottom: 3rem;
-        padding-bottom: 3rem;
-        border-bottom: 1px solid rgba(240,237,232,0.08);
+        position: relative;
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center top;
+        display: flex;
+        align-items: flex-end;
     }
 
-    .about-mobile-chapter:last-of-type {
-        border-bottom: none;
+    .about-ch-1 { background-image: url('/static/images/about/pexels-venvick-9946984.jpg'); }
+    .about-ch-2 { background-image: url('/static/images/about/pexels-cottonbro-8718339.jpg'); }
+    .about-ch-3 { background-image: url('/static/images/about/pexels-cottonbro-7622238.jpg'); }
+    .about-ch-4 { background-image: url('/static/images/about/pexels-prince-akachi-604075563-20286005.jpg'); }
+
+    .about-mobile-overlay {
+        width: 100%;
+        padding: 3rem 2rem;
+        background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
     }
 
     .about-mobile-num {
         font-size: 0.65rem;
         letter-spacing: 0.35em;
-        color: rgba(240,237,232,0.4);
+        color: rgba(240,237,232,0.5);
         display: block;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
     }
 
     .about-mobile-title {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         letter-spacing: 0.2em;
         text-transform: uppercase;
         margin-bottom: 1rem;
@@ -145,7 +155,14 @@
     .about-mobile-body {
         font-size: 0.9rem;
         line-height: 1.8;
-        color: rgba(240,237,232,0.75);
+        color: rgba(240,237,232,0.8);
         letter-spacing: 0.03em;
+        margin: 0;
+    }
+
+    .about-mobile-cta {
+        background: var(--black);
+        padding: 3rem 2rem;
+        text-align: center;
     }
 }
