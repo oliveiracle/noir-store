@@ -757,8 +757,6 @@ heroku run python manage.py migrate
 
 ### Acknowledgements
 
-- The Code Institute Slack community for support
-- Code Institute tutors for technical assistance
 - [Claude](https://claude.ai) by Anthropic — AI assistant used for development support, debugging and code review
 
 ---
