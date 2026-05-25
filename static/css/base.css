@@ -1745,7 +1745,7 @@ body {
     padding: 0.75rem 1rem;
     color: var(--white);
     font-family: var(--font);
-    font-size: 0.75rem;
+    font-size: 1rem;
     letter-spacing: 0.05em;
     outline: none;
 }
@@ -1763,6 +1763,11 @@ body {
 @media (max-width: 767px) {
     .chat-widget { bottom: 1.2rem; right: 1.2rem; }
     .chat-box { width: 290px; }
+}
+
+/* Prevent iOS Safari auto-zoom on input focus */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input, textarea, select { font-size: 16px !important; }
 }
 
 /* ============================================================
