@@ -611,6 +611,32 @@ A newsletter subscription system is built into the footer of every page. Subscri
 
 Full manual testing was carried out across all user stories. See [TESTING.md](TESTING.md) for detailed results.
 
+### Lighthouse Testing
+
+Lighthouse audits were run via Chrome DevTools on the key pages of the site.
+
+#### Mobile Results
+
+| Category | Score |
+|----------|-------|
+| Performance | 69 |
+| Accessibility | 100 |
+| Best Practices | 100 |
+| SEO | 100 |
+
+> Performance score on mobile is lower due to the autoplay editorial video and canvas starfield animation — both are intentional design features. Accessibility, SEO and Best Practices all score 100.
+
+| | |
+|---|---|
+| ![Performance](docs/lighthouse/mobile/perfomance.png) | ![Accessibility](docs/lighthouse/mobile/acessibility.png) |
+| ![Best Practices](docs/lighthouse/mobile/best-practices.png) | ![SEO](docs/lighthouse/mobile/seo.png) |
+
+#### Desktop Results
+
+Desktop Lighthouse results will be added after testing.
+
+---
+
 ### Validator Testing
 
 | Tool | Result |
