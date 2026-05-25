@@ -134,6 +134,8 @@ The NOIR wordmark uses Montserrat at maximum weight (900) with extended letter-s
 
 The NOIR colour palette is built entirely from blacks, warm neutrals and a single gold accent. Every colour has a defined role in the interface — nothing is decorative.
 
+![NOIR Colour Palette](docs/noir_colour_palette.png)
+
 **Backgrounds**
 
 | Colour | Hex | Usage |
