@@ -9,7 +9,6 @@ from .webhook_handler import StripeWH_Handler
 @require_POST
 @csrf_exempt
 def webhook(request):
-    """Listen for and handle webhooks from Stripe."""
     payload = request.body
     sig_header = request.META.get('HTTP_STRIPE_SIGNATURE', '')
     wh_secret = settings.STRIPE_WH_SECRET

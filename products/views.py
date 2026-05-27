@@ -6,7 +6,6 @@ from .forms import ProductForm, ReviewForm
 
 
 def all_products(request):
-    """Display all products with optional search and category filtering."""
     products = Product.objects.all()
     categories = Category.objects.all()
     current_category = None
@@ -49,7 +48,6 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """Display a single product detail page."""
     product = get_object_or_404(Product, pk=product_id)
     reviews = product.reviews.all()
 
@@ -75,7 +73,6 @@ def product_detail(request, product_id):
 
 @login_required
 def add_review(request, product_id):
-    """Allow authenticated users to submit a review for a product."""
     product = get_object_or_404(Product, pk=product_id)
 
     # Make sure the user hasn't already reviewed this product
@@ -98,7 +95,6 @@ def add_review(request, product_id):
 
 @login_required
 def edit_review(request, review_id):
-    """Allow users to edit their own review."""
     # The user=request.user check prevents editing someone else's review
     review = get_object_or_404(Review, pk=review_id, user=request.user)
 
@@ -121,7 +117,6 @@ def edit_review(request, review_id):
 
 @login_required
 def delete_review(request, review_id):
-    """Allow users to delete their own review."""
     # Again, user=request.user ensures only the author can delete
     review = get_object_or_404(Review, pk=review_id, user=request.user)
     product_id = review.product.id
@@ -132,7 +127,6 @@ def delete_review(request, review_id):
 
 @login_required
 def add_product(request):
-    """Allow superusers to add a new product to the store."""
     # Restrict access to admin users only
     if not request.user.is_superuser:
         messages.error(request, 'Access restricted to store administrators.')
@@ -153,7 +147,6 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """Allow superusers to edit an existing product."""
     if not request.user.is_superuser:
         messages.error(request, 'Access restricted to store administrators.')
         return redirect('products')
@@ -180,7 +173,6 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """Allow superusers to delete a product from the store."""
     if not request.user.is_superuser:
         messages.error(request, 'Access restricted to store administrators.')
         return redirect('products')

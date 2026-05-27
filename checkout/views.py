@@ -12,8 +12,6 @@ from .models import Order, OrderLineItem
 
 
 def checkout(request):
-    """Handle checkout form and create a Stripe PaymentIntent."""
-
     # Get the Stripe keys from settings (stored in environment variables)
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -115,7 +113,6 @@ def checkout(request):
 
 
 def send_confirmation_email(order):
-    """Send an order confirmation email to the customer."""
     # Build the subject and body from templates to keep things clean
     subject = render_to_string(
         'checkout/confirmation_emails/confirmation_email_subject.txt',
@@ -134,7 +131,6 @@ def send_confirmation_email(order):
 
 
 def checkout_success(request, order_number):
-    """Display the order confirmation page after a successful payment."""
     order = get_object_or_404(Order, order_number=order_number)
 
     # Send the confirmation email when the user reaches this page

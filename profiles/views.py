@@ -9,7 +9,6 @@ from .models import Wishlist
 
 @login_required
 def profile(request):
-    """Display and update the user's delivery profile and order history."""
     user_profile = request.user.profile
 
     # Get all orders linked to this user's email, newest first
@@ -35,7 +34,6 @@ def profile(request):
 
 @login_required
 def toggle_wishlist(request, product_id):
-    """Add or remove a product from the user's wishlist."""
     product = get_object_or_404(Product, pk=product_id)
 
     # get_or_create ensures the user always has a wishlist record

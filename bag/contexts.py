@@ -3,7 +3,6 @@ from products.models import Product
 
 
 def all_products_json(request):
-    """Return all products as a JSON-serialisable dict for the chat widget."""
     products = Product.objects.select_related('category').all()
     data = [
         {
@@ -18,7 +17,6 @@ def all_products_json(request):
 
 
 def bag_contents(request):
-    """Calculate bag totals and return context for use across all templates."""
     bag = request.session.get('bag', {})
     bag_items = []
     total = 0
