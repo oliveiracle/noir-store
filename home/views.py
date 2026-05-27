@@ -39,10 +39,13 @@ def contact(request):
     """Render the contact page and handle form submission."""
     message_sent = False
     if request.method == 'POST':
-        # We don't process the message yet — just show a confirmation
         message_sent = True
+    user_email = ''
+    if request.user.is_authenticated:
+        user_email = request.user.email
     return render(
-        request, 'home/contact.html', {'message_sent': message_sent}
+        request, 'home/contact.html',
+        {'message_sent': message_sent, 'user_email': user_email}
     )
 
 
