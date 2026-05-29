@@ -74,6 +74,7 @@ class StripeWH_Handler:
             order_exists = True
         except Order.DoesNotExist:
             # Order doesn't exist yet — create it from the webhook data
+            order = None
             try:
                 order = Order.objects.create(
                     stripe_pid=pid,
@@ -89,6 +90,7 @@ class StripeWH_Handler:
                         product=product,
                         quantity=quantity,
                     )
+                order.update_total()
             except Exception as e:
                 # If anything goes wrong, delete the incomplete order
                 if order:

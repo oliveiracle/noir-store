@@ -68,6 +68,7 @@ def checkout(request):
                     product=product,
                     quantity=quantity,
                 )
+            order.update_total()
 
             # Clear the bag from the session after the order is placed
             request.session['bag'] = {}
