@@ -1507,6 +1507,46 @@ body {
     background: var(--bone);
 }
 
+.qty-selector {
+    border: 1px solid rgba(240,237,232,0.25);
+}
+
+.qty-btn {
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 1.1rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.qty-btn:hover {
+    background: rgba(240,237,232,0.08);
+}
+
+.qty-input {
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(240,237,232,0.25);
+    border-right: 1px solid rgba(240,237,232,0.25);
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+    width: 3rem;
+    height: 2.2rem;
+    -moz-appearance: textfield;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .btn-wishlist {
     background: transparent;
     color: var(--white);
