@@ -32,11 +32,15 @@
 
     let currentChapter = 0;
     let currentChar    = 0;
-    let typing         = true;
     let paused         = false;
-    const SPEED        = 38;
-    const PAUSE_AFTER  = 2200;
+    const LABEL_SPEED  = 55;
+    const TEXT_SPEED   = 38;
     const ERASE_SPEED  = 18;
+    const PAUSE_AFTER  = 2200;
+    const LABEL_PAUSE  = 350;
+
+    // Sequence: type label → pause → type text → pause → erase text → next
+    var phase = 'label'; // 'label' | 'text' | 'erase'
 
     function updateDots() {
         dots.forEach(function (d, i) {
@@ -46,18 +50,32 @@
 
     function typeNext() {
         if (paused) return;
-        const chapter = chapters[currentChapter];
+        var chapter = chapters[currentChapter];
 
-        if (typing) {
-            if (currentChar <= chapter.text.length) {
-                textEl.textContent = chapter.text.slice(0, currentChar);
+        if (phase === 'label') {
+            if (currentChar <= chapter.label.length) {
+                labelEl.textContent = chapter.label.slice(0, currentChar);
                 currentChar++;
-                setTimeout(typeNext, SPEED);
+                setTimeout(typeNext, LABEL_SPEED);
             } else {
                 paused = true;
                 setTimeout(function () {
                     paused = false;
-                    typing = false;
+                    phase = 'text';
+                    currentChar = 0;
+                    typeNext();
+                }, LABEL_PAUSE);
+            }
+        } else if (phase === 'text') {
+            if (currentChar <= chapter.text.length) {
+                textEl.textContent = chapter.text.slice(0, currentChar);
+                currentChar++;
+                setTimeout(typeNext, TEXT_SPEED);
+            } else {
+                paused = true;
+                setTimeout(function () {
+                    paused = false;
+                    phase = 'erase';
                     typeNext();
                 }, PAUSE_AFTER);
             }
@@ -68,28 +86,30 @@
                 setTimeout(typeNext, ERASE_SPEED);
             } else {
                 currentChapter = (currentChapter + 1) % chapters.length;
-                labelEl.textContent = chapters[currentChapter].label;
+                labelEl.textContent = '';
+                textEl.textContent  = '';
                 updateDots();
-                typing = true;
+                phase = 'label';
+                currentChar = 0;
                 setTimeout(typeNext, 400);
             }
         }
     }
 
-    labelEl.textContent = chapters[0].label;
+    labelEl.textContent = '';
     updateDots();
     setTimeout(typeNext, 800);
 
     dots.forEach(function (dot) {
         dot.addEventListener('click', function () {
-            const target = parseInt(dot.dataset.chapter, 10);
+            var target = parseInt(dot.dataset.chapter, 10);
             if (target === currentChapter) return;
-            currentChapter = target;
-            currentChar    = 0;
-            typing         = true;
-            paused         = false;
+            currentChapter      = target;
+            currentChar         = 0;
+            phase               = 'label';
+            paused              = false;
             textEl.textContent  = '';
-            labelEl.textContent = chapters[currentChapter].label;
+            labelEl.textContent = '';
             updateDots();
             typeNext();
         });
