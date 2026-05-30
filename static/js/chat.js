@@ -90,6 +90,26 @@
             k: ['discount', 'promo', 'code', 'sale', 'offer', 'coupon'],
             r: 'We don\'t do discount codes right now. The best deal we offer is free shipping when you spend over €150.'
         },
+        {
+            k: ['late', 'delayed', 'delay', 'not arrived', 'hasn\'t arrived', 'where is my order', 'still waiting', 'taking long'],
+            r: 'Sorry to hear that. Delays can happen occasionally. Please check your confirmation email for tracking info — if it\'s been more than 7 business days, reach out via the Contact page and we\'ll look into it right away.'
+        },
+        {
+            k: ['wrong', 'damaged', 'broken', 'missing', 'incorrect', 'defect', 'faulty'],
+            r: 'That\'s not acceptable and we\'re sorry about that. Please contact us through the Contact page with your order number and a photo if possible — we\'ll get it sorted for you quickly.'
+        },
+        {
+            k: ['complaint', 'complain', 'unhappy', 'disappointed', 'terrible', 'awful', 'bad experience'],
+            r: 'We\'re really sorry to hear that. That\'s not the experience we want for you. Please reach out via the Contact page and we\'ll make it right.'
+        },
+        {
+            k: ['love', 'amazing', 'great', 'excellent', 'fantastic', 'beautiful', 'perfect', 'happy', 'impressed'],
+            r: 'That means a lot — thank you! We put a lot into every piece. Hope to see you back soon.'
+        },
+        {
+            k: ['quality', 'material', 'fabric', 'made of', 'composition'],
+            r: 'Quality is everything to us. Each piece is selected for its fabric and construction. For specific material details, check the product description on the product page.'
+        },
     ];
 
     function reply(msg) {
@@ -127,7 +147,7 @@
         if (containsAny(clean, ['hello', 'hi', 'hey', 'hola', 'oi', 'good morning', 'good afternoon'])) {
             if (!greeted) {
                 greeted = true;
-                return 'Hey! What can I help you with? Ask me about a product, shipping, sizing or returns.';
+                return 'Hey, I\'m NOX — the NOIR assistant. What can I help you with? Ask me about a product, shipping, sizing or returns.';
             }
             return 'What else can I help you with?';
         }
@@ -150,7 +170,15 @@
 
     toggle.addEventListener('click', function () {
         box.classList.toggle('chat-box--open');
-        if (box.classList.contains('chat-box--open')) input.focus();
+        if (box.classList.contains('chat-box--open')) {
+            input.focus();
+            if (!greeted && msgs.children.length === 0) {
+                greeted = true;
+                setTimeout(function () {
+                    addMsg('Hey, I\'m NOX — the NOIR assistant. Ask me about products, sizing, shipping or returns.', 'chat-msg--bot');
+                }, 300);
+            }
+        }
     });
 
     closeBtn.addEventListener('click', function () {
