@@ -9,6 +9,9 @@
 > **Live Site:** [noir-store-pp5.herokuapp.com](https://noir-store-pp5-a76b3f8c9d2e.herokuapp.com)
 > **GitHub Repository:** [github.com/oliveiracle/noir-store](https://github.com/oliveiracle/noir-store)
 
+> **Test Account (Customer):**
+> Username: `assessor` | Password: `Noir2026!`
+
 ---
 
 ## Table of Contents
