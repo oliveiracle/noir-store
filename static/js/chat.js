@@ -56,39 +56,39 @@
     var rules = [
         {
             k: ['shipping', 'delivery', 'deliver', 'postage', 'dispatch'],
-            r: 'We offer free shipping on orders over €150. Orders below that have a flat 10% shipping fee. Delivery takes 3–5 business days.'
+            r: 'Shipping is free on orders over €150 — otherwise it\'s a flat 10% of your order total. Should arrive in 3–5 business days.'
         },
         {
             k: ['return', 'refund', 'exchange'],
-            r: 'You can return any item within 30 days of delivery. Items must be unworn and in original packaging. Visit our Returns page for more details.'
+            r: 'No worries — you have 30 days from delivery to return anything. Just make sure it\'s unworn and in the original packaging. Head to the Returns page and we\'ll sort it out.'
         },
         {
             k: ['size', 'sizing', 'fit', 'measurements', 'small', 'large', 'medium'],
-            r: 'Our pieces run true to size. We recommend going one size up for a relaxed fit. Check the product page for size options (XS–XL).'
+            r: 'Everything runs true to size. If you want a more relaxed, oversized look go one size up. We stock XS through XL on most pieces.'
         },
         {
             k: ['payment', 'pay', 'card', 'stripe', 'checkout'],
-            r: 'We accept all major credit and debit cards securely via Stripe. Your payment details are never stored on our servers.'
+            r: 'We take all major cards through Stripe — it\'s fully secure and we never store your card details.'
         },
         {
             k: ['contact', 'email', 'phone', 'reach', 'support', 'help'],
-            r: 'Reach us via the Contact page. We respond within 24 hours, Monday to Friday.'
+            r: 'Best way to reach us is through the Contact page. We usually reply within 24 hours on weekdays.'
         },
         {
-            k: ['order', 'track', 'tracking', 'where is my'],
-            r: 'You can view your order history in your account profile. For tracking updates, check the confirmation email sent after purchase.'
+            k: ['order', 'track', 'tracking', 'where is'],
+            r: 'You can check your order history in your account. Tracking info should come through in your confirmation email — if not, drop us a message via the Contact page.'
         },
         {
             k: ['wishlist', 'save', 'favourite', 'favorite'],
-            r: 'You can save items to your wishlist by clicking the wishlist button on any product page. You\'ll need to be signed in.'
+            r: 'Just hit the wishlist button on any product page and it\'ll be saved to your account. You\'ll need to be signed in for that.'
         },
         {
             k: ['account', 'login', 'sign in', 'register', 'password'],
-            r: 'You can create an account or sign in from the top right of the page. Your profile stores your delivery info and order history.'
+            r: 'You can sign in or create an account from the icon in the top right. Once you\'re in, your delivery info and order history are all there.'
         },
         {
-            k: ['discount', 'promo', 'code', 'sale', 'offer'],
-            r: 'We don\'t currently run discount codes. Free shipping is automatically applied to orders over €150.'
+            k: ['discount', 'promo', 'code', 'sale', 'offer', 'coupon'],
+            r: 'We don\'t do discount codes right now. The best deal we offer is free shipping when you spend over €150.'
         },
     ];
 
@@ -101,19 +101,19 @@
         if (matches.length === 1) {
             var p = matches[0];
             if (isPriceQuestion(msg)) {
-                return 'The ' + p.name + ' is priced at €' + p.price + '.';
+                return 'The ' + p.name + ' is €' + p.price + '. You can find it in the shop if you want to take a closer look.';
             }
             if (isAvailabilityQuestion(msg)) {
-                return 'Yes, we carry the ' + p.name + ' — it\'s €' + p.price + '. You can find it in our shop.';
+                return 'Yes, we have the ' + p.name + ' — it\'s €' + p.price + '. Check it out in the shop.';
             }
-            return 'Here\'s what I found:\n• ' + p.name + ' — €' + p.price + '\nYou can find it in our shop.';
+            return 'Found it — ' + p.name + ' at €' + p.price + '. Head to the shop to see the full details.';
         }
 
         if (matches.length > 1) {
             if (isPriceQuestion(msg)) {
-                return 'Here are the matching products and their prices:\n' + formatProductList(matches);
+                return 'Here\'s what we have with prices:\n' + formatProductList(matches);
             }
-            return 'I found a few items that match:\n' + formatProductList(matches);
+            return 'A few things came up:\n' + formatProductList(matches);
         }
 
         // Check topic rules
@@ -127,16 +127,16 @@
         if (containsAny(clean, ['hello', 'hi', 'hey', 'hola', 'oi', 'good morning', 'good afternoon'])) {
             if (!greeted) {
                 greeted = true;
-                return 'Hello! How can I help you today? You can ask me about products, pricing, shipping, returns or sizing.';
+                return 'Hey! What can I help you with? Ask me about a product, shipping, sizing or returns.';
             }
-            return 'What can I help you with?';
+            return 'What else can I help you with?';
         }
 
         if (containsAny(clean, ['thank', 'thanks', 'obrigado', 'cheers'])) {
-            return "You\'re welcome. Is there anything else I can help you with?";
+            return 'Of course! Let me know if there\'s anything else.';
         }
 
-        return "I\'m not sure about that. Try asking about a specific product, shipping, returns or sizing — or visit our FAQ page.";
+        return 'Not sure I caught that — try asking about a specific product or something like shipping, sizing or returns. I\'ll do my best!';
     }
 
     function addMsg(text, cls) {
