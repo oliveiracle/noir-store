@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 
 
 class Category(models.Model):
-    """Represents a product category like Jackets or Trousers."""
 
     name = models.CharField(max_length=254)
     # Friendly name is shown to users; the regular name is used internally
@@ -17,12 +16,10 @@ class Category(models.Model):
         return self.name
 
     def get_friendly_name(self):
-        """Return the display-friendly name for this category."""
         return self.friendly_name
 
 
 class Product(models.Model):
-    """Represents a product available for sale in the store."""
 
     # Category is optional — a product can exist without one
     category = models.ForeignKey(
@@ -47,7 +44,6 @@ class Product(models.Model):
 
 
 class Review(models.Model):
-    """A customer review for a product."""
 
     # Choices list: 1 star to 5 stars
     RATING_CHOICES = [(i, i) for i in range(1, 6)]

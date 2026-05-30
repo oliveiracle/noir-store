@@ -6,7 +6,6 @@ from products.models import Product
 
 
 class UserProfile(models.Model):
-    """Stores delivery information for a registered user."""
 
     # One profile per user — deleting the user also deletes the profile
     user = models.OneToOneField(
@@ -28,14 +27,12 @@ class UserProfile(models.Model):
 # This signal fires every time a User is saved (created or updated)
 @receiver(post_save, sender=User)
 def create_or_update_profile(sender, instance, created, **kwargs):
-    """Automatically create or update the UserProfile when a User is saved."""
     # get_or_create handles both new registrations and existing user updates
     profile, _ = UserProfile.objects.get_or_create(user=instance)
     profile.save()
 
 
 class Wishlist(models.Model):
-    """Stores products saved to a user's wishlist."""
 
     # One wishlist per user
     user = models.OneToOneField(

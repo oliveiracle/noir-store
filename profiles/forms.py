@@ -3,7 +3,6 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
-    """Form for updating the user's default delivery information."""
 
     class Meta:
         model = UserProfile

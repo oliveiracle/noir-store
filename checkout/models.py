@@ -5,7 +5,6 @@ from products.models import Product
 
 
 class Order(models.Model):
-    """Represents a completed customer order."""
 
     # The order number is auto-generated using UUID — not editable by users
     order_number = models.CharField(max_length=32, null=False, editable=False)
@@ -37,12 +36,10 @@ class Order(models.Model):
         max_length=254, null=False, blank=False, default='')
 
     def _generate_order_number(self):
-        """Generate a unique order number using UUID."""
         # UUID gives us a random 32-character string — very unlikely to repeat
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        """Recalculate order total, delivery cost and grand total."""
         # Sum all the line item totals to get the order total
         self.order_total = (
             self.lineitems.aggregate(
@@ -67,7 +64,6 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    """Represents a single product line within an order."""
 
     # Each line item belongs to one order and refers to one product
     order = models.ForeignKey(

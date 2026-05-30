@@ -7,14 +7,12 @@ from .models import Order, OrderLineItem
 
 
 class StripeWH_Handler:
-    """Handle Stripe webhooks for payment events."""
 
     def __init__(self, request):
         # Store the request so we can access it in the handler methods
         self.request = request
 
     def _send_confirmation_email(self, order):
-        """Send order confirmation email to the customer."""
         # Build the subject and body from email template files
         subject = render_to_string(
             'checkout/confirmation_emails/'
@@ -34,7 +32,6 @@ class StripeWH_Handler:
         )
 
     def handle_event(self, event):
-        """Handle unexpected or unhandled webhook events."""
         # Return 200 so Stripe knows we received it, even if we don't act on it
         return HttpResponse(
             content=f'Unhandled webhook: {event["type"]}',
@@ -42,7 +39,6 @@ class StripeWH_Handler:
         )
 
     def handle_payment_intent_succeeded(self, event):
-        """Handle payment_intent.succeeded webhook from Stripe."""
         intent = event.data.object
         pid = intent.id  # The PaymentIntent ID
 
@@ -108,7 +104,6 @@ class StripeWH_Handler:
         )
 
     def handle_payment_intent_payment_failed(self, event):
-        """Handle payment_intent.payment_failed webhook from Stripe."""
         # Log that we received it — no action needed for failed payments here
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',

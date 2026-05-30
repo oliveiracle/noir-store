@@ -754,9 +754,6 @@ heroku run python manage.py migrate
 
 - Above all, thanks be to **Jesus Christ** — my strength, my foundation, and the reason I finished this project.
 
-
-- [Claude](https://claude.ai) by Anthropic — AI assistant used for development support, debugging and code review
-
 ---
 
 *This project was created as part of the Code Institute Full Stack Software Development Diploma — Portfolio Project 5 (E-Commerce Applications).*

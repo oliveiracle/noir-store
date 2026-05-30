@@ -3,7 +3,6 @@ from .models import Product, Category, Review
 
 
 class ProductForm(forms.ModelForm):
-    """Form for adding or editing a product — used by admin only."""
 
     class Meta:
         model = Product
@@ -31,7 +30,6 @@ class ProductForm(forms.ModelForm):
 
 
 class ReviewForm(forms.ModelForm):
-    """Form for submitting or editing a product review."""
 
     class Meta:
         model = Review
