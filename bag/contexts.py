@@ -3,6 +3,8 @@ from products.models import Product
 
 
 def all_products_json(request):
+    # Serialise all products to JSON so the chat widget can search them
+    # client-side without making extra API calls
     products = Product.objects.select_related('category').all()
     data = [
         {
@@ -17,6 +19,7 @@ def all_products_json(request):
 
 
 def bag_contents(request):
+    # Read the bag from the session — it's stored as {product_id: quantity}
     bag = request.session.get('bag', {})
     bag_items = []
     total = 0
@@ -35,9 +38,11 @@ def bag_contents(request):
                 'subtotal': subtotal,
             })
         except Product.DoesNotExist:
+            # If a product was deleted after being added to the bag, skip it
             pass
 
     from decimal import Decimal
+    # Free delivery on orders over €150, otherwise 10% of the order total
     delivery = 0 if total >= 150 else round(total * Decimal('0.1'), 2)
     grand_total = total + delivery
 
