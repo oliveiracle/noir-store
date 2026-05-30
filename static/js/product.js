@@ -1,1 +1,4 @@
-// No zoom effect — removed due to inconsistent behaviour on touch devices
+// Product detail page enhancements
+// Mouse-follow zoom was removed due to unreliable behaviour on touch devices
+// and layout shifts on smaller screens. This file is kept as a placeholder
+// for any future product page interactions.
