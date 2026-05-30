@@ -759,6 +759,7 @@ heroku run python manage.py migrate
 ### Acknowledgements
 
 - Above all, thanks be to **Jesus Christ** — my strength, my foundation, and the reason I finished this project.
+- **Claude (Anthropic AI)** was used as a development assistant throughout this project — helping debug errors, fix logic issues (such as order totals, N+1 queries, and Stripe integration), and review code. All code was written, reviewed and understood by the developer. Claude was a tool, not the author.
 
 ---
 
