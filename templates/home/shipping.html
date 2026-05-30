@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 
-<!-- Shipping info page — static content -->
-
 {% block title %}Shipping — NOIR{% endblock %}
 
 {% block content %}
@@ -11,35 +9,44 @@
         <p>Delivery information</p>
     </div>
     <div class="container-fluid px-4 px-lg-5 py-5">
-        <div class="row">
-            <div class="col-lg-7">
+        <div class="row g-4">
 
-                <!-- Shipping options listed as FAQ-style items -->
-                <div class="faq-item">
+            <div class="col-lg-6">
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-box"></i></div>
                     <span class="detail-label">STANDARD DELIVERY</span>
-                    <p class="faq-answer">5–7 working days. €8.00 flat rate, or free on orders over €150.</p>
+                    <p class="faq-answer mt-2">5–7 working days. €8.00 flat rate, or free on orders over €150.</p>
                 </div>
-                <div class="detail-divider"></div>
-
-                <div class="faq-item">
-                    <span class="detail-label">EXPRESS DELIVERY</span>
-                    <p class="faq-answer">2–3 working days. €15.00 flat rate, available for most European destinations.</p>
-                </div>
-                <div class="detail-divider"></div>
-
-                <div class="faq-item">
-                    <span class="detail-label">INTERNATIONAL</span>
-                    <p class="faq-answer">7–14 working days depending on destination. Customs duties may apply and are the responsibility of the recipient.</p>
-                </div>
-                <div class="detail-divider"></div>
-
-                <div class="faq-item">
-                    <span class="detail-label">ORDER TRACKING</span>
-                    <p class="faq-answer">A tracking number will be emailed once your order has been dispatched. Allow up to 24 hours for tracking to update.</p>
-                </div>
-
             </div>
+
+            <div class="col-lg-6">
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-bolt"></i></div>
+                    <span class="detail-label">EXPRESS DELIVERY</span>
+                    <p class="faq-answer mt-2">2–3 working days. €15.00 flat rate, available for most European destinations.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-globe"></i></div>
+                    <span class="detail-label">INTERNATIONAL</span>
+                    <p class="faq-answer mt-2">7–14 working days depending on destination. Customs duties may apply and are the responsibility of the recipient.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-search-location"></i></div>
+                    <span class="detail-label">ORDER TRACKING</span>
+                    <p class="faq-answer mt-2">A tracking number will be emailed once your order has been dispatched. Allow up to 24 hours for tracking to update.</p>
+                </div>
+            </div>
+
         </div>
+
+        <div class="detail-divider my-5"></div>
+        <p class="label-muted">Questions? <a href="{% url 'contact' %}" class="auth-link">Contact us</a> and we'll get back to you within 24 hours.</p>
     </div>
 </div>
 {% endblock %}
