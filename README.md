@@ -6,11 +6,14 @@
 
 ![NOIR Logo](docs/noir_logo.png)
 
-> **Live Site:** [noir-store-pp5.herokuapp.com](https://noir-store-pp5-a76b3f8c9d2e.herokuapp.com)
+> **Live Site:** [noir-store-pp5-8191b2832be3.herokuapp.com](https://noir-store-pp5-8191b2832be3.herokuapp.com)
 > **GitHub Repository:** [github.com/oliveiracle/noir-store](https://github.com/oliveiracle/noir-store)
 
 > **Test Account (Customer):**
 > Username: `assessor` | Password: `Noir2026!`
+>
+> **Stripe Test Card:**
+> Card: `4242 4242 4242 4242` | Expiry: any future date | CVC: any 3 digits
 
 ---
 
