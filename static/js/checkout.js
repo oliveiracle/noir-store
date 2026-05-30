@@ -32,8 +32,40 @@
         e.preventDefault();
         document.getElementById('submit-btn').disabled = true;
 
+        var getVal = function (id) {
+            var el = document.getElementById(id);
+            return el ? el.value.trim() : '';
+        };
+
         stripe.confirmCardPayment(clientSecret, {
-            payment_method: { card: card },
+            payment_method: {
+                card: card,
+                billing_details: {
+                    name: getVal('id_full_name'),
+                    email: getVal('id_email'),
+                    phone: getVal('id_phone_number'),
+                    address: {
+                        line1: getVal('id_street_address1'),
+                        line2: getVal('id_street_address2'),
+                        city: getVal('id_town_or_city'),
+                        postal_code: getVal('id_postcode'),
+                        country: getVal('id_country'),
+                        state: getVal('id_county'),
+                    },
+                },
+            },
+            shipping: {
+                name: getVal('id_full_name'),
+                phone: getVal('id_phone_number'),
+                address: {
+                    line1: getVal('id_street_address1'),
+                    line2: getVal('id_street_address2'),
+                    city: getVal('id_town_or_city'),
+                    postal_code: getVal('id_postcode'),
+                    country: getVal('id_country'),
+                    state: getVal('id_county'),
+                },
+            },
         }).then(function (result) {
             if (result.error) {
                 document.getElementById('card-errors').textContent = result.error.message;

@@ -33,6 +33,7 @@ def add_to_bag(request, item_id):
 
 def update_bag(request, item_id):
     quantity = int(request.POST.get('quantity', 1))
+    quantity = max(1, min(quantity, 10))
     bag = request.session.get('bag', {})
     key = str(item_id)
 
