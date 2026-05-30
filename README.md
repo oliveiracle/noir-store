@@ -741,7 +741,7 @@ heroku run python manage.py migrate
 - Stripe integration pattern based on [Code Institute's Boutique Ado walkthrough](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
 - Django allauth documentation for authentication setup
 - Django documentation for signals, context processors and model design
-- **Claude by Anthropic** was used as an AI development assistant to help debug errors and review logic (order totals, N+1 queries, Stripe integration). All code was written and understood by the developer.
+- **Claude by Anthropic** was used as an AI development assistant to help debug errors and review logic (order totals, N+1 queries, Stripe integration).
 
 ### Media
 
