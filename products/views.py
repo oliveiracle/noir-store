@@ -26,16 +26,16 @@ def all_products(request):
         products = products.filter(category__name=category_filter)
         current_category = category_filter
 
-    # Group products by category for the default view (no search or filter)
+    # Group products by category for the default view — single query, no N+1
     categories_with_products = []
     if not current_category and not query:
-        for cat in categories:
-            cat_products = Product.objects.filter(category=cat)
-            if cat_products.exists():
-                categories_with_products.append({
-                    'category': cat,
-                    'products': cat_products,
-                })
+        grouped = {}
+        for p in Product.objects.select_related('category').all():
+            if p.category_id:
+                if p.category_id not in grouped:
+                    grouped[p.category_id] = {'category': p.category, 'products': []}
+                grouped[p.category_id]['products'].append(p)
+        categories_with_products = list(grouped.values())
 
     context = {
         'products': products,
